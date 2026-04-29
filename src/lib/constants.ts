@@ -272,3 +272,28 @@ export const WHAT_IS_AUTONOMOUS_SOC_RIGHT_BALANCE = {
     alt: 'OmniSense autonomous mode interface with human and machine balance visual',
   },
 } as const
+
+export const WHAT_IS_AUTONOMOUS_SOC_SAFETY = {
+  heading: {
+    line1: 'Is an Autonomous SOC',
+    line2: 'Safe?',
+  },
+  paragraphs: [
+    'Safety depends on architecture.',
+    'SIRP enforces:',
+  ],
+  points: [
+    'Confidence-gated execution',
+    'Structured escalation policies',
+    'Shadow validation before live autonomy',
+    'Full audit trails for every action',
+  ],
+  closingLines: [
+    'Autonomy without governance is risky.',
+    'Governed autonomy is safer than manual response under fatigue.',
+  ],
+  image: {
+    src: '/images/benefitsOfSOC/machine decision making.png',
+    alt: 'Machine decision-making and human authority governance diagram',
+  },
+} as const

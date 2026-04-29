@@ -3,11 +3,13 @@ import { SplitInfoCtaImage } from '@/components/global/SplitInfoCtaImage'
 import { HowAutonomousSocWorksSection } from '@/components/global/HowAutonomousSocWorksSection'
 import { AutonomousSocBenefitsSection } from '@/components/global/AutonomousSocBenefitsSection'
 import { RightBalanceSection } from '@/components/global/RightBalanceSection'
+import { AutonomousSocSafetySection } from '@/components/global/AutonomousSocSafetySection'
 import {
   WHAT_IS_AUTONOMOUS_SOC_BENEFITS,
   WHAT_IS_AUTONOMOUS_SOC_HEADER,
   WHAT_IS_AUTONOMOUS_SOC_HOW_IT_WORKS,
   WHAT_IS_AUTONOMOUS_SOC_RIGHT_BALANCE,
+  WHAT_IS_AUTONOMOUS_SOC_SAFETY,
   WHAT_IS_AUTONOMOUS_SOC_TRADITIONAL_MODELS,
 } from '@/lib/constants'
 
@@ -17,6 +19,7 @@ export default function Page() {
   const howItWorks = WHAT_IS_AUTONOMOUS_SOC_HOW_IT_WORKS
   const benefits = WHAT_IS_AUTONOMOUS_SOC_BENEFITS
   const rightBalance = WHAT_IS_AUTONOMOUS_SOC_RIGHT_BALANCE
+  const safety = WHAT_IS_AUTONOMOUS_SOC_SAFETY
 
   return (
     <>
@@ -78,6 +81,7 @@ export default function Page() {
       />
 
       <RightBalanceSection data={rightBalance} />
+      <AutonomousSocSafetySection data={safety} />
     </>
   )
 }
