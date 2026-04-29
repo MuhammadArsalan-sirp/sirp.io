@@ -234,3 +234,41 @@ export const WHAT_IS_AUTONOMOUS_SOC_BENEFITS = {
     },
   ],
 } as const
+
+export const WHAT_IS_AUTONOMOUS_SOC_RIGHT_BALANCE = {
+  heading: {
+    line1: 'The Right Balance of Human',
+    line2: 'and Machine',
+  },
+  paragraphs: [
+    'An autonomous SOC does not remove humans from security operations.',
+    'It repositions them.',
+  ],
+  analystDefinesLead: 'Analysts define:',
+  analystDefines: [
+    'Execution boundaries',
+    'Confidence thresholds',
+    'Escalation conditions',
+    'Irreversible action restrictions',
+  ],
+  operationsParagraph: 'The system operates inside those guardrails.',
+  analystFocusLead: 'Analysts focus on:',
+  analystFocus: [
+    'Complex investigations',
+    'Emerging threat hunting',
+    'Governance and oversight',
+    'Strategic security improvements',
+  ],
+  closingLines: [
+    'Human-in-the-loop for every alert does not scale.',
+    'Human-on-the-loop governance does. This architectural shift reflects the fundamental difference between SOAR and autonomous SOC operating models.',
+  ],
+  differenceLink: {
+    label: 'difference between SOAR and autonomous SOC',
+    href: '/soar-vs-autonomous-soc',
+  },
+  image: {
+    src: '/images/benefitsOfSOC/right balance.png',
+    alt: 'OmniSense autonomous mode interface with human and machine balance visual',
+  },
+} as const
