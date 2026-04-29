@@ -72,12 +72,12 @@ export function AutonomousSocBenefitsSection({
                   <Image
                     src="/images/global/number border purple.svg"
                     alt=""
-                    width={28}
-                    height={56}
+                    width={58}
+                    height={96}
                     className="autonomous-benefit-border"
                     unoptimized
                   />
-                  <Icon className="autonomous-benefit-icon" size={13} strokeWidth={2.25} />
+                  <Icon className="autonomous-benefit-icon" size={20} strokeWidth={2.25} />
                 </div>
 
                 <h3 className="autonomous-benefit-title">{card.title}</h3>

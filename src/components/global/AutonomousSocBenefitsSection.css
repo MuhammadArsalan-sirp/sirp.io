@@ -58,27 +58,29 @@
 .autonomous-benefits-grid {
   margin-top: 2.8rem;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.8rem;
+  grid-template-columns: repeat(4, 280px);
+  justify-content: center;
+  gap: 10px;
 }
 
 .autonomous-benefit-card {
   background: #121218;
-  border: 1px solid #2f3550;
-  border-radius: 16px;
-  padding: 18px 18px 16px;
-  min-height: 480px;
+  border: 1px solid #3a3a4d;
+  border-radius: 20px;
+  padding: 30px;
+  min-height: 629px;
 }
 
 .autonomous-benefit-icon-wrap {
   position: relative;
-  width: 28px;
-  height: 56px;
+  width: 58px;
+  height: 96px;
+  margin-top: 10px;
 }
 
 .autonomous-benefit-border {
-  width: 28px;
-  height: 56px;
+  width: 58px;
+  height: 96px;
   filter:
     drop-shadow(0 0 2px rgba(184, 137, 255, 0.95))
     drop-shadow(0 0 8px rgba(142, 45, 255, 0.45));
@@ -92,7 +94,7 @@
 }
 
 .autonomous-benefit-title {
-  margin: 1.15rem 0 0;
+  margin: 2.4rem 0 0;
   color: #ffffff;
   font-family: 'Inter', sans-serif;
   font-size: 24px;
@@ -116,7 +118,7 @@
 
 @media (max-width: 1180px) {
   .autonomous-benefits-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 280px);
   }
 }
 
@@ -126,7 +128,7 @@
   }
 
   .autonomous-benefits-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 280px;
   }
 
   .autonomous-benefit-card {
