@@ -7,6 +7,13 @@ export const NAV_LINKS = [
   {
     label: 'Autonomous Security',
     href: '/autonomous-security',
+    children: [
+      { label: 'What is Autonomous Security',  href: '/autonomous-security',        description: 'The autonomous security model' },
+      { label: 'What is an Autonomous SOC',    href: '/what-is-autonomous-soc',     description: 'Understanding autonomous SOC' },
+      { label: 'How Autonomous SOC Works',     href: '/how-autonomous-soc-works',   description: 'Under the hood' },
+      { label: 'Autonomous SOC vs SOAR',       href: '/soar-vs-autonomous-soc',     description: 'Side-by-side comparison' },
+      { label: 'SOAR Alternatives',            href: '/soar-alternatives',          description: 'Make the switch' },
+    ],
   },
   {
     label: 'Platform',
@@ -21,10 +28,6 @@ export const NAV_LINKS = [
     label: 'Resources',
     href: '#',
     children: [
-      { label: 'What is Autonomous SOC?',   href: '/what-is-autonomous-soc',    description: 'The primer' },
-      { label: 'How Autonomous SOC Works',  href: '/how-autonomous-soc-works',  description: 'Under the hood' },
-      { label: 'SOAR vs Autonomous SOC',    href: '/soar-vs-autonomous-soc',    description: 'Side-by-side' },
-      { label: 'SOAR Alternatives',         href: '/soar-alternatives',         description: 'Make the switch' },
       { label: 'Technical White Paper',     href: '/technical-white-paper',     description: 'Deep dive' },
       { label: 'Manifesto',                 href: '/manifesto',                 description: 'Our vision' },
       { label: 'Blog',                      href: '/blog',                      description: 'Insights & news' },
