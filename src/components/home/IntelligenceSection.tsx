@@ -1,11 +1,26 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import './IntelligenceSection.css'
+import { INTELLIGENCE_DATA } from '@/lib/constants'
 
-export function IntelligenceSection() {
+/* ─── Types ──────────────────────────────────────────────── */
+interface IntelligenceData {
+  heading:       string
+  headingItalic: string
+  description:   string
+  videoSrc:      string
+}
+
+interface IntelligenceSectionProps {
+  data?: IntelligenceData
+}
+
+/* ─── Component ──────────────────────────────────────────── */
+export function IntelligenceSection({ data = INTELLIGENCE_DATA }: IntelligenceSectionProps) {
+  const { heading, headingItalic, description, videoSrc } = data
+
   return (
-    <section className="intelligence-section">
+    <section className="bg-[#121218] border-b border-[#3a3a4c] py-[100px] overflow-hidden">
       <div className="container-sirp">
 
         {/* Heading */}
@@ -14,14 +29,30 @@ export function IntelligenceSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="intelligence-heading"
+          className="text-center mb-16"
         >
-          <h2>
-            See intelligence come <em>alive</em>
+          <h2
+            className="text-white font-bold mb-5"
+            style={{
+              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+              lineHeight: '1.15',
+              letterSpacing: '-0.03em',
+              fontFamily: 'Inter, sans-serif',
+            }}
+          >
+            {heading}{' '}
+            <em
+              style={{
+                fontStyle: 'italic',
+                fontFamily: 'Noto Serif, serif',
+                fontWeight: 400,
+              }}
+            >
+              {headingItalic}
+            </em>
           </h2>
-          <p>
-            From overwhelming alert floods to prioritized incidents and automated response,
-            OmniSense streamlines the entire journey without slowing you down.
+          <p className="text-white/70 text-lg leading-[1.7] max-w-[620px] mx-auto font-['Inter',sans-serif]">
+            {description}
           </p>
         </motion.div>
 
@@ -31,16 +62,16 @@ export function IntelligenceSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="intelligence-video-wrapper"
+          className="relative max-w-[1100px] mx-auto rounded-2xl overflow-hidden bg-[#0f0f1a]"
         >
           <video
             autoPlay
             muted
             loop
             playsInline
-            className="intelligence-video"
+            className="w-full h-auto block rounded-2xl"
           >
-            <source src="/video/Home-Feature.mp4" type="video/mp4" />
+            <source src={videoSrc} type="video/mp4" />
           </video>
         </motion.div>
 

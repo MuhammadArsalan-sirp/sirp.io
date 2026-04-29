@@ -1,8 +1,31 @@
 import type { Metadata, Viewport } from 'next'
+import { Inter, Noto_Serif, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from '@/lib/constants'
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+  weight: ['300', '400', '500', '600', '700'],
+})
+
+const notoSerif = Noto_Serif({
+  subsets: ['latin'],
+  variable: '--font-noto-serif',
+  display: 'swap',
+  weight: ['400', '500', '600'],
+  style: ['normal', 'italic'],
+})
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  variable: '--font-ibm-mono',
+  display: 'swap',
+  weight: ['400', '500', '600'],
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -45,8 +68,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="bg-bg-base text-text-primary font-sans antialiased overflow-x-hidden">
+    <html
+      lang="en"
+      className={`${inter.variable} ${notoSerif.variable} ${ibmPlexMono.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="bg-[#121218] text-white antialiased overflow-x-hidden">
 
         {/* Grain overlay */}
         <div

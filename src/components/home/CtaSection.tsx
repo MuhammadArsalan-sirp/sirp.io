@@ -2,68 +2,92 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { CTA_DATA } from '@/lib/constants'
 import './CtaSection.css'
 
-export function CtaSection() {
-  return (
-    <section className="cta-section">
+/* ─── Types ──────────────────────────────────────────────── */
+interface CtaBtn {
+  label: string
+  href:  string
+}
 
-      {/* Arch + content */}
+interface CtaData {
+  heading:       string
+  headingItalic: string
+  primaryBtn:    CtaBtn
+  secondaryBtn:  CtaBtn
+}
+
+interface CtaSectionProps {
+  data?: CtaData
+}
+
+/* ─── Component ──────────────────────────────────────────── */
+export function CtaSection({ data = CTA_DATA }: CtaSectionProps) {
+  const { headingItalic, primaryBtn, secondaryBtn } = data
+
+  return (
+    <section className="bg-[#121218] overflow-hidden relative z-[2] -mt-20">
+
       <div className="cta-arch-wrapper">
 
-        {/* Animated purple glow layers */}
+        {/* 1. Glow — renders first, behind dome */}
         <motion.div
-          className="cta-glow-1"
-          animate={{ opacity: [0.4, 0.8, 0.4], scale: [1, 1.05, 1] }}
-          transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-        />
-        <motion.div
-          className="cta-glow-2"
-          animate={{ opacity: [0.6, 1, 0.6], scale: [1.05, 1, 1.05] }}
-          transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-        />
-        <motion.div
-          className="cta-glow-3"
-          animate={{ opacity: [0.3, 0.7, 0.3] }}
-          transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+          className="cta-orb"
+          animate={{ opacity: [0.5, 1, 0.5], scale: [1, 1.08, 1] }}
+          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
         />
 
-        {/* Dark dome shape */}
-        <div className="cta-dome-shape">
-          <svg
-            viewBox="0 0 1000 500"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            <path
-              d="M 0 500 C 0 223.857 223.857 0 500 0 C 776.143 0 1000 223.857 1000 500 Z"
-              fill="#0d0d14"
-            />
-          </svg>
-        </div>
+        {/* 2. Black dome — covers bottom of glow */}
+        <div className="cta-dome-black" />
 
-        {/* Content */}
+        {/* 3. Content — on top */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="cta-content"
+          className="relative z-[3] text-center pt-28"
         >
-          <h2>
+          <h2
+            className="text-white mb-10"
+            style={{
+              fontSize: '56px',
+              fontWeight: 500,
+              lineHeight: '1.2',
+              letterSpacing: '-0.03em',
+              fontFamily: 'Inter, sans-serif',
+            }}
+          >
             Watch your<br />
             Autonomous SOC<br />
-            drive <em>itself</em>
+            drive{' '}
+            <em
+              style={{
+                fontStyle: 'italic',
+                fontFamily: 'Noto Serif, serif',
+                fontWeight: 400,
+              }}
+            >
+              {headingItalic}
+            </em>
           </h2>
 
-          <div className="cta-buttons">
-            <Link href="/what-is-autonomous-soc" className="cta-btn-primary">
-              What is Autonomous SOC?
+          <div className="flex items-center justify-center gap-4 flex-wrap">
+            <Link
+              href={primaryBtn.href}
+              className="inline-flex items-center bg-[#8e2dff] text-white px-8 py-3.5 rounded-full font-medium text-base hover:bg-[#a855f7] transition-all duration-200 no-underline shadow-[0_0_30px_rgba(142,45,255,0.5)]"
+            >
+              {primaryBtn.label}
             </Link>
-            <Link href="/how-autonomous-soc-works" className="cta-btn-secondary">
-              Learn More
+            <Link
+              href={secondaryBtn.href}
+              className="inline-flex items-center border border-white/30 text-white px-8 py-3.5 rounded-full font-medium text-base hover:bg-white/10 hover:border-white/50 transition-all duration-200 no-underline bg-white/5"
+            >
+              {secondaryBtn.label}
             </Link>
           </div>
+
         </motion.div>
 
       </div>
