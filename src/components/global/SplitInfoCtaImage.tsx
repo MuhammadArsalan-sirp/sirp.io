@@ -6,6 +6,7 @@ import './SplitInfoCtaImage.css'
 export type SplitInfoCtaImageProps = {
   heading: ReactNode
   body: ReactNode
+  topShade?: boolean
   button?: {
     label: string
     href: string
@@ -19,11 +20,16 @@ export type SplitInfoCtaImageProps = {
 export function SplitInfoCtaImage({
   heading,
   body,
+  topShade = false,
   button,
   image = { src: '/images/omnisense_architecture.png', alt: 'OmniSense architecture' },
 }: SplitInfoCtaImageProps) {
+  const sectionClassName = topShade
+    ? 'split-info-cta-image split-info-cta-image--top-shade'
+    : 'split-info-cta-image'
+
   return (
-    <section className="split-info-cta-image">
+    <section className={sectionClassName}>
       <div className="container-sirp split-info-cta-inner">
         <div className="split-left">
           <h2 className="info-cta-heading">{heading}</h2>

@@ -1,0 +1,58 @@
+.comparison-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid #3a3a4d;
+  background: #000000;
+  padding: 26px 34px 30px;
+}
+
+.comparison-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 182.29px;
+  height: 443.36px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 100% 100%;
+}
+
+.comparison-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 52px;
+  pointer-events: none;
+}
+
+.comparison-card--red::before {
+  background-image: url('/images/benefitsOfSOC/red shadow.svg');
+}
+
+.comparison-card--yellow::before {
+  background-image: url('/images/benefitsOfSOC/yellow shadow.svg');
+}
+
+.comparison-card--red::after {
+  background: linear-gradient(
+    90deg,
+    rgba(240, 65, 65, 0.28) 0%,
+    rgba(240, 65, 65, 0.1) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.comparison-card--yellow::after {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 219, 38, 0.28) 0%,
+    rgba(255, 219, 38, 0.1) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
