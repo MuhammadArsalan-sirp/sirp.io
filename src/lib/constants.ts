@@ -98,3 +98,20 @@ export const HOMEPAGE_STATS = [
   { value: '<2min', label: 'Mean time to detect' },
   { value: '99.9%', label: 'Platform uptime' },
 ] as const
+
+export const WHAT_IS_AUTONOMOUS_SOC_HEADER = {
+  badgeText: 'Pillar',
+  heading: {
+    prefix: 'What is an ',
+    emphasized: 'Autonomous SOC',
+    suffix: '?',
+  },
+  subtext: {
+    paragraph1:
+      'An Autonomous SOC is a security operations model where AI systems independently detect, investigate, decide, and respond to defined classes of incidents within governance boundaries.',
+    paragraph2:
+      'Unlike traditional SOAR platforms that automate static workflows, an Autonomous SOC evaluates live context, computes risk dynamically, selects a response, and executes actions based on policy and confidence thresholds.',
+    paragraph3:
+      'The goal is not to replace analysts. The goal is to redesign how security decisions are made.',
+  },
+} as const
