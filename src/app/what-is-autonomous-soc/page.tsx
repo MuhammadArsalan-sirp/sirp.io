@@ -1,7 +1,9 @@
 import { PageHeader } from '@/components/layout/PageHeader'
 import { SplitInfoCtaImage } from '@/components/global/SplitInfoCtaImage'
 import { HowAutonomousSocWorksSection } from '@/components/global/HowAutonomousSocWorksSection'
+import { AutonomousSocBenefitsSection } from '@/components/global/AutonomousSocBenefitsSection'
 import {
+  WHAT_IS_AUTONOMOUS_SOC_BENEFITS,
   WHAT_IS_AUTONOMOUS_SOC_HEADER,
   WHAT_IS_AUTONOMOUS_SOC_HOW_IT_WORKS,
   WHAT_IS_AUTONOMOUS_SOC_TRADITIONAL_MODELS,
@@ -11,6 +13,7 @@ export default function Page() {
   const { heading, subtext } = WHAT_IS_AUTONOMOUS_SOC_HEADER
   const traditionalModels = WHAT_IS_AUTONOMOUS_SOC_TRADITIONAL_MODELS
   const howItWorks = WHAT_IS_AUTONOMOUS_SOC_HOW_IT_WORKS
+  const benefits = WHAT_IS_AUTONOMOUS_SOC_BENEFITS
 
   return (
     <>
@@ -62,6 +65,13 @@ export default function Page() {
         lead={howItWorks.lead}
         steps={howItWorks.steps}
         notes={howItWorks.notes}
+      />
+
+      <AutonomousSocBenefitsSection
+        badgeText={benefits.badgeText}
+        heading={benefits.heading}
+        intro={benefits.intro}
+        cards={benefits.cards}
       />
     </>
   )

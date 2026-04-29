@@ -192,3 +192,45 @@ export const WHAT_IS_AUTONOMOUS_SOC_HOW_IT_WORKS = {
     'If it can resolve defined incident classes independently within policy boundaries, it is autonomous.',
   ],
 } as const
+
+export const WHAT_IS_AUTONOMOUS_SOC_BENEFITS = {
+  badgeText: 'The Business Outcome',
+  heading: 'Benefits of an Autonomous SOC',
+  intro:
+    'SIRP changes the shape of your cost curve. Instead of growth increasing operational drag, growth increases leverage.',
+  cards: [
+    {
+      icon: 'chart',
+      title: 'Faster Incident Response',
+      paragraphs: [
+        'By eliminating routing delays for low-risk incidents, response time decreases significantly. This is possible because of the continuous decision pipeline that governs how autonomous SOC works in real time.',
+        'Routine phishing, known IOC matches, and predefined account abuse patterns can be resolved automatically — within policy.',
+      ],
+    },
+    {
+      icon: 'mute',
+      title: 'Reduced Alert Fatigue',
+      paragraphs: [
+        'Noise and false positives are cleared before reaching analysts.',
+        'Only cases that require judgment or exception handling are escalated.',
+      ],
+    },
+    {
+      icon: 'hand',
+      title: 'Consistent Decision-Making',
+      paragraphs: [
+        'Autonomous systems do not vary by shift, fatigue level, or experience.',
+        'Policy is enforced uniformly.',
+      ],
+    },
+    {
+      icon: 'refresh',
+      title: 'Continuous Improvement',
+      paragraphs: [
+        'Through OmniFlex, containment strategies improve over time.',
+        'Through OmniCollective, learning can strengthen across environments without sharing raw data.',
+        'Autonomy compounds.',
+      ],
+    },
+  ],
+} as const
