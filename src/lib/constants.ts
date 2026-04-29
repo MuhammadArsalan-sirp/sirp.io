@@ -115,3 +115,22 @@ export const WHAT_IS_AUTONOMOUS_SOC_HEADER = {
       'The goal is not to replace analysts. The goal is to redesign how security decisions are made.',
   },
 } as const
+
+export const WHAT_IS_AUTONOMOUS_SOC_TRADITIONAL_MODELS = {
+  heading: 'Why Traditional SOC Models Don’t Scale',
+  intro:
+    'Traditional SOC models rely on sequential human routing: alert generation, analyst investigation, supervisory review, and manual remediation. This process breaks down under modern conditions of high alert volume, tool sprawl, and AI-driven attack velocity.',
+  lead: "Today’s challenges include:",
+  points: [
+    'AI-driven attacks operating 24/7',
+    'Growing alert fatigue and analyst burnout',
+    'Talent shortages across cybersecurity teams',
+    'Increasing pressure to reduce response time',
+  ],
+  outro:
+    'Simply adding automation is no longer enough. Security teams need systems that can independently resolve routine incidents safely.',
+  image: {
+    src: '/images/traditional soc models/soc model.png',
+    alt: 'Human SOC and Autonomous SOC comparison diagram',
+  },
+} as const
