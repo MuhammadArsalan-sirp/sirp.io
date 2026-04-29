@@ -8,14 +8,13 @@ import {
 } from '@/lib/constants'
 
 export default function Page() {
-  const { badgeText, heading, subtext } = WHAT_IS_AUTONOMOUS_SOC_HEADER
+  const { heading, subtext } = WHAT_IS_AUTONOMOUS_SOC_HEADER
   const traditionalModels = WHAT_IS_AUTONOMOUS_SOC_TRADITIONAL_MODELS
   const howItWorks = WHAT_IS_AUTONOMOUS_SOC_HOW_IT_WORKS
 
   return (
     <>
       <PageHeader
-        badgeText={badgeText}
         heading={
           <>
             {heading.prefix}
