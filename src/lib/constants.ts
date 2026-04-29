@@ -297,3 +297,36 @@ export const WHAT_IS_AUTONOMOUS_SOC_SAFETY = {
     alt: 'Machine decision-making and human authority governance diagram',
   },
 } as const
+
+export const WHAT_IS_AUTONOMOUS_SOC_COMPARISON = {
+  heading: 'Automated SOC vs Autonomous SOC',
+  cards: [
+    {
+      title: 'Automated SOC',
+      points: [
+        'Executes predefined playbooks',
+        'Relies on static logic',
+        'Requires frequent manual oversight',
+        'Focused on task automation',
+      ],
+      glow: 'red',
+    },
+    {
+      title: 'Autonomous SOC',
+      points: [
+        'Computes decisions dynamically',
+        'Adapts based on context and outcomes',
+        'Operates independently within policy guardrails',
+        'Focused on decision ownership',
+      ],
+      glow: 'yellow',
+    },
+  ],
+  redesign: {
+    heading: 'The Structural Redesign of the Modern SOC',
+    paragraphs: [
+      'Security automation was the first evolution in modern SOC design. Autonomous SOC represents the next phase — governed, AI-driven decision systems capable of operating at machine speed while preserving human oversight.',
+      'SIRP delivers a governed Autonomous SOC platform designed for the AI era.',
+    ],
+  },
+} as const

@@ -4,8 +4,10 @@ import { HowAutonomousSocWorksSection } from '@/components/global/HowAutonomousS
 import { AutonomousSocBenefitsSection } from '@/components/global/AutonomousSocBenefitsSection'
 import { RightBalanceSection } from '@/components/global/RightBalanceSection'
 import { AutonomousSocSafetySection } from '@/components/global/AutonomousSocSafetySection'
+import { AutonomousSocComparisonSection } from '@/components/global/AutonomousSocComparisonSection'
 import {
   WHAT_IS_AUTONOMOUS_SOC_BENEFITS,
+  WHAT_IS_AUTONOMOUS_SOC_COMPARISON,
   WHAT_IS_AUTONOMOUS_SOC_HEADER,
   WHAT_IS_AUTONOMOUS_SOC_HOW_IT_WORKS,
   WHAT_IS_AUTONOMOUS_SOC_RIGHT_BALANCE,
@@ -20,6 +22,7 @@ export default function Page() {
   const benefits = WHAT_IS_AUTONOMOUS_SOC_BENEFITS
   const rightBalance = WHAT_IS_AUTONOMOUS_SOC_RIGHT_BALANCE
   const safety = WHAT_IS_AUTONOMOUS_SOC_SAFETY
+  const comparison = WHAT_IS_AUTONOMOUS_SOC_COMPARISON
 
   return (
     <>
@@ -82,6 +85,7 @@ export default function Page() {
 
       <RightBalanceSection data={rightBalance} />
       <AutonomousSocSafetySection data={safety} />
+      <AutonomousSocComparisonSection data={comparison} />
     </>
   )
 }
