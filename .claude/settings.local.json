@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npm list *)",
+      "WebFetch(domain:sirp.io)"
+    ]
+  }
+}

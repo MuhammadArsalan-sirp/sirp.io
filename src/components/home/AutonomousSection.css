@@ -1,0 +1,131 @@
+/* ─── Autonomous Section ─────────────────────────────────── */
+.autonomous-section {
+  background: linear-gradient(180deg, #121218 0%, #0d0d1a 50%, #121218 100%);
+  border-bottom: 1px solid #3a3a4c;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.autonomous-heading-block {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.autonomous-heading-block h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.autonomous-heading-block h2 em {
+  font-style: italic;
+  font-family: 'Noto Serif', serif;
+  font-weight: 400;
+}
+
+.autonomous-heading-block p {
+  font-size: 18px;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ─── Toggle tabs ────────────────────────────────────────── */
+.autonomous-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 48px;
+  background: #1e1e2e;
+  border: 1px solid #3a3a4c;
+  border-radius: 999px;
+  padding: 4px;
+  width: fit-content;
+  margin-inline: auto;
+  margin-bottom: 48px;
+}
+
+.autonomous-tab {
+  padding: 0.6rem 1.75rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  color: rgba(255, 255, 255, 0.6);
+  background: transparent;
+}
+
+.autonomous-tab.active {
+  background: #8e2dff;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(142, 45, 255, 0.4);
+}
+
+/* ─── Dashboard screenshots ──────────────────────────────── */
+.autonomous-screens {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Purple glow behind screens */
+.autonomous-screens::before {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(ellipse at center, rgba(142, 45, 255, 0.35) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.autonomous-screen {
+  position: relative;
+  z-index: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #3a3a4c;
+  background: #161625;
+  flex: 1;
+  max-width: 480px;
+}
+
+.autonomous-screen img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .autonomous-screens {
+    flex-direction: column;
+  }
+
+  .autonomous-screen {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .autonomous-heading-block h2 {
+    font-size: 2rem;
+  }
+}
