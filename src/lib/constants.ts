@@ -134,3 +134,58 @@ export const WHAT_IS_AUTONOMOUS_SOC_TRADITIONAL_MODELS = {
     alt: 'Human SOC and Autonomous SOC comparison diagram',
   },
 } as const
+
+export const WHAT_IS_AUTONOMOUS_SOC_HOW_IT_WORKS = {
+  heading: 'How an Autonomous SOC Works',
+  intro:
+    'An Autonomous SOC is not a feature set. It is an architectural shift from task automation to decision ownership. To function safely, it must maintain a complete reasoning and execution loop.',
+  lead: 'At SIRP, that includes:',
+  steps: [
+    {
+      number: '1',
+      title: 'Continuous Signal Ingestion',
+      description:
+        'Collecting and correlating alerts across SIEM, EDR, identity, cloud, and SaaS tools.',
+      borderIcon: '/images/global/number border purple.svg',
+    },
+    {
+      number: '2',
+      title: 'Real-Time Context Construction',
+      description:
+        'Using OmniMap to maintain persistent relationships between users, endpoints, incidents, and historical actions.',
+      borderIcon: '/images/global/number border purple.svg',
+    },
+    {
+      number: '3',
+      title: 'Intelligent Reasoning',
+      description:
+        'Applying OmniSense, powered by the OmniSec LLM and tenant-grounded retrieval, to interpret and evaluate the situation.',
+      borderIcon: '/images/global/number border purple.svg',
+    },
+    {
+      number: '4',
+      title: 'Adaptive Response Optimization',
+      description:
+        'Leveraging OmniFlex, the reinforcement learning layer, to determine the most effective containment strategy based on prior outcomes and analyst feedback.',
+      borderIcon: '/images/global/number border purple.svg',
+    },
+    {
+      number: '5',
+      title: 'Policy-Bound Execution',
+      description:
+        'Executing remediation actions only when confidence thresholds and governance constraints are satisfied.',
+      borderIcon: '/images/global/number border purple.svg',
+    },
+    {
+      number: '6',
+      title: 'Native Traceability',
+      description:
+        'Recording the reasoning path, evidence, and actions for every autonomous decision.',
+      borderIcon: '/images/global/number border purple.svg',
+    },
+  ],
+  notes: [
+    'If a system only recommends actions and waits for approval, it is assistive.',
+    'If it can resolve defined incident classes independently within policy boundaries, it is autonomous.',
+  ],
+} as const
