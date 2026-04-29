@@ -65,7 +65,7 @@ export function AutonomousSocComparisonSection({ data }: AutonomousSocComparison
           transition={{ duration: 0.5 }}
           className="mt-28 max-w-[1450px]"
         >
-          <h3 className="font-['Inter',sans-serif] text-white text-[56px] leading-[1.16] font-medium tracking-tight">
+          <h3 className="font-['Inter',sans-serif] text-white text-[42px] leading-[1.2] font-medium tracking-tight">
             {data.redesign.heading}
           </h3>
           <div className="mt-10 space-y-8 font-['Inter',sans-serif] text-[16px] leading-[1.55] font-medium text-white">
