@@ -117,7 +117,10 @@ export const WHAT_IS_AUTONOMOUS_SOC_HEADER = {
 } as const
 
 export const WHAT_IS_AUTONOMOUS_SOC_TRADITIONAL_MODELS = {
-  heading: 'Why Traditional SOC Models Don’t Scale',
+  heading: {
+    line1: 'Why Traditional SOC',
+    line2: 'Models Don’t Scale',
+  },
   intro:
     'Traditional SOC models rely on sequential human routing: alert generation, analyst investigation, supervisory review, and manual remediation. This process breaks down under modern conditions of high alert volume, tool sprawl, and AI-driven attack velocity.',
   lead: "Today’s challenges include:",

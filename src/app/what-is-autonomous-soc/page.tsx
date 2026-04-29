@@ -35,7 +35,13 @@ export default function Page() {
 
       <SplitInfoCtaImage
         topShade
-        heading={traditionalModels.heading}
+        heading={
+          <span className="traditional-models-heading">
+            {traditionalModels.heading.line1}
+            <br />
+            {traditionalModels.heading.line2}
+          </span>
+        }
         body={
           <>
             <p>{traditionalModels.intro}</p>

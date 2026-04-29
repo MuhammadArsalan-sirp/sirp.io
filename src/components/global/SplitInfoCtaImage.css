@@ -28,6 +28,15 @@
   margin-top: 1.15rem;
 }
 
+.traditional-models-heading {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2.35rem, 4.2vw, 3.45rem);
+  font-weight: 600;
+  line-height: 1.07;
+  letter-spacing: -0.02em;
+}
+
 .info-cta-body ul.soc-point-list {
   list-style: none;
   padding-left: 0;
