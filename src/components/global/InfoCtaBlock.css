@@ -1,0 +1,92 @@
+/* ─── Info + CTA Block (inner pages) ───────────────────────── */
+.info-cta-block {
+  padding: 4.5rem 0 3.25rem;
+}
+
+.info-cta-inner {
+  max-width: 880px;
+}
+
+.info-cta-heading {
+  margin: 0;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  font-size: clamp(1.9rem, 3.2vw, 2.65rem);
+}
+
+.info-cta-body {
+  margin-top: 1.5rem;
+  max-width: 880px;
+  color: #ffffff;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.info-cta-body p {
+  margin: 0 0 1.15rem;
+}
+
+.info-cta-lead {
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 600;
+}
+
+.info-cta-body ul {
+  margin: 0 0 1.15rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+  list-style-position: outside;
+}
+
+.info-cta-body li {
+  margin: 0.1rem 0;
+  display: list-item;
+}
+
+.info-cta-body li::marker {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.info-cta-button-row {
+  margin-top: 1.35rem;
+}
+
+.info-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.65rem;
+  border-radius: 999px;
+  background: #8e2dff;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 0 24px rgba(142, 45, 255, 0.25);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.info-cta-button:hover {
+  background: #a855f7;
+  transform: translateY(-1px);
+}
+
+.info-cta-button:active {
+  transform: translateY(0px) scale(0.99);
+}
+
+@media (max-width: 640px) {
+  .info-cta-block {
+    padding: 3.5rem 0 2.5rem;
+  }
+
+  .info-cta-body {
+    font-size: 0.98rem;
+  }
+}
+
