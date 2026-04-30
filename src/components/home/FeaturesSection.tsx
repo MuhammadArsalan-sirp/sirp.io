@@ -67,7 +67,7 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
         </motion.div>
 
         {/* 2x2 Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-15">
           {features.map((feature, i) => (
             <motion.div
               key={feature.id}
@@ -79,7 +79,7 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
             >
               {/* Image top */}
               {!feature.textTop && (
-                <div className="relative w-[calc(100%-32px)] mx-4 mt-4 h-[320px] rounded-xl overflow-hidden bg-[#161625]">
+                <div className="feature-card-image relative w-[calc(100%-32px)] mx-4 mt-4 h-[320px] rounded-xl overflow-hidden">
                   <Image
                     src={feature.image}
                     alt={feature.title}
@@ -109,7 +109,7 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
 
               {/* Image bottom */}
               {feature.textTop && (
-                <div className="relative w-[calc(100%-32px)] mx-4 mb-4 h-[320px] rounded-xl overflow-hidden bg-[#161625]">
+                <div className="feature-card-image relative w-[calc(100%-32px)] mx-4 mb-4 h-[320px] rounded-xl overflow-hidden">
                   <Image
                     src={feature.image}
                     alt={feature.title}

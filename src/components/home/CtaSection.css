@@ -1,56 +1,75 @@
-/* CtaSection — only glow + dome (pseudo elements + filter) */
-
-.cta-arch-wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 420px;
-  padding: 60px 0 120px;
-  overflow: hidden;
-}
-
-.cta-orb {
-  position: absolute;
-  top: 0px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 350px;
-  border-radius: 50%;
-  background: radial-gradient(
-    ellipse at center top,
-    rgba(160, 60, 255, 0.9) 0%,
-    rgba(142, 45, 255, 0.6) 25%,
-    rgba(100, 20, 200, 0.3) 55%,
-    transparent 75%
-  );
+/* ─── Purple glow — sunrise effect ──────────────────────── */
+.cta-glow {
+  border-radius: 406%;
+  background: radial-gradient(#b450ffe6 0%,
+      #8e2dff99 30%,
+      #6414c833 60%,
+      #0000 80%);
   pointer-events: none;
   z-index: 1;
-  filter: blur(8px);
-  will-change: opacity, transform;
+  filter: blur(15px);
+  will-change: opacity;
 }
 
-.cta-dome-black {
+/* ─── Black dome — large centered semicircle ─────────────── */
+.cta-dome {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 800px;
+  width: 1000px;
   height: 450px;
-  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-  background: #121218;
+  border-radius: 57% 57% 0 0 / 102% 100% 0 0;
   pointer-events: none;
   z-index: 2;
+  background-color: #121218;
+  /* background: linear-gradient(#14141a); */
+
+  /* border-top: 1px solid rgba(10, 8, 8, 0.4);
+  border-left: 1px solid rgba(14, 12, 12, 0.15);
+  border-right: 1px solid rgba(0, 0, 0, 0.15); */
+  border-bottom: none;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  /* box-shadow:
+    0 0 30px rgba(255, 255, 255, 0.1),
+    0 0 8px rgba(255, 255, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1); */
 }
 
-@media (max-width: 1024px) {
-  .cta-dome-black { width: 900px; height: 500px; }
-  .cta-orb        { width: 600px; }
+.cta-dome::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      #121218 100%);
+  pointer-events: none;
+  border-radius: 0 0 50% 50%;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .cta-dome {
+    width: 850px;
+    height: 440px;
+  }
+
+  .cta-glow {
+    width: 700px;
+  }
 }
 
 @media (max-width: 768px) {
-  .cta-dome-black { width: 120%; height: 400px; }
-  .cta-orb        { width: 350px; }
+  .cta-dome {
+    width: 120%;
+    height: 360px;
+  }
+
+  .cta-glow {
+    width: 100%;
+  }
 }
