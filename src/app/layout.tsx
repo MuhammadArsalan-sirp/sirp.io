@@ -1,18 +1,18 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Noto_Serif, IBM_Plex_Mono } from 'next/font/google'
-import '../styles/globals.css'
+import './globals.css'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from '@/lib/constants'
 
-const inter = Inter({
+export const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
   weight: ['300', '400', '500', '600', '700'],
 })
 
-const notoSerif = Noto_Serif({
+export const notoSerif = Noto_Serif({
   subsets: ['latin'],
   variable: '--font-noto-serif',
   display: 'swap',
@@ -20,7 +20,7 @@ const notoSerif = Noto_Serif({
   style: ['normal', 'italic'],
 })
 
-const ibmPlexMono = IBM_Plex_Mono({
+export const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],
   variable: '--font-ibm-mono',
   display: 'swap',
