@@ -67,6 +67,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
                 lineHeight: '1.2',
                 letterSpacing: '-0.02em',
                 fontFamily: 'Inter, sans-serif',
+                whiteSpace: 'nowrap',
               }}
             >
               {heading}{' '}

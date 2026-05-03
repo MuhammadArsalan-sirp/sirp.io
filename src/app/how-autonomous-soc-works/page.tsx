@@ -1,9 +1,25 @@
-export default function Page() {
+import type { Metadata } from 'next'
+import { HowItWorksHero }     from '@/components/pages/how-autonomous-soc-works/HowItWorksHero'
+import { HowItWorksOverview } from '@/components/pages/how-autonomous-soc-works/HowItWorksOverview'
+import { HowItWorksSteps }    from '@/components/pages/how-autonomous-soc-works/HowItWorksSteps'
+import { HowItWorksVideo }    from '@/components/pages/how-autonomous-soc-works/HowItWorksVideo'
+import { CtaSection }         from '@/components/home/CtaSection'
+import { HOW_AUTONOMOUS_SOC_WORKS_DATA, CTA_DATA } from '@/lib/constants'
+
+export const metadata: Metadata = {
+  title: 'How Autonomous SOC Works | AI-Driven Security Decision Flow',
+  description: 'SIRP replaces the broken SOC process with a continuous decision system that ingests, reasons, governs, acts, and learns in real time.',
+}
+
+export default function HowAutonomousSocWorksPage() {
   return (
-    <div className="min-h-screen pt-32">
-      <div className="container-sirp">
-        <h1 className="text-display-lg font-medium">How Autonomous SOC Works</h1>
-      </div>
-    </div>
+    <>
+      <HowItWorksHero     data={HOW_AUTONOMOUS_SOC_WORKS_DATA.hero} />
+      <HowItWorksOverview data={HOW_AUTONOMOUS_SOC_WORKS_DATA.overview} />
+      <HowItWorksSteps    data={HOW_AUTONOMOUS_SOC_WORKS_DATA.steps.slice(0, 5)} />
+      <HowItWorksVideo    videoId="VIeVs8nbM6U" />
+      <HowItWorksSteps    data={HOW_AUTONOMOUS_SOC_WORKS_DATA.steps.slice(5)} />
+      <CtaSection         data={CTA_DATA} />
+    </>
   )
 }

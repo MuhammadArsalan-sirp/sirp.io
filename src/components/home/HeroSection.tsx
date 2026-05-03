@@ -105,31 +105,24 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-white font-bold"
+            className="font-sans font-bold mb-7"
             style={{
               fontSize: '88px',
               lineHeight: '1.08',
               letterSpacing: '-0.03em',
-              fontFamily: 'Inter, sans-serif',
               whiteSpace: 'nowrap',
             }}
           >
             Imagine, a{' '}
-            <em
-              className="italic font-normal"
-              style={{ fontFamily: 'Noto Serif, serif' }}
-            >
-              self-driving
-            </em>{' '}
-            SOC
+            <em className="font-serif italic font-normal">self-driving</em>
+            {' '}SOC
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-white font-medium text-xl leading-relaxed font-['Inter',sans-serif]"
-            style={{ maxWidth: '740px' }}
+            className="font-sans font-medium text-xl leading-relaxed max-w-[740px] mb-10 text-white"
           >
             {subheading}
           </motion.p>

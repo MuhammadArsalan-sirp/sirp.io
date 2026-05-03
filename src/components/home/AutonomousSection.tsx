@@ -63,23 +63,22 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
           style={{ maxWidth: '860px' }}
         >
           <h2
-            className="text-white font-bold mb-6"
+            className="font-sans font-bold mb-6"
             style={{
               fontSize: 'clamp(3rem, 6vw, 5rem)',
               lineHeight: '1.1',
               letterSpacing: '-0.03em',
-              fontFamily: 'Inter, sans-serif',
             }}
           >
             The world&apos;s{' '}
-            <em style={{ fontStyle: 'italic', fontFamily: 'Noto Serif, serif', fontWeight: 400 }}>
+            <em className="font-serif italic font-normal">
               {headingItalic}
             </em>
             <br />
             {subheading}
           </h2>
-          <p
-            className="text-white/60 leading-[1.7] mx-auto font-['Inter',sans-serif]"
+
+          <p className="font-sans text-white/60 leading-[1.7] mx-auto"
             style={{ fontSize: '18px', maxWidth: '520px' }}
           >
             {description}
@@ -99,7 +98,7 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-7 py-2.5 rounded-full text-sm font-medium font-['Inter',sans-serif] transition-all duration-200 border-none cursor-pointer ${
+                className={`px-7 py-2.5 rounded-full text-sm font-sans font-medium transition-all duration-200 border-none cursor-pointer ${
                   activeTab === tab
                     ? 'bg-[#8e2dff] text-white shadow-[0_0_20px_rgba(142,45,255,0.4)]'
                     : 'bg-transparent text-white/60 hover:text-white'
