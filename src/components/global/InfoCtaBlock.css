@@ -92,7 +92,6 @@
 
 /* ─── Authority closing (SOAR vs Autonomous SOC) ───────────── */
 .info-cta-block--authority {
-  border-top: 1px solid #3a3a4c;
   background: linear-gradient(
     180deg,
     #121218 0%,
