@@ -41,31 +41,28 @@ export function SplitInfoCtaImage({
   imageLeft = false,
   bodyFontSize = 'default',
 }: SplitInfoCtaImageProps) {
-  const sectionClassName = [
+  const composedSectionClassName = cn(
     topShade ? 'split-info-cta-image split-info-cta-image--top-shade' : 'split-info-cta-image',
-    bodyFontSize === '18' ? 'split-info-cta-image--body-18' : '',
-  ]
-    .filter(Boolean)
-    .join(' ')
+    bodyFontSize === '18' && 'split-info-cta-image--body-18',
+    sectionClassName,
+  )
 
   const innerClassName = imageLeft
     ? 'split-info-cta-inner split-info-cta-inner--image-left'
     : 'split-info-cta-inner'
 
   return (
-    <section className={sectionClassName}>
+    <section className={composedSectionClassName}>
       <div className={`container-sirp ${innerClassName}`}>
         <div className="split-left">
           <h2 className="info-cta-heading">{heading}</h2>
           <div className="info-cta-body split-left-body">{body}</div>
-
-      {button && (
-        <div className="info-cta-button-row">
-          <Button href={button.href}>{button.label}</Button>
+          {button && (
+            <div className="info-cta-button-row">
+              <Button href={button.href}>{button.label}</Button>
+            </div>
+          )}
         </div>
-      )}
-    </div>
-  )
 
         <div className="split-right" aria-hidden="true">
           <div className="split-image-wrap">

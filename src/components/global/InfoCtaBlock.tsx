@@ -11,20 +11,29 @@ export type InfoCtaBlockCta = {
 export type InfoCtaBlockProps = {
   heading: ReactNode
   body: ReactNode
-  button?: {
-    label: string
-    href: string
-  }
+  button?: InfoCtaBlockCta
+  secondaryButton?: InfoCtaBlockCta
+  /** Extra classes on the root `<section>` (e.g. page-specific layout). */
+  sectionClassName?: string
   /** SOAR vs Autonomous — closing authority strip: left-aligned, looser paragraphs, soft purple floor. */
   variant?: 'default' | 'authority'
 }
 
-export function InfoCtaBlock({ heading, body, button, variant = 'default' }: InfoCtaBlockProps) {
+export function InfoCtaBlock({
+  heading,
+  body,
+  button,
+  secondaryButton,
+  sectionClassName,
+  variant = 'default',
+}: InfoCtaBlockProps) {
+  const hasButtons = Boolean(button || secondaryButton)
+
   const sectionClass =
     variant === 'authority' ? 'info-cta-block info-cta-block--authority' : 'info-cta-block'
 
   return (
-    <section className={sectionClass}>
+    <section className={cn(sectionClass, sectionClassName)}>
       <div className="container-sirp info-cta-inner">
         <h2 className="info-cta-heading">{heading}</h2>
 
