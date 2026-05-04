@@ -37,6 +37,23 @@
   margin-top: 1.15rem;
 }
 
+/* Looser vertical rhythm between stacked paragraphs (e.g. next-gen SOAR copy). */
+.split-left-body:has(.split-info-body-relaxed-paragraphs) {
+  margin-top: 1.65rem;
+}
+
+.split-info-body-relaxed-paragraphs > p {
+  margin: 0 0 1.65rem;
+}
+
+.split-info-body-relaxed-paragraphs > p:last-child {
+  margin-bottom: 0;
+}
+
+.split-info-body-relaxed-paragraphs > .info-cta-lead {
+  margin-bottom: 1.85rem;
+}
+
 .traditional-models-heading {
   display: inline-block;
   font-family: 'Inter', sans-serif;

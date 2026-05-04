@@ -9,6 +9,7 @@ import {
   SOAR_VS_COMPARISON_TABLE,
   SOAR_VS_WHEN_SOAR_SUFFICIENT,
   SOAR_VS_WHEN_AUTONOMOUS_SOC_NEEDED,
+  SOAR_VS_NEXT_GEN_SOAR,
   SOAR_VS_AUTONOMOUS_SOC_HEADER,
   SOAR_VS_AUTONOMOUS_SOC_METADATA,
   SOAR_VS_WHAT_IS_AUTONOMOUS_SOC,
@@ -27,6 +28,7 @@ export default function Page() {
   const whatIsAutonomousSoc = SOAR_VS_WHAT_IS_AUTONOMOUS_SOC
   const whenSoarSufficient = SOAR_VS_WHEN_SOAR_SUFFICIENT
   const whenAutonomousSocNeeded = SOAR_VS_WHEN_AUTONOMOUS_SOC_NEEDED
+  const nextGenSoar = SOAR_VS_NEXT_GEN_SOAR
 
   return (
     <>
@@ -137,6 +139,20 @@ export default function Page() {
           </>
         }
         image={whenAutonomousSocNeeded.image}
+        imageObjectFit="contain"
+      />
+
+      <SplitInfoCtaImage
+        heading={<span className="traditional-models-heading">{nextGenSoar.heading}</span>}
+        body={
+          <div className="split-info-body-relaxed-paragraphs">
+            <p className="info-cta-lead">{nextGenSoar.answer}</p>
+            {nextGenSoar.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        }
+        image={nextGenSoar.image}
         imageObjectFit="contain"
       />
     </>

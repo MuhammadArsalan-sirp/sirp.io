@@ -644,3 +644,18 @@ export const SOAR_VS_WHEN_AUTONOMOUS_SOC_NEEDED = {
     alt: 'Cost over time: Human SOC rising vs flat Autonomous SOC',
   },
 } as const
+
+export const SOAR_VS_NEXT_GEN_SOAR = {
+  heading: 'Is Autonomous SOC Just "Next-Generation SOAR"?',
+  answer: 'No.',
+  paragraphs: [
+    'Enhancing workflows with AI assistance does not change the underlying architecture.',
+    'Autonomous SOC replaces workflow-centric orchestration with a governed decision model in which risk computation, policy enforcement, and execution are embedded within the system.',
+    'It is not deeper automation.',
+    'It is a different operating model.',
+  ],
+  image: {
+    src: '/images/soar vs autonomous/next-gen-SOAR.png',
+    alt: 'Autonomous SOC flow: Detection, Evaluation, and Action',
+  },
+} as const
