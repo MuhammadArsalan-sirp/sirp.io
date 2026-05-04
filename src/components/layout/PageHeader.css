@@ -6,6 +6,10 @@
   border-bottom: 1px solid #3a3a4c;
 }
 
+.page-header.page-header--flush {
+  border-bottom: none;
+}
+
 .page-header-inner {
   text-align: center;
 }

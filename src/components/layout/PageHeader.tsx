@@ -7,11 +7,21 @@ export type PageHeaderProps = {
   /** Optional second title line (e.g. Framer h2 at 60px) — renders as h2 below the main h1 */
   headingLine2?: ReactNode
   subtext: ReactNode
+  /** Default true. Set false to remove the bottom border for a flush join with the next section. */
+  showBottomBorder?: boolean
 }
 
-export function PageHeader({ badgeText, heading, headingLine2, subtext }: PageHeaderProps) {
+export function PageHeader({
+  badgeText,
+  heading,
+  headingLine2,
+  subtext,
+  showBottomBorder = true,
+}: PageHeaderProps) {
+  const sectionClassName = showBottomBorder ? 'page-header' : 'page-header page-header--flush'
+
   return (
-    <section className="page-header">
+    <section className={sectionClassName}>
       <div className="container-sirp page-header-inner">
         <div className="page-header-stack">
           {badgeText && (

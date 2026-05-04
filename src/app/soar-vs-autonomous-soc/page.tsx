@@ -21,6 +21,7 @@ export default function Page() {
   return (
     <>
     <PageHeader
+      showBottomBorder={false}
       heading={hero.heading.line1}
       headingLine2={hero.heading.line2}
       subtext={
@@ -48,7 +49,6 @@ export default function Page() {
     />
 
       <SplitInfoCtaImage
-        topShade
         heading={<span className="traditional-models-heading">{whatIsSoar.heading}</span>}
         body={
           <>
