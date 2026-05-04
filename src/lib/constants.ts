@@ -465,23 +465,27 @@ export const SOAR_VS_AUTONOMOUS_SOC_HEADER = {
     line2: "What's the Difference?",
   },
   paragraph1: {
-    line1:
-      'Security Orchestration, Automation, and Response (SOAR) platforms were introduced to reduce manual\u00A0effort in security operations.',
-    line2:
-      'They automate workflows, trigger playbooks, and coordinate tools across the SOC.',
+    lines: [
+      'Security Orchestration, Automation, and Response (SOAR) platforms were introduced to reduce manual',
+      'effort in security operations. They automate workflows, trigger playbooks, and coordinate tools across',
+      'the SOC.',
+    ],
   },
   paragraph2: {
-    beforeLink:
-      'Autonomous SOC represents a different architectural model. To understand the core concept, see ',
-    link1Label: 'what an autonomous SOC is',
+    line1:
+      'Autonomous SOC represents a different architectural model. To understand the core concept, see what',
+    link1Label: 'an autonomous SOC is',
     link1Href: '/what-is-autonomous-soc',
     betweenLinks: ' and ',
-    link2Label: 'how it changes security operations',
+    link2Label: 'how it changes security operations.',
     link2Href: '/how-autonomous-soc-works',
-    afterLinks: '.',
   },
-  paragraph3:
-    'Instead of focusing primarily on workflow orchestration, an Autonomous SOC embeds decision logic, risk computation, and policy enforcement directly into the operating system of security operations.',
+  paragraph3: {
+    line1:
+      'Instead of focusing primarily on workflow orchestration, an Autonomous SOC embeds decision logic,',
+    line2:
+      'risk computation, and policy enforcement directly into the operating system of security operations.',
+  },
   paragraph4:
     'This page explains how SOAR and Autonomous SOC differ — and where each model fits.',
 } as const

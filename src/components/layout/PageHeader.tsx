@@ -9,6 +9,11 @@ export type PageHeaderProps = {
   subtext: ReactNode
   /** Default true. Set false to remove the bottom border for a flush join with the next section. */
   showBottomBorder?: boolean
+  /**
+   * `/soar-vs-autonomous-soc`: match site `container-sirp` horizontal padding and widen intro
+   * so the hero subtext breaks on the intended lines.
+   */
+  heroLayout?: 'default' | 'soar'
 }
 
 export function PageHeader({
@@ -17,8 +22,14 @@ export function PageHeader({
   headingLine2,
   subtext,
   showBottomBorder = true,
+  heroLayout = 'default',
 }: PageHeaderProps) {
-  const sectionClassName = showBottomBorder ? 'page-header' : 'page-header page-header--flush'
+  const sectionClassName = [
+    showBottomBorder ? 'page-header' : 'page-header page-header--flush',
+    heroLayout === 'soar' ? 'page-header--soar-hero' : '',
+  ]
+    .filter(Boolean)
+    .join(' ')
 
   return (
     <section className={sectionClassName}>

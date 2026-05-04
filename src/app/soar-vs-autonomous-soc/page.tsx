@@ -27,7 +27,9 @@ export const metadata: Metadata = {
 
 export default function Page() {
   const hero = SOAR_VS_AUTONOMOUS_SOC_HEADER
+  const p1 = hero.paragraph1
   const p2 = hero.paragraph2
+  const p3 = hero.paragraph3
   const whatIsSoar = SOAR_VS_WHAT_IS_SOAR
   const whatIsAutonomousSoc = SOAR_VS_WHAT_IS_AUTONOMOUS_SOC
   const whenSoarSufficient = SOAR_VS_WHEN_SOAR_SUFFICIENT
@@ -40,17 +42,21 @@ export default function Page() {
     <>
     <PageHeader
       showBottomBorder={false}
+      heroLayout="soar"
       heading={hero.heading.line1}
       headingLine2={hero.heading.line2}
       subtext={
         <>
           <span className="page-header-subtext-block">
-            {hero.paragraph1.line1}
+            {p1.lines[0]}
             <br />
-            {hero.paragraph1.line2}
+            {p1.lines[1]}
+            <br />
+            {p1.lines[2]}
           </span>
           <span className="page-header-subtext-gap">
-            {p2.beforeLink}
+            {p2.line1}
+            <br />
             <Link href={p2.link1Href} className="text-white underline underline-offset-4">
               {p2.link1Label}
             </Link>
@@ -58,9 +64,12 @@ export default function Page() {
             <Link href={p2.link2Href} className="text-white underline underline-offset-4">
               {p2.link2Label}
             </Link>
-            {p2.afterLinks}
           </span>
-          <span className="page-header-subtext-gap">{hero.paragraph3}</span>
+          <span className="page-header-subtext-gap">
+            {p3.line1}
+            <br />
+            {p3.line2}
+          </span>
           <span className="page-header-subtext-gap">{hero.paragraph4}</span>
         </>
       }
