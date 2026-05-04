@@ -1,0 +1,28 @@
+/* SOAR Alternatives only — no section divider lines under the page header / bands */
+.soar-alternatives-page .page-header,
+.soar-alternatives-page .section-lead,
+.soar-alternatives-page .statement-lines-section {
+  border-bottom: none;
+}
+
+/* SOAR Alternatives only — smaller header subtext than default PageHeader */
+.soar-alternatives-page .page-header-subtext {
+  max-width: 1400px;
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+.soar-alternatives-page .page-header-stack {
+  max-width: 1080px;
+}
+
+.soar-alternatives-page .page-header-subtitle {
+  font-size: clamp(1.2rem, 2.8vw, 1.58rem);
+  line-height: 1.38;
+}
+
+@media (max-width: 640px) {
+  .soar-alternatives-page .page-header-subtext {
+    font-size: 0.94rem;
+  }
+}

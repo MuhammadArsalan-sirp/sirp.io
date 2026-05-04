@@ -22,7 +22,7 @@ export function PageHeader({ badgeText, heading, subtext }: PageHeaderProps) {
           )}
 
           <h1 className="page-header-heading">{heading}</h1>
-          <p className="page-header-subtext">{subtext}</p>
+          <div className="page-header-subtext">{subtext}</div>
         </div>
       </div>
     </section>
