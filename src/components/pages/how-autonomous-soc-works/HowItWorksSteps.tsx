@@ -79,8 +79,8 @@ export function HowItWorksSteps({ data = [] }: HowItWorksStepsProps) {
                       />
                     </svg>
                     <span
+                      className="font-sans"
                       style={{
-                        fontFamily: 'Inter, sans-serif',
                         fontSize: '12px',
                         fontWeight: 600,
                         color: '#ffffff',
@@ -93,12 +93,11 @@ export function HowItWorksSteps({ data = [] }: HowItWorksStepsProps) {
 
                 {/* Title */}
                 <h3
-                  className="text-white font-bold mb-6"
+                  className="font-sans text-white font-bold mb-6"
                   style={{
                     fontSize: '48px',
                     lineHeight: '1.1',
                     letterSpacing: '-0.03em',
-                    fontFamily: 'Inter, sans-serif',
                   }}
                 >
                   {step.title}
@@ -109,7 +108,7 @@ export function HowItWorksSteps({ data = [] }: HowItWorksStepsProps) {
                   {step.description.split('\n\n').map((para, k) => (
                     <p
                       key={k}
-                      className="text-white font-['Inter',sans-serif]"
+                      className="font-sans text-white"
                       style={{ fontSize: '16px', lineHeight: '1.75', marginBottom: k < step.description.split('\n\n').length - 1 ? '1rem' : 0 }}
                     >
                       {para}

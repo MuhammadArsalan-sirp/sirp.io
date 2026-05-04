@@ -32,26 +32,17 @@ export function IntelligenceSection({ data = INTELLIGENCE_DATA }: IntelligenceSe
           className="text-center mb-16"
         >
           <h2
-            className="text-white font-bold mb-5"
+            className="font-sans font-bold text-white mb-5"
             style={{
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               lineHeight: '1.15',
               letterSpacing: '-0.03em',
-              fontFamily: 'Inter, sans-serif',
             }}
           >
             {heading}{' '}
-            <em
-              style={{
-                fontStyle: 'italic',
-                fontFamily: 'Noto Serif, serif',
-                fontWeight: 400,
-              }}
-            >
-              {headingItalic}
-            </em>
+            <em>{headingItalic}</em>
           </h2>
-          <p className="text-white/70 text-lg leading-[1.7] max-w-[620px] mx-auto font-['Inter',sans-serif]">
+          <p className="font-sans text-white/70 text-lg leading-[1.7] max-w-[620px] mx-auto">
             {description}
           </p>
         </motion.div>

@@ -37,7 +37,12 @@ export function IntegrationsSection({ data = INTEGRATIONS_DATA }: IntegrationsSe
   const doubled = [...logos, ...logos]
 
   return (
-    <section className="bg-[#121218] pt-[100px] overflow-visible relative z-[1]">
+    <section
+      className="pt-[100px] overflow-visible relative z-[3]"
+      style={{
+        background: 'linear-gradient(to bottom, #121218 0%, #121218 50%, rgba(18,18,24,0.5) 80%, transparent 100%)',
+      }}
+    >
       <div className="container-sirp">
 
         {/* Heading */}
@@ -52,27 +57,18 @@ export function IntegrationsSection({ data = INTEGRATIONS_DATA }: IntegrationsSe
             {pill}
           </span>
           <h2
-            className="text-white font-bold mt-4 mb-5"
+            className="font-sans font-bold text-white mt-4 mb-5"
             style={{
               fontSize: 'clamp(2.5rem, 6vw, 5rem)',
               lineHeight: '1.1',
               letterSpacing: '-0.03em',
-              fontFamily: 'Inter, sans-serif',
             }}
           >
             {heading}{' '}
-            <em
-              style={{
-                fontStyle: 'italic',
-                fontFamily: 'Noto Serif, serif',
-                fontWeight: 400,
-              }}
-            >
-              {headingItalic}
-            </em>{' '}
+            <em>{headingItalic}</em>{' '}
             {headingSuffix}
           </h2>
-          <p className="text-white/70 text-lg leading-[1.7] max-w-[680px] mx-auto font-['Inter',sans-serif]">
+          <p className="font-sans text-white/70 text-lg leading-[1.7] max-w-[680px] mx-auto">
             {description}
           </p>
         </motion.div>
@@ -80,7 +76,7 @@ export function IntegrationsSection({ data = INTEGRATIONS_DATA }: IntegrationsSe
       </div>
 
       {/* Logo strip — full width */}
-      <div className="integrations-strip pb-20">
+      <div className="integrations-strip pb-20 relative z-[10]">
         <div className="integrations-track">
           {doubled.map((logo, i) => (
             <div
