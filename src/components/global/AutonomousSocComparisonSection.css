@@ -69,3 +69,43 @@
     rgba(0, 0, 0, 0) 100%
   );
 }
+
+/* SOAR vs Autonomous SOC Comparison — Framer card specs */
+.comparison-grid--soar {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 386.67px);
+  justify-content: center;
+}
+
+.comparison-section--soar .comparison-card {
+  width: 386.67px;
+  max-width: 100%;
+  min-height: 338.8px;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #060606;
+}
+
+.comparison-card-list--soar {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comparison-card-list--soar li + li {
+  margin-top: 0.45rem;
+}
+
+@media (max-width: 1240px) {
+  .comparison-grid--soar {
+    grid-template-columns: minmax(0, 386.67px);
+    justify-items: stretch;
+  }
+
+  .comparison-section--soar .comparison-card {
+    width: 100%;
+    max-width: 386.67px;
+    margin-inline: auto;
+  }
+}

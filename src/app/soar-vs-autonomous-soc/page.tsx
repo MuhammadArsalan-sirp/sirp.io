@@ -118,7 +118,7 @@ export default function Page() {
 
       <SoarVsArchitecturalDifferenceSection data={SOAR_VS_ARCHITECTURAL_DIFFERENCE} />
 
-      <AutonomousSocComparisonSection data={SOAR_VS_COMPARISON_TABLE} />
+      <AutonomousSocComparisonSection data={SOAR_VS_COMPARISON_TABLE} variant="soarComparison" />
 
       <SplitInfoCtaImage
         heading={

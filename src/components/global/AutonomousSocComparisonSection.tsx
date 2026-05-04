@@ -22,11 +22,20 @@ type AutonomousSocComparisonData = {
 
 type AutonomousSocComparisonSectionProps = {
   data: AutonomousSocComparisonData
+  /** `/soar-vs-autonomous-soc` comparison row: fixed card size from design (~386.67×338.8px, #060606, 20px pad). */
+  variant?: 'default' | 'soarComparison'
 }
 
-export function AutonomousSocComparisonSection({ data }: AutonomousSocComparisonSectionProps) {
+export function AutonomousSocComparisonSection({
+  data,
+  variant = 'default',
+}: AutonomousSocComparisonSectionProps) {
+  const isSoarComparison = variant === 'soarComparison'
+
   return (
-    <section className="bg-[#121218] py-24">
+    <section
+      className={`bg-[#121218] py-24 ${isSoarComparison ? 'comparison-section--soar' : ''}`}
+    >
       <div className="container-sirp">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -39,7 +48,11 @@ export function AutonomousSocComparisonSection({ data }: AutonomousSocComparison
         </motion.h2>
 
         <div
-          className={`mt-10 grid gap-3 ${data.cards.length >= 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-2'}`}
+          className={
+            isSoarComparison
+              ? 'comparison-grid comparison-grid--soar mt-10'
+              : `mt-10 grid gap-3 ${data.cards.length >= 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-2'}`
+          }
         >
           {data.cards.map((card, index) => (
             <motion.article
@@ -53,7 +66,13 @@ export function AutonomousSocComparisonSection({ data }: AutonomousSocComparison
               <h3 className="text-center font-['Inter',sans-serif] text-[24px] leading-[1.2] font-semibold tracking-[0] text-white">
                 {card.title}
               </h3>
-              <ul className="mt-10 space-y-5 text-center font-['Inter',sans-serif] text-[16px] leading-[1.5] font-medium text-white">
+              <ul
+                className={
+                  isSoarComparison
+                    ? 'comparison-card-list--soar mt-8 text-center font-[Inter,sans-serif] text-[18px] leading-[1.5] font-medium text-white'
+                    : 'mt-10 space-y-5 text-center font-[Inter,sans-serif] text-[16px] leading-[1.5] font-medium text-white'
+                }
+              >
                 {card.points.map((point) => (
                   <li key={point}>{point}</li>
                 ))}
