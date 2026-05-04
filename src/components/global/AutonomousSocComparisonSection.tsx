@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import './AutonomousSocComparisonSection.css'
 
 type ComparisonCard = {
@@ -9,13 +10,25 @@ type ComparisonCard = {
   glow: 'red' | 'yellow' | 'blue'
 }
 
-type AutonomousSocComparisonData = {
+type ComparisonFooterWithLink = {
+  beforeLink: string
+  linkLabel: string
+  linkHref: string
+  afterLink: string
+  taglines: readonly string[]
+}
+
+export type AutonomousSocComparisonData = {
   heading: string
+  /** Optional lead lines above the card grid (e.g. Architectural Difference). */
+  introLines?: readonly string[]
   cards: readonly ComparisonCard[]
   redesign?: {
     heading: string
     paragraphs: readonly string[]
   }
+  /** Linked paragraph + taglines below the grid (e.g. Architectural Difference). */
+  footerWithLink?: ComparisonFooterWithLink
   /** Short closing lines (e.g. SOAR vs Autonomous page); omit when `redesign` is used. */
   footerLines?: readonly string[]
 }
@@ -47,10 +60,24 @@ export function AutonomousSocComparisonSection({
           {data.heading}
         </motion.h2>
 
+        {data.introLines && data.introLines.length > 0 ? (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45 }}
+            className="comparison-section-intro"
+          >
+            {data.introLines.map((line) => (
+              <p key={line}>{line}</p>
+            ))}
+          </motion.div>
+        ) : null}
+
         <div
           className={
             isSoarComparison
-              ? 'comparison-grid comparison-grid--soar mt-10'
+              ? `comparison-grid comparison-grid--soar mt-10${data.cards.length === 2 ? ' comparison-grid--soar-2' : ''}`
               : `mt-10 grid gap-3 ${data.cards.length >= 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-2'}`
           }
         >
@@ -103,6 +130,30 @@ export function AutonomousSocComparisonSection({
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
+          </motion.div>
+        )}
+
+        {data.footerWithLink && (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45 }}
+            className="comparison-section-footer-with-link"
+          >
+            <p>
+              {data.footerWithLink.beforeLink}
+              <Link
+                href={data.footerWithLink.linkHref}
+                className="comparison-section-footer-with-link-anchor"
+              >
+                {data.footerWithLink.linkLabel}
+              </Link>
+              {data.footerWithLink.afterLink}
+            </p>
+            {data.footerWithLink.taglines.map((line) => (
+              <p key={line}>{line}</p>
+            ))}
           </motion.div>
         )}
 

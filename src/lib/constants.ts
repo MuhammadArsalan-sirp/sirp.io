@@ -540,6 +540,7 @@ export const SOAR_VS_ARCHITECTURAL_DIFFERENCE = {
   cards: [
     {
       title: 'SOAR architecture:',
+      glow: 'yellow' as const,
       points: [
         'Event → Trigger → Playbook → Action',
         'Static branching logic',
@@ -548,6 +549,7 @@ export const SOAR_VS_ARCHITECTURAL_DIFFERENCE = {
     },
     {
       title: 'Autonomous SOC architecture:',
+      glow: 'blue' as const,
       points: [
         'Continuous signal ingestion',
         'Context construction across identities, endpoints, and behavior',
@@ -557,7 +559,7 @@ export const SOAR_VS_ARCHITECTURAL_DIFFERENCE = {
       ],
     },
   ],
-  footer: {
+  footerWithLink: {
     beforeLink: 'This decision pipeline is explained in detail in ',
     linkLabel: 'how autonomous SOC works',
     linkHref: '/what-is-autonomous-soc',

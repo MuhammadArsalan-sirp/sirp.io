@@ -5,7 +5,6 @@ import { PageHeader } from '@/components/layout/PageHeader'
 import { SplitInfoCtaImage } from '@/components/global/SplitInfoCtaImage'
 import { AutonomousSocBenefitsSection } from '@/components/global/AutonomousSocBenefitsSection'
 import { AutonomousSocComparisonSection } from '@/components/global/AutonomousSocComparisonSection'
-import { SoarVsArchitecturalDifferenceSection } from '@/components/global/SoarVsArchitecturalDifferenceSection'
 import {
   SOAR_VS_ARCHITECTURAL_DIFFERENCE,
   SOAR_VS_COMPARISON_TABLE,
@@ -116,7 +115,10 @@ export default function Page() {
         imageObjectFit="contain"
       />
 
-      <SoarVsArchitecturalDifferenceSection data={SOAR_VS_ARCHITECTURAL_DIFFERENCE} />
+      <AutonomousSocComparisonSection
+        data={SOAR_VS_ARCHITECTURAL_DIFFERENCE}
+        variant="soarComparison"
+      />
 
       <AutonomousSocComparisonSection data={SOAR_VS_COMPARISON_TABLE} variant="soarComparison" />
 
