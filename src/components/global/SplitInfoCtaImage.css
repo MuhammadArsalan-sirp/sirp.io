@@ -115,9 +115,11 @@
 }
 
 .info-cta-body ul.split-plain-disc-list li {
-  margin: 0.4rem 0;
+  margin: 0;
+  padding: 0;
   display: list-item;
   color: #ffffff;
+  line-height: 1.28;
 }
 
 .info-cta-body ul.split-plain-disc-list li::marker {
