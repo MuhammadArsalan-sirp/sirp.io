@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { PurplePill } from '@/components/global/PurplePill'
 import './PageHeader.css'
 
 export type PageHeaderProps = {
@@ -14,10 +15,7 @@ export function PageHeader({ badgeText, heading, subtext }: PageHeaderProps) {
         <div className="page-header-stack">
           {badgeText && (
             <div className="page-header-badge">
-              <span className="pill">
-                <span aria-hidden="true">✦</span>
-                {badgeText}
-              </span>
+              <PurplePill>{badgeText}</PurplePill>
             </div>
           )}
 
