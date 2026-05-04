@@ -491,3 +491,22 @@ export const SOAR_VS_AUTONOMOUS_SOC_METADATA = {
   description:
     'Compare SOAR vs Autonomous SOC to understand how workflow automation differs from AI-driven decision systems and governed security execution.',
 } as const
+
+export const SOAR_VS_WHAT_IS_SOAR = {
+  heading: 'What Is SOAR?',
+  summary:
+    'SOAR platforms are designed to orchestrate tools and automate predefined workflows.',
+  listLead: 'They typically:',
+  points: [
+    'Trigger playbooks when alerts are received',
+    'Execute branching logic based on rules',
+    'Integrate across SIEM, EDR, and ticketing systems',
+    'Require human validation for critical actions',
+  ],
+  closing:
+    'SOAR reduces repetitive work by automating steps. However, it does not fundamentally change where decision authority resides. Analysts still review, validate, and execute most meaningful response actions.',
+  image: {
+    src: '/images/soar vs autonomous/what-is-soar.png',
+    alt: 'SOAR diagram: human availability, incoming tickets, swift coverage',
+  },
+} as const

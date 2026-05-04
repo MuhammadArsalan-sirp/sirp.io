@@ -87,6 +87,10 @@
   object-position: center;
 }
 
+.split-image.split-image--contain {
+  object-fit: contain;
+}
+
 @media (max-width: 900px) {
   .split-info-cta-inner {
     grid-template-columns: 1fr;

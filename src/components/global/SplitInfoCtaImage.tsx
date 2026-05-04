@@ -15,6 +15,8 @@ export type SplitInfoCtaImageProps = {
     src: string
     alt: string
   }
+  /** Use `contain` for diagrams so nothing is cropped (default `cover`). */
+  imageObjectFit?: 'cover' | 'contain'
 }
 
 export function SplitInfoCtaImage({
@@ -23,6 +25,7 @@ export function SplitInfoCtaImage({
   topShade = false,
   button,
   image = { src: '/images/omnisense_architecture.png', alt: 'OmniSense architecture' },
+  imageObjectFit = 'cover',
 }: SplitInfoCtaImageProps) {
   const sectionClassName = topShade
     ? 'split-info-cta-image split-info-cta-image--top-shade'
@@ -46,7 +49,15 @@ export function SplitInfoCtaImage({
 
         <div className="split-right" aria-hidden="true">
           <div className="split-image-wrap">
-            <Image src={image.src} alt={image.alt} fill className="split-image" unoptimized />
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              className={
+                imageObjectFit === 'contain' ? 'split-image split-image--contain' : 'split-image'
+              }
+              unoptimized
+            />
           </div>
         </div>
       </div>

@@ -1,7 +1,12 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/layout/PageHeader'
-import { SOAR_VS_AUTONOMOUS_SOC_HEADER, SOAR_VS_AUTONOMOUS_SOC_METADATA } from '@/lib/constants'
+import { SplitInfoCtaImage } from '@/components/global/SplitInfoCtaImage'
+import {
+  SOAR_VS_AUTONOMOUS_SOC_HEADER,
+  SOAR_VS_AUTONOMOUS_SOC_METADATA,
+  SOAR_VS_WHAT_IS_SOAR,
+} from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: SOAR_VS_AUTONOMOUS_SOC_METADATA.title,
@@ -11,8 +16,10 @@ export const metadata: Metadata = {
 export default function Page() {
   const hero = SOAR_VS_AUTONOMOUS_SOC_HEADER
   const p2 = hero.paragraph2
+  const whatIsSoar = SOAR_VS_WHAT_IS_SOAR
 
   return (
+    <>
     <PageHeader
       heading={hero.heading.line1}
       headingLine2={hero.heading.line2}
@@ -39,5 +46,25 @@ export default function Page() {
         </>
       }
     />
+
+      <SplitInfoCtaImage
+        topShade
+        heading={<span className="traditional-models-heading">{whatIsSoar.heading}</span>}
+        body={
+          <>
+            <p className="info-cta-lead">{whatIsSoar.summary}</p>
+            <p>{whatIsSoar.listLead}</p>
+            <ul className="soc-point-list">
+              {whatIsSoar.points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+            <p>{whatIsSoar.closing}</p>
+          </>
+        }
+        image={whatIsSoar.image}
+        imageObjectFit="contain"
+      />
+    </>
   )
 }
