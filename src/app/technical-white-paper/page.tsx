@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { PageHeader } from '@/components/layout/PageHeader'
+import { WhitePaperBody } from './WhitePaperBody'
 import './page.css'
 
 export const metadata: Metadata = {
@@ -20,8 +21,8 @@ export default function Page() {
         }
         subtext={
           <>
-            <p className="page-header-subtitle">A Founder&apos;s Technical Perspective <br />
-            Faiz Shuja, Founder, Sirp</p>
+            <p className="page-header-subtitle">A Founder&apos;s Technical Perspective</p>
+            <p>Faiz Shuja, Founder, Sirp</p>
           </>
         }
       />
@@ -41,6 +42,8 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      <WhitePaperBody />
     </div>
   )
 }

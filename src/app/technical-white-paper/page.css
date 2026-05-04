@@ -46,6 +46,121 @@
   object-position: center top;
 }
 
+/* Body: outer band 1320px; section copy narrower and centered (hero stays full width) */
+.technical-white-paper-page .whitepaper-main .container-sirp.whitepaper-main-inner {
+  max-width: 1320px;
+}
+
+.whitepaper-main {
+  background: #121218;
+}
+
+.whitepaper-section {
+  padding: 3rem 0 2.75rem;
+  text-align: left;
+}
+
+.whitepaper-section:last-of-type {
+  padding-bottom: 4rem;
+}
+
+/* Narrower reading column than hero / diagram */
+.whitepaper-section-heading,
+.whitepaper-section-body {
+  max-width: 50rem;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.whitepaper-section-heading {
+  margin-top: 0;
+  margin-bottom: 1.75rem;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.whitepaper-section-body > p {
+  margin: 0 0 1.15rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.02rem;
+  font-weight: 500;
+  line-height: 1.8;
+  color: #ffffff;
+}
+
+.whitepaper-section-body > p:last-child {
+  margin-bottom: 0;
+}
+
+.whitepaper-em-paragraph {
+  margin: 0 0 1.15rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.02rem;
+  font-weight: 500;
+  line-height: 1.8;
+  color: #ffffff;
+}
+
+.whitepaper-em-paragraph em {
+  font-style: italic;
+}
+
+.whitepaper-strong-label {
+  margin: 0 0 0.85rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.02rem;
+  font-weight: 500;
+  line-height: 1.8;
+  color: #ffffff;
+}
+
+.whitepaper-list,
+.whitepaper-ordered-list {
+  margin: 0 0 1.25rem;
+  padding-left: 1.35rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.02rem;
+  font-weight: 500;
+  line-height: 1.75;
+  color: #ffffff;
+}
+
+.whitepaper-list li,
+.whitepaper-ordered-list li {
+  margin: 0.35rem 0;
+}
+
+.whitepaper-list li::marker {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.whitepaper-inline-figure {
+  margin: 1.75rem 0 0;
+  width: 100%;
+}
+
+.whitepaper-inline-figure + .whitepaper-inline-figure {
+  margin-top: 1.25rem;
+}
+
+.whitepaper-inline-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.whitepaper-copyright {
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.72);
+  margin-top: 1.5rem;
+}
+
 @media (max-width: 640px) {
   .technical-white-paper-page .page-header {
     padding-bottom: 1.75rem;
@@ -53,5 +168,21 @@
 
   .whitepaper-hero-diagram {
     padding-bottom: 2rem;
+  }
+
+  .whitepaper-section {
+    padding: 2.5rem 0 2.25rem;
+  }
+
+  .whitepaper-section:last-of-type {
+    padding-bottom: 3rem;
+  }
+
+  .whitepaper-section-body > p,
+  .whitepaper-em-paragraph,
+  .whitepaper-strong-label,
+  .whitepaper-list,
+  .whitepaper-ordered-list {
+    font-size: 0.98rem;
   }
 }
