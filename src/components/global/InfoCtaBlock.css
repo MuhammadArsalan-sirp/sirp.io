@@ -90,3 +90,46 @@
   }
 }
 
+/* ─── Authority closing (SOAR vs Autonomous SOC) ───────────── */
+.info-cta-block--authority {
+  border-top: 1px solid #3a3a4c;
+  background: linear-gradient(
+    180deg,
+    #121218 0%,
+    #121218 58%,
+    rgba(142, 45, 255, 0.09) 100%
+  );
+  padding-top: 4.75rem;
+  padding-bottom: 5.25rem;
+}
+
+/* Match SplitInfoCtaImage: full container width (override default 880px inner), keep margin-inline from .container-sirp */
+.info-cta-block--authority .info-cta-inner {
+  max-width: 1280px;
+  text-align: left;
+}
+
+.info-cta-block--authority .info-cta-heading,
+.info-cta-block--authority .info-cta-body {
+  max-width: 560px;
+}
+
+.info-cta-block--authority .info-cta-heading {
+  font-size: 42px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.info-cta-block--authority .info-cta-body {
+  margin-top: 2.35rem;
+}
+
+.info-cta-block--authority .info-cta-body > p {
+  margin: 0 0 1.65rem;
+}
+
+.info-cta-block--authority .info-cta-body > p:last-child {
+  margin-bottom: 0;
+}
+

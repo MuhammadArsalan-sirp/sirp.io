@@ -9,11 +9,16 @@ export type InfoCtaBlockProps = {
     label: string
     href: string
   }
+  /** SOAR vs Autonomous — closing authority strip: left-aligned, looser paragraphs, soft purple floor. */
+  variant?: 'default' | 'authority'
 }
 
-export function InfoCtaBlock({ heading, body, button }: InfoCtaBlockProps) {
+export function InfoCtaBlock({ heading, body, button, variant = 'default' }: InfoCtaBlockProps) {
+  const sectionClass =
+    variant === 'authority' ? 'info-cta-block info-cta-block--authority' : 'info-cta-block'
+
   return (
-    <section className="info-cta-block">
+    <section className={sectionClass}>
       <div className="container-sirp info-cta-inner">
         <h2 className="info-cta-heading">{heading}</h2>
 

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { InfoCtaBlock } from '@/components/global/InfoCtaBlock'
 import { PageHeader } from '@/components/layout/PageHeader'
 import { SplitInfoCtaImage } from '@/components/global/SplitInfoCtaImage'
 import { AutonomousSocBenefitsSection } from '@/components/global/AutonomousSocBenefitsSection'
@@ -12,6 +13,7 @@ import {
   SOAR_VS_WHEN_AUTONOMOUS_SOC_NEEDED,
   SOAR_VS_NEXT_GEN_SOAR,
   SOAR_VS_MIGRATION_CONSIDERATIONS,
+  SOAR_VS_ARCHITECTURE_AUTHORITY,
   SOAR_VS_AUTONOMOUS_SOC_HEADER,
   SOAR_VS_AUTONOMOUS_SOC_METADATA,
   SOAR_VS_WHAT_IS_AUTONOMOUS_SOC,
@@ -32,6 +34,7 @@ export default function Page() {
   const whenAutonomousSocNeeded = SOAR_VS_WHEN_AUTONOMOUS_SOC_NEEDED
   const nextGenSoar = SOAR_VS_NEXT_GEN_SOAR
   const migration = SOAR_VS_MIGRATION_CONSIDERATIONS
+  const architectureAuthority = SOAR_VS_ARCHITECTURE_AUTHORITY
 
   return (
     <>
@@ -174,6 +177,20 @@ export default function Page() {
         cards={migration.cards}
         footerLines={migration.footerLines}
         variant="soarMigration"
+      />
+
+      <InfoCtaBlock
+        variant="authority"
+        heading={
+          <span className="traditional-models-heading">{architectureAuthority.heading}</span>
+        }
+        body={
+          <>
+            {architectureAuthority.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </>
+        }
       />
     </>
   )
