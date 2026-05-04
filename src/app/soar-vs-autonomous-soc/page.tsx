@@ -2,9 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/layout/PageHeader'
 import { SplitInfoCtaImage } from '@/components/global/SplitInfoCtaImage'
+import { AutonomousSocComparisonSection } from '@/components/global/AutonomousSocComparisonSection'
 import { SoarVsArchitecturalDifferenceSection } from '@/components/global/SoarVsArchitecturalDifferenceSection'
 import {
   SOAR_VS_ARCHITECTURAL_DIFFERENCE,
+  SOAR_VS_COMPARISON_TABLE,
   SOAR_VS_AUTONOMOUS_SOC_HEADER,
   SOAR_VS_AUTONOMOUS_SOC_METADATA,
   SOAR_VS_WHAT_IS_AUTONOMOUS_SOC,
@@ -92,6 +94,8 @@ export default function Page() {
       />
 
       <SoarVsArchitecturalDifferenceSection data={SOAR_VS_ARCHITECTURAL_DIFFERENCE} />
+
+      <AutonomousSocComparisonSection data={SOAR_VS_COMPARISON_TABLE} />
     </>
   )
 }

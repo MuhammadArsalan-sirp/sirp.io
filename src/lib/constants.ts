@@ -561,3 +561,52 @@ export const SOAR_VS_ARCHITECTURAL_DIFFERENCE = {
     taglines: ['One coordinates actions.', 'The other governs decisions.'],
   },
 } as const
+
+export const SOAR_VS_COMPARISON_TABLE = {
+  heading: 'SOAR vs Autonomous SOC Comparison',
+  cards: [
+    {
+      title: 'Capability',
+      glow: 'red' as const,
+      points: [
+        'Core Model',
+        'Logic Type',
+        'Human Dependency',
+        'Learning',
+        'Context Awareness',
+        'Execution',
+        'Governance',
+      ],
+    },
+    {
+      title: 'SOAR',
+      glow: 'yellow' as const,
+      points: [
+        'Workflow orchestration',
+        'Rule-based branching',
+        'High for validation',
+        'Manual tuning',
+        'Playbook-scoped',
+        'Playbook-driven',
+        'External controls',
+      ],
+    },
+    {
+      title: 'Autonomous SOC',
+      glow: 'blue' as const,
+      points: [
+        'Decision system',
+        'Dynamic risk computation',
+        'Policy-bound autonomy',
+        'Embedded reinforcement learning',
+        'State-aware across domains',
+        'Confidence-gated enforcement',
+        'Embedded policy model',
+      ],
+    },
+  ],
+  footerLines: [
+    'SOAR automates steps.',
+    'Autonomous SOC computes and enforces outcomes.',
+  ],
+} as const

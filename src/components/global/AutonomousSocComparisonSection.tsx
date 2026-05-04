@@ -6,16 +6,18 @@ import './AutonomousSocComparisonSection.css'
 type ComparisonCard = {
   title: string
   points: readonly string[]
-  glow: 'red' | 'yellow'
+  glow: 'red' | 'yellow' | 'blue'
 }
 
 type AutonomousSocComparisonData = {
   heading: string
   cards: readonly ComparisonCard[]
-  redesign: {
+  redesign?: {
     heading: string
     paragraphs: readonly string[]
   }
+  /** Short closing lines (e.g. SOAR vs Autonomous page); omit when `redesign` is used. */
+  footerLines?: readonly string[]
 }
 
 type AutonomousSocComparisonSectionProps = {
@@ -36,7 +38,9 @@ export function AutonomousSocComparisonSection({ data }: AutonomousSocComparison
           {data.heading}
         </motion.h2>
 
-        <div className="mt-10 grid gap-3 lg:grid-cols-2">
+        <div
+          className={`mt-10 grid gap-3 ${data.cards.length >= 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-2'}`}
+        >
           {data.cards.map((card, index) => (
             <motion.article
               key={card.title}
@@ -58,22 +62,38 @@ export function AutonomousSocComparisonSection({ data }: AutonomousSocComparison
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mt-28 max-w-[1450px]"
-        >
-          <h3 className="font-['Inter',sans-serif] text-white text-[42px] leading-[1.2] font-medium tracking-tight">
-            {data.redesign.heading}
-          </h3>
-          <div className="mt-10 space-y-8 font-['Inter',sans-serif] text-[16px] leading-[1.55] font-medium text-white">
-            {data.redesign.paragraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+        {data.redesign && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mt-28 max-w-[1450px]"
+          >
+            <h3 className="font-['Inter',sans-serif] text-white text-[42px] leading-[1.2] font-medium tracking-tight">
+              {data.redesign.heading}
+            </h3>
+            <div className="mt-10 space-y-8 font-['Inter',sans-serif] text-[16px] leading-[1.55] font-medium text-white">
+              {data.redesign.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </motion.div>
+        )}
+
+        {data.footerLines && data.footerLines.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mt-16 max-w-[900px] space-y-2 font-['Inter',sans-serif] text-[16px] leading-[1.65] font-medium text-white"
+          >
+            {data.footerLines.map((line) => (
+              <p key={line}>{line}</p>
             ))}
-          </div>
-        </motion.div>
+          </motion.div>
+        )}
       </div>
     </section>
   )
