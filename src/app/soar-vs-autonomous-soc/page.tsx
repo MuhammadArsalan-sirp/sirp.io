@@ -8,6 +8,7 @@ import {
   SOAR_VS_ARCHITECTURAL_DIFFERENCE,
   SOAR_VS_COMPARISON_TABLE,
   SOAR_VS_WHEN_SOAR_SUFFICIENT,
+  SOAR_VS_WHEN_AUTONOMOUS_SOC_NEEDED,
   SOAR_VS_AUTONOMOUS_SOC_HEADER,
   SOAR_VS_AUTONOMOUS_SOC_METADATA,
   SOAR_VS_WHAT_IS_AUTONOMOUS_SOC,
@@ -25,6 +26,7 @@ export default function Page() {
   const whatIsSoar = SOAR_VS_WHAT_IS_SOAR
   const whatIsAutonomousSoc = SOAR_VS_WHAT_IS_AUTONOMOUS_SOC
   const whenSoarSufficient = SOAR_VS_WHEN_SOAR_SUFFICIENT
+  const whenAutonomousSocNeeded = SOAR_VS_WHEN_AUTONOMOUS_SOC_NEEDED
 
   return (
     <>
@@ -115,6 +117,26 @@ export default function Page() {
           </>
         }
         image={whenSoarSufficient.image}
+        imageObjectFit="contain"
+      />
+
+      <SplitInfoCtaImage
+        imageLeft
+        heading={
+          <span className="traditional-models-heading">{whenAutonomousSocNeeded.heading}</span>
+        }
+        body={
+          <>
+            <p>{whenAutonomousSocNeeded.listLead}</p>
+            <ul className="split-plain-disc-list">
+              {whenAutonomousSocNeeded.points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+            <p>{whenAutonomousSocNeeded.closing}</p>
+          </>
+        }
+        image={whenAutonomousSocNeeded.image}
         imageObjectFit="contain"
       />
     </>

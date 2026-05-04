@@ -627,3 +627,20 @@ export const SOAR_VS_WHEN_SOAR_SUFFICIENT = {
     alt: 'Execute Playbook UI: playbook search and selection',
   },
 } as const
+
+export const SOAR_VS_WHEN_AUTONOMOUS_SOC_NEEDED = {
+  heading: 'When Autonomous SOC Is Needed',
+  listLead: 'An Autonomous SOC becomes necessary when:',
+  points: [
+    'Incident velocity exceeds human routing capacity',
+    'Cross-domain attacks require dynamic context interpretation',
+    'Response latency directly increases business risk',
+    'Security outcomes vary by analyst experience',
+    'Continuous learning is required to improve containment effectiveness',
+  ],
+  closing: 'In these environments, workflow orchestration becomes a bottleneck.',
+  image: {
+    src: '/images/soar vs autonomous/autonomous SOC needed.png',
+    alt: 'Cost over time: Human SOC rising vs flat Autonomous SOC',
+  },
+} as const
