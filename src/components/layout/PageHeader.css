@@ -6,6 +6,10 @@
   border-bottom: 1px solid #3a3a4c;
 }
 
+.page-header.page-header--flush {
+  border-bottom: none;
+}
+
 .page-header-inner {
   text-align: center;
 }
@@ -40,6 +44,16 @@
   font-family: 'Noto Serif', serif;
   font-style: italic;
   font-weight: 400;
+}
+
+.page-header-heading-line2 {
+  margin: 0.35rem 0 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  font-size: 60px;
 }
 
 .page-header-subtext {
@@ -111,8 +125,29 @@
     padding-bottom: 3.5rem;
   }
 
+  .page-header-heading-line2 {
+    font-size: clamp(1.85rem, 8vw, 2.75rem);
+  }
+
   .page-header-subtext {
     font-size: 1rem;
   }
+}
+
+/*
+ * SOAR vs Autonomous hero — widen stack (default 1000px) so `<br />` intro lines
+ * are not squeezed by the parent; subtext matches intended three-line intro.
+ */
+.page-header.page-header--soar-hero .page-header-stack {
+  max-width: min(70rem, calc(100vw - 2rem));
+}
+
+.page-header.page-header--soar-hero .page-header-subtext {
+  text-align: center;
+  max-width: min(68rem, calc(100vw - 2.5rem));
+}
+
+.page-header.page-header--soar-hero .page-header-subtext-gap {
+  margin-top: 1.2rem;
 }
 

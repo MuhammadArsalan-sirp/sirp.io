@@ -135,3 +135,80 @@
     min-height: auto;
   }
 }
+
+/* ─── SOAR vs Autonomous — Migration Considerations (reuse benefits cards) ─ */
+.autonomous-benefits--soar-migration .autonomous-benefits-top {
+  text-align: left;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.autonomous-benefits--soar-migration .autonomous-benefits-heading {
+  margin-top: 0;
+  font-size: 42px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.autonomous-benefits--soar-migration .autonomous-benefits-intro {
+  margin: 1.25rem 0 0;
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.autonomous-benefits--soar-migration .autonomous-benefits-intro p {
+  margin: 0 0 1.35rem;
+}
+
+.autonomous-benefits--soar-migration .autonomous-benefits-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.autonomous-benefits--soar-migration .autonomous-benefits-intro a {
+  color: #9ecbff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.autonomous-benefits--soar-migration .autonomous-benefits-intro a:hover {
+  color: #c8e0ff;
+}
+
+.autonomous-benefits--soar-migration .autonomous-benefit-card {
+  min-height: auto;
+}
+
+.autonomous-benefits-footer {
+  margin-top: 3.25rem;
+  max-width: 720px;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  font-weight: 500;
+}
+
+.autonomous-benefits--soar-migration .autonomous-benefits-footer {
+  max-width: 100%;
+  width: 100%;
+}
+
+.autonomous-benefits--soar-migration .autonomous-benefits-footer p + p {
+  margin-top: 0.5rem;
+}
+
+.autonomous-benefits-footer p {
+  margin: 0;
+}
+
+.autonomous-benefits-footer p + p {
+  margin-top: 2.75rem;
+}

@@ -21,6 +21,12 @@ export type SplitInfoCtaImageProps = {
     src: string
     alt: string
   }
+  /** Use `contain` for diagrams so nothing is cropped (default `cover`). */
+  imageObjectFit?: 'cover' | 'contain'
+  /** Image column on the left, text on the right (default: text left, image right). */
+  imageLeft?: boolean
+  /** Body copy size in the text column (default matches ~1.02rem elsewhere). */
+  bodyFontSize?: 'default' | '18'
 }
 
 export function SplitInfoCtaImage({
@@ -31,17 +37,27 @@ export function SplitInfoCtaImage({
   sectionClassName,
   button,
   image = { src: '/images/omnisense_architecture.png', alt: 'OmniSense architecture' },
+  imageObjectFit = 'cover',
+  imageLeft = false,
+  bodyFontSize = 'default',
 }: SplitInfoCtaImageProps) {
-  const rootClassName = cn(
-    'split-info-cta-image',
-    topShade && 'split-info-cta-image--top-shade',
-    sectionClassName,
-  )
+  const sectionClassName = [
+    topShade ? 'split-info-cta-image split-info-cta-image--top-shade' : 'split-info-cta-image',
+    bodyFontSize === '18' ? 'split-info-cta-image--body-18' : '',
+  ]
+    .filter(Boolean)
+    .join(' ')
 
-  const textColumn = (
-    <div className="split-left">
-      <h2 className="info-cta-heading">{heading}</h2>
-      <div className="info-cta-body split-left-body">{body}</div>
+  const innerClassName = imageLeft
+    ? 'split-info-cta-inner split-info-cta-inner--image-left'
+    : 'split-info-cta-inner'
+
+  return (
+    <section className={sectionClassName}>
+      <div className={`container-sirp ${innerClassName}`}>
+        <div className="split-left">
+          <h2 className="info-cta-heading">{heading}</h2>
+          <div className="info-cta-body split-left-body">{body}</div>
 
       {button && (
         <div className="info-cta-button-row">
@@ -51,28 +67,19 @@ export function SplitInfoCtaImage({
     </div>
   )
 
-  const imageColumn = (
-    <div className="split-right" aria-hidden="true">
-      <div className="split-image-wrap">
-        <Image src={image.src} alt={image.alt} fill className="split-image" unoptimized />
-      </div>
-    </div>
-  )
-
-  return (
-    <section className={rootClassName}>
-      <div className="container-sirp split-info-cta-inner">
-        {imagePosition === 'left' ? (
-          <>
-            {imageColumn}
-            {textColumn}
-          </>
-        ) : (
-          <>
-            {textColumn}
-            {imageColumn}
-          </>
-        )}
+        <div className="split-right" aria-hidden="true">
+          <div className="split-image-wrap">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              className={
+                imageObjectFit === 'contain' ? 'split-image split-image--contain' : 'split-image'
+              }
+              unoptimized
+            />
+          </div>
+        </div>
       </div>
     </section>
   )
