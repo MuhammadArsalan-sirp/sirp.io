@@ -7,7 +7,7 @@ export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-[#3a3a4c] bg-[#121218]">
+    <footer className="border-t border-[#3a3a4c] bg-[#0f0f1a]">
       <div className="container-sirp py-16">
 
         {/* Top grid */}
@@ -17,14 +17,14 @@ export function Footer() {
           <div className="col-span-2 md:col-span-3 lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
               <Image
-                src="/images/logos/sirp-logo.png"
+                src="/images/logos/SIRP-Logo.png"
                 alt={SITE_NAME}
                 width={100}
                 height={32}
                 className="h-8 w-auto object-contain"
               />
             </Link>
-            <p className="text-sm text-white/55 leading-relaxed max-w-[220px] font-['Inter',sans-serif]">
+            <p className="font-sans text-sm text-white/55 leading-relaxed max-w-[220px]">
               The first Autonomous SOC platform. Detect, learn, respond — without human intervention.
             </p>
           </div>
@@ -32,7 +32,7 @@ export function Footer() {
           {/* Link columns */}
           {FOOTER_LINKS.map((col) => (
             <div key={col.heading}>
-              <h3 className="text-[11px] font-mono font-medium text-white/40 uppercase tracking-widest mb-4">
+              <h3 className="font-mono text-[11px] font-medium text-white/40 uppercase tracking-widest mb-4">
                 {col.heading}
               </h3>
               <ul className="space-y-3 list-none p-0 m-0">
@@ -43,7 +43,7 @@ export function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-sm text-white/55 hover:text-white transition-colors no-underline font-['Inter',sans-serif]"
+                        className="flex items-center gap-1.5 font-sans text-sm text-white/55 hover:text-white transition-colors no-underline"
                       >
                         {link.label}
                         <ExternalLink className="w-3 h-3 opacity-50" />
@@ -51,7 +51,7 @@ export function Footer() {
                     ) : (
                       <Link
                         href={link.href}
-                        className="text-sm text-white/55 hover:text-white transition-colors no-underline font-['Inter',sans-serif]"
+                        className="font-sans text-sm text-white/55 hover:text-white transition-colors no-underline"
                       >
                         {link.label}
                       </Link>
@@ -73,23 +73,23 @@ export function Footer() {
 
         {/* Bottom row */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/40 font-mono">
+          <p className="font-mono text-xs text-white/40">
             © {year} SIRP. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link
               href="/privacy"
-              className="text-xs text-white/40 hover:text-white/60 transition-colors no-underline font-['Inter',sans-serif]"
+              className="font-sans text-xs text-white/40 hover:text-white/60 transition-colors no-underline"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="text-xs text-white/40 hover:text-white/60 transition-colors no-underline font-['Inter',sans-serif]"
+              className="font-sans text-xs text-white/40 hover:text-white/60 transition-colors no-underline"
             >
               Terms of Service
             </Link>
-            <span className="text-xs text-white/40 font-mono">
+            <span className="font-mono text-xs text-white/40">
               Built with OmniSense™
             </span>
           </div>

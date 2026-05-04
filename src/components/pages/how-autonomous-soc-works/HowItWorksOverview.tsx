@@ -33,38 +33,36 @@ export function HowItWorksOverview({ data }: HowItWorksOverviewProps) {
             transition={{ duration: 0.6 }}
           >
             <h2
-              className="text-white font-bold mb-6"
+              className="font-sans text-white font-bold mb-6"
               style={{
                 fontSize: '48px',
                 lineHeight: '1.1',
                 letterSpacing: '-0.03em',
-                fontFamily: 'Inter, sans-serif',
               }}
             >
               {heading}
             </h2>
 
             <h3
-              className="text-white font-bold mb-6"
+              className="font-sans text-white font-bold mb-6"
               style={{
                 fontSize: '36px',
                 lineHeight: '1.15',
                 letterSpacing: '-0.02em',
-                fontFamily: 'Inter, sans-serif',
               }}
             >
               {subheading}
             </h3>
 
             <p
-              className="text-white/60 mb-6 font-['Inter',sans-serif]"
+              className="font-sans text-white/60 mb-6"
               style={{ fontSize: '16px', lineHeight: '1.75' }}
             >
               {subtext}
             </p>
 
             <p
-              className="text-white/60 font-['Inter',sans-serif]"
+              className="font-sans text-white/60"
               style={{ fontSize: '16px', lineHeight: '1.75' }}
             >
               {subtext2}

@@ -45,29 +45,20 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
             {pill}
           </span>
           <h2
-            className="text-white font-bold mt-4"
+            className="font-sans font-bold text-white mt-4"
             style={{
               fontSize: 'clamp(2rem, 4vw, 3.2rem)',
               lineHeight: '1.15',
               letterSpacing: '-0.03em',
-              fontFamily: 'Inter, sans-serif',
             }}
           >
             {heading}{' '}
-            <em
-              style={{
-                fontStyle: 'italic',
-                fontFamily: 'Noto Serif, serif',
-                fontWeight: 400,
-              }}
-            >
-              {headingItalic}
-            </em>
+            <em>{headingItalic}</em>
           </h2>
         </motion.div>
 
         {/* 2x2 Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-15">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {features.map((feature, i) => (
             <motion.div
               key={feature.id}
@@ -79,7 +70,7 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
             >
               {/* Image top */}
               {!feature.textTop && (
-                <div className="feature-card-image relative w-[calc(100%-32px)] mx-4 mt-4 h-[320px] rounded-xl overflow-hidden">
+                <div className="relative w-full h-[280px] overflow-hidden">
                   <Image
                     src={feature.image}
                     alt={feature.title}
@@ -91,25 +82,24 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
               )}
 
               {/* Body */}
-              <div className="px-9 py-8">
+              <div className="px-8 py-7">
                 <h3
-                  className="text-white font-semibold mb-3"
+                  className="font-sans font-semibold text-white mb-3"
                   style={{
-                    fontSize: '24px',
+                    fontSize: '22px',
                     lineHeight: '1.3',
-                    fontFamily: 'Inter, sans-serif',
                   }}
                 >
                   {feature.title}
                 </h3>
-                <p className="text-white/65 text-[15px] leading-[1.75] font-['Inter',sans-serif]">
+                <p className="font-sans text-white/60 text-sm leading-[1.75]">
                   {feature.description}
                 </p>
               </div>
 
               {/* Image bottom */}
               {feature.textTop && (
-                <div className="feature-card-image relative w-[calc(100%-32px)] mx-4 mb-4 h-[320px] rounded-xl overflow-hidden">
+                <div className="relative w-full h-[280px] overflow-hidden">
                   <Image
                     src={feature.image}
                     alt={feature.title}

@@ -47,28 +47,19 @@ export function SaraSection({ data = SARA_DATA }: SaraSectionProps) {
             transition={{ duration: 0.5 }}
           >
             <h2
-              className="text-white font-bold mb-6"
+              className="font-sans font-bold text-white mb-6"
               style={{
                 fontSize: 'clamp(2rem, 3.5vw, 3rem)',
                 lineHeight: '1.2',
                 letterSpacing: '-0.03em',
-                fontFamily: 'Inter, sans-serif',
               }}
             >
               {heading}{' '}
-              <em
-                style={{
-                  fontStyle: 'italic',
-                  fontFamily: 'Noto Serif, serif',
-                  fontWeight: 400,
-                }}
-              >
-                {headingItalic}
-              </em>{' '}
+              <em>{headingItalic}</em>{' '}
               {headingSuffix}
             </h2>
 
-            <p className="text-white/70 text-base leading-[1.75] mb-8 max-w-[420px] font-['Inter',sans-serif]">
+            <p className="font-sans text-white/70 text-base leading-[1.75] mb-8 max-w-[420px]">
               {description}
             </p>
 
@@ -76,7 +67,7 @@ export function SaraSection({ data = SARA_DATA }: SaraSectionProps) {
               href={learnMoreHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center bg-[#8e2dff] text-white px-7 py-3 rounded-full font-medium text-sm hover:bg-[#a855f7] transition-all duration-200 no-underline shadow-[0_0_20px_rgba(142,45,255,0.35)]"
+              className="inline-flex items-center bg-[#8e2dff] text-white px-7 py-3 rounded-full font-sans font-medium text-sm hover:bg-[#a855f7] transition-all duration-200 no-underline shadow-[0_0_20px_rgba(142,45,255,0.35)]"
             >
               {learnMoreLabel}
             </Link>

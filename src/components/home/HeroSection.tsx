@@ -70,7 +70,7 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
         }}
       />
 
-      {/* Content — absolutely positioned bottom left like sirp.io */}
+      {/* Content */}
       <div
         className="absolute bottom-0 left-0 z-[1] overflow-visible"
         style={{
@@ -99,30 +99,28 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
           </span>
         </motion.div>
 
-        {/* Heading + subheading + buttons grouped */}
+        {/* Heading + subheading + buttons */}
         <div className="flex flex-col gap-6">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-sans font-bold mb-7"
+            className="font-sans font-bold text-white whitespace-nowrap"
             style={{
               fontSize: '88px',
               lineHeight: '1.08',
               letterSpacing: '-0.03em',
-              whiteSpace: 'nowrap',
             }}
           >
-            Imagine, a{' '}
-            <em className="font-serif italic font-normal">self-driving</em>
-            {' '}SOC
+            Imagine, a <em>self-driving</em> SOC
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-sans font-medium text-xl leading-relaxed max-w-[740px] mb-10 text-white"
+            className="font-sans font-medium text-xl leading-relaxed text-white"
+            style={{ maxWidth: '740px' }}
           >
             {subheading}
           </motion.p>
@@ -135,14 +133,14 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
           >
             <Link
               href={primaryBtn.href}
-              className="inline-flex items-center gap-2 bg-[#8e2dff] text-white px-7 py-3 rounded-full font-medium text-sm hover:bg-[#a855f7] transition-all duration-200 no-underline shadow-[0_0_24px_rgba(142,45,255,0.4)]"
+              className="inline-flex items-center gap-2 bg-[#8e2dff] text-white px-7 py-3 rounded-full font-sans font-medium text-sm hover:bg-[#a855f7] transition-all duration-200 no-underline shadow-[0_0_24px_rgba(142,45,255,0.4)]"
             >
               {primaryBtn.label}
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href={secondaryBtn.href}
-              className="inline-flex items-center gap-2 border border-white/20 text-white/70 px-7 py-3 rounded-full font-medium text-sm hover:text-white hover:border-white/40 transition-all duration-200 no-underline font-['Inter',sans-serif]"
+              className="inline-flex items-center gap-2 border border-white/20 text-white/70 px-7 py-3 rounded-full font-sans font-medium text-sm hover:text-white hover:border-white/40 transition-all duration-200 no-underline"
             >
               {secondaryBtn.label}
             </Link>
