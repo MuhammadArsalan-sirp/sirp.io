@@ -707,7 +707,7 @@ export const SOAR_VS_ARCHITECTURE_AUTHORITY = {
   paragraphs: [
     'SOAR introduced automation into the SOC.',
     'Autonomous SOC introduces governed decision systems.',
-    'If your security operations still rely on inbox routing, workflow tuning, and manual validation for meaningful response, the limitation may not be automation depth — but architectural design.',
+    'If your security operations still rely on inbox routing, workflow tuning, and manual validation for meaningful response, the limitation may not be automation\ndepth — but architectural design.',
     'Autonomous SOC represents the next evolution in security operations.',
   ],
 } as const

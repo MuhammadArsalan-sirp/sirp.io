@@ -98,37 +98,65 @@
     #121218 58%,
     rgba(142, 45, 255, 0.09) 100%
   );
-  padding-top: 4.75rem;
-  padding-bottom: 5.25rem;
+  padding: 3rem 0 7rem;
 }
 
-/* Match SplitInfoCtaImage: full container width (override default 880px inner), keep margin-inline from .container-sirp */
+/* Full row width; slightly tighter horizontal padding than default .container-sirp for long-line copy */
 .info-cta-block--authority .info-cta-inner {
   max-width: 1280px;
   text-align: left;
+  padding-inline: 1.5rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .info-cta-block--authority .info-cta-inner {
+    padding-inline: 2rem;
+  }
 }
 
 .info-cta-block--authority .info-cta-heading,
 .info-cta-block--authority .info-cta-body {
-  max-width: 560px;
+  max-width: 100%;
 }
 
 .info-cta-block--authority .info-cta-heading {
-  font-size: 42px;
-  font-weight: 500;
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
 .info-cta-block--authority .info-cta-body {
-  margin-top: 2.35rem;
+  margin-top: 2.25rem;
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 400;
 }
 
 .info-cta-block--authority .info-cta-body > p {
-  margin: 0 0 1.65rem;
+  margin: 0 0 1rem;
+  white-space: pre-line;
 }
 
 .info-cta-block--authority .info-cta-body > p:last-child {
   margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .info-cta-block--authority {
+    padding: 2.5rem 0 4.75rem;
+  }
+
+  .info-cta-block--authority .info-cta-heading {
+    font-size: clamp(1.85rem, 6.5vw, 2.5rem);
+  }
+
+  .info-cta-block--authority .info-cta-body {
+    margin-top: 1.75rem;
+    font-size: 16px;
+    line-height: 1.38;
+  }
 }
 
