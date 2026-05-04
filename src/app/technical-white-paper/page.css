@@ -1,0 +1,57 @@
+/* Left-aligned hero (matches https://www.sirp.io/technical-white-paper layout) */
+.technical-white-paper-page .page-header-inner {
+  text-align: left;
+}
+
+.technical-white-paper-page .page-header-stack {
+  margin-inline: 0;
+  max-width: none;
+}
+
+.technical-white-paper-page .page-header-subtext {
+  margin-inline: 0;
+  max-width: 42rem;
+  font-size: 1.06rem;
+  line-height: 1.62;
+}
+
+.technical-white-paper-page .page-header-subtitle {
+  font-size: clamp(1rem, 2vw, 1.22rem);
+}
+
+.technical-white-paper-page .page-header {
+  border-bottom: none;
+  padding-bottom: 2.25rem;
+}
+
+.whitepaper-hero-diagram {
+  background: #121218;
+  padding: 0 0 3rem;
+  border-bottom: 1px solid #3a3a4c;
+}
+
+.whitepaper-hero-diagram .container-sirp.whitepaper-hero-diagram-inner {
+  max-width: 1320px;
+}
+
+.whitepaper-architecture-frame {
+  position: relative;
+  width: 100%;
+  min-height: clamp(280px, 56vw, 820px);
+  margin-inline: auto;
+}
+
+.whitepaper-architecture-img {
+  object-fit: contain;
+  object-position: center top;
+}
+
+@media (max-width: 640px) {
+  .technical-white-paper-page .page-header {
+    padding-bottom: 1.75rem;
+  }
+
+  .whitepaper-hero-diagram {
+    padding-bottom: 2rem;
+  }
+}
