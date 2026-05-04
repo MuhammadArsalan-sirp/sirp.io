@@ -1,8 +1,136 @@
 /* SOAR Alternatives only — no section divider lines under the page header / bands */
 .soar-alternatives-page .page-header,
 .soar-alternatives-page .section-lead,
-.soar-alternatives-page .statement-lines-section {
+.soar-alternatives-page .statement-lines-section,
+.soar-alternatives-page .split-info-cta-image,
+.soar-alternatives-page .autonomous-soc-comparison-section,
+.soar-alternatives-page .faq-accordion-section,
+.soar-alternatives-page .soar-alt-info-cta-outro {
   border-bottom: none;
+}
+
+/* Why Teams… + Intelligence — same width / alignment as splits, FAQ, outro (not narrow 70%) */
+.soar-alternatives-page .section-lead .section-lead-inner,
+.soar-alternatives-page .statement-lines-section .statement-lines-inner {
+  max-width: 1320px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+/* Below "Intelligence Does Not Compound" — tighter vertical rhythm (not page header) */
+.soar-alternatives-page .split-info-cta-image.soar-alt-split {
+  padding-block: 2rem;
+  padding-inline: 0;
+}
+
+.soar-alternatives-page .autonomous-soc-comparison-section {
+  padding: 2.25rem 0;
+}
+
+.soar-alternatives-page .autonomous-soc-comparison-section .container-sirp > .mt-10 {
+  margin-top: 2rem;
+}
+
+.soar-alternatives-page .autonomous-soc-comparison-section .container-sirp > .mt-12 {
+  margin-top: 2rem;
+}
+
+.soar-alternatives-page .faq-accordion-section {
+  padding-block: 2rem;
+}
+
+/* SOAR Alternatives split sections — shared wide two-col band */
+.soar-alternatives-page .split-info-cta-image.soar-alt-split .container-sirp,
+.soar-alternatives-page .faq-accordion-section .container-sirp,
+.soar-alternatives-page .soar-alt-info-cta-outro .container-sirp {
+  max-width: 1320px;
+}
+
+.soar-alternatives-page .soar-alt-info-cta-outro.info-cta-block {
+  background: transparent;
+  padding-block: 2.25rem;
+  max-width: 1320px;
+  width: calc(100% - 3rem);
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .soar-alternatives-page .soar-alt-info-cta-outro.info-cta-block {
+    width: calc(100% - 5rem);
+  }
+}
+
+@media (min-width: 1280px) {
+  .soar-alternatives-page .soar-alt-info-cta-outro.info-cta-block {
+    width: calc(100% - 6rem);
+  }
+}
+
+.soar-alternatives-page .soar-alt-info-cta-outro .info-cta-inner {
+  max-width: 100%;
+}
+
+.soar-alternatives-page .soar-alt-info-cta-outro .info-cta-body {
+  max-width: 100%;
+}
+
+.soar-alternatives-page .split-info-cta-image.soar-alt-split .split-info-cta-inner {
+  gap: clamp(1.25rem, 2.4vw, 2.25rem);
+}
+
+.soar-alternatives-page .split-info-cta-image.soar-alt-split .split-left,
+.soar-alternatives-page .split-info-cta-image.soar-alt-split .split-left-body {
+  max-width: none;
+}
+
+.soar-alternatives-page .split-info-cta-image.soar-alt-split .info-cta-body {
+  max-width: 100%;
+}
+
+/* "What Replaces SOAR?" — diagram: transparent wrap, larger display + trim */
+.soar-alternatives-page .split-info-cta-image.soar-alt-what-replaces .split-image-wrap {
+  background: transparent;
+  height: clamp(460px, 52vw, 700px);
+}
+
+.soar-alternatives-page .split-info-cta-image.soar-alt-what-replaces .split-image {
+  object-fit: contain;
+  clip-path: inset(10% 5% 10% 5%);
+}
+
+/* "Who Should Consider Replacing SOAR?" — illustration, no clip */
+.soar-alternatives-page .split-info-cta-image.soar-alt-who-should-replacing .split-image-wrap {
+  background: transparent;
+  height: clamp(360px, 46vw, 580px);
+}
+
+.soar-alternatives-page .split-info-cta-image.soar-alt-who-should-replacing .split-image {
+  object-fit: contain;
+}
+
+/* "Migration Path: Moving Beyond SOAR" — diagram right */
+.soar-alternatives-page .split-info-cta-image.soar-alt-migration-path .split-image-wrap {
+  background: transparent;
+  height: clamp(380px, 48vw, 620px);
+}
+
+.soar-alternatives-page .split-info-cta-image.soar-alt-migration-path .split-image {
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .soar-alternatives-page .split-info-cta-image.soar-alt-what-replaces .split-image-wrap {
+    height: clamp(280px, 72vw, 500px);
+  }
+
+  .soar-alternatives-page .split-info-cta-image.soar-alt-who-should-replacing .split-image-wrap {
+    height: clamp(260px, 68vw, 440px);
+  }
+
+  .soar-alternatives-page .split-info-cta-image.soar-alt-migration-path .split-image-wrap {
+    height: clamp(270px, 70vw, 480px);
+  }
 }
 
 /* SOAR Alternatives only — smaller header subtext than default PageHeader */
