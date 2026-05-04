@@ -76,11 +76,12 @@ export default function Page() {
     />
 
       <SplitInfoCtaImage
+        bodyFontSize="18"
         heading={<span className="traditional-models-heading">{whatIsSoar.heading}</span>}
         body={
           <>
             <p className="info-cta-lead">{whatIsSoar.summary}</p>
-            <p>{whatIsSoar.listLead}</p>
+            <p className="info-cta-lead">{whatIsSoar.listLead}</p>
             <ul className="soc-point-list">
               {whatIsSoar.points.map((point) => (
                 <li key={point}>{point}</li>
@@ -94,6 +95,7 @@ export default function Page() {
       />
 
       <SplitInfoCtaImage
+        bodyFontSize="18"
         imageLeft
         heading={
           <span className="traditional-models-heading">{whatIsAutonomousSoc.heading}</span>

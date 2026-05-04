@@ -19,6 +19,8 @@ export type SplitInfoCtaImageProps = {
   imageObjectFit?: 'cover' | 'contain'
   /** Image column on the left, text on the right (default: text left, image right). */
   imageLeft?: boolean
+  /** Body copy size in the text column (default matches ~1.02rem elsewhere). */
+  bodyFontSize?: 'default' | '18'
 }
 
 export function SplitInfoCtaImage({
@@ -29,10 +31,14 @@ export function SplitInfoCtaImage({
   image = { src: '/images/omnisense_architecture.png', alt: 'OmniSense architecture' },
   imageObjectFit = 'cover',
   imageLeft = false,
+  bodyFontSize = 'default',
 }: SplitInfoCtaImageProps) {
-  const sectionClassName = topShade
-    ? 'split-info-cta-image split-info-cta-image--top-shade'
-    : 'split-info-cta-image'
+  const sectionClassName = [
+    topShade ? 'split-info-cta-image split-info-cta-image--top-shade' : 'split-info-cta-image',
+    bodyFontSize === '18' ? 'split-info-cta-image--body-18' : '',
+  ]
+    .filter(Boolean)
+    .join(' ')
 
   const innerClassName = imageLeft
     ? 'split-info-cta-inner split-info-cta-inner--image-left'
