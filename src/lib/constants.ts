@@ -523,7 +523,7 @@ export const SOAR_VS_WHAT_IS_AUTONOMOUS_SOC = {
   points: [
     'Continuously evaluates contextual state',
     'Computes risk in real time',
-    'Selects response actions based on policy and confidence thresholds',
+    'Selects response actions based on policy and \nconfidence thresholds',
     'Executes without routing every decision through human queues',
     'Learns from outcomes to improve future decisions',
   ],

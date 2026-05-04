@@ -9,7 +9,8 @@
 }
 
 .split-info-cta-image--body-18 .info-cta-body ul.soc-point-list li {
-  margin: 0.2rem 0;
+  margin: 0.08rem 0;
+  line-height: 1.4;
 }
 
 .split-info-cta-image--top-shade {
@@ -81,10 +82,11 @@
 .info-cta-body ul.soc-point-list li {
   position: relative;
   display: flex;
-  align-items: center;
-  gap: 0.7rem;
+  align-items: flex-start;
+  gap: 0.55rem;
   margin: 0.45rem 0;
   color: #ffffff;
+  white-space: pre-line;
 }
 
 .info-cta-body ul.soc-point-list li::before {
@@ -96,12 +98,12 @@
   align-items: center;
   justify-content: center;
   flex: 0 0 1.25rem;
+  margin-top: 0.22em;
   background: linear-gradient(135deg, #8e2dff 0%, #a855f7 100%);
   color: #ffffff;
   font-size: 0.68rem;
   font-weight: 700;
   line-height: 1;
-  transform: translateY(-0.02rem);
 }
 
 /* Standard disc bullets (no purple checkmarks). */
