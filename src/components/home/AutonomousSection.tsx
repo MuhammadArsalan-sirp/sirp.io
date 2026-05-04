@@ -2,8 +2,10 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import { AUTONOMOUS_DATA } from '@/lib/constants'
+
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 
 /* ─── Types ──────────────────────────────────────────────── */
 interface AutonomousData {
@@ -21,16 +23,6 @@ interface AutonomousSectionProps {
 
 const tabs = ['Assist mode', 'Autonomous mode'] as const
 
-const screens = {
-  'Assist mode': [
-    { src: 'https://framerusercontent.com/images/3TXmSoZgNfmLSajSAXExoiGFo.png', alt: 'Assist Mode Left' },
-    { src: 'https://framerusercontent.com/images/795nY4seVbJxYywe1uHSdwn86Xg.png', alt: 'Assist Mode Right' },
-  ],
-  'Autonomous mode': [
-    { src: 'https://framerusercontent.com/images/oNfJaqdIBVGk5DRDqy3zlHVIb2A.png', alt: 'Autonomous Mode Left' },
-    { src: 'https://framerusercontent.com/images/MRJI1JKakrby79kLCmJmVWqPYTE.png', alt: 'Autonomous Mode Right' },
-  ],
-}
 
 /* ─── Component ──────────────────────────────────────────── */
 export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionProps) {
@@ -53,7 +45,7 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
           <h2
             className="font-sans font-bold text-white mb-6"
             style={{
-              fontSize: 'clamp(3rem, 6vw, 5rem)',
+              fontSize: '60px',
               lineHeight: '1.1',
               letterSpacing: '-0.03em',
             }}
@@ -118,23 +110,21 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="relative z-[1] grid grid-cols-2 gap-4"
+              className="relative z-[1]"
             >
-              {screens[activeTab].map((screen, i) => (
-                <div
-                  key={i}
-                  className="rounded-xl overflow-hidden border border-[#3a3a4c] bg-[#161625]"
-                >
-                  <Image
-                    src={screen.src}
-                    alt={screen.alt}
-                    width={480}
-                    height={340}
-                    className="w-full h-auto block"
-                    unoptimized
-                  />
-                </div>
-              ))}
+              {activeTab === 'Assist mode' ? (
+                <Lottie
+                  animationData={require('../../../public/animations/assist-mode/home-01A.json')}
+                  loop={true}
+                  className="w-full h-auto"
+                />
+              ) : (
+                <Lottie
+                  animationData={require('../../../public/animations/autonomous/home-01B.json')}
+                  loop={true}
+                  className="w-full h-auto"
+                />
+              )}
             </motion.div>
           </AnimatePresence>
         </motion.div>

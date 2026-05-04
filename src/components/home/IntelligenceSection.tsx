@@ -1,7 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import dynamic from 'next/dynamic'
 import { INTELLIGENCE_DATA } from '@/lib/constants'
+
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 
 /* ─── Types ──────────────────────────────────────────────── */
 interface IntelligenceData {
@@ -15,9 +18,17 @@ interface IntelligenceSectionProps {
   data?: IntelligenceData
 }
 
+const rawAnim = require('../../../public/animations/intelligence/home-06.json')
+const intelligenceAnim = {
+  ...rawAnim,
+  assets: (rawAnim.assets as any[]).map((a) =>
+    a.u !== undefined ? { ...a, u: '/animations/intelligence/images/' } : a
+  ),
+}
+
 /* ─── Component ──────────────────────────────────────────── */
 export function IntelligenceSection({ data = INTELLIGENCE_DATA }: IntelligenceSectionProps) {
-  const { heading, headingItalic, description, videoSrc } = data
+  const { heading, headingItalic, description } = data
 
   return (
     <section className="bg-[#121218] border-b border-[#3a3a4c] py-[100px] overflow-hidden">
@@ -42,28 +53,24 @@ export function IntelligenceSection({ data = INTELLIGENCE_DATA }: IntelligenceSe
             {heading}{' '}
             <em>{headingItalic}</em>
           </h2>
-          <p className="font-sans text-white/70 text-lg leading-[1.7] max-w-[620px] mx-auto">
+          <p className="font-sans text-white text-lg leading-[1.7] max-w-[620px] mx-auto">
             {description}
           </p>
         </motion.div>
 
-        {/* Video */}
+        {/* Lottie animation */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="relative max-w-[1100px] mx-auto rounded-2xl overflow-hidden bg-[#0f0f1a]"
+          className="relative max-w-[1100px] mx-auto rounded-2xl overflow-hidden"
         >
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-auto block rounded-2xl"
-          >
-            <source src={videoSrc} type="video/mp4" />
-          </video>
+          <Lottie
+            animationData={intelligenceAnim}
+            loop={true}
+            className="w-full h-auto"
+          />
         </motion.div>
 
       </div>
