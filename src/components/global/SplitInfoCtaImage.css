@@ -78,6 +78,25 @@
   transform: translateY(-0.02rem);
 }
 
+/* Standard disc bullets (no purple checkmarks). */
+.info-cta-body ul.split-plain-disc-list {
+  list-style: disc;
+  list-style-position: outside;
+  padding-left: 1.35rem;
+  margin: -0.35rem 0 1.15rem;
+}
+
+.info-cta-body ul.split-plain-disc-list li {
+  margin: 0.4rem 0;
+  display: list-item;
+  color: #ffffff;
+}
+
+.info-cta-body ul.split-plain-disc-list li::marker {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.05em;
+}
+
 .split-right {
   display: flex;
   justify-content: center;

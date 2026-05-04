@@ -7,6 +7,7 @@ import { SoarVsArchitecturalDifferenceSection } from '@/components/global/SoarVs
 import {
   SOAR_VS_ARCHITECTURAL_DIFFERENCE,
   SOAR_VS_COMPARISON_TABLE,
+  SOAR_VS_WHEN_SOAR_SUFFICIENT,
   SOAR_VS_AUTONOMOUS_SOC_HEADER,
   SOAR_VS_AUTONOMOUS_SOC_METADATA,
   SOAR_VS_WHAT_IS_AUTONOMOUS_SOC,
@@ -23,6 +24,7 @@ export default function Page() {
   const p2 = hero.paragraph2
   const whatIsSoar = SOAR_VS_WHAT_IS_SOAR
   const whatIsAutonomousSoc = SOAR_VS_WHAT_IS_AUTONOMOUS_SOC
+  const whenSoarSufficient = SOAR_VS_WHEN_SOAR_SUFFICIENT
 
   return (
     <>
@@ -96,6 +98,25 @@ export default function Page() {
       <SoarVsArchitecturalDifferenceSection data={SOAR_VS_ARCHITECTURAL_DIFFERENCE} />
 
       <AutonomousSocComparisonSection data={SOAR_VS_COMPARISON_TABLE} />
+
+      <SplitInfoCtaImage
+        heading={
+          <span className="traditional-models-heading">{whenSoarSufficient.heading}</span>
+        }
+        body={
+          <>
+            <p>{whenSoarSufficient.listLead}</p>
+            <ul className="split-plain-disc-list">
+              {whenSoarSufficient.points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+            <p>{whenSoarSufficient.closing}</p>
+          </>
+        }
+        image={whenSoarSufficient.image}
+        imageObjectFit="contain"
+      />
     </>
   )
 }

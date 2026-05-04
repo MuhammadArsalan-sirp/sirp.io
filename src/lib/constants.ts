@@ -610,3 +610,20 @@ export const SOAR_VS_COMPARISON_TABLE = {
     'Autonomous SOC computes and enforces outcomes.',
   ],
 } as const
+
+export const SOAR_VS_WHEN_SOAR_SUFFICIENT = {
+  heading: 'When SOAR Is Sufficient',
+  listLead: 'SOAR may be appropriate when:',
+  points: [
+    'Automation is limited to enrichment workflows',
+    'Incident volume is manageable',
+    'Human triage remains primary',
+    'Risk tolerance requires strict manual approval',
+  ],
+  closing:
+    'In stable, low-complexity environments, workflow automation can provide efficiency gains.',
+  image: {
+    src: '/images/soar vs autonomous/sufficient.png',
+    alt: 'Execute Playbook UI: playbook search and selection',
+  },
+} as const
