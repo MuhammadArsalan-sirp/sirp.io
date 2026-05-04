@@ -510,3 +510,22 @@ export const SOAR_VS_WHAT_IS_SOAR = {
     alt: 'SOAR diagram: human availability, incoming tickets, swift coverage',
   },
 } as const
+
+export const SOAR_VS_WHAT_IS_AUTONOMOUS_SOC = {
+  heading: 'What Is an Autonomous SOC?',
+  definition:
+    'An Autonomous SOC is a security operations model in which AI systems independently analyze incidents, compute risk dynamically, and execute response actions within governance boundaries.',
+  listLead: 'Rather than following static playbooks, an Autonomous SOC:',
+  points: [
+    'Continuously evaluates contextual state',
+    'Computes risk in real time',
+    'Selects response actions based on policy and confidence thresholds',
+    'Executes without routing every decision through human queues',
+    'Learns from outcomes to improve future decisions',
+  ],
+  closing: 'The shift is from task automation to decision ownership.',
+  image: {
+    src: '/images/soar vs autonomous/autonomous-SOC.png',
+    alt: 'Autonomous SOC funnel from high alert volume to governed human review',
+  },
+} as const

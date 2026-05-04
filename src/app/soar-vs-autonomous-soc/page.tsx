@@ -5,6 +5,7 @@ import { SplitInfoCtaImage } from '@/components/global/SplitInfoCtaImage'
 import {
   SOAR_VS_AUTONOMOUS_SOC_HEADER,
   SOAR_VS_AUTONOMOUS_SOC_METADATA,
+  SOAR_VS_WHAT_IS_AUTONOMOUS_SOC,
   SOAR_VS_WHAT_IS_SOAR,
 } from '@/lib/constants'
 
@@ -17,6 +18,7 @@ export default function Page() {
   const hero = SOAR_VS_AUTONOMOUS_SOC_HEADER
   const p2 = hero.paragraph2
   const whatIsSoar = SOAR_VS_WHAT_IS_SOAR
+  const whatIsAutonomousSoc = SOAR_VS_WHAT_IS_AUTONOMOUS_SOC
 
   return (
     <>
@@ -63,6 +65,27 @@ export default function Page() {
           </>
         }
         image={whatIsSoar.image}
+        imageObjectFit="contain"
+      />
+
+      <SplitInfoCtaImage
+        imageLeft
+        heading={
+          <span className="traditional-models-heading">{whatIsAutonomousSoc.heading}</span>
+        }
+        body={
+          <>
+            <p>{whatIsAutonomousSoc.definition}</p>
+            <p>{whatIsAutonomousSoc.listLead}</p>
+            <ul className="soc-point-list">
+              {whatIsAutonomousSoc.points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+            <p className="info-cta-lead">{whatIsAutonomousSoc.closing}</p>
+          </>
+        }
+        image={whatIsAutonomousSoc.image}
         imageObjectFit="contain"
       />
     </>

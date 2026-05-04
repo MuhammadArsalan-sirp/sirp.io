@@ -19,6 +19,15 @@
   gap: 4.5rem;
 }
 
+.split-info-cta-inner--image-left .split-right {
+  order: 1;
+}
+
+.split-info-cta-inner--image-left .split-left {
+  order: 2;
+  margin-left: auto;
+}
+
 .split-left {
   max-width: 560px;
 }
