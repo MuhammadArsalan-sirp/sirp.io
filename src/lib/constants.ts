@@ -659,3 +659,41 @@ export const SOAR_VS_NEXT_GEN_SOAR = {
     alt: 'Autonomous SOC flow: Detection, Evaluation, and Action',
   },
 } as const
+
+export const SOAR_VS_MIGRATION_CONSIDERATIONS = {
+  heading: 'Migration Considerations',
+  intro: {
+    line1Before:
+      'Transitioning from SOAR to Autonomous SOC does not require immediate replacement. Most organizations replace workflow-centric automation with ',
+    linkLabel: 'SOAR alternatives',
+    linkHref: '/soar-alternatives',
+    line1After: ' built for autonomous response.',
+    line2: 'A phased approach may include:',
+  },
+  cards: [
+    {
+      icon: 'chart' as const,
+      title: 'Deploying Autonomous SOC alongside existing SOAR',
+      paragraphs: [],
+    },
+    {
+      icon: 'sparkle' as const,
+      title: 'Defining execution boundaries and policy thresholds',
+      paragraphs: [],
+    },
+    {
+      icon: 'pie' as const,
+      title: 'Moving repetitive containment classes into autonomous execution',
+      paragraphs: [],
+    },
+    {
+      icon: 'pie' as const,
+      title: 'Gradually reducing human gating as confidence matures',
+      paragraphs: [],
+    },
+  ],
+  footerLines: [
+    'The objective is not eliminating analysts.',
+    'It is relocating human effort from routing work to defining governance.',
+  ],
+} as const

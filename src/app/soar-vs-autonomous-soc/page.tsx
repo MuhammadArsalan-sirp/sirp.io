@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/layout/PageHeader'
 import { SplitInfoCtaImage } from '@/components/global/SplitInfoCtaImage'
+import { AutonomousSocBenefitsSection } from '@/components/global/AutonomousSocBenefitsSection'
 import { AutonomousSocComparisonSection } from '@/components/global/AutonomousSocComparisonSection'
 import { SoarVsArchitecturalDifferenceSection } from '@/components/global/SoarVsArchitecturalDifferenceSection'
 import {
@@ -10,6 +11,7 @@ import {
   SOAR_VS_WHEN_SOAR_SUFFICIENT,
   SOAR_VS_WHEN_AUTONOMOUS_SOC_NEEDED,
   SOAR_VS_NEXT_GEN_SOAR,
+  SOAR_VS_MIGRATION_CONSIDERATIONS,
   SOAR_VS_AUTONOMOUS_SOC_HEADER,
   SOAR_VS_AUTONOMOUS_SOC_METADATA,
   SOAR_VS_WHAT_IS_AUTONOMOUS_SOC,
@@ -29,6 +31,7 @@ export default function Page() {
   const whenSoarSufficient = SOAR_VS_WHEN_SOAR_SUFFICIENT
   const whenAutonomousSocNeeded = SOAR_VS_WHEN_AUTONOMOUS_SOC_NEEDED
   const nextGenSoar = SOAR_VS_NEXT_GEN_SOAR
+  const migration = SOAR_VS_MIGRATION_CONSIDERATIONS
 
   return (
     <>
@@ -154,6 +157,23 @@ export default function Page() {
         }
         image={nextGenSoar.image}
         imageObjectFit="contain"
+      />
+
+      <AutonomousSocBenefitsSection
+        heading={migration.heading}
+        intro={
+          <>
+            <p>
+              {migration.intro.line1Before}
+              <Link href={migration.intro.linkHref}>{migration.intro.linkLabel}</Link>
+              {migration.intro.line1After}
+            </p>
+            <p>{migration.intro.line2}</p>
+          </>
+        }
+        cards={migration.cards}
+        footerLines={migration.footerLines}
+        variant="soarMigration"
       />
     </>
   )
