@@ -1,0 +1,74 @@
+.manifesto-page .page-header {
+  background: #0b0c10;
+  border-bottom: none;
+  padding-bottom: 5rem;
+}
+
+.manifesto-page .page-header .container-sirp {
+  max-width: 1320px;
+  padding-inline: clamp(0.875rem, 2.5vw, 1.75rem);
+}
+
+@media (min-width: 768px) {
+  .manifesto-page .page-header .container-sirp {
+    padding-inline: clamp(1.25rem, 3vw, 2.25rem);
+  }
+}
+
+@media (min-width: 1280px) {
+  .manifesto-page .page-header .container-sirp {
+    padding-inline: clamp(1.5rem, 2.5vw, 2.5rem);
+  }
+}
+
+.manifesto-page .page-header-stack {
+  max-width: min(92vw, 1200px);
+}
+
+.manifesto-page .page-header-badge .pill {
+  text-transform: none;
+  letter-spacing: 0.04em;
+  font-size: 0.7rem;
+  font-weight: 500;
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  background: rgba(88, 28, 135, 0.55);
+  border-color: rgba(168, 85, 247, 0.45);
+}
+
+.manifesto-page .page-header-heading {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  font-size: clamp(2.85rem, 6.2vw, 4.65rem);
+}
+
+.manifesto-page .page-header-heading em {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.manifesto-page .page-header-subtext {
+  margin-top: 1.75rem;
+  max-width: min(58rem, 100%);
+}
+
+.manifesto-page .page-header-subtitle {
+  font-weight: 500;
+  font-size: clamp(1.2rem, 2.65vw, 1.55rem);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.manifesto-page .page-header-byline {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .manifesto-page .page-header-byline {
+    font-size: 1.0625rem;
+  }
+}
