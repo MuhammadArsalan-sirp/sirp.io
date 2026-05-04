@@ -1,12 +1,18 @@
 import type { ReactNode } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
+import { cn } from '@/lib/utils'
+import { Button } from '@/components/global/Button'
+import './InfoCtaBlock.css'
 import './SplitInfoCtaImage.css'
 
 export type SplitInfoCtaImageProps = {
   heading: ReactNode
   body: ReactNode
   topShade?: boolean
+  /** When `left`, image column renders first (desktop: image left, copy right). */
+  imagePosition?: 'left' | 'right'
+  /** Extra classes on the root `<section>` (e.g. page-specific layout hooks). */
+  sectionClassName?: string
   button?: {
     label: string
     href: string
@@ -27,6 +33,8 @@ export function SplitInfoCtaImage({
   heading,
   body,
   topShade = false,
+  imagePosition = 'right',
+  sectionClassName,
   button,
   image = { src: '/images/omnisense_architecture.png', alt: 'OmniSense architecture' },
   imageObjectFit = 'cover',
@@ -51,14 +59,13 @@ export function SplitInfoCtaImage({
           <h2 className="info-cta-heading">{heading}</h2>
           <div className="info-cta-body split-left-body">{body}</div>
 
-          {button && (
-            <div className="info-cta-button-row">
-              <Link className="info-cta-button" href={button.href}>
-                {button.label}
-              </Link>
-            </div>
-          )}
+      {button && (
+        <div className="info-cta-button-row">
+          <Button href={button.href}>{button.label}</Button>
         </div>
+      )}
+    </div>
+  )
 
         <div className="split-right" aria-hidden="true">
           <div className="split-image-wrap">

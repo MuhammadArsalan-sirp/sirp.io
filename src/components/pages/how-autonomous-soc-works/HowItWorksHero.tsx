@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 
+/* ─── Types ──────────────────────────────────────────────── */
 interface HeroData {
   badge:         string
   heading:       string
@@ -10,17 +11,11 @@ interface HeroData {
 }
 
 interface HowItWorksHeroProps {
-  data?: HeroData
+  data: HeroData
 }
 
-const DEFAULT: HeroData = {
-  badge:         'HOW IT WORKS',
-  heading:       'Your SOC,',
-  headingItalic: 'on autopilot.',
-  description:   'SIRP doesn\'t add automation to a broken process. It replaces the process entirely with a continuous decision system that ingests, reasons, governs, acts, and learns. In real time.',
-}
-
-export function HowItWorksHero({ data = DEFAULT }: HowItWorksHeroProps) {
+/* ─── Component ──────────────────────────────────────────── */
+export function HowItWorksHero({ data }: HowItWorksHeroProps) {
   const { badge, heading, headingItalic, description } = data
 
   return (
@@ -65,23 +60,15 @@ export function HowItWorksHero({ data = DEFAULT }: HowItWorksHeroProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-white font-bold mb-8"
+          className="font-sans font-bold text-white mb-8"
           style={{
-            fontSize: '82px',
+            fontSize: '74px',
             lineHeight: '1.05',
             letterSpacing: '-0.03em',
-            fontFamily: 'Inter, sans-serif',
           }}
         >
-          {heading}
-          {headingItalic && (
-            <>
-              {' '}
-              <em style={{ fontStyle: 'italic', fontFamily: 'Noto Serif, serif', fontWeight: 400 }}>
-                {headingItalic}
-              </em>
-            </>
-          )}
+          {heading}{' '}
+          <em>{headingItalic}</em>
         </motion.h1>
 
         {/* Description */}
@@ -89,8 +76,7 @@ export function HowItWorksHero({ data = DEFAULT }: HowItWorksHeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-white leading-relaxed max-w-[680px] mx-auto font-['Inter',sans-serif]"
-          style={{ fontSize: '20px' }}
+          className="font-sans text-white/70 text-xl leading-relaxed max-w-[680px] mx-auto"
         >
           {description}
         </motion.p>

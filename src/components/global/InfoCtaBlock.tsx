@@ -1,6 +1,12 @@
 import type { ReactNode } from 'react'
-import Link from 'next/link'
+import { cn } from '@/lib/utils'
+import { Button } from '@/components/global/Button'
 import './InfoCtaBlock.css'
+
+export type InfoCtaBlockCta = {
+  label: string
+  href: string
+}
 
 export type InfoCtaBlockProps = {
   heading: ReactNode
@@ -24,11 +30,14 @@ export function InfoCtaBlock({ heading, body, button, variant = 'default' }: Inf
 
         <div className="info-cta-body">{body}</div>
 
-        {button && (
+        {hasButtons && (
           <div className="info-cta-button-row">
-            <Link className="info-cta-button" href={button.href}>
-              {button.label}
-            </Link>
+            {button && <Button href={button.href}>{button.label}</Button>}
+            {secondaryButton && (
+              <Button href={secondaryButton.href} variant="secondary">
+                {secondaryButton.label}
+              </Button>
+            )}
           </div>
         )}
       </div>

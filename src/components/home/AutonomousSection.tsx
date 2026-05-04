@@ -23,24 +23,12 @@ const tabs = ['Assist mode', 'Autonomous mode'] as const
 
 const screens = {
   'Assist mode': [
-    {
-      src: 'https://framerusercontent.com/images/3TXmSoZgNfmLSajSAXExoiGFo.png',
-      alt: 'OmniSense Assist Mode Left',
-    },
-    {
-      src: 'https://framerusercontent.com/images/795nY4seVbJxYywe1uHSdwn86Xg.png',
-      alt: 'OmniSense Assist Mode Right',
-    },
+    { src: 'https://framerusercontent.com/images/3TXmSoZgNfmLSajSAXExoiGFo.png', alt: 'Assist Mode Left' },
+    { src: 'https://framerusercontent.com/images/795nY4seVbJxYywe1uHSdwn86Xg.png', alt: 'Assist Mode Right' },
   ],
   'Autonomous mode': [
-    {
-      src: 'https://framerusercontent.com/images/oNfJaqdIBVGk5DRDqy3zlHVIb2A.png',
-      alt: 'OmniSense Autonomous Mode Left',
-    },
-    {
-      src: 'https://framerusercontent.com/images/MRJI1JKakrby79kLCmJmVWqPYTE.png',
-      alt: 'OmniSense Autonomous Mode Right',
-    },
+    { src: 'https://framerusercontent.com/images/oNfJaqdIBVGk5DRDqy3zlHVIb2A.png', alt: 'Autonomous Mode Left' },
+    { src: 'https://framerusercontent.com/images/MRJI1JKakrby79kLCmJmVWqPYTE.png', alt: 'Autonomous Mode Right' },
   ],
 }
 
@@ -63,22 +51,19 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
           style={{ maxWidth: '860px' }}
         >
           <h2
-            className="font-sans font-bold mb-6"
+            className="font-sans font-bold text-white mb-6"
             style={{
               fontSize: 'clamp(3rem, 6vw, 5rem)',
               lineHeight: '1.1',
               letterSpacing: '-0.03em',
             }}
           >
-            The world&apos;s{' '}
-            <em className="font-serif italic font-normal">
-              {headingItalic}
-            </em>
+            The world&apos;s <em>{headingItalic}</em>
             <br />
             {subheading}
           </h2>
-
-          <p className="font-sans text-white/60 leading-[1.7] mx-auto"
+          <p
+            className="font-sans text-white/60 leading-[1.7] mx-auto"
             style={{ fontSize: '18px', maxWidth: '520px' }}
           >
             {description}
@@ -93,12 +78,12 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
           transition={{ duration: 0.4, delay: 0.1 }}
           className="flex items-center justify-center mb-12"
         >
-          <div className="flex items-center bg-[#1e1e2e] border border-[#3a3a4c] rounded-full p-1 gap-0">
+          <div className="flex items-center bg-[#1e1e2e] border border-[#3a3a4c] rounded-full p-1">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-7 py-2.5 rounded-full text-sm font-sans font-medium transition-all duration-200 border-none cursor-pointer ${
+                className={`px-7 py-2.5 rounded-full font-sans text-sm font-medium transition-all duration-200 border-none cursor-pointer ${
                   activeTab === tab
                     ? 'bg-[#8e2dff] text-white shadow-[0_0_20px_rgba(142,45,255,0.4)]'
                     : 'bg-transparent text-white/60 hover:text-white'
@@ -118,7 +103,7 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
           transition={{ duration: 0.5, delay: 0.15 }}
           className="relative max-w-[1000px] mx-auto"
         >
-          {/* Purple glow behind screens */}
+          {/* Purple glow */}
           <div
             className="absolute bottom-[-60px] left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none z-0"
             style={{
@@ -126,7 +111,6 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
             }}
           />
 
-          {/* Two screens side by side */}
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}

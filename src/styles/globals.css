@@ -19,9 +19,9 @@
   --color-text-muted:     rgba(255, 255, 255, 0.6);
 
   /* ─── Typography ─────────────────────────────────────── */
-  --font-sans: var(--font-inter), sans-serif;
-  --font-serif: var(--font-noto-serif), serif;
-  --font-mono: var(--font-ibm-mono), monospace;
+  --font-sans:  var(--font-inter), system-ui, sans-serif;
+  --font-serif: var(--font-noto-serif), Georgia, serif;
+  --font-mono:  var(--font-ibm-mono), 'Courier New', monospace;
 
   /* ─── Border radius ──────────────────────────────────── */
   --radius-sirp-sm: 6px;
@@ -30,20 +30,18 @@
   --radius-sirp-xl: 24px;
 
   /* ─── Animations ─────────────────────────────────────── */
-  --animate-fade-up:    fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  --animate-fade-in:    fadeIn 0.5s ease forwards;
-  --animate-float:      float 6s ease-in-out infinite;
+  --animate-fade-up:  fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-in:  fadeIn 0.5s ease forwards;
+  --animate-float:    float 6s ease-in-out infinite;
 
   @keyframes fadeUp {
     0%   { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }
   }
-
   @keyframes fadeIn {
     0%   { opacity: 0; }
     100% { opacity: 1; }
   }
-
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50%       { transform: translateY(-10px); }
@@ -56,7 +54,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-sans);
   background-color: #121218;
   color: #ffffff;
   line-height: 1.6;
@@ -69,6 +67,20 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   line-height: 1.15;
   letter-spacing: -0.02em;
+}
+
+em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+code, pre, .mono {
+  font-family: var(--font-mono);
+}
+
+p, a, li, span, button {
+  color: inherit;
 }
 
 /* ─── Utility classes ────────────────────────────────────── */
@@ -97,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.08em;

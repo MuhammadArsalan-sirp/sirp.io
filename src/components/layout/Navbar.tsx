@@ -7,12 +7,13 @@ import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { NAV_LINKS } from '@/lib/constants'
 import { cn } from '@/lib/utils'
+import { Button } from '@/components/global/Button'
 
 export function Navbar() {
   const [scrolled, setScrolled]     = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeDropdown, setActive] = useState<string | null>(null)
-  const pathname  = usePathname()
+  const pathname   = usePathname()
   const closeTimer = useRef<ReturnType<typeof setTimeout>>(null)
 
   useEffect(() => {
@@ -36,13 +37,13 @@ export function Navbar() {
       className={cn(
         'fixed top-0 inset-x-0 z-40 transition-all duration-300',
         scrolled
-          ? 'bg-[#0d0d14]/98 backdrop-blur-md border-b border-[#3a3a4c]'
+          ? 'bg-[#080810]/95 backdrop-blur-md border-b border-[#3a3a4c]'
           : 'bg-transparent',
       )}
     >
       {/* SARA Banner */}
       <div
-        className="text-white text-center py-2 text-sm font-medium font-['Inter',sans-serif]"
+        className="font-sans text-white text-center py-2 text-sm font-medium"
         style={{
           background: 'linear-gradient(91deg, #000000 20%, #3e1958 40%, #8e2dff 50%, #000000 90%)',
         }}
@@ -64,7 +65,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" aria-label="SIRP home">
           <Image
-            src="/images/logos/sirp-logo.png"
+            src="/images/logos/SIRP-Logo.png"
             alt="SIRP"
             width={100}
             height={36}
@@ -90,10 +91,8 @@ export function Navbar() {
                   <>
                     <button
                       className={cn(
-                        'flex items-center gap-1 px-4 py-2 text-sm rounded-[10px] transition-all duration-200 font-["Inter",sans-serif] bg-transparent border-none cursor-pointer',
-                        isActive
-                          ? 'text-white'
-                          : 'text-white/80 hover:text-white',
+                        'flex items-center gap-1 px-4 py-2 font-sans text-sm rounded-[10px] transition-all duration-200 bg-transparent border-none cursor-pointer',
+                        isActive ? 'text-white' : 'text-white hover:text-white',
                       )}
                     >
                       {item.label}
@@ -113,9 +112,9 @@ export function Navbar() {
                             <Link
                               key={child.href}
                               href={child.href}
-                              className="block px-3 py-2.5 rounded-[10px] hover:bg-[#0f0f1a] group transition-colors duration-150 no-underline"
+                              className="block px-3 py-2.5 rounded-[10px] hover:bg-[#0f0f1a] transition-colors duration-150 no-underline"
                             >
-                              <span className="block text-sm font-medium text-white group-hover:text-white transition-colors font-['Inter',sans-serif]">
+                              <span className="block font-sans text-sm font-medium text-white">
                                 {child.label}
                               </span>
                             </Link>
@@ -128,10 +127,8 @@ export function Navbar() {
                   <Link
                     href={item.href}
                     className={cn(
-                      'flex items-center px-4 py-2 text-sm rounded-[10px] transition-all duration-200 no-underline font-["Inter",sans-serif]',
-                      isActive
-                        ? 'text-white'
-                        : 'text-white/80 hover:text-white',
+                      'flex items-center px-4 py-2 font-sans text-sm rounded-[10px] transition-all duration-200 no-underline',
+                      isActive ? 'text-white' : 'text-white hover:text-white',
                     )}
                   >
                     {item.label}
@@ -144,12 +141,9 @@ export function Navbar() {
 
         {/* CTA */}
         <div className="hidden lg:flex items-center">
-          <Link
-            href="/contact"
-            className="inline-flex items-center px-5 py-2 border border-white text-white text-sm font-medium rounded-full hover:bg-white hover:text-[#121218] transition-all duration-200 no-underline font-['Inter',sans-serif]"
-          >
+          <Button href="/contact" variant="secondary">
             Get a demo
-          </Link>
+          </Button>
         </div>
 
         {/* Mobile burger */}
@@ -170,14 +164,14 @@ export function Navbar() {
               <div key={item.label}>
                 {'children' in item && item.children ? (
                   <>
-                    <p className="px-3 py-2 text-[11px] font-mono font-medium text-white/40 uppercase tracking-widest">
+                    <p className="px-3 py-2 font-mono text-[11px] font-medium text-white/40 uppercase tracking-widest">
                       {item.label}
                     </p>
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block px-5 py-2.5 text-sm text-white hover:bg-white/5 rounded-[10px] transition-colors no-underline font-['Inter',sans-serif]"
+                        className="block px-5 py-2.5 font-sans text-sm text-white hover:bg-white/5 rounded-[10px] transition-colors no-underline"
                       >
                         {child.label}
                       </Link>
@@ -186,7 +180,7 @@ export function Navbar() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="block px-3 py-2.5 text-sm font-medium text-white hover:bg-white/5 rounded-[10px] transition-colors no-underline font-['Inter',sans-serif]"
+                    className="block px-3 py-2.5 font-sans text-sm font-medium text-white hover:bg-white/5 rounded-[10px] transition-colors no-underline"
                   >
                     {item.label}
                   </Link>
@@ -194,12 +188,9 @@ export function Navbar() {
               </div>
             ))}
             <div className="pt-3 border-t border-[#3a3a4c]">
-              <Link
-                href="/contact"
-                className="block w-full text-center px-4 py-2.5 bg-[#8e2dff] text-white text-sm font-medium rounded-[10px] hover:bg-[#a855f7] transition-colors no-underline font-['Inter',sans-serif]"
-              >
+              <Button href="/contact" variant="secondary" className="w-full justify-center">
                 Get a demo
-              </Link>
+              </Button>
             </div>
           </div>
         </div>
