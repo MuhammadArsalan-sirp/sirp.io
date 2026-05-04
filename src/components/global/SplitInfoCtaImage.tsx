@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { cn } from '@/lib/utils'
+import { Button } from '@/components/global/Button'
 import './InfoCtaBlock.css'
 import './SplitInfoCtaImage.css'
 
@@ -45,9 +45,7 @@ export function SplitInfoCtaImage({
 
       {button && (
         <div className="info-cta-button-row">
-          <Link className="info-cta-button" href={button.href}>
-            {button.label}
-          </Link>
+          <Button href={button.href}>{button.label}</Button>
         </div>
       )}
     </div>

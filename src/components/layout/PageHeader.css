@@ -26,15 +26,6 @@
   margin-bottom: 1.25rem;
 }
 
-.page-header-badge .pill {
-  border-radius: 4px;
-  font-size: 0.625rem;
-  padding: 0.22rem 0.65rem;
-  gap: 0.3rem;
-}
-
-/* Badge uses global `.pill` token styles */
-
 .page-header-heading {
   margin: 0;
   font-family: 'Inter', sans-serif;
