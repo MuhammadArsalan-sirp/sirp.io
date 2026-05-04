@@ -129,8 +129,19 @@
   color: #ffffff;
 }
 
+.whitepaper-list {
+  list-style: disc;
+  list-style-position: outside;
+}
+
+.whitepaper-ordered-list {
+  list-style: decimal;
+  list-style-position: outside;
+}
+
 .whitepaper-list li,
 .whitepaper-ordered-list li {
+  display: list-item;
   margin: 0.35rem 0;
 }
 
