@@ -56,3 +56,17 @@
     rgba(0, 0, 0, 0) 100%
   );
 }
+
+.comparison-card--purple::before {
+  background-image: none;
+  width: 0;
+}
+
+.comparison-card--purple::after {
+  background: linear-gradient(
+    90deg,
+    rgba(142, 45, 255, 0.32) 0%,
+    rgba(142, 45, 255, 0.12) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}

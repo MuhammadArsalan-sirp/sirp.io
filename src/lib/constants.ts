@@ -529,3 +529,37 @@ export const SOAR_VS_WHAT_IS_AUTONOMOUS_SOC = {
     alt: 'Autonomous SOC funnel from high alert volume to governed human review',
   },
 } as const
+
+export const SOAR_VS_ARCHITECTURAL_DIFFERENCE = {
+  heading: 'Architectural Difference',
+  introLines: ['SOAR is workflow-centric.', 'Autonomous SOC is decision-centric.'],
+  cards: [
+    {
+      title: 'SOAR architecture:',
+      points: [
+        'Event → Trigger → Playbook → Action',
+        'Static branching logic',
+        'Human approval checkpoints',
+      ],
+      glow: 'red' as const,
+    },
+    {
+      title: 'Autonomous SOC architecture:',
+      points: [
+        'Continuous signal ingestion',
+        'Context construction across identities, endpoints, and behavior',
+        'Real-time risk computation',
+        'Policy-bound execution',
+        'Embedded learning loop',
+      ],
+      glow: 'purple' as const,
+    },
+  ],
+  footer: {
+    beforeLink: 'This decision pipeline is explained in detail in ',
+    linkLabel: 'how autonomous SOC works',
+    linkHref: '/what-is-autonomous-soc',
+    afterLink: ' at the system level.',
+    taglines: ['One coordinates actions.', 'The other governs decisions.'],
+  },
+} as const
