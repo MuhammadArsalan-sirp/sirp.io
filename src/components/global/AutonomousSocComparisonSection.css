@@ -70,6 +70,19 @@
   );
 }
 
+.comparison-card--purple::before {
+  background-image: url('/images/benefitsOfSOC/purple shadow.svg');
+}
+
+.comparison-card--purple::after {
+  background: linear-gradient(
+    90deg,
+    rgba(142, 45, 255, 0.28) 0%,
+    rgba(168, 85, 247, 0.1) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
 /* SOAR vs Autonomous SOC Comparison — Framer card specs */
 .comparison-grid--soar {
   display: grid;
@@ -98,6 +111,74 @@
   width: 100%;
   max-width: 580px;
   min-height: auto;
+}
+
+/* Architectural Difference (2-up): shadow art centered on top, feathered edges */
+.comparison-section--soar .comparison-grid--soar-2 .comparison-card::before {
+  top: 0;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  width: min(40%, 240px);
+  height: 80px;
+  transform: translateX(-50%);
+  background-position: center top;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 26%, #000 74%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 26%, #000 74%, transparent 100%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.comparison-section--soar .comparison-grid--soar-2 .comparison-card--red::after,
+.comparison-section--soar .comparison-grid--soar-2 .comparison-card--blue::after,
+.comparison-section--soar .comparison-grid--soar-2 .comparison-card--purple::after {
+  top: 0;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  width: min(44%, 268px);
+  height: 78px;
+  transform: translateX(-50%);
+  z-index: 1;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.comparison-section--soar .comparison-grid--soar-2 .comparison-card--red::after {
+  background: radial-gradient(
+    ellipse 85% 130% at 50% 0%,
+    rgba(240, 65, 65, 0.42) 0%,
+    rgba(240, 65, 65, 0.12) 45%,
+    rgba(0, 0, 0, 0) 72%
+  );
+}
+
+.comparison-section--soar .comparison-grid--soar-2 .comparison-card--blue::after {
+  background: radial-gradient(
+    ellipse 85% 130% at 50% 0%,
+    rgba(142, 45, 255, 0.44) 0%,
+    rgba(142, 45, 255, 0.13) 45%,
+    rgba(0, 0, 0, 0) 72%
+  );
+}
+
+.comparison-section--soar .comparison-grid--soar-2 .comparison-card--purple::after {
+  background: radial-gradient(
+    ellipse 85% 130% at 50% 0%,
+    rgba(142, 45, 255, 0.4) 0%,
+    rgba(168, 85, 247, 0.14) 45%,
+    rgba(0, 0, 0, 0) 72%
+  );
+}
+
+.comparison-section--soar .comparison-grid--soar-2 .comparison-card > * {
+  position: relative;
+  z-index: 2;
 }
 
 .comparison-card-heading--soar {

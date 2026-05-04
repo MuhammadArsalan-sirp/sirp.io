@@ -7,7 +7,7 @@ import './AutonomousSocComparisonSection.css'
 type ComparisonCard = {
   title: string
   points: readonly string[]
-  glow: 'red' | 'yellow' | 'blue'
+  glow: 'red' | 'yellow' | 'blue' | 'purple'
 }
 
 type ComparisonFooterWithLink = {
