@@ -17,6 +17,10 @@
   margin-inline: auto;
 }
 
+.soar-alternatives-page .section-lead {
+  border-top: 1px solid #3a3a4c;
+}
+
 /* Below "Intelligence Does Not Compound" — tighter vertical rhythm (not page header) */
 .soar-alternatives-page .split-info-cta-image.soar-alt-split {
   padding-block: 2rem;
