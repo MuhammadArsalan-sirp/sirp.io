@@ -44,6 +44,16 @@
   font-weight: 400;
 }
 
+.page-header-heading-line2 {
+  margin: 0.35rem 0 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  font-size: 60px;
+}
+
 .page-header-subtext {
   margin: 1.35rem auto 0;
   max-width: 780px;
@@ -79,6 +89,10 @@
   .page-header {
     padding-top: 8rem;
     padding-bottom: 3.5rem;
+  }
+
+  .page-header-heading-line2 {
+    font-size: clamp(1.85rem, 8vw, 2.75rem);
   }
 
   .page-header-subtext {
