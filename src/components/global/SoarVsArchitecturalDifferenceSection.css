@@ -2,6 +2,7 @@
 .architectural-diff-section {
   padding: 4.5rem 0 4.75rem;
   background-color: #121218;
+  border-top: 1px solid #3a3a4c;
 }
 
 .architectural-diff-section--top-shade {
@@ -43,6 +44,12 @@
   display: grid;
   gap: 0.75rem;
   grid-template-columns: 1fr;
+}
+
+/* Glow disabled for now — hide comparison-card pseudos (left-edge shadow art). */
+.architectural-diff-section .architectural-diff-card::before,
+.architectural-diff-section .architectural-diff-card::after {
+  display: none;
 }
 
 @media (min-width: 1024px) {

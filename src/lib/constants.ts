@@ -541,7 +541,6 @@ export const SOAR_VS_ARCHITECTURAL_DIFFERENCE = {
         'Static branching logic',
         'Human approval checkpoints',
       ],
-      glow: 'red' as const,
     },
     {
       title: 'Autonomous SOC architecture:',
@@ -552,7 +551,6 @@ export const SOAR_VS_ARCHITECTURAL_DIFFERENCE = {
         'Policy-bound execution',
         'Embedded learning loop',
       ],
-      glow: 'purple' as const,
     },
   ],
   footer: {

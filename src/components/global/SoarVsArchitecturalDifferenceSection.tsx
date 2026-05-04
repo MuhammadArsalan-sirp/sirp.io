@@ -5,7 +5,6 @@ import './SoarVsArchitecturalDifferenceSection.css'
 export type SoarVsArchitecturalDifferenceCard = {
   title: string
   points: readonly string[]
-  glow: 'red' | 'purple'
 }
 
 export type SoarVsArchitecturalDifferenceData = {
@@ -45,7 +44,7 @@ export function SoarVsArchitecturalDifferenceSection({
           {cards.map((card) => (
             <article
               key={card.title}
-              className={`comparison-card comparison-card--${card.glow}`}
+              className="comparison-card architectural-diff-card"
             >
               <h3 className="text-center font-['Inter',sans-serif] text-[24px] leading-[1.2] font-semibold tracking-[0] text-white">
                 {card.title}

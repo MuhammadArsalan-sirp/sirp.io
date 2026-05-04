@@ -57,12 +57,11 @@
   );
 }
 
-.comparison-card--purple::before {
-  background-image: none;
-  width: 0;
+.comparison-card--blue::before {
+  background-image: url('/images/benefitsOfSOC/blue shadow.svg');
 }
 
-.comparison-card--purple::after {
+.comparison-card--blue::after {
   background: linear-gradient(
     90deg,
     rgba(142, 45, 255, 0.32) 0%,
