@@ -87,14 +87,33 @@
   background: #060606;
 }
 
-.comparison-card-list--soar {
-  list-style: none;
-  padding: 0;
+.comparison-card-heading--soar {
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   margin: 0;
 }
 
-.comparison-card-list--soar li + li {
-  margin-top: 0.45rem;
+.comparison-section--soar ul.comparison-card-list--soar {
+  list-style: none;
+  margin: 0;
+  padding: 2rem 0 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.45;
+  color: #ffffff;
+}
+
+.comparison-section--soar ul.comparison-card-list--soar li {
+  font-size: inherit;
+  font-weight: 700;
+}
+
+.comparison-section--soar ul.comparison-card-list--soar li + li {
+  margin-top: 0.75rem;
 }
 
 @media (max-width: 1240px) {

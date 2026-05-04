@@ -63,13 +63,19 @@ export function AutonomousSocComparisonSection({
               transition={{ duration: 0.45, delay: index * 0.08 }}
               className={`comparison-card comparison-card--${card.glow}`}
             >
-              <h3 className="text-center font-['Inter',sans-serif] text-[24px] leading-[1.2] font-semibold tracking-[0] text-white">
+              <h3
+                className={
+                  isSoarComparison
+                    ? 'comparison-card-heading--soar text-center font-[Inter,sans-serif] text-[22px] font-bold leading-[1.2] text-white'
+                    : 'text-center font-[Inter,sans-serif] text-[24px] leading-[1.2] font-semibold tracking-[0] text-white'
+                }
+              >
                 {card.title}
               </h3>
               <ul
                 className={
                   isSoarComparison
-                    ? 'comparison-card-list--soar mt-8 text-center font-[Inter,sans-serif] text-[18px] leading-[1.5] font-medium text-white'
+                    ? 'comparison-card-list--soar text-center font-[Inter,sans-serif] text-[15px] font-bold leading-[1.45] text-white'
                     : 'mt-10 space-y-5 text-center font-[Inter,sans-serif] text-[16px] leading-[1.5] font-medium text-white'
                 }
               >
