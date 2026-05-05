@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 import { PageHeader } from '@/components/layout/PageHeader'
-import { SectionLead } from '@/components/global/SectionLead'
-import { BlackGradientCard } from '@/components/global/BlackGradientCard'
-import { StatementLinesSection } from '@/components/global/StatementLinesSection'
-import { SplitInfoCtaImage } from '@/components/global/SplitInfoCtaImage'
-import { AutonomousSocComparisonSection } from '@/components/global/AutonomousSocComparisonSection'
-import { FaqAccordionSection } from '@/components/global/FaqAccordionSection'
-import { InfoCtaBlock } from '@/components/global/InfoCtaBlock'
+import { SectionLead } from '@/components/shared/SectionLead'
+import { BlackGradientCard } from '@/components/shared/BlackGradientCard'
+import { StatementLinesSection } from '@/components/shared/StatementLinesSection'
+import { SplitInfoCtaImage } from '@/components/shared/SplitInfoCtaImage'
+import { AutonomousSocComparisonSection } from '@/components/shared/AutonomousSocComparisonSection'
+import { FaqAccordionSection } from '@/components/shared/FaqAccordionSection'
+import { InfoCtaBlock } from '@/components/shared/InfoCtaBlock'
 import {
   SOAR_ALTERNATIVES_FAQ,
   SOAR_ALTERNATIVES_KEY_DIFFERENCES,

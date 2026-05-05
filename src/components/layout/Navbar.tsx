@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { NAV_LINKS } from '@/lib/constants'
 import { cn } from '@/lib/utils'
-import { Button } from '@/components/global/Button'
+import { Button } from '@/components/shared/Button'
 
 export function Navbar() {
   const [scrolled, setScrolled]     = useState(false)

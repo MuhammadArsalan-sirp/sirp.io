@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
-import { Button } from '@/components/global/Button'
+import { Button } from '@/components/shared/Button'
 import './InfoCtaBlock.css'
 
 export type InfoCtaBlockCta = {

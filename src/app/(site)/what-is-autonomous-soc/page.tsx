@@ -1,10 +1,10 @@
 import { PageHeader } from '@/components/layout/PageHeader'
-import { SplitInfoCtaImage } from '@/components/global/SplitInfoCtaImage'
-import { HowAutonomousSocWorksSection } from '@/components/global/HowAutonomousSocWorksSection'
-import { AutonomousSocBenefitsSection } from '@/components/global/AutonomousSocBenefitsSection'
-import { RightBalanceSection } from '@/components/global/RightBalanceSection'
-import { AutonomousSocSafetySection } from '@/components/global/AutonomousSocSafetySection'
-import { AutonomousSocComparisonSection } from '@/components/global/AutonomousSocComparisonSection'
+import { SplitInfoCtaImage } from '@/components/shared/SplitInfoCtaImage'
+import { HowAutonomousSocWorksSection } from '@/components/shared/HowAutonomousSocWorksSection'
+import { AutonomousSocBenefitsSection } from '@/components/shared/AutonomousSocBenefitsSection'
+import { RightBalanceSection } from '@/components/shared/RightBalanceSection'
+import { AutonomousSocSafetySection } from '@/components/shared/AutonomousSocSafetySection'
+import { AutonomousSocComparisonSection } from '@/components/shared/AutonomousSocComparisonSection'
 import {
   WHAT_IS_AUTONOMOUS_SOC_BENEFITS,
   WHAT_IS_AUTONOMOUS_SOC_COMPARISON,

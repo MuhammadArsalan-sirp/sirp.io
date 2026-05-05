@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { PageHeader } from '@/components/layout/PageHeader'
-import { WhitePaperBody } from './WhitePaperBody'
-import './page.css'
+import { WhitePaperBody } from '@/sections/technical-white-paper/WhitePaperBody'
+import '@/sections/technical-white-paper/page.css'
 
 export const metadata: Metadata = {
   title: 'Autonomous SOC Architecture White Paper | SIRP',

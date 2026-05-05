@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
-import { Button } from '@/components/global/Button'
+import { Button } from '@/components/shared/Button'
 import './InfoCtaBlock.css'
 import './SplitInfoCtaImage.css'
 

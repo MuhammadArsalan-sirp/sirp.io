@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { PurplePill } from '@/components/global/PurplePill'
+import { PurplePill } from '@/components/shared/PurplePill'
 import './PageHeader.css'
 
 export type PageHeaderProps = {
