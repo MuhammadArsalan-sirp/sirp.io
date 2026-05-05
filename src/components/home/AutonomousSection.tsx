@@ -9,12 +9,12 @@ const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 
 /* ─── Types ──────────────────────────────────────────────── */
 interface AutonomousData {
-  pill:          string
-  heading:       string
+  pill: string
+  heading: string
   headingItalic: string
-  subheading:    string
-  description:   string
-  videoSrc:      string
+  subheading: string
+  description: string
+  videoSrc: string
 }
 
 interface AutonomousSectionProps {
@@ -23,10 +23,9 @@ interface AutonomousSectionProps {
 
 const tabs = ['Assist mode', 'Autonomous mode'] as const
 
-
 /* ─── Component ──────────────────────────────────────────── */
 export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionProps) {
-  const [activeTab, setActiveTab] = useState<keyof typeof screens>('Assist mode')
+  const [activeTab, setActiveTab] = useState<typeof tabs[number]>('Assist mode')
   const { headingItalic, subheading, description } = data
 
   return (
@@ -75,11 +74,10 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-7 py-2.5 rounded-full font-sans text-sm font-medium transition-all duration-200 border-none cursor-pointer ${
-                  activeTab === tab
+                className={`px-7 py-2.5 rounded-full font-sans text-sm font-medium transition-all duration-200 border-none cursor-pointer ${activeTab === tab
                     ? 'bg-[#8e2dff] text-white shadow-[0_0_20px_rgba(142,45,255,0.4)]'
                     : 'bg-transparent text-white/60 hover:text-white'
-                }`}
+                  }`}
               >
                 {tab}
               </button>
