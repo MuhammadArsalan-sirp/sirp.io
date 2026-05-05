@@ -6,6 +6,10 @@
   border-bottom: 1px solid #3a3a4c;
 }
 
+.page-header.page-header--flush {
+  border-bottom: none;
+}
+
 .page-header-inner {
   text-align: center;
 }
@@ -26,8 +30,6 @@
   margin-bottom: 1.25rem;
 }
 
-/* Badge uses global `.pill` token styles */
-
 .page-header-heading {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -44,6 +46,16 @@
   font-weight: 400;
 }
 
+.page-header-heading-line2 {
+  margin: 0.35rem 0 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  font-size: 60px;
+}
+
 .page-header-subtext {
   margin: 1.35rem auto 0;
   max-width: 780px;
@@ -54,6 +66,28 @@
   font-weight: 500;
 }
 
+.page-header-subtitle {
+  margin: 0 0 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.page-header-subtext > p {
+  margin: 0 0 1rem;
+}
+
+.page-header-subtext > p.page-header-subtitle {
+  margin: 0 0 1.5rem;
+}
+
+.page-header-subtext > p:last-child {
+  margin-bottom: 0;
+}
+
 .page-header-subtext-block {
   display: block;
 }
@@ -61,6 +95,16 @@
 .page-header-subtext-gap {
   display: block;
   margin-top: 0.7rem;
+}
+
+.page-header-byline {
+  margin: 1.5rem 0 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.88);
 }
 
 @media (min-width: 768px) {
@@ -81,8 +125,29 @@
     padding-bottom: 3.5rem;
   }
 
+  .page-header-heading-line2 {
+    font-size: clamp(1.85rem, 8vw, 2.75rem);
+  }
+
   .page-header-subtext {
     font-size: 1rem;
   }
+}
+
+/*
+ * SOAR vs Autonomous hero — widen stack (default 1000px) so `<br />` intro lines
+ * are not squeezed by the parent; subtext matches intended three-line intro.
+ */
+.page-header.page-header--soar-hero .page-header-stack {
+  max-width: min(70rem, calc(100vw - 2rem));
+}
+
+.page-header.page-header--soar-hero .page-header-subtext {
+  text-align: center;
+  max-width: min(68rem, calc(100vw - 2.5rem));
+}
+
+.page-header.page-header--soar-hero .page-header-subtext-gap {
+  margin-top: 1.2rem;
 }
 

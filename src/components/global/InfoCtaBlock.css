@@ -53,31 +53,11 @@
 }
 
 .info-cta-button-row {
-  margin-top: 1.35rem;
-}
-
-.info-cta-button {
-  display: inline-flex;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  padding: 0.9rem 1.65rem;
-  border-radius: 999px;
-  background: #8e2dff;
-  color: #ffffff;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 0 24px rgba(142, 45, 255, 0.25);
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.info-cta-button:hover {
-  background: #a855f7;
-  transform: translateY(-1px);
-}
-
-.info-cta-button:active {
-  transform: translateY(0px) scale(0.99);
+  gap: 0.75rem 1rem;
+  margin-top: 1.35rem;
 }
 
 @media (max-width: 640px) {
@@ -87,6 +67,76 @@
 
   .info-cta-body {
     font-size: 0.98rem;
+  }
+}
+
+/* ─── Authority closing (SOAR vs Autonomous SOC) ───────────── */
+.info-cta-block--authority {
+  background: linear-gradient(
+    180deg,
+    #121218 0%,
+    #121218 58%,
+    rgba(142, 45, 255, 0.09) 100%
+  );
+  padding: 3rem 0 7rem;
+}
+
+/* Full row width; slightly tighter horizontal padding than default .container-sirp for long-line copy */
+.info-cta-block--authority .info-cta-inner {
+  max-width: 1280px;
+  text-align: left;
+  padding-inline: 1.5rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .info-cta-block--authority .info-cta-inner {
+    padding-inline: 2rem;
+  }
+}
+
+.info-cta-block--authority .info-cta-heading,
+.info-cta-block--authority .info-cta-body {
+  max-width: 100%;
+}
+
+.info-cta-block--authority .info-cta-heading {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.info-cta-block--authority .info-cta-body {
+  margin-top: 2.25rem;
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 400;
+}
+
+.info-cta-block--authority .info-cta-body > p {
+  margin: 0 0 1rem;
+  white-space: pre-line;
+}
+
+.info-cta-block--authority .info-cta-body > p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .info-cta-block--authority {
+    padding: 2.5rem 0 4.75rem;
+  }
+
+  .info-cta-block--authority .info-cta-heading {
+    font-size: clamp(1.85rem, 6.5vw, 2.5rem);
+  }
+
+  .info-cta-block--authority .info-cta-body {
+    margin-top: 1.75rem;
+    font-size: 16px;
+    line-height: 1.38;
   }
 }
 

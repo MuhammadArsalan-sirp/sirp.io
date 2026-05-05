@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { NAV_LINKS } from '@/lib/constants'
 import { cn } from '@/lib/utils'
+import { Button } from '@/components/global/Button'
 
 export function Navbar() {
   const [scrolled, setScrolled]     = useState(false)
@@ -140,12 +141,9 @@ export function Navbar() {
 
         {/* CTA */}
         <div className="hidden lg:flex items-center">
-          <Link
-            href="/contact"
-            className="inline-flex items-center px-5 py-2 border border-white text-white font-sans text-sm font-medium rounded-full hover:bg-white hover:text-[#121218] transition-all duration-200 no-underline"
-          >
+          <Button href="/contact" variant="secondary">
             Get a demo
-          </Link>
+          </Button>
         </div>
 
         {/* Mobile burger */}
@@ -190,12 +188,9 @@ export function Navbar() {
               </div>
             ))}
             <div className="pt-3 border-t border-[#3a3a4c]">
-              <Link
-                href="/contact"
-                className="block w-full text-center px-4 py-2.5 border border-white text-white font-sans text-sm font-medium rounded-full hover:bg-white hover:text-[#121218] transition-colors no-underline"
-              >
+              <Button href="/contact" variant="secondary" className="w-full justify-center">
                 Get a demo
-              </Link>
+              </Button>
             </div>
           </div>
         </div>

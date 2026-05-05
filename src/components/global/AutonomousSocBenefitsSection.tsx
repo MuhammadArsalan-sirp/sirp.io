@@ -1,21 +1,32 @@
 'use client'
 
+import type { ReactNode } from 'react'
 import { motion } from 'framer-motion'
-import { BellOff, ChartNoAxesColumnIncreasing, Hand, RefreshCcw } from 'lucide-react'
+import {
+  BellOff,
+  ChartNoAxesColumnIncreasing,
+  Hand,
+  PieChart,
+  RefreshCcw,
+  Sparkles,
+} from 'lucide-react'
 import Image from 'next/image'
 import './AutonomousSocBenefitsSection.css'
 
 type BenefitCard = {
-  icon: 'chart' | 'mute' | 'hand' | 'refresh'
+  icon: 'chart' | 'mute' | 'hand' | 'refresh' | 'sparkle' | 'pie'
   title: string
   paragraphs: readonly string[]
 }
 
 type AutonomousSocBenefitsSectionProps = {
-  badgeText: string
+  badgeText?: string
   heading: string
-  intro: string
+  intro: ReactNode
   cards: readonly BenefitCard[]
+  footerLines?: readonly string[]
+  /** SOAR migration page: no badge, left-aligned header, shorter cards, optional footer. */
+  variant?: 'default' | 'soarMigration'
 }
 
 const iconMap = {
@@ -23,6 +34,8 @@ const iconMap = {
   mute: BellOff,
   hand: Hand,
   refresh: RefreshCcw,
+  sparkle: Sparkles,
+  pie: PieChart,
 } as const
 
 export function AutonomousSocBenefitsSection({
@@ -30,9 +43,16 @@ export function AutonomousSocBenefitsSection({
   heading,
   intro,
   cards,
+  footerLines,
+  variant = 'default',
 }: AutonomousSocBenefitsSectionProps) {
+  const sectionClass =
+    variant === 'soarMigration'
+      ? 'autonomous-benefits autonomous-benefits--soar-migration'
+      : 'autonomous-benefits'
+
   return (
-    <section className="autonomous-benefits">
+    <section className={sectionClass}>
       <div className="container-sirp autonomous-benefits-inner">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -41,19 +61,21 @@ export function AutonomousSocBenefitsSection({
           transition={{ duration: 0.45 }}
           className="autonomous-benefits-top"
         >
-          <span className="autonomous-benefits-badge">
-            <Image
-              src="/images/benefitsOfSOC/star.svg"
-              alt=""
-              width={12}
-              height={12}
-              className="autonomous-benefits-badge-star"
-              unoptimized
-            />
-            {badgeText}
-          </span>
+          {badgeText ? (
+            <span className="autonomous-benefits-badge">
+              <Image
+                src="/images/benefitsOfSOC/star.svg"
+                alt=""
+                width={12}
+                height={12}
+                className="autonomous-benefits-badge-star"
+                unoptimized
+              />
+              {badgeText}
+            </span>
+          ) : null}
           <h2 className="autonomous-benefits-heading">{heading}</h2>
-          <p className="autonomous-benefits-intro">{intro}</p>
+          <div className="autonomous-benefits-intro">{intro}</div>
         </motion.div>
 
         <div className="autonomous-benefits-grid">
@@ -81,15 +103,31 @@ export function AutonomousSocBenefitsSection({
                 </div>
 
                 <h3 className="autonomous-benefit-title">{card.title}</h3>
-                <div className="autonomous-benefit-body">
-                  {card.paragraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
-                </div>
+                {card.paragraphs.length > 0 ? (
+                  <div className="autonomous-benefit-body">
+                    {card.paragraphs.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
+                ) : null}
               </motion.article>
             )
           })}
         </div>
+
+        {footerLines && footerLines.length > 0 ? (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45 }}
+            className="autonomous-benefits-footer"
+          >
+            {footerLines.map((line) => (
+              <p key={line}>{line}</p>
+            ))}
+          </motion.div>
+        ) : null}
       </div>
     </section>
   )
