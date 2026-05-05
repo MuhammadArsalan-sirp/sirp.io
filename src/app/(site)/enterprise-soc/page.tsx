@@ -1,9 +1,23 @@
-export default function Page() {
+import { EnterpriseSocHero } from '@/sections/enterprise-soc/EnterpriseSocHero'
+import { EnterpriseSocReality } from '@/sections/enterprise-soc/EnterpriseSocReality'
+import { EnterpriseSocShift } from '@/sections/enterprise-soc/EnterpriseSocShift'
+import { EnterpriseSocDashboard } from '@/sections/enterprise-soc/EnterpriseSocDashboard'
+import { EnterpriseSocAiNative } from '@/sections/enterprise-soc/EnterpriseSocAiNative'
+
+export const metadata = {
+  title: 'Enterprise SOC | SIRP',
+  description:
+    'SIRP transforms enterprise security operations from human-driven workflows into an AI-native, self-orchestrating system.',
+}
+
+export default function EnterpriseSocPage() {
   return (
-    <div className="min-h-screen pt-32">
-      <div className="container-sirp">
-        <h1 className="text-display-lg font-medium">Enterprise SOC</h1>
-      </div>
-    </div>
+    <>
+      <EnterpriseSocHero />
+      <EnterpriseSocReality />
+      <EnterpriseSocShift />
+      <EnterpriseSocDashboard />
+      <EnterpriseSocAiNative />
+    </>
   )
 }
