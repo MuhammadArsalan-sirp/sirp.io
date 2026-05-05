@@ -1,5 +1,5 @@
 /* ─── Purple glow — sunrise effect ──────────────────────── */
-.cta-glow {
+/* .cta-glow {
   border-radius: 406%;
   background: radial-gradient(#b450ffe6 0%,
       #8e2dff99 30%,
@@ -9,6 +9,49 @@
   z-index: 1;
   filter: blur(15px);
   will-change: opacity;
+} */
+.cta-glow {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  width: 998px;
+  height: 676px;
+  transform: translateX(-50%);
+
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(40px);
+  /* Heavier blur for a massive light dome */
+  will-change: transform, opacity;
+
+  /* A 3D Dome Gradient: Lightest at the bottom-center of the glow */
+  background: radial-gradient(ellipse at 50% 100%,
+      #d69dff 0%,
+      /* The "Hot" rising core */
+      #8e2dffcc 30%,
+      /* Vibrant purple body */
+      #6414c833 60%,
+      /* Deep atmospheric fade */
+      #0000 85%);
+
+  /* The "Rise" Animation */
+  animation: purple-dome-rise 6s ease-in-out infinite alternate;
+  transform-origin: top;
+  /* Animates relative to your top: -256px position */
+}
+
+@keyframes purple-dome-rise {
+  0% {
+    opacity: 0.3;
+    transform: translateX(-50%) scale(0.8) translateY(-50px);
+    filter: blur(60px);
+  }
+
+  100% {
+    opacity: 0.8;
+    transform: translateX(-50%) scale(1.1) translateY(0);
+    filter: blur(30px);
+  }
 }
 
 /* ─── Black dome — large centered semicircle ─────────────── */

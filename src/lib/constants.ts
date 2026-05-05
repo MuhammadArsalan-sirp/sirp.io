@@ -484,75 +484,192 @@ export const SOAR_ALTERNATIVES_OPERATING_MODEL_CTA = {
 /* ─── How Autonomous SOC Works Page ──────────────────────── */
 export const HOW_AUTONOMOUS_SOC_WORKS_DATA = {
   hero: {
-    badge:         'HOW IT WORKS',
-    heading:       'How an autonomous SOC works',
+    badge: 'HOW IT WORKS',
+    heading: 'How an autonomous SOC works',
     headingItalic: '',
-    description:   'SIRP doesn\'t add automation to a broken process. It replaces the process entirely with a continuous decision system that ingests, reasons, governs, acts, and learns. In real time.',
+    description: 'SIRP doesn\'t add automation to a broken process. It replaces the process entirely with a continuous decision system that ingests, reasons, governs, acts, and learns. In real time.',
   },
   overview: {
-    heading:    'Architecture overview',
+    heading: 'Architecture overview',
     subheading: 'Six layers. One continuous loop.',
-    subtext:    'SIRP functions as a closed-loop Autonomous SOC built around six core layers. Every layer runs continuously as your environment changes.',
-    subtext2:   'Not per ticket. Not per alert. Evaluated as an evolving system state.',
-    image:      '/images/autonomous-soc/learning.png',
-    imageAlt:   'Six layers architecture overview',
+    subtext: 'SIRP functions as a closed-loop Autonomous SOC built around six core layers. Every layer runs continuously as your environment changes.',
+    subtext2: 'Not per ticket. Not per alert. Evaluated as an evolving system state.',
+    image: '/images/autonomous-soc/learning.png',
+    imageAlt: 'Six layers architecture overview',
   },
   steps: [
     {
-      number:      '01',
-      label:       'Step one',
-      title:       'Signal Ingestion',
+      number: '01',
+      label: 'Step one',
+      title: 'Signal Ingestion',
       description: 'SIRP ingests telemetry from your entire stack: Identity providers, endpoints, cloud, network, SaaS, threat intel, and your existing SIEM/EDR/XDR. Every signal is normalized into structured entities. No blind spots. No filtered snapshots.',
       images: [
         '/images/autonomous-soc/reasoning.png',
       ],
     },
     {
-      number:      '02',
-      label:       'Step two',
-      title:       'Relational Context',
+      number: '02',
+      label: 'Step two',
+      title: 'Relational Context',
       description: 'Most tools treat alerts as isolated events. Three signals, three tickets, zero connected thinking.\n\nOmniMap maps the relationships between identities, devices, workloads, access paths, and historical incidents so SIRP can estimate blast radius and detect exposure paths before a human would even think to connect them.',
       images: [
         '/images/autonomous-soc/context.png',
       ],
     },
     {
-      number:      '03',
-      label:       'Step three',
-      title:       'Risk Evaluation & Reasoning',
+      number: '03',
+      label: 'Step three',
+      title: 'Risk Evaluation & Reasoning',
       description: 'OmniSense continuously evaluates system state against behavioral baselines, threat intel, privilege levels, asset sensitivity, and OmniMap\'s relational context. For every event: a risk score, a confidence level, eligible actions, and a clear execution authorization.\n\nIt doesn\'t just flag what\'s bad. It decides what to do about it.',
       images: [
         '/images/autonomous-soc/mesh.png',
       ],
     },
     {
-      number:      '04',
-      label:       'Step four',
-      title:       'Policy Validation',
+      number: '04',
+      label: 'Step four',
+      title: 'Policy Validation',
       description: 'Autonomy without governance is just chaos with better tooling. Every decision is validated against your policies permitted actions, risk thresholds, asset constraints, escalation rules.\n\nConditions met? It acts.\n\nConditions not met? It escalates.\n\nNo ambiguity.',
       images: [
         '/images/autonomous-soc/ingestion.png',
       ],
     },
     {
-      number:      '05',
-      label:       'Step five',
-      title:       'Autonomous Execution',
+      number: '05',
+      label: 'Step five',
+      title: 'Autonomous Execution',
       description: 'This is where most platforms stop and send you a Slack message. SIRP\'s Agentic Mesh executes — endpoint isolation, identity restriction, session termination, network containment, cloud workload isolation — the moment governance and confidence conditions are met.',
       images: [
         '/images/autonomous-soc/ingestion-2.png',
       ],
     },
     {
-      number:      '06',
-      label:       'Step six',
-      title:       'Decision Memory & Learning',
+      number: '06',
+      label: 'Step six',
+      title: 'Decision Memory & Learning',
       description: 'Every decision is recorded: context, actors, actions, outcomes, analyst feedback. This memory feeds back into OmniSense, refining future risk evaluation continuously.\n\nStatic systems degrade. Learning systems compound.',
       images: [
         '/images/autonomous-soc/execution.png',
       ],
     },
   ],
+} as const
+
+/* ═══════════════════════════════════════════════════════════
+   OMNISENSE PAGE
+═══════════════════════════════════════════════════════════ */
+export const OMNISENSE_PAGE_DATA = {
+  hero: {
+    badge:         'Autonomous SOC Platform',
+    headingItalic: 'Actually',
+    heading:       'autonomous.',
+    description:   'SIRP OmniSense™ delivers a governed Autonomous SOC that continuously detects, decides, and executes response actions within defined policy boundaries. It also thinks, learns and acts at machine speed, without the noise or the burnout.',
+    ctaLabel:      'Learn more about Autonomous SOC',
+    ctaHref:       '/how-autonomous-soc-works',
+    image:         '/images/omnisense/architecture.png',
+    imageAlt:      'OmniSense architecture overview',
+  },
+  platform: {
+    badge:         'The AI-native Autonomous SOC platform',
+    heading:       'Not just smarter.',
+    headingItalic: 'Truly',
+    headingSuffix: 'autonomous.',
+    tabs: [
+      {
+        id:          'omnisense-core',
+        label:       'OmniSense Core',
+        title:       'OmniSense Core',
+        description: 'The foundation: a living mesh of autonomous security agents and the orchestrator that binds them. It\'s where reflex, reasoning, and execution converge.',
+        image:       '/images/omnisense/omnisense-core.png',
+      },
+      {
+        id:          'omnisec-llm',
+        label:       'OmniSec LLM',
+        title:       'OmniSec LLM',
+        description: 'A security-tuned large language model trained on threat intel, incident data, and SOC workflows. It powers natural-language reasoning, alert narration, and co-analyst capabilities across the platform.',
+        image:       '/images/omnisense/omnisec-llm.png',
+      },
+      {
+        id:          'omnimap-rag',
+        label:       'OmniMap + RAG',
+        title:       'OmniMap + RAG',
+        description: 'OmniMap builds a live relational graph of your environment — identities, devices, workloads, access paths. RAG grounds every decision in your organization\'s own context, history, and policies.',
+        image:       '/images/omnisense/omnimap-rag.png',
+      },
+      {
+        id:          'omniflex',
+        label:       'OmniFlex',
+        title:       'OmniFlex',
+        description: 'The integration and orchestration layer. OmniFlex connects OmniSense to your entire security stack — SIEM, EDR, SOAR, identity, cloud — and executes bi-directional actions without manual routing.',
+        image:       '/images/omnisense/omniflex.png',
+      },
+      {
+        id:          'omnicollective',
+        label:       'OmniCollective',
+        title:       'OmniCollective',
+        description: 'Collective threat intelligence that improves every OmniSense deployment. Anonymized signals from the network feed back into detection models, making every instance smarter over time.',
+        image:       '/images/omnisense/omnicollective.png',
+      },
+    ],
+  },
+  agents: {
+    heading:     'Agents in the mesh',
+    description: "OmniSense's autonomous SOC agents in the mesh accelerate alert containment, optimizing security operations with faster incident analysis, remediation, and response.",
+    items: [
+      {
+        icon:        'classification',
+        title:       'Classification Agent',
+        description: 'The Classification Agent categorizes incoming alerts based on type (e.g., phishing, malware, insider threat). This helps in efficient triaging and routing of the alerts for appropriate action.',
+      },
+      {
+        icon:        'playbook',
+        title:       'Suggest Playbook Agent',
+        description: 'The Suggest Playbook Agent proposes relevant playbooks to follow based on the nature of the incident. It helps in ensuring that the right procedures are applied, aligning actions with pre-configured, best-practice response procedures.',
+      },
+      {
+        icon:        'assign',
+        title:       'Assign Analyst Agent',
+        description: 'The Assign Analyst Agent automatically assigns alerts to available analysts based on their expertise and workload. This optimizes resource allocation, ensuring that the right person handles the right incident.',
+      },
+      {
+        icon:        'header',
+        title:       'Header Analysis Agent',
+        description: 'Analysis email headers to detect spoofing, relay abuse, sender mismatches and anomalous routing, enhancing phishing detection, sender trust scoring and automated triage.',
+      },
+      {
+        icon:        'preprocessor',
+        title:       'Pre Processor Agent',
+        description: 'Processes and normalizes raw alerts by extracting key entities and context for downstream triage and enrichment.',
+      },
+      {
+        icon:        'enrichment',
+        title:       'Enrichment Agent',
+        description: 'The Enrichment Agent gathers external threat intelligence, asset data, and historical context to add depth to incoming alerts. It ensures that each alert is enriched with relevant details for better analysis and decision-making.',
+      },
+      {
+        icon:        'analysis',
+        title:       'Analysis Agent',
+        description: 'The Analysis Agent analyzes alerts to identify patterns, behaviors, and trends. It examines alert data and context, highlighting anomalous activities and key indicators, aiding the analyst in setting to quicker threat detection.',
+      },
+      {
+        icon:        'remediation',
+        title:       'Remediation Agent',
+        description: 'The Remediation Agent executes containment actions, such as isolating endpoints or blocking IPs, to automate remediation, ensuring swift and consistent incident response.',
+      },
+      {
+        icon:        'actions',
+        title:       'Suggested Actions Agent',
+        description: 'The Suggested Actions Agent proposes targeted response steps based on alert context and severity, providing analysts with timely and appropriate responses to threats.',
+      },
+    ],
+  },
+  action: {
+    heading: 'See Autonomous SOC in Action',
+    description: 'Watch how SIRP ingests a live alert, constructs relational context, computes risk, enforces policy boundaries, and executes containment actions autonomously — without manual routing or workflow delays.',
+    note1: 'This is not playbook automation.',
+    note2: 'This is governed decision execution.',
+    videoId: 'VIeVs8nbM6U',
+  },
 } as const
 
 /* ─── SOAR vs Autonomous SOC page ───────────────────────── */
