@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { PurplePill } from '@/components/global/PurplePill'
+import { PurplePill } from '@/components/shared/PurplePill'
 import { SITE_URL } from '@/lib/constants'
 import './ManifestoCitationSection.css'
 

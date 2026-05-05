@@ -1,4 +1,4 @@
-import { PurplePill } from '@/components/global/PurplePill'
+import { PurplePill } from '@/components/shared/PurplePill'
 import './ManifestoAboutAuthorSection.css'
 
 export function ManifestoAboutAuthorSection() {

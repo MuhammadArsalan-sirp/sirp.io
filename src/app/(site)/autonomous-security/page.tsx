@@ -1,6 +1,6 @@
 import { PageHeader } from '@/components/layout/PageHeader'
-import { InfoCtaBlock } from '@/components/global/InfoCtaBlock'
-import { SplitInfoCtaImage } from '@/components/global/SplitInfoCtaImage'
+import { InfoCtaBlock } from '@/components/shared/InfoCtaBlock'
+import { SplitInfoCtaImage } from '@/components/shared/SplitInfoCtaImage'
 
 export default function Page() {
   return (

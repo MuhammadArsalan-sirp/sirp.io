@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import { HowItWorksHero }     from '@/components/pages/how-autonomous-soc-works/HowItWorksHero'
-import { HowItWorksOverview } from '@/components/pages/how-autonomous-soc-works/HowItWorksOverview'
-import { HowItWorksSteps }    from '@/components/pages/how-autonomous-soc-works/HowItWorksSteps'
-import { HowItWorksVideo }    from '@/components/pages/how-autonomous-soc-works/HowItWorksVideo'
-import { CtaSection }         from '@/components/home/CtaSection'
+import { HowItWorksHero }     from '@/sections/how-autonomous-soc-works/HowItWorksHero'
+import { HowItWorksOverview } from '@/sections/how-autonomous-soc-works/HowItWorksOverview'
+import { HowItWorksSteps }    from '@/sections/how-autonomous-soc-works/HowItWorksSteps'
+import { HowItWorksVideo }    from '@/sections/how-autonomous-soc-works/HowItWorksVideo'
+import { CtaSection }         from '@/sections/home/CtaSection'
 import { HOW_AUTONOMOUS_SOC_WORKS_DATA, CTA_DATA } from '@/lib/constants'
 
 export const metadata: Metadata = {

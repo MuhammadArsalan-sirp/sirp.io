@@ -1,11 +1,11 @@
-import { HeroSection } from '@/components/home/HeroSection'
-import { StatsSection } from '@/components/home/StatsSection'
-import { AutonomousSection } from '@/components/home/AutonomousSection'
-import { FeaturesSection } from '@/components/home/FeaturesSection'
-import { IntelligenceSection } from '@/components/home/IntelligenceSection'
-import { SaraSection } from '@/components/home/SaraSection'
-import { IntegrationsSection } from '@/components/home/IntegrationsSection'
-import { CtaSection } from '@/components/home/CtaSection'
+import { HeroSection } from '@/sections/home/HeroSection'
+import { StatsSection } from '@/sections/home/StatsSection'
+import { AutonomousSection } from '@/sections/home/AutonomousSection'
+import { FeaturesSection } from '@/sections/home/FeaturesSection'
+import { IntelligenceSection } from '@/sections/home/IntelligenceSection'
+import { SaraSection } from '@/sections/home/SaraSection'
+import { IntegrationsSection } from '@/sections/home/IntegrationsSection'
+import { CtaSection } from '@/sections/home/CtaSection'
 import {
   HERO_DATA,
   STATS_DATA,

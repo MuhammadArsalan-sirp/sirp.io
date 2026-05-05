@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { InfoCtaBlock } from '@/components/global/InfoCtaBlock'
+import { InfoCtaBlock } from '@/components/shared/InfoCtaBlock'
 import { PageHeader } from '@/components/layout/PageHeader'
-import { SplitInfoCtaImage } from '@/components/global/SplitInfoCtaImage'
-import { AutonomousSocBenefitsSection } from '@/components/global/AutonomousSocBenefitsSection'
-import { AutonomousSocComparisonSection } from '@/components/global/AutonomousSocComparisonSection'
+import { SplitInfoCtaImage } from '@/components/shared/SplitInfoCtaImage'
+import { AutonomousSocBenefitsSection } from '@/components/shared/AutonomousSocBenefitsSection'
+import { AutonomousSocComparisonSection } from '@/components/shared/AutonomousSocComparisonSection'
 import {
   SOAR_VS_ARCHITECTURAL_DIFFERENCE,
   SOAR_VS_COMPARISON_TABLE,

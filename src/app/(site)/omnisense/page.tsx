@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
-import { OmnisenseHero } from '@/components/pages/omnisense/OmnisenseHero'
-import { OmnisensePlatform } from '@/components/pages/omnisense/OmnisensePlatform'
-import { OmnisenseAgents } from '@/components/pages/omnisense/OmnisenseAgents'
-import { OmnisenseAction } from '@/components/pages/omnisense/OmnisenseAction'
-import { IntegrationsSection } from '@/components/home/IntegrationsSection'
-import { CtaSection } from '@/components/home/CtaSection'
+import { OmnisenseHero } from '@/sections/omnisense/OmnisenseHero'
+import { OmnisensePlatform } from '@/sections/omnisense/OmnisensePlatform'
+import { OmnisenseAgents } from '@/sections/omnisense/OmnisenseAgents'
+import { OmnisenseAction } from '@/sections/omnisense/OmnisenseAction'
+import { IntegrationsSection } from '@/sections/home/IntegrationsSection'
+import { CtaSection } from '@/sections/home/CtaSection'
 import { OMNISENSE_PAGE_DATA, INTEGRATIONS_DATA, CTA_DATA } from '@/lib/constants'
 
 export const metadata: Metadata = {
