@@ -3,6 +3,7 @@ import { EnterpriseSocReality } from '@/sections/enterprise-soc/EnterpriseSocRea
 import { EnterpriseSocShift } from '@/sections/enterprise-soc/EnterpriseSocShift'
 import { EnterpriseSocDashboard } from '@/sections/enterprise-soc/EnterpriseSocDashboard'
 import { EnterpriseSocAiNative } from '@/sections/enterprise-soc/EnterpriseSocAiNative'
+import { EnterpriseSocThreat } from '@/sections/enterprise-soc/EnterpriseSocThreat'
 
 export const metadata = {
   title: 'Enterprise SOC | SIRP',
@@ -18,6 +19,7 @@ export default function EnterpriseSocPage() {
       <EnterpriseSocShift />
       <EnterpriseSocDashboard />
       <EnterpriseSocAiNative />
+      <EnterpriseSocThreat />
     </>
   )
 }

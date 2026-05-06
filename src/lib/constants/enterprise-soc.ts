@@ -116,6 +116,24 @@ export const ENTERPRISE_SOC_DASHBOARD = {
   ],
 } as const
 
+export const ENTERPRISE_SOC_THREAT = {
+  heading: 'What happens when threat appears',
+  steps: [
+    { id: 'alerts',      icon: 'bargraph', label: 'Alerts are correlated' },
+    { id: 'context',     icon: 'search',   label: 'Context is assembled' },
+    { id: 'confidence',  icon: 'quater',   label: 'Confidence is calculated' },
+    { id: 'containment', icon: 'current',  label: 'Containment is executed' },
+    { id: 'response',    icon: 'download', label: 'Response happens at machine speed.' },
+  ],
+  cta: {
+    badge: 'This is Not Assistance. This is Autonomy.',
+    headingItalic: 'Enterprise SOC transformation',
+    headingSuffix: ' is an operating decision.',
+    subtext: 'Autonomous security delivers the speed, control, and consistency that decision requires.',
+    btn: { label: 'Transform your SOC', href: '/contact' },
+  },
+} as const
+
 export const ENTERPRISE_SOC_AI_NATIVE = {
   heading: 'See what an AI-native SOC feels like',
   subtext: 'Not a slide deck. Not a feature tour. An actual operating system in motion.',
