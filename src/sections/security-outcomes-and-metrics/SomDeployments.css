@@ -1,0 +1,250 @@
+/* ─── Section badge ───────────────────────────────────────── */
+.deploy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-inter, sans-serif);
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+  padding: 5px 14px;
+  border-radius: 5px;
+  border: 0.75px solid rgb(142, 45, 255);
+  background-color: rgba(142, 45, 255, 0.25);
+}
+
+/* ─── Card ────────────────────────────────────────────────── */
+.deploy-card {
+  background: rgb(18, 18, 24);
+  border: 1px solid rgb(58, 58, 77);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Card header ─────────────────────────────────────────── */
+.deploy-card-header {
+  position: relative;
+  padding: 36px 32px 28px;
+  overflow: hidden;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Multi-layer teal glow (saas card) */
+.deploy-glow-teal {
+  position: absolute;
+  top: 110px;
+  left: -9px;
+  width: 588px;
+  height: 372px;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.deploy-glow-teal__l1 {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 294px);
+  width: 588px;
+  height: 372px;
+  border-radius: 100%;
+  background: linear-gradient(#13a3ad00 0%, #13a3ad 100%);
+  filter: blur(47.5px);
+}
+
+.deploy-glow-teal__l2 {
+  position: absolute;
+  top: 25px;
+  left: calc(50% - 126px);
+  width: 252px;
+  height: 322px;
+  border-radius: 100%;
+  background-color: #7fd2d8;
+  filter: blur(25px);
+}
+
+.deploy-glow-teal__l3 {
+  position: absolute;
+  top: 53px;
+  left: calc(50% - 126px);
+  width: 252px;
+  height: 266px;
+  border-radius: 100%;
+  background-color: #fff;
+  filter: blur(10px);
+}
+
+/* Multi-layer purple glow (fintech card) */
+.deploy-glow-purple {
+  position: absolute;
+  top: 110px;
+  left: -9px;
+  width: 588px;
+  height: 372px;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.deploy-glow-purple__l1 {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 294px);
+  width: 588px;
+  height: 372px;
+  border-radius: 100%;
+  background: linear-gradient(#8e2dff00 0%, #8e2dff 100%);
+  filter: blur(47.5px);
+}
+
+.deploy-glow-purple__l2 {
+  position: absolute;
+  top: 25px;
+  left: calc(50% - 126px);
+  width: 252px;
+  height: 322px;
+  border-radius: 100%;
+  background-color: #b889ff;
+  filter: blur(25px);
+}
+
+.deploy-glow-purple__l3 {
+  position: absolute;
+  top: 53px;
+  left: calc(50% - 126px);
+  width: 252px;
+  height: 266px;
+  border-radius: 100%;
+  background-color: #fff;
+  filter: blur(10px);
+}
+
+/* Logo row */
+.deploy-logo-row {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.deploy-logo {
+  object-fit: contain;
+  object-position: left center;
+}
+
+.deploy-logo-pill {
+  width: 36px;
+  height: 60px;
+  background-image: url('/images/whitepill.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.deploy-pill-plus {
+  font-family: var(--font-inter, sans-serif);
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1;
+  user-select: none;
+}
+
+.deploy-company {
+  font-family: var(--font-inter, sans-serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* ─── Card body ───────────────────────────────────────────── */
+.deploy-card-body {
+  padding: 24px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ─── Tags ────────────────────────────────────────────────── */
+.deploy-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.deploy-tag {
+  font-family: var(--font-inter, sans-serif);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ─── Divider ─────────────────────────────────────────────── */
+.deploy-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ─── Before / After ──────────────────────────────────────── */
+.deploy-before-after {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* ─── Labels ──────────────────────────────────────────────── */
+.deploy-label {
+  display: block;
+  font-family: var(--font-inter, sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+}
+
+.deploy-label--before  { color: rgb(255, 196, 144); }
+.deploy-label--after   { color: rgb(184, 137, 255); }
+.deploy-label--results { color: rgb(146, 248, 192); }
+.deploy-label--quote   { color: rgb(127, 210, 216); }
+
+/* ─── Text ────────────────────────────────────────────────── */
+.deploy-text {
+  font-family: var(--font-inter, sans-serif);
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.deploy-text.mt-3 { margin-top: 0; }
+
+/* ─── Quote box ───────────────────────────────────────────── */
+.deploy-quote-box {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px 24px;
+}
+
+.deploy-quote-text {
+  font-family: var(--font-inter, sans-serif);
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.65;
+  margin-top: 6px;
+}

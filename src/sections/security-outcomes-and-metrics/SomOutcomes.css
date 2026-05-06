@@ -1,0 +1,148 @@
+/* ─── Card wrapper ────────────────────────────────────────── */
+.outcomes-card {
+  background: #121218;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* ─── Body (left text + right image) ─────────────────────── */
+.outcomes-body {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  min-height: 580px;
+}
+
+.outcomes-text {
+  padding: 64px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ─── Badge ───────────────────────────────────────────────── */
+.outcomes-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-inter, sans-serif);
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+  padding: 5px 14px;
+  border-radius: 5px;
+  border: 0.75px solid rgb(142, 45, 255);
+  background-color: rgba(142, 45, 255, 0.25);
+  margin-top: 16px;
+  margin-bottom: 24px;
+  width: fit-content;
+}
+
+/* ─── Title ───────────────────────────────────────────────── */
+.outcomes-title {
+  font-family: var(--font-inter, sans-serif);
+  font-size: 42px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  line-height: 120%;
+  margin-bottom: 24px;
+}
+
+/* ─── Paragraphs ──────────────────────────────────────────── */
+.outcomes-paras {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.outcomes-para {
+  font-family: var(--font-inter, sans-serif);
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+}
+
+/* ─── Image area ──────────────────────────────────────────── */
+.outcomes-image-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.outcomes-image-inner {
+  position: absolute;
+  inset: 0;
+}
+
+/* ─── Tab bar ─────────────────────────────────────────────── */
+.outcomes-tabs {
+  display: flex;
+  flex-flow: row;
+  flex: none;
+  place-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  height: min-content;
+  padding: 16px 20px;
+  position: relative;
+  overflow: visible;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.outcomes-tab {
+  flex: 1;
+  padding: 5px 20px;
+  font-family: var(--font-inter, sans-serif);
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgb(24, 24, 33);
+  border: 1px solid rgb(89, 89, 104);
+  border-radius: 4px;
+  opacity: 0.9;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.2s, background 0.2s, border-color 0.2s, opacity 0.2s;
+  line-height: 1.4;
+}
+
+.outcomes-tab:hover {
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 1;
+}
+
+.outcomes-tab--active {
+  background-color: rgb(142, 45, 255);
+  border: 1px solid rgb(142, 45, 255);
+  border-radius: 4px;
+  color: #ffffff;
+  opacity: 1;
+}
+
+.outcomes-tab--active:hover {
+  background-color: #a855f7;
+  border-color: #a855f7;
+  color: #ffffff;
+}
+
+/* ─── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .outcomes-body {
+    grid-template-columns: 1fr;
+  }
+
+  .outcomes-text {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 36px 28px;
+  }
+
+  .outcomes-image-wrap {
+    min-height: 280px;
+  }
+
+  .outcomes-tabs {
+    flex-wrap: wrap;
+  }
+}
