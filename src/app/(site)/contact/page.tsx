@@ -1,6 +1,6 @@
 'use client'
 
-import { FormEvent, useState } from 'react'
+import { FormEvent, useEffect, useState } from 'react'
 import './page.css'
 import { PurplePill } from '@/components/shared/PurplePill'
 
@@ -204,11 +204,24 @@ const COUNTRY_OPTIONS = [
   'Zimbabwe',
 ] as const
 
+const CONTACT_SUBMITTED_STORAGE_KEY = 'sirp_contact_submitted'
+
 export default function Page() {
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitStateReady, setIsSubmitStateReady] = useState(false)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const submitted = window.localStorage.getItem(CONTACT_SUBMITTED_STORAGE_KEY)
+    setIsSubmitted(submitted === 'true')
+    setIsSubmitStateReady(true)
+  }, [])
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem(CONTACT_SUBMITTED_STORAGE_KEY, 'true')
+    }
     setIsSubmitted(true)
   }
 
@@ -226,7 +239,9 @@ export default function Page() {
             </p>
           </div>
 
-          {isSubmitted ? (
+          {!isSubmitStateReady ? (
+            <div className="contact-form-card contact-form-card--loading" aria-hidden="true" />
+          ) : isSubmitted ? (
             <div className="contact-form-card contact-inline-message" role="status" aria-live="polite">
               <h2>You&rsquo;re In. Welcome to Actually Autonomous.</h2>
               <p>
