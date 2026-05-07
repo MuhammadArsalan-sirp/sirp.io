@@ -75,6 +75,7 @@ export default function Page() {
     />
 
       <SplitInfoCtaImage
+        animateOnScroll
         bodyFontSize="18"
         heading={<span className="traditional-models-heading">{whatIsSoar.heading}</span>}
         body={
@@ -94,6 +95,7 @@ export default function Page() {
       />
 
       <SplitInfoCtaImage
+        animateOnScroll
         bodyFontSize="18"
         imageLeft
         heading={
@@ -123,6 +125,7 @@ export default function Page() {
       <AutonomousSocComparisonSection data={SOAR_VS_COMPARISON_TABLE} variant="soarComparison" />
 
       <SplitInfoCtaImage
+        animateOnScroll
         heading={
           <span className="traditional-models-heading">{whenSoarSufficient.heading}</span>
         }
@@ -142,6 +145,7 @@ export default function Page() {
       />
 
       <SplitInfoCtaImage
+        animateOnScroll
         imageLeft
         heading={
           <span className="traditional-models-heading">{whenAutonomousSocNeeded.heading}</span>
@@ -162,6 +166,7 @@ export default function Page() {
       />
 
       <SplitInfoCtaImage
+        animateOnScroll
         heading={<span className="traditional-models-heading">{nextGenSoar.heading}</span>}
         body={
           <div className="split-info-body-relaxed-paragraphs">
