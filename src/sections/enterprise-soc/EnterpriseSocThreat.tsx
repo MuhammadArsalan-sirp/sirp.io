@@ -71,33 +71,22 @@ export function EnterpriseSocThreat() {
       {/* ── CTA dome area ── */}
       <div className="relative flex flex-col items-center min-h-[700px] pb-20">
 
-        {/* SVG dome layers */}
+        {/* Dome layers */}
         <div className="threat-dome-layers" aria-hidden="true">
+          <div className="threat-cta-glow" />
+          <div className="threat-cta-dome" />
+        </div>
 
-          {/* Purple glow — orb centered at dome apex, bleeds upward only */}
-          <motion.div
-            animate={{ opacity: [0.55, 1.85, 2.55] }}
-            transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-            style={{
-              position: 'absolute',
-              bottom: '430px',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              width: '700px',
-              height: '200px',
-              borderRadius: '100%',
-              background: 'rgb(142,45,255)',
-              filter: 'blur(65px)',
-            }}
+        {/* White outline arc */}
+        <div className="threat-cta-dome-outline">
+          <Image
+            src="/images/whiteoutlinedom.svg"
+            alt=""
+            width={859}
+            height={217}
+            unoptimized
+            style={{ width: '100%', height: 'auto', display: 'block' }}
           />
-
-          {/* Main dark dome — sits on top, glow bleeds around its edges */}
-          <div style={{ position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)' }}>
-            <svg viewBox="0 0 1064 532" width="1064" height="532" overflow="visible" xmlns="http://www.w3.org/2000/svg">
-              <path d="M 532 0 C 238.185 0 0 238.184 0 532 L 1064 532 C 1064 238.185 825.816 0 532 0 Z" fill="rgb(18,18,24)" />
-            </svg>
-          </div>
-
         </div>
 
         {/* Content */}

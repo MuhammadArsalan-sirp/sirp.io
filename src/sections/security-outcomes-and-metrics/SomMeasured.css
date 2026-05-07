@@ -1,0 +1,64 @@
+/* ─── Card ────────────────────────────────────────────────── */
+.som-measured-card {
+  background-color: rgb(18, 18, 24);
+  border: 1px solid rgb(58, 58, 77);
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  width: 100%;
+}
+
+/* ─── Pill icon — same as SomWhy ──────────────────────────── */
+.som-measured-pill {
+  width: 46px;
+  height: 90px;
+  border-radius: 999px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.som-measured-pill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/enterprise-soc/purple-rounded.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: inherit;
+  filter: drop-shadow(0 0 6px rgba(180, 100, 255, 0.5));
+  pointer-events: none;
+}
+
+/* ─── Value (bold title) ──────────────────────────────────── */
+.som-measured-value {
+  font-family: var(--font-inter, sans-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+/* ─── Label (description) ─────────────────────────────────── */
+.som-measured-label {
+  font-family: var(--font-inter, sans-serif);
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
+}
+
+/* ─── Footer note ─────────────────────────────────────────── */
+.som-measured-excluded {
+  font-family: var(--font-inter, sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin-top: 32px;
+}
