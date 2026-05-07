@@ -46,6 +46,7 @@ export default function Page() {
 
       <SplitInfoCtaImage
         topShade
+        animateOnScroll
         heading={
           <span className="traditional-models-heading">
             {traditionalModels.heading.line1}
