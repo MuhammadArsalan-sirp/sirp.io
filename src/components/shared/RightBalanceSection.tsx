@@ -40,8 +40,8 @@ export function RightBalanceSection({ data }: RightBalanceSectionProps) {
       <div className="container-sirp">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="max-w-[620px]"
@@ -94,10 +94,10 @@ export function RightBalanceSection({ data }: RightBalanceSectionProps) {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.08 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="relative mx-auto w-full max-w-[700px]"
           >
             <Image

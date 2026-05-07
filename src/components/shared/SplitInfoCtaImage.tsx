@@ -1,3 +1,6 @@
+'use client'
+
+import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
@@ -27,6 +30,8 @@ export type SplitInfoCtaImageProps = {
   imageLeft?: boolean
   /** Body copy size in the text column (default matches ~1.02rem elsewhere). */
   bodyFontSize?: 'default' | '18'
+  /** Enables reveal-on-scroll animation for text and image columns. */
+  animateOnScroll?: boolean
 }
 
 export function SplitInfoCtaImage({
@@ -40,6 +45,7 @@ export function SplitInfoCtaImage({
   imageObjectFit = 'cover',
   imageLeft = false,
   bodyFontSize = 'default',
+  animateOnScroll = false,
 }: SplitInfoCtaImageProps) {
   const composedSectionClassName = cn(
     topShade ? 'split-info-cta-image split-info-cta-image--top-shade' : 'split-info-cta-image',
@@ -54,29 +60,70 @@ export function SplitInfoCtaImage({
   return (
     <section className={composedSectionClassName}>
       <div className={`container-sirp ${innerClassName}`}>
-        <div className="split-left">
-          <h2 className="info-cta-heading">{heading}</h2>
-          <div className="info-cta-body split-left-body">{body}</div>
-          {button && (
-            <div className="info-cta-button-row">
-              <Button href={button.href}>{button.label}</Button>
-            </div>
-          )}
-        </div>
-
-        <div className="split-right" aria-hidden="true">
-          <div className="split-image-wrap">
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              className={
-                imageObjectFit === 'contain' ? 'split-image split-image--contain' : 'split-image'
-              }
-              unoptimized
-            />
+        {animateOnScroll ? (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.45 }}
+            className="split-left"
+          >
+            <h2 className="info-cta-heading">{heading}</h2>
+            <div className="info-cta-body split-left-body">{body}</div>
+            {button && (
+              <div className="info-cta-button-row">
+                <Button href={button.href}>{button.label}</Button>
+              </div>
+            )}
+          </motion.div>
+        ) : (
+          <div className="split-left">
+            <h2 className="info-cta-heading">{heading}</h2>
+            <div className="info-cta-body split-left-body">{body}</div>
+            {button && (
+              <div className="info-cta-button-row">
+                <Button href={button.href}>{button.label}</Button>
+              </div>
+            )}
           </div>
-        </div>
+        )}
+
+        {animateOnScroll ? (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.45, delay: 0.06 }}
+            className="split-right"
+            aria-hidden="true"
+          >
+            <div className="split-image-wrap">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className={
+                  imageObjectFit === 'contain' ? 'split-image split-image--contain' : 'split-image'
+                }
+                unoptimized
+              />
+            </div>
+          </motion.div>
+        ) : (
+          <div className="split-right" aria-hidden="true">
+            <div className="split-image-wrap">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className={
+                  imageObjectFit === 'contain' ? 'split-image split-image--contain' : 'split-image'
+                }
+                unoptimized
+              />
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )

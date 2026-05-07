@@ -5,7 +5,10 @@ import { AutonomousSocBenefitsSection } from '@/components/shared/AutonomousSocB
 import { RightBalanceSection } from '@/components/shared/RightBalanceSection'
 import { AutonomousSocSafetySection } from '@/components/shared/AutonomousSocSafetySection'
 import { AutonomousSocComparisonSection } from '@/components/shared/AutonomousSocComparisonSection'
+import { CtaSection } from '@/sections/home/CtaSection'
+import './page.css'
 import {
+  CTA_DATA,
   WHAT_IS_AUTONOMOUS_SOC_BENEFITS,
   WHAT_IS_AUTONOMOUS_SOC_COMPARISON,
   WHAT_IS_AUTONOMOUS_SOC_HEADER,
@@ -46,6 +49,7 @@ export default function Page() {
 
       <SplitInfoCtaImage
         topShade
+        animateOnScroll
         heading={
           <span className="traditional-models-heading">
             {traditionalModels.heading.line1}
@@ -86,6 +90,9 @@ export default function Page() {
       <RightBalanceSection data={rightBalance} />
       <AutonomousSocSafetySection data={safety} />
       <AutonomousSocComparisonSection data={comparison} />
+      <div className="what-is-autonomous-soc-cta-wrap">
+        <CtaSection data={CTA_DATA} />
+      </div>
     </>
   )
 }
