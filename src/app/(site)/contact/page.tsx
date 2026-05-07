@@ -1,6 +1,6 @@
 'use client'
 
-import { FormEvent, useEffect, useState } from 'react'
+import { FormEvent, useEffect, useRef, useState } from 'react'
 import './page.css'
 import { PurplePill } from '@/components/shared/PurplePill'
 
@@ -206,6 +206,72 @@ const COUNTRY_OPTIONS = [
 
 const CONTACT_SUBMITTED_STORAGE_KEY = 'sirp_contact_submitted'
 
+type SelectOption = {
+  label: string
+  value: string
+}
+
+function ContactCustomSelect({
+  name,
+  options,
+  placeholder = 'Please Select',
+}: {
+  name: string
+  options: readonly SelectOption[]
+  placeholder?: string
+}) {
+  const [open, setOpen] = useState(false)
+  const [value, setValue] = useState('')
+  const rootRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const onPointerDown = (event: MouseEvent) => {
+      if (!rootRef.current?.contains(event.target as Node)) {
+        setOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', onPointerDown)
+    return () => document.removeEventListener('mousedown', onPointerDown)
+  }, [])
+
+  const selected = options.find((option) => option.value === value)
+
+  return (
+    <div className="contact-custom-select" ref={rootRef}>
+      <input type="hidden" name={name} value={value} />
+      <button
+        type="button"
+        className="contact-custom-select-trigger"
+        onClick={() => setOpen((prev) => !prev)}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+      >
+        <span className={selected ? '' : 'contact-custom-select-placeholder'}>
+          {selected?.label ?? placeholder}
+        </span>
+      </button>
+      {open ? (
+        <ul className="contact-custom-select-menu" role="listbox">
+          {options.map((option) => (
+            <li key={option.value}>
+              <button
+                type="button"
+                className="contact-custom-select-option"
+                onClick={() => {
+                  setValue(option.value)
+                  setOpen(false)
+                }}
+              >
+                {option.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+      ) : null}
+    </div>
+  )
+}
+
 export default function Page() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isSubmitStateReady, setIsSubmitStateReady] = useState(false)
@@ -300,28 +366,25 @@ export default function Page() {
                 </label>
                 <label className="contact-field">
                   <span>Company size*</span>
-                  <select name="companySize" defaultValue="">
-                    <option value="" disabled>
-                      Please Select
-                    </option>
-                    <option value="<500">&lt;500</option>
-                    <option value=">500">&gt;500</option>
-                  </select>
+                  <ContactCustomSelect
+                    name="companySize"
+                    options={[
+                      { label: '<500', value: '<500' },
+                      { label: '>500', value: '>500' },
+                    ]}
+                  />
                 </label>
               </div>
 
               <label className="contact-field contact-field-full">
                 <span>Country / Region*</span>
-                <select name="countryRegion" defaultValue="">
-                  <option value="" disabled>
-                    Please Select
-                  </option>
-                  {COUNTRY_OPTIONS.map((country) => (
-                    <option key={country} value={country}>
-                      {country}
-                    </option>
-                  ))}
-                </select>
+                <ContactCustomSelect
+                  name="countryRegion"
+                  options={COUNTRY_OPTIONS.map((country) => ({
+                    label: country,
+                    value: country,
+                  }))}
+                />
               </label>
 
               <label className="contact-field contact-field-full">
