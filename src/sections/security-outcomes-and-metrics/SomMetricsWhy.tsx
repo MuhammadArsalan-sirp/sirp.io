@@ -32,7 +32,7 @@ export function SomMetricsWhy() {
               fontFamily: 'var(--font-inter, sans-serif)',
               fontSize: '20px',
               fontWeight: 600,
-              color: 'rgba(255,255,255,0.75)',
+              color: '#ffffff',
               whiteSpace: 'nowrap',
             }}
           >

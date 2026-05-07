@@ -85,7 +85,7 @@ export function SomHero() {
             fontFamily: 'var(--font-sans)',
             fontSize: '17px',
             lineHeight: '1.65',
-            color: 'rgba(255,255,255,0.65)',
+            color: '#ffffff',
             maxWidth: '500px',
           }}
         >

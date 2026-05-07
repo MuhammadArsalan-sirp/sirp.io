@@ -59,7 +59,7 @@ export function SomCta() {
               fontFamily: 'var(--font-inter, sans-serif)',
               fontSize: '20px',
               fontWeight: 500,
-              color: 'rgba(255,255,255,0.75)',
+              color: '#ffffff',
               maxWidth: '520px',
               lineHeight: '1.6',
             }}
