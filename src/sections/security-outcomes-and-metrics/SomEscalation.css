@@ -1,0 +1,130 @@
+/* ─── Layout ──────────────────────────────────────────────── */
+.som-esc-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ─── Left text column ────────────────────────────────────── */
+.som-esc-text {
+  display: flex;
+  flex-flow: column;
+  flex: none;
+  place-content: flex-start;
+  align-items: flex-start;
+  gap: 60px;
+  width: 522px;
+  height: min-content;
+  position: relative;
+  overflow: visible;
+}
+
+/* ─── Heading ─────────────────────────────────────────────── */
+.som-esc-heading {
+  font-family: var(--font-inter, sans-serif);
+  font-size: 42px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 110%;
+}
+
+/* ─── Escalation block ────────────────────────────────────── */
+.som-esc-escalation {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+/* ─── Escalation label ────────────────────────────────────── */
+.som-esc-label {
+  font-family: var(--font-inter, sans-serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* ─── Bullet list ─────────────────────────────────────────── */
+.som-esc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.som-esc-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-inter, sans-serif);
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+}
+
+/* Purple check badge */
+.som-esc-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background-color: rgb(142, 45, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.som-esc-check svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ─── Stats + summary block ───────────────────────────────── */
+.som-esc-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+/* ─── Stats ───────────────────────────────────────────────── */
+.som-esc-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.som-esc-stat {
+  font-family: var(--font-inter, sans-serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* ─── Summary ─────────────────────────────────────────────── */
+.som-esc-summary {
+  font-family: var(--font-inter, sans-serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* ─── Image ───────────────────────────────────────────────── */
+.som-esc-image-wrap {
+  position: relative;
+  width: 100%;
+}
+
+/* ─── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .som-esc-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .som-esc-heading {
+    font-size: 36px;
+  }
+}

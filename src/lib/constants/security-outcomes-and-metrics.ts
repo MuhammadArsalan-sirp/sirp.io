@@ -162,17 +162,20 @@ export const SOM_WHY = {
     {
       id: 'traditional',
       title: 'Traditional SOC',
+      icon: 'bargraph' as const,
       body: 'Decisions happen in meetings and tickets. Execution waits for humans. Speed is limited by availability. Cost scales with volume.',
     },
     {
       id: 'autonomous',
       title: 'Autonomous SOC',
+      icon: 'shine' as const,
       body: 'Decisions happen in-system. Execution happens at decision time. Speed is limited by compute. Cost is decoupled from volume.',
     },
     {
       id: 'difference',
-      title: 'The key difference: decision moment',
-      body: 'Workflow automation accelerates human work. Autonomous execution eliminates humans from the execution pipeline entirely — creating cascading outcome improvements.',
+      title: 'The key difference: decision placement',
+      icon: 'quater' as const,
+      body: "Workflow automation makes humans faster. Autonomous execution removes humans from the execution path entirely. That's why the outcomes cascade.",
     },
   ],
 } as const
@@ -196,38 +199,42 @@ export const SOM_SYSTEM = {
 
 export const SOM_MEASURED = {
   label: 'How we measured this:',
+  excluded: 'Excluded: Test incidents, training data, simulations, deployment phase, cases requiring human judgment',
   items: [
     {
       id: 'scope',
       value: '3 enterprise SOCs',
-      label: 'Fintech, SaaS, and healthcare',
-      icon: 'search' as const,
+      label: 'Fintech, SaaS, and healthcare.',
+      icon: 'bargraph' as const,
     },
     {
       id: 'window',
       value: '90-day window',
-      label: 'Post-stabilization (excludes tuning & pilots)',
-      icon: 'current' as const,
+      label: '90-day window post-stabilization (excludes tuning and pilots).',
+      icon: 'shine' as const,
     },
     {
       id: 'alerts',
       value: 'Millions of alerts',
-      label: 'Across EDR, cloud, identity, SaaS, endpoint',
-      icon: 'bargraph' as const,
+      label: 'Millions of alerts across EDR, cloud, identity, SaaS, endpoint.',
+      icon: 'current' as const,
     },
     {
       id: 'chain',
       value: 'Full chain measured',
       label: 'Detection → triage → decision → containment',
-      icon: 'download' as const,
+      icon: 'current' as const,
     },
   ],
 } as const
 
 export const SOM_VENN = {
   heading: 'What this means for your SOC',
-  body: 'When your SOC depends on human availability and shift coverage, performance caps at analyst speed and hiring limits. Policy-bound system execution delivers predictable response speed, flat costs, consistent quality, and infrastructure-scaled volume capacity.',
-  conclusion: 'The operating model changes. The outcomes follow.',
+  paragraphs: [
+    'If your SOC depends on human availability, tickets, and shift coverage, your performance is capped by how fast analysts work and how many you can hire.',
+    'When decisions are policy-bound and system-executed, response speed becomes predictable, cost becomes flat, quality becomes consistent, and scale becomes an infrastructure question.',
+    'The operating model changes. The outcomes follow.',
+  ],
 } as const
 
 export const SOM_CTA = {

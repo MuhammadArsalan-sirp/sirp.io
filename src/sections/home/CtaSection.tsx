@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import Link from 'next/link'
 import { CTA_DATA } from '@/lib/constants'
 import './CtaSection.css'
@@ -31,22 +32,22 @@ export function CtaSection({ data = CTA_DATA }: CtaSectionProps) {
       <div className="relative flex flex-col items-center justify-center min-h-[500px] pt-20 pb-36">
 
         {/* Purple glow */}
-        <motion.div
-          className="cta-glow"
-          style={{
-            position: 'absolute',
-            top: '-171px',
-            left: '50%',
-            x: '-50%',
-            width: '900px',
-            height: '662px',
-          }}
-          animate={{ opacity: [0.6, 1, 0.8, 1, 0.6] }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-        />
+        <div className="cta-glow" />
 
         {/* Black dome */}
         <div className="cta-dome" />
+
+        {/* White outline arc */}
+        <div className="cta-dome-outline">
+          <Image
+            src="/images/whiteoutlinedom.svg"
+            alt=""
+            width={859}
+            height={217}
+            unoptimized
+            style={{ width: '100%', height: 'auto', display: 'block' }}
+          />
+        </div>
 
         {/* Content */}
         <motion.div

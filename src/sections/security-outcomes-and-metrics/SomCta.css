@@ -1,5 +1,5 @@
 /* ─── Purple glow ─────────────────────────────────────────── */
-.cta-glow {
+.som-cta-glow {
   pointer-events: none;
   z-index: 1;
   filter: blur(40px);
@@ -8,14 +8,14 @@
   background: radial-gradient(at 50% 100%, #d69dff 0%, #8e2dffcc 30%, #6414c833 60%, #0000 85%);
   width: 998px;
   height: 676px;
-  animation: 6s ease-in-out infinite alternate purple-dome-rise;
+  animation: 6s ease-in-out infinite alternate som-cta-dome-rise;
   position: absolute;
   top: -278px;
   left: 50%;
   transform: translateX(-50%);
 }
 
-@keyframes purple-dome-rise {
+@keyframes som-cta-dome-rise {
   0% {
     opacity: 0.3;
     transform: translateX(-50%) scale(0.8) translateY(-50px);
@@ -30,7 +30,7 @@
 }
 
 /* ─── Black dome ──────────────────────────────────────────── */
-.cta-dome {
+.som-cta-dome {
   pointer-events: none;
   z-index: 2;
   backdrop-filter: blur(20px);
@@ -46,7 +46,7 @@
   transform: translateX(-50%);
 }
 
-.cta-dome::after {
+.som-cta-dome::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -59,7 +59,7 @@
 }
 
 /* ─── White outline arc ───────────────────────────────────── */
-.cta-dome-outline {
+.som-cta-dome-outline {
   z-index: -39;
   pointer-events: none;
   filter: blur(3px);
@@ -72,25 +72,25 @@
   transform: translateX(-50%);
 }
 
-/* ─── Responsive ─────────────────────────────────────────── */
+/* ─── Responsive ──────────────────────────────────────────── */
 @media (max-width: 1200px) {
-  .cta-dome {
+  .som-cta-dome {
     width: 850px;
     height: 440px;
   }
 
-  .cta-glow {
+  .som-cta-glow {
     width: 700px;
   }
 }
 
 @media (max-width: 768px) {
-  .cta-dome {
+  .som-cta-dome {
     width: 120%;
     height: 360px;
   }
 
-  .cta-glow {
+  .som-cta-glow {
     width: 100%;
   }
 }

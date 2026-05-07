@@ -21,14 +21,15 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  min-height: 740px;
 }
 
 /* ─── Card header ─────────────────────────────────────────── */
 .deploy-card-header {
   position: relative;
-  padding: 36px 32px 28px;
+  padding: 30px;
   overflow: hidden;
-  min-height: 160px;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -169,7 +170,7 @@
 
 /* ─── Card body ───────────────────────────────────────────── */
 .deploy-card-body {
-  padding: 24px 32px 32px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   gap: 20px;
