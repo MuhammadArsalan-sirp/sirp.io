@@ -1,9 +1,19 @@
-export default function Page() {
+import { BlogHero } from '@/sections/blog/BlogHero'
+import { BlogGrid } from '@/sections/blog/BlogGrid'
+import { BlogChangelog } from '@/sections/blog/BlogChangelog'
+
+export const metadata = {
+  title: 'Blog | SIRP',
+  description:
+    'Autonomous SOC insights, security operations research, and AI-native security content from the SIRP team.',
+}
+
+export default function BlogPage() {
   return (
-    <div className="min-h-screen pt-32">
-      <div className="container-sirp">
-        <h1 className="text-display-lg font-medium">Blog</h1>
-      </div>
-    </div>
+    <>
+      <BlogHero />
+      <BlogGrid />
+      <BlogChangelog />
+    </>
   )
 }

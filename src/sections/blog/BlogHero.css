@@ -1,0 +1,97 @@
+/* ─── Badge ───────────────────────────────────────────────── */
+.blog-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-inter, sans-serif);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(142, 45, 255, 0.25);
+  border: 1px solid #8e2dff;
+  border-radius: 8px;
+  padding: 6px 12px;
+}
+
+/* ─── Heading ─────────────────────────────────────────────── */
+.blog-hero-heading {
+  font-family: var(--font-inter, sans-serif);
+  font-size: 77px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 900px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+/* ─── Description block ───────────────────────────────────── */
+.blog-hero-desc-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+/* ─── Description ─────────────────────────────────────────── */
+.blog-hero-desc {
+  font-family: var(--font-inter, sans-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.65;
+  text-align: center;
+}
+
+/* ─── Guide text ──────────────────────────────────────────── */
+.blog-hero-guide-text {
+  font-family: var(--font-inter, sans-serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.6;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ─── Guide pill link ─────────────────────────────────────── */
+.blog-hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-inter, sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: rgba(142, 45, 255, 0.25);
+  border: 0.75px solid rgb(142, 45, 255);
+  border-radius: 5px;
+  padding: 5px 15px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.blog-hero-pill:hover {
+  background: rgba(142, 45, 255, 0.4);
+}
+
+/* ─── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .blog-hero-heading {
+    font-size: 42px;
+  }
+
+  .blog-hero-desc,
+  .blog-hero-guide-text {
+    font-size: 17px;
+  }
+
+  .blog-hero-guide-text {
+    white-space: normal;
+  }
+}

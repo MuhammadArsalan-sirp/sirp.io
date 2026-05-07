@@ -146,7 +146,7 @@
 }
 
 .whitepaper-list li::marker {
-  color: rgba(255, 255, 255, 0.85);
+  color: #ffffff;
 }
 
 .whitepaper-inline-figure {
@@ -168,7 +168,7 @@
 .whitepaper-copyright {
   font-size: 0.94rem;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.72);
+  color: #ffffff;
   margin-top: 1.5rem;
 }
 

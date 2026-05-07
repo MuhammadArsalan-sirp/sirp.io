@@ -68,7 +68,7 @@
   font-size: clamp(0.8125rem, 1.5vw, 0.9rem);
   line-height: 1.65;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.82);
+  color: #ffffff;
 }
 
 @media (max-width: 640px) {
