@@ -1,6 +1,7 @@
 'use client'
 
 import { FormEvent, useEffect, useRef, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import './page.css'
 import { PurplePill } from '@/components/shared/PurplePill'
 
@@ -273,6 +274,7 @@ function ContactCustomSelect({
 }
 
 export default function Page() {
+  const router = useRouter()
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isSubmitStateReady, setIsSubmitStateReady] = useState(false)
 
@@ -291,8 +293,23 @@ export default function Page() {
     setIsSubmitted(true)
   }
 
+  useEffect(() => {
+    if (!isSubmitted || typeof window === 'undefined') return
+
+    // Add one history step so browser "Back" from submitted view
+    // returns users to home instead of showing this contact state again.
+    window.history.pushState({ contactSubmitted: true }, '', window.location.href)
+
+    const handlePopState = () => {
+      router.replace('/')
+    }
+
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [isSubmitted, router])
+
   return (
-    <div className="contact-page">
+    <div className={`contact-page ${isSubmitted ? 'contact-page--submitted' : ''}`}>
       <section className="contact-hero">
         <div className="container-sirp contact-hero-inner">
           <div className="contact-copy">
