@@ -5,7 +5,10 @@ import { PageHeader } from '@/components/layout/PageHeader'
 import { SplitInfoCtaImage } from '@/components/shared/SplitInfoCtaImage'
 import { AutonomousSocBenefitsSection } from '@/components/shared/AutonomousSocBenefitsSection'
 import { AutonomousSocComparisonSection } from '@/components/shared/AutonomousSocComparisonSection'
+import { CtaSection } from '@/sections/home/CtaSection'
+import './page.css'
 import {
+  CTA_DATA,
   SOAR_VS_ARCHITECTURAL_DIFFERENCE,
   SOAR_VS_COMPARISON_TABLE,
   SOAR_VS_WHEN_SOAR_SUFFICIENT,
@@ -210,6 +213,9 @@ export default function Page() {
           </>
         }
       />
+      <div className="soar-vs-autonomous-soc-cta-wrap">
+        <CtaSection data={CTA_DATA} />
+      </div>
     </>
   )
 }
