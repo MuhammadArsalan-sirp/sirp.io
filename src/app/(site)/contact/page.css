@@ -144,6 +144,24 @@
   box-shadow: 0 0 0 3px rgba(142, 45, 255, 0.2);
 }
 
+.contact-field input:-webkit-autofill,
+.contact-field input:-webkit-autofill:hover,
+.contact-field input:-webkit-autofill:focus,
+.contact-field textarea:-webkit-autofill,
+.contact-field textarea:-webkit-autofill:hover,
+.contact-field textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: #f3f5ff;
+  caret-color: #f3f5ff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  -webkit-box-shadow:
+    0 0 0px 1000px rgba(12, 14, 24, 0.92) inset,
+    0 0 0 1px rgba(255, 255, 255, 0.18) inset;
+  box-shadow:
+    0 0 0px 1000px rgba(12, 14, 24, 0.92) inset,
+    0 0 0 1px rgba(255, 255, 255, 0.18) inset;
+  transition: background-color 9999s ease-out 0s;
+}
+
 .contact-field textarea {
   min-height: 4.1rem;
   resize: vertical;
