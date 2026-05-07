@@ -133,6 +133,38 @@
   background: #a855f7;
 }
 
+.contact-inline-message {
+  min-height: 0;
+  padding: 1.6rem 1.7rem 1.8rem;
+}
+
+.contact-inline-message h2 {
+  margin: 0 0 0.9rem;
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #eeeeee;
+}
+
+.contact-inline-message p,
+.contact-inline-message li {
+  margin: 0 0 0.65rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #eeeeee;
+}
+
+.contact-inline-message ul {
+  margin: 0.2rem 0 0.8rem 1rem;
+  padding: 0;
+}
+
+.contact-inline-message a {
+  color: #eeeeee;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 @media (max-width: 980px) {
   .contact-hero {
     padding-top: 6.5rem;
