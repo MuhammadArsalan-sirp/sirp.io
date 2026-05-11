@@ -69,7 +69,7 @@ export function Footer() {
                 Powered by OmniSense™
               </p>
             </div>
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="mt-3 flex flex-wrap items-center gap-3 sm:mt-4">
               <Image
                 src="/images/logos/iso.png"
                 alt="ISO 27001"
