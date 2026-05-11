@@ -3,6 +3,9 @@ import Image from 'next/image'
 import { ExternalLink } from 'lucide-react'
 import { FOOTER_LINKS, SITE_NAME } from '@/lib/constants'
 
+const FOOTER_SOCIAL_X_HREF = 'https://twitter.com/sirp_io'
+const FOOTER_SOCIAL_LINKEDIN_HREF = 'https://linkedin.com/company/sirp-io'
+
 export function Footer() {
   const year = new Date().getFullYear()
 
@@ -13,20 +16,75 @@ export function Footer() {
         {/* Top grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 mb-16">
 
-          {/* Brand */}
-          <div className="col-span-2 md:col-span-3 lg:col-span-1">
-            <Link href="/" className="inline-block mb-4">
+          {/* Brand: logo + socials (top row), taglines, compliance badges */}
+          <div className="col-span-2 md:col-span-3 lg:col-span-1 max-w-[min(100%,320px)]">
+            <div className="flex items-start justify-between gap-4 mb-5">
+              <Link href="/" className="inline-block shrink-0">
+                <Image
+                  src="/images/logos/SIRP-Logo.png"
+                  alt={SITE_NAME}
+                  width={100}
+                  height={32}
+                  className="h-8 w-auto object-contain"
+                />
+              </Link>
+              <div className="flex items-center gap-2.5 shrink-0 pt-0.5">
+                <a
+                  href={FOOTER_SOCIAL_X_HREF}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/50 text-white transition-opacity hover:opacity-90"
+                  aria-label="SIRP on X"
+                >
+                  <Image
+                    src="/images/logos/twitter.svg"
+                    alt=""
+                    width={14}
+                    height={13}
+                    className="h-[13px] w-[14px] object-contain"
+                  />
+                </a>
+                <a
+                  href={FOOTER_SOCIAL_LINKEDIN_HREF}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/50 text-white transition-opacity hover:opacity-90"
+                  aria-label="SIRP on LinkedIn"
+                >
+                  <Image
+                    src="/images/logos/linkedin.svg"
+                    alt=""
+                    width={14}
+                    height={15}
+                    className="h-[15px] w-[14px] object-contain"
+                  />
+                </a>
+              </div>
+            </div>
+            <div className="space-y-1 mb-5">
+              <p className="font-sans text-sm text-white italic leading-snug">
+                Self-driving SOC — governed, AI-native security operations.
+              </p>
+              <p className="font-sans text-sm text-white italic leading-snug">
+                Powered by OmniSense™
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center gap-3">
               <Image
-                src="/images/logos/SIRP-Logo.png"
-                alt={SITE_NAME}
-                width={100}
-                height={32}
-                className="h-8 w-auto object-contain"
+                src="/images/logos/iso.png"
+                alt="ISO 27001"
+                width={64}
+                height={64}
+                className="h-9 w-auto max-w-[64px] object-contain"
               />
-            </Link>
-            <p className="font-sans text-sm text-white/55 leading-relaxed max-w-[220px]">
-              The first Autonomous SOC platform. Detect, learn, respond — without human intervention.
-            </p>
+              <Image
+                src="/images/logos/soc2type2.png"
+                alt="SOC 2 Type II"
+                width={96}
+                height={64}
+                className="h-9 w-auto max-w-[96px] object-contain"
+              />
+            </div>
           </div>
 
           {/* Link columns */}
@@ -89,9 +147,6 @@ export function Footer() {
             >
               Terms of Service
             </Link>
-            <span className="font-mono text-xs text-white/40">
-              Built with OmniSense™
-            </span>
           </div>
         </div>
 
