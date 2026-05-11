@@ -10,7 +10,7 @@ export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-[#3a3a4c] bg-[#0f0f1a]">
+    <footer className="border-t border-[#3a3a4c] bg-[#121218]">
       <div className="container-sirp py-16">
 
         {/* Top grid */}
@@ -150,33 +150,11 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Divider */}
-        <div
-          className="h-px w-full mb-6"
-          style={{
-            background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)',
-          }}
-        />
-
-        {/* Bottom row */}
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <p className="font-mono text-xs text-white/40 md:max-w-[45%]">
-            © {year} SIRP. All rights reserved.
+        {/* Copyright */}
+        <div className="mb-6 flex justify-center text-center">
+          <p className="font-mono text-xs text-white/40">
+            © {year} SIRP Labs Inc. All Rights Reserved.
           </p>
-          <div className="flex flex-wrap items-center justify-end gap-4 pr-8 md:pr-16 lg:pr-24 xl:pr-28 sm:gap-6">
-            <Link
-              href="/privacy"
-              className="font-sans text-xs text-white/40 hover:text-white/60 transition-colors no-underline"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms"
-              className="font-sans text-xs text-white/40 hover:text-white/60 transition-colors no-underline"
-            >
-              Terms of Service
-            </Link>
-          </div>
         </div>
 
       </div>
