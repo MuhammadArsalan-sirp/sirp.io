@@ -122,10 +122,10 @@ export function Footer() {
         </div>
 
         {/* Office addresses (above divider, bottom-right) */}
-        <div className="mb-6 flex w-full justify-end pr-8 md:pr-16 lg:pr-24 xl:pr-28">
+        <div className="mb-0 flex w-full justify-end pr-8 md:pr-16 lg:pr-24 xl:pr-28">
           <div className="flex flex-col gap-4 text-right sm:flex-row sm:justify-end sm:gap-8">
             <address className="not-italic font-sans text-[11px] leading-snug text-white/50">
-              <p className="mb-1 text-xs font-semibold text-white/75">United States</p>
+              <p className="mb-1 text-sm font-semibold text-white/75 sm:text-base">United States</p>
               <p>
                 7735 Old Georgetown Rd, Suite 510
                 <br />
@@ -140,7 +140,7 @@ export function Footer() {
               </p>
             </address>
             <address className="not-italic font-sans text-[11px] leading-snug text-white/50">
-              <p className="mb-1 text-xs font-semibold text-white/75">United Kingdom</p>
+              <p className="mb-1 text-sm font-semibold text-white/75 sm:text-base">United Kingdom</p>
               <p>
                 167-169 Great Portland Street,
                 <br />
@@ -151,7 +151,7 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mb-6 flex justify-center text-center">
+        <div className="mb-6 flex justify-center pt-8 text-center md:pt-10">
           <p className="font-mono text-xs text-white/40">
             © {year} SIRP Labs Inc. All Rights Reserved.
           </p>
