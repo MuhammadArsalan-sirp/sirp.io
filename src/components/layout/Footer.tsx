@@ -69,20 +69,20 @@ export function Footer() {
                 Powered by OmniSense™
               </p>
             </div>
-            <div className="mt-3 flex flex-wrap items-center gap-3 sm:mt-4">
+            <div className="mt-6 flex flex-wrap items-center gap-3 sm:mt-8">
               <Image
                 src="/images/logos/iso.png"
                 alt="ISO 27001"
-                width={64}
-                height={64}
-                className="h-9 w-auto max-w-[64px] object-contain"
+                width={80}
+                height={80}
+                className="h-11 w-auto max-w-[80px] object-contain sm:h-12 sm:max-w-[88px]"
               />
               <Image
                 src="/images/logos/soc2type2.png"
                 alt="SOC 2 Type II"
-                width={96}
-                height={64}
-                className="h-9 w-auto max-w-[96px] object-contain"
+                width={112}
+                height={72}
+                className="h-11 w-auto max-w-[112px] object-contain sm:h-12 sm:max-w-[128px]"
               />
             </div>
           </div>
