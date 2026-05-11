@@ -121,6 +121,35 @@ export function Footer() {
           ))}
         </div>
 
+        {/* Office addresses (above divider, bottom-right) */}
+        <div className="mb-6 flex w-full justify-end pr-8 md:pr-16 lg:pr-24 xl:pr-28">
+          <div className="flex flex-col gap-4 text-right sm:flex-row sm:justify-end sm:gap-8">
+            <address className="not-italic font-sans text-[11px] leading-snug text-white/50">
+              <p className="mb-1 text-xs font-semibold text-white/75">United States</p>
+              <p>
+                7735 Old Georgetown Rd, Suite 510
+                <br />
+                Bethesda, MD 20814
+                <br />
+                <a
+                  href="tel:+18887019252"
+                  className="text-white/50 underline-offset-2 hover:text-white/70 hover:underline"
+                >
+                  +1 888 701 9252
+                </a>
+              </p>
+            </address>
+            <address className="not-italic font-sans text-[11px] leading-snug text-white/50">
+              <p className="mb-1 text-xs font-semibold text-white/75">United Kingdom</p>
+              <p>
+                167-169 Great Portland Street,
+                <br />
+                5th Floor, London, W1W 5PF
+              </p>
+            </address>
+          </div>
+        </div>
+
         {/* Divider */}
         <div
           className="h-px w-full mb-6"
@@ -130,11 +159,11 @@ export function Footer() {
         />
 
         {/* Bottom row */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="font-mono text-xs text-white/40">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <p className="font-mono text-xs text-white/40 md:max-w-[45%]">
             © {year} SIRP. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-end gap-4 pr-8 md:pr-16 lg:pr-24 xl:pr-28 sm:gap-6">
             <Link
               href="/privacy"
               className="font-sans text-xs text-white/40 hover:text-white/60 transition-colors no-underline"
