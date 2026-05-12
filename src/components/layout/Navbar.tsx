@@ -35,7 +35,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        'fixed top-0 inset-x-0 z-40 transition-all duration-300',
+        'relative w-full z-40 transition-all duration-300',
         scrolled
           ? 'bg-[#080810]/95 backdrop-blur-md border-b border-[#3a3a4c]'
           : 'bg-transparent',
@@ -43,20 +43,54 @@ export function Navbar() {
     >
       {/* SARA Banner */}
       <div
-        className="font-sans text-white text-center py-2 text-sm font-medium"
+        className="relative overflow-hidden w-full"
         style={{
-          background: 'linear-gradient(91deg, #000000 20%, #3e1958 40%, #8e2dff 50%, #000000 90%)',
+          backgroundColor: 'rgb(18, 18, 24)',
+          borderBottom: '1px solid rgb(184, 137, 255)',
         }}
       >
-        Too good to gatekeep. Sara is now free.
-        <Link
-          href="https://sara-open.sirp.io/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline underline-offset-2 font-semibold ml-6 hover:opacity-80 transition-opacity"
-        >
-          Try her now
-        </Link>
+        {/* Purple glow blobs */}
+        <div
+          className="absolute pointer-events-none"
+          style={{
+            width: '550px',
+            height: '251px',
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%)',
+            background: 'radial-gradient(ellipse at center, #a558d6 0%, #7b3bb9 40%, #311765 100%)',
+            borderRadius: '50% 50% 0 0 / 100% 100% 0 0',
+            filter: 'blur(80px)',
+            opacity: 0.8,
+          }}
+        />
+
+        {/* Content */}
+        <div className="relative z-10 flex items-center justify-center gap-6 py-2">
+          <Link
+            href="/autonomous-security"
+            className="font-sans text-sm text-white no-underline hover:opacity-80 transition-opacity"
+          >
+            Too good to gatekeep. Sara is now free.
+          </Link>
+          <Link
+            href="https://sara-open.sirp.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative flex flex-col items-center gap-0.5 no-underline hover:opacity-80 transition-opacity"
+          >
+            <span
+              className="font-sans text-sm text-white"
+              style={{ fontWeight: 600, letterSpacing: '0.02em' }}
+            >
+              Try her now
+            </span>
+            <span
+              className="w-full h-[2px]"
+              style={{ backgroundColor: 'rgb(184, 137, 255)', borderRadius: '30px' }}
+            />
+          </Link>
+        </div>
       </div>
 
       {/* Main nav */}
