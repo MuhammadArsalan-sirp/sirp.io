@@ -31,7 +31,7 @@ export function IntelligenceSection({ data = INTELLIGENCE_DATA }: IntelligenceSe
   const { heading, headingItalic, description } = data
 
   return (
-    <section className="bg-[#121218] border-b border-[#3a3a4c] py-[100px] overflow-hidden">
+    <section className="bg-[#121218] border-b border-[#3a3a4c] py-16 md:py-[100px] overflow-hidden">
       <div className="container-sirp">
 
         {/* Heading */}

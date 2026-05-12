@@ -30,7 +30,7 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
   const { pill, heading, headingItalic, features } = data
 
   return (
-    <section className="bg-[#121218] border-b border-[#3a3a4c] py-[100px] overflow-hidden">
+    <section className="bg-[#121218] border-b border-[#3a3a4c] py-[50px] md:py-[100px] overflow-hidden">
       <div className="container-sirp">
 
         {/* Heading */}
@@ -41,15 +41,16 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
           transition={{ duration: 0.5 }}
           className="mb-16 max-w-[700px]"
         >
-          <span className="inline-flex items-center gap-1 font-mono text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]">
+          <span className="inline-flex items-center gap-1.5 font-mono text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-md border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]">
+            <img src="/images/shine.svg" alt="" className="w-3 h-3" />
             {pill}
           </span>
           <h2
-            className="font-sans font-bold text-white mt-4"
+            className="font-sans text-white mt-4"
             style={{
-              fontSize: 'clamp(2rem, 4vw, 3.2rem)',
-              lineHeight: '1.15',
-              letterSpacing: '-0.03em',
+              fontSize: 'clamp(2.25rem, 5vw, 3.5rem)',
+              fontWeight: 500,
+              lineHeight: '1.2',
             }}
           >
             {heading}{' '}
@@ -70,7 +71,7 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
             >
               {/* Image top */}
               {!feature.textTop && (
-                <div className="relative w-full h-[280px] overflow-hidden">
+                <div className="relative w-full h-[230px] md:h-[280px] overflow-hidden">
                   <Image
                     src={feature.image}
                     alt={feature.title}
@@ -82,24 +83,24 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
               )}
 
               {/* Body */}
-              <div className="px-8 py-7">
+              <div className="px-7 py-7">
                 <h3
                   className="font-sans font-semibold text-white mb-3"
                   style={{
-                    fontSize: '22px',
+                    fontSize: '26px',
                     lineHeight: '1.3',
                   }}
                 >
                   {feature.title}
                 </h3>
-                <p className="font-sans text-white/60 text-sm leading-[1.75]">
+                <p className="font-sans text-white/60 text-base leading-[1.5]">
                   {feature.description}
                 </p>
               </div>
 
               {/* Image bottom */}
               {feature.textTop && (
-                <div className="relative w-full h-[280px] overflow-hidden">
+                <div className="relative w-full h-[230px] md:h-[280px] overflow-hidden">
                   <Image
                     src={feature.image}
                     alt={feature.title}

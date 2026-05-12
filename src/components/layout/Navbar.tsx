@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react'
 import { NAV_LINKS } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/shared/Button'
@@ -65,19 +65,33 @@ export function Navbar() {
           }}
         />
 
-        {/* Content */}
-        <div className="relative z-10 flex items-center justify-center gap-6 py-2">
+        {/* Content — mobile: space-between row | desktop: centered */}
+        <div className="relative z-10 flex items-center justify-between lg:justify-center lg:gap-x-4 py-2 px-4">
           <Link
             href="/autonomous-security"
             className="font-sans text-sm text-white no-underline hover:opacity-80 transition-opacity"
           >
             Too good to gatekeep. Sara is now free.
           </Link>
+
+          {/* Mobile: arrow button */}
           <Link
             href="https://sara-open.sirp.io/"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative flex flex-col items-center gap-0.5 no-underline hover:opacity-80 transition-opacity"
+            className="lg:hidden flex items-center justify-center w-7 h-7 rounded-full text-white hover:opacity-80 transition-opacity no-underline flex-shrink-0"
+            style={{ backgroundColor: 'rgb(184, 137, 255)' }}
+            aria-label="Try Sara now"
+          >
+            <ArrowRight size={14} />
+          </Link>
+
+          {/* Desktop: Try her now with underline */}
+          <Link
+            href="https://sara-open.sirp.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden lg:relative lg:flex flex-col items-center gap-0.5 no-underline hover:opacity-80 transition-opacity"
           >
             <span
               className="font-sans text-sm text-white"
@@ -182,11 +196,11 @@ export function Navbar() {
 
         {/* Mobile burger */}
         <button
-          className="lg:hidden p-2 text-white/60 hover:text-white transition-colors bg-transparent border-none cursor-pointer"
+          className="lg:hidden flex items-center justify-center w-10 h-10 rounded-[50px] bg-[#8e2dff] text-white transition-colors hover:bg-[#a040ff] border-none cursor-pointer"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
         >
-          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          {mobileOpen ? <X size={18} /> : <Menu size={18} />}
         </button>
       </nav>
 

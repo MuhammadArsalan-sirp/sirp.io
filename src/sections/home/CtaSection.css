@@ -6,7 +6,7 @@
   will-change: transform, opacity;
   transform-origin: top;
   background: radial-gradient(at 50% 100%, #d69dff 0%, #8e2dffcc 30%, #6414c833 60%, #0000 85%);
-  width: 998px;
+  width: 787px;
   height: 676px;
   animation: 6s ease-in-out infinite alternate purple-dome-rise;
   position: absolute;
@@ -38,10 +38,10 @@
   background-color: #121218;
   border-bottom: none;
   border-radius: 57% 57% 0 0 / 102% 100% 0 0;
-  width: 1000px;
-  height: 450px;
+  width: 956px;
+  height: 330px;
   position: absolute;
-  bottom: 173px;
+  bottom: 177px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -60,13 +60,13 @@
 
 /* ─── White outline arc ───────────────────────────────────── */
 .cta-dome-outline {
-  z-index: -39;
+  z-index: 18;
   pointer-events: none;
   filter: blur(3px);
-  width: 891px;
+  width: 981px;
   line-height: 0;
   position: absolute;
-  bottom: 403px;
+  bottom: 267px;
   left: 50%;
   overflow: hidden;
   transform: translateX(-50%);
@@ -76,7 +76,7 @@
 @media (max-width: 1200px) {
   .cta-dome {
     width: 850px;
-    height: 440px;
+    height: 240px;
   }
 
   .cta-glow {
@@ -86,11 +86,19 @@
 
 @media (max-width: 768px) {
   .cta-dome {
-    width: 120%;
-    height: 360px;
+    width: 170%;
+    height: 341px;
+    bottom: -51px;
   }
 
   .cta-glow {
     width: 100%;
+    height: 520px;
+    top: -80px;
+  }
+
+  .cta-dome-outline {
+    width: 120%;
+    bottom: 180px;
   }
 }
