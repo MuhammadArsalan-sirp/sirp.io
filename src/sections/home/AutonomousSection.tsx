@@ -69,19 +69,35 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
           transition={{ duration: 0.4, delay: 0.1 }}
           className="flex items-center justify-center mb-12"
         >
-          <div className="flex items-center bg-[#1e1e2e] border border-[#3a3a4c] rounded-full p-1">
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-7 py-2.5 rounded-full font-sans text-sm font-medium transition-all duration-200 border-none cursor-pointer ${activeTab === tab
-                    ? 'bg-[#8e2dff] text-white shadow-[0_0_20px_rgba(142,45,255,0.4)]'
-                    : 'bg-transparent text-white/60 hover:text-white'
-                  }`}
-              >
-                {tab}
-              </button>
-            ))}
+          <div className="flex">
+            {tabs.map((tab, i) => {
+              const isActive = activeTab === tab
+              const isFirst = i === 0
+              return (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  style={{
+                    width: '151px',
+                    height: '38px',
+                    padding: '8px 20px',
+                    fontSize: '12px',
+                    fontWeight: 600,
+                    fontFamily: 'Inter, sans-serif',
+                    color: '#ffffff',
+                    cursor: 'pointer',
+                    border: 'none',
+                    outline: 'none',
+                    transition: 'background-color 0.2s ease',
+                    borderRadius: isFirst ? '4px 0 0 4px' : '0 4px 4px 0',
+                    backgroundColor: isActive ? 'rgb(142, 45, 255)' : 'rgb(24, 24, 33)',
+                    boxShadow: !isFirst ? 'inset 1px 0 0 rgb(89,89,104), inset 0 1px 0 rgb(89,89,104), inset 0 -1px 0 rgb(89,89,104), 1px 0 0 rgb(89,89,104)' : 'none',
+                  }}
+                >
+                  {tab}
+                </button>
+              )
+            })}
           </div>
         </motion.div>
 

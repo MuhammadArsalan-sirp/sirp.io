@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { HERO_DATA } from '@/lib/constants'
+import { ShineIcon } from '@/components/shared/ShineIcon'
 
 /* ─── Types ──────────────────────────────────────────────── */
 interface HeroBtn {
@@ -29,17 +30,13 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
   const { pill, subheading, primaryBtn, secondaryBtn, videoSrc } = data
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#121218]">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
 
-      {/* Background grid */}
+      {/* Bottom fade */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none z-[1]"
         style={{
-          backgroundImage: `
-            linear-gradient(rgba(142,45,255,0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(142,45,255,0.03) 1px, transparent 1px)
-          `,
-          backgroundSize: '60px 60px',
+          background: 'linear-gradient(#121218 0%, #252534 100%)',
         }}
       />
 
@@ -49,26 +46,10 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-20"
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
       >
         <source src={videoSrc} type="video/webm" />
       </video>
-
-      {/* Left overlay */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'linear-gradient(90deg, rgba(18,18,24,0.92) 35%, rgba(18,18,24,0.4) 65%, rgba(18,18,24,0.1) 100%)',
-        }}
-      />
-
-      {/* Bottom fade */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
-        style={{
-          background: 'linear-gradient(to top, #121218 0%, transparent 100%)',
-        }}
-      />
 
       {/* Content */}
       <div
@@ -92,9 +73,10 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
           transition={{ duration: 0.5 }}
         >
           <span
-            className="inline-flex items-center gap-2 font-mono text-[11px] font-medium tracking-widest uppercase rounded-lg border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]"
-            style={{ padding: '5px 10px 6px' }}
+            className="inline-flex items-center gap-2 text-[11px] font-medium tracking-widest uppercase rounded-lg border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]"
+            style={{ padding: '5px 10px 6px', fontFamily: 'var(--font-inter)' }}
           >
+            <ShineIcon size={12} />
             {pill}
           </span>
         </motion.div>

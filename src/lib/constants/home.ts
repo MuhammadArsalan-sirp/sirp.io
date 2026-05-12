@@ -8,7 +8,7 @@ export const HOMEPAGE_STATS = [
 
 /* ─── Hero Section ───────────────────────────────────────── */
 export const HERO_DATA = {
-  pill: '✦ Autonomous SOC Platform',
+  pill: 'Autonomous SOC Platform',
   heading: 'Imagine, a self-driving SOC',
   subheading: 'SIRP OmniSense™, is the first Autonomous SOC that\'s actually autonomous. An AI agentic mesh that detects, learns, responds and evolves. Just like your best analyst, only at machine speed.',
   primaryBtn: { label: 'Learn more', href: '/autonomous-security' },
@@ -18,7 +18,7 @@ export const HERO_DATA = {
 
 /* ─── Stats Section ──────────────────────────────────────── */
 export const STATS_DATA = {
-  pill: '🔮 Results you can see',
+  pill: 'Results you can see',
   heading: 'Results backed by',
   headingItalic: 'intelligent',
   headingSuffix: 'automation',
@@ -58,7 +58,7 @@ export const AUTONOMOUS_DATA = {
 
 /* ─── Features Section ───────────────────────────────────── */
 export const FEATURES_DATA = {
-  pill: '✦ AI-Driven Autonomous SOC Features',
+  pill: 'AI-Driven Autonomous SOC Features',
   heading: 'The future of operations is here and it\'s',
   headingItalic: 'self-learning',
   features: [
