@@ -1,0 +1,35 @@
+/* Tighter vertical rhythm between stacked sections on small viewports (page-only). */
+
+@media (max-width: 768px) {
+  .autonomous-security-page .info-cta-block {
+    padding: 2.65rem 0 1.85rem;
+  }
+
+  .autonomous-security-page .split-info-cta-image {
+    padding: 2.65rem 0 2.85rem;
+  }
+
+  .autonomous-security-page .split-info-cta-inner {
+    gap: 1.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .autonomous-security-page .info-cta-block {
+    padding: 1.85rem 0 1.15rem;
+  }
+
+  .autonomous-security-page .split-info-cta-image {
+    padding: 1.85rem 0 2rem;
+  }
+
+  .autonomous-security-page .split-info-cta-inner {
+    gap: 1.35rem;
+  }
+
+  .autonomous-security-page .sirp-button {
+    font-size: 0.8125rem;
+    padding: 0.52rem 1.25rem;
+    letter-spacing: 0.01em;
+  }
+}
