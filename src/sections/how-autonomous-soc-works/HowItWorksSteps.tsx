@@ -17,9 +17,9 @@ interface HowItWorksStepsProps {
 
 export function HowItWorksSteps({ data = [] }: HowItWorksStepsProps) {
   return (
-    <section className="bg-[#121218] py-24">
+    <section className="bg-[#121218] py-10 md:py-20 lg:py-24">
       <div className="container-sirp">
-        <div className="space-y-32">
+        <div className="space-y-12 md:space-y-24 lg:space-y-32">
           {data.map((step, i) => (
             <motion.div
               key={step.number}
@@ -27,7 +27,7 @@ export function HowItWorksSteps({ data = [] }: HowItWorksStepsProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+              className="grid grid-cols-1 items-center gap-8 md:gap-12 lg:grid-cols-2 lg:gap-16"
             >
               {/* Image first on odd steps (image left, content right) */}
               {i % 2 === 1 && (
@@ -92,14 +92,7 @@ export function HowItWorksSteps({ data = [] }: HowItWorksStepsProps) {
                 </div>
 
                 {/* Title */}
-                <h3
-                  className="font-sans text-white font-bold mb-6"
-                  style={{
-                    fontSize: '48px',
-                    lineHeight: '1.1',
-                    letterSpacing: '-0.03em',
-                  }}
-                >
+                <h3 className="mb-4 font-sans text-[1.85rem] font-bold leading-[1.1] tracking-[-0.03em] text-white sm:text-[2.1rem] md:mb-6 md:text-[2.5rem] lg:text-[3rem]">
                   {step.title}
                 </h3>
 
