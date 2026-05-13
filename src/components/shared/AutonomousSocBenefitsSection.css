@@ -136,6 +136,51 @@
   }
 }
 
+/* Smaller pill + icon on narrow phones */
+@media (max-width: 640px) {
+  .autonomous-benefit-icon-wrap {
+    width: 48px;
+    height: 80px;
+    margin-top: 8px;
+  }
+
+  .autonomous-benefit-border {
+    width: 48px;
+    height: 80px;
+  }
+
+  .autonomous-benefit-icon {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .autonomous-benefit-title {
+    margin-top: 1.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .autonomous-benefit-icon-wrap {
+    width: 42px;
+    height: 70px;
+    margin-top: 6px;
+  }
+
+  .autonomous-benefit-border {
+    width: 42px;
+    height: 70px;
+  }
+
+  .autonomous-benefit-icon {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .autonomous-benefit-title {
+    margin-top: 1.35rem;
+  }
+}
+
 /* ─── SOAR vs Autonomous — Migration Considerations (reuse benefits cards) ─ */
 .autonomous-benefits--soar-migration .autonomous-benefits-top {
   text-align: left;
