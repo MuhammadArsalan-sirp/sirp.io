@@ -12,7 +12,7 @@ export function HowItWorksVideo({
   heading = 'The agentic mesh in action',
 }: HowItWorksVideoProps) {
   return (
-    <section className="bg-[#121218] py-24">
+    <section className="bg-[#121218] py-10 md:py-20 lg:py-24">
       <div className="container-sirp">
 
         <motion.h2
@@ -20,13 +20,7 @@ export function HowItWorksVideo({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-white text-center font-bold mb-12"
-          style={{
-            fontSize: '42px',
-            lineHeight: '1.1',
-            letterSpacing: '-0.03em',
-            fontFamily: 'Inter, sans-serif',
-          }}
+          className="mb-8 text-center font-sans text-[1.65rem] font-bold leading-[1.1] tracking-[-0.03em] text-white sm:text-[1.85rem] md:mb-12 md:text-[2.25rem] lg:text-[2.625rem]"
         >
           {heading}
         </motion.h2>

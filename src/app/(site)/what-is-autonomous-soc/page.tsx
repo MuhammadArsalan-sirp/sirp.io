@@ -28,7 +28,7 @@ export default function Page() {
   const comparison = WHAT_IS_AUTONOMOUS_SOC_COMPARISON
 
   return (
-    <>
+    <div className="what-is-autonomous-soc-page">
       <PageHeader
         heading={
           <>
@@ -93,6 +93,6 @@ export default function Page() {
       <div className="what-is-autonomous-soc-cta-wrap">
         <CtaSection data={CTA_DATA} />
       </div>
-    </>
+    </div>
   )
 }

@@ -155,8 +155,38 @@
     gap: 2.25rem;
   }
 
+  /* Single column: heading + body first, image below (overrides wide-screen `imageLeft` swap). */
+  .split-info-cta-inner--image-left .split-left {
+    order: 1;
+    margin-left: 0;
+  }
+
+  .split-info-cta-inner--image-left .split-right {
+    order: 2;
+  }
+
   .split-image-wrap {
-    height: 320px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 640px) {
+  .split-info-cta-inner {
+    gap: 1.5rem;
+  }
+
+  .split-image-wrap {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .split-info-cta-inner {
+    gap: 1.25rem;
+  }
+
+  .split-image-wrap {
+    height: 142px;
   }
 }
 
