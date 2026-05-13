@@ -42,7 +42,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
   return (
     <section className="bg-[#121218] border-t border-[#3a3a4c]">
       <div className="container-sirp">
-        <div className="flex flex-row items-start gap-[129px] py-[100px]">
+        <div className="flex flex-col md:flex-row items-start gap-10 md:gap-10 lg:gap-[80px] py-16 md:py-12 lg:py-0">
 
           {/* Left */}
           <motion.div
@@ -50,7 +50,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="flex-none w-[480px]"
+            className="w-full md:flex-none md:w-[320px] lg:w-[560px] md:pt-10 md:pb-10 lg:pt-[100px] lg:pb-[100px]"
           >
             {/* Pill */}
             <div className="mb-5">
@@ -67,11 +67,10 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
             <h2
               className="text-white font-bold mt-4 mb-4"
               style={{
-                fontSize: '42px',
+                fontSize: 'clamp(1.8rem, 3.5vw, 2.625rem)',
                 lineHeight: '1.2',
                 letterSpacing: '-0.02em',
                 fontFamily: 'Inter, sans-serif',
-                whiteSpace: 'nowrap',
               }}
             >
               {heading}{' '}
@@ -93,14 +92,14 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
             {/* Button */}
             <Link
               href={learnMoreHref}
-              className="inline-flex items-center bg-[#8e2dff] text-white px-7 py-3 rounded-full font-medium text-sm hover:bg-[#a855f7] transition-all duration-200 no-underline shadow-[0_0_20px_rgba(142,45,255,0.35)]"
+              className="inline-flex items-center bg-[#8e2dff] text-white px-7 py-3 rounded-[50px] font-medium text-sm hover:bg-[#a855f7] transition-all duration-200 no-underline"
             >
               Learn more
             </Link>
           </motion.div>
 
           {/* Vertical divider */}
-          <div className="w-px bg-[#3a3a4c] self-stretch flex-shrink-0" />
+          <div className="hidden md:block w-px bg-[#3a3a4c] self-stretch flex-shrink-0" />
 
           {/* Right */}
           <motion.div
@@ -108,7 +107,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="flex-1"
+            className="w-full md:flex-1"
           >
             {stats.map((stat, i) => (
               <div key={stat.label}>
@@ -117,10 +116,10 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="flex items-center gap-6 py-7"
+                  className="flex items-start gap-4 py-6 md:py-7"
                 >
                   {/* Icon */}
-                  <div className="relative flex-shrink-0 w-[50px] h-[88px]">
+                  <div className="relative flex-shrink-0 w-[58px] h-[97px]">
                     <Image
                       src={stat.icon}
                       alt={stat.label}
@@ -130,39 +129,42 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
                     />
                   </div>
 
-                  {/* Number */}
-                  <div className="flex items-start gap-0 flex-shrink-0">
-                    <span
-                      className="font-['Noto_Serif',serif] font-normal leading-none"
-                      style={{
-                        fontSize: '90px',
-                        letterSpacing: '-0.02em',
-                        backgroundImage: stat.gradient,
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        backgroundClip: 'text',
-                      }}
-                    >
-                      {stat.value}
-                    </span>
-                    <span
-                      className="font-['Noto_Serif',serif] font-normal leading-none mt-2"
-                      style={{
-                        fontSize: '54px',
-                        backgroundImage: stat.gradient,
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        backgroundClip: 'text',
-                      }}
-                    >
-                      %
+                  {/* Mobile: number+% stacked above label | Desktop: number% + label inline */}
+                  <div className="flex flex-col gap-1 lg:flex-row lg:items-center lg:gap-6 flex-1">
+                    {/* Number + % */}
+                    <div className="flex items-start gap-0 flex-shrink-0">
+                      <span
+                        className="font-['Noto_Serif',serif] font-normal leading-[1.1]"
+                        style={{
+                          fontSize: 'clamp(5.625rem, 26vw, 6.875rem)',
+                          letterSpacing: '-0.02em',
+                          backgroundImage: stat.gradient,
+                          WebkitBackgroundClip: 'text',
+                          WebkitTextFillColor: 'transparent',
+                          backgroundClip: 'text',
+                        }}
+                      >
+                        {stat.value}
+                      </span>
+                      <span
+                        className="font-['Noto_Serif',serif] font-normal leading-[1.1] mt-1"
+                        style={{
+                          fontSize: 'clamp(3.375rem, 16vw, 4rem)',
+                          backgroundImage: stat.gradient,
+                          WebkitBackgroundClip: 'text',
+                          WebkitTextFillColor: 'transparent',
+                          backgroundClip: 'text',
+                        }}
+                      >
+                        %
+                      </span>
+                    </div>
+
+                    {/* Label */}
+                    <span className="text-white font-semibold text-base font-['Inter',sans-serif]">
+                      {stat.label}
                     </span>
                   </div>
-
-                  {/* Label */}
-                  <span className="text-white font-semibold text-base font-['Inter',sans-serif]">
-                    {stat.label}
-                  </span>
                 </motion.div>
 
                 {/* Row divider */}

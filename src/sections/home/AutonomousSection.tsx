@@ -29,7 +29,10 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
   const { headingItalic, subheading, description } = data
 
   return (
-    <section className="bg-[#121218] border-b border-[#3a3a4c] py-[100px] overflow-hidden">
+    <section
+      className="border-b border-[#3a3a4c] py-16 md:py-[100px] overflow-hidden"
+      style={{ background: 'linear-gradient(#252534 0%, #121218 20%)' }}
+    >
       <div className="container-sirp">
 
         {/* Heading */}
@@ -38,13 +41,13 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-14 mx-auto"
+          className="text-center mb-8 md:mb-14 mx-auto"
           style={{ maxWidth: '860px' }}
         >
           <h2
-            className="font-sans font-bold text-white mb-6"
+            className="font-sans font-bold text-white mb-4 md:mb-6"
             style={{
-              fontSize: '60px',
+              fontSize: 'clamp(2rem, 5vw, 3.75rem)',
               lineHeight: '1.1',
               letterSpacing: '-0.03em',
             }}
@@ -54,8 +57,8 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
             {subheading}
           </h2>
           <p
-            className="font-sans text-white/60 leading-[1.7] mx-auto"
-            style={{ fontSize: '18px', maxWidth: '520px' }}
+            className="font-sans text-white/60 leading-[1.7] mx-auto text-base md:text-lg"
+            style={{ maxWidth: '520px' }}
           >
             {description}
           </p>
@@ -67,9 +70,9 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.1 }}
-          className="flex items-center justify-center mb-12"
+          className="flex items-center justify-center mb-8 md:mb-12 px-0"
         >
-          <div className="flex">
+          <div className="flex w-full max-w-[380px] md:w-auto">
             {tabs.map((tab, i) => {
               const isActive = activeTab === tab
               const isFirst = i === 0
@@ -78,7 +81,6 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   style={{
-                    width: '151px',
                     height: '38px',
                     padding: '8px 20px',
                     fontSize: '12px',
@@ -92,6 +94,8 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
                     borderRadius: isFirst ? '4px 0 0 4px' : '0 4px 4px 0',
                     backgroundColor: isActive ? 'rgb(142, 45, 255)' : 'rgb(24, 24, 33)',
                     boxShadow: !isFirst ? 'inset 1px 0 0 rgb(89,89,104), inset 0 1px 0 rgb(89,89,104), inset 0 -1px 0 rgb(89,89,104), 1px 0 0 rgb(89,89,104)' : 'none',
+                    flex: 1,
+                    minWidth: '151px',
                   }}
                 >
                   {tab}
@@ -107,7 +111,7 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="relative max-w-[1000px] mx-auto"
+          className="relative max-w-[1000px] mx-auto aspect-video md:aspect-auto overflow-hidden rounded-xl md:rounded-none"
         >
           {/* Purple glow */}
           <div
