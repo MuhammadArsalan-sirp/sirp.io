@@ -37,7 +37,7 @@ export function SaraSection({ data = SARA_DATA }: SaraSectionProps) {
   return (
     <section className="bg-[#121218] border-b border-[#3a3a4c] py-16 md:py-[100px] overflow-hidden">
       <div className="container-sirp">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-20 items-center">
 
           {/* Left — text */}
           <motion.div

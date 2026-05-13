@@ -38,7 +38,7 @@ export function IntegrationsSection({ data = INTEGRATIONS_DATA }: IntegrationsSe
 
   return (
     <section
-      className="pt-[54px] md:pt-[100px] overflow-x-hidden relative z-[3]"
+      className="pt-[54px] md:pt-[100px] relative z-[3]"
       style={{
         background: 'linear-gradient(to bottom, #121218 0%, #121218 50%, rgba(18,18,24,0.5) 80%, transparent 100%)',
       }}
@@ -59,7 +59,7 @@ export function IntegrationsSection({ data = INTEGRATIONS_DATA }: IntegrationsSe
           <h2
             className="font-sans font-bold text-white mt-4 mb-4"
             style={{
-              fontSize: 'clamp(2.25rem, 9vw, 5rem)',
+              fontSize: 'clamp(2rem, 6vw, 5rem)',
               lineHeight: '1.1',
               letterSpacing: '-0.03em',
             }}

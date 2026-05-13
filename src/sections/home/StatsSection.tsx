@@ -42,7 +42,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
   return (
     <section className="bg-[#121218] border-t border-[#3a3a4c]">
       <div className="container-sirp">
-        <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-[80px] py-16 lg:py-0">
+        <div className="flex flex-col md:flex-row items-start gap-10 md:gap-10 lg:gap-[80px] py-16 md:py-12 lg:py-0">
 
           {/* Left */}
           <motion.div
@@ -50,7 +50,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="w-full lg:flex-none lg:w-[560px] lg:pt-[100px] lg:pb-[100px]"
+            className="w-full md:flex-none md:w-[320px] lg:w-[560px] md:pt-10 md:pb-10 lg:pt-[100px] lg:pb-[100px]"
           >
             {/* Pill */}
             <div className="mb-5">
@@ -92,27 +92,14 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
             {/* Button */}
             <Link
               href={learnMoreHref}
-              className="relative inline-flex items-center bg-[#8e2dff] text-white px-7 py-3 rounded-[50px] font-medium text-sm hover:bg-[#a855f7] transition-all duration-200 no-underline overflow-visible"
+              className="inline-flex items-center bg-[#8e2dff] text-white px-7 py-3 rounded-[50px] font-medium text-sm hover:bg-[#a855f7] transition-all duration-200 no-underline"
             >
-              <span className="relative z-[1]">Learn more</span>
-              {/* Glow blob */}
-              <span
-                className="absolute pointer-events-none z-0"
-                style={{
-                  width: '110px',
-                  top: '-30px',
-                  bottom: '-30px',
-                  right: '-157px',
-                  backgroundColor: 'rgb(184, 137, 255)',
-                  filter: 'blur(25px)',
-                  borderRadius: '100%',
-                }}
-              />
+              Learn more
             </Link>
           </motion.div>
 
           {/* Vertical divider */}
-          <div className="hidden lg:block w-px bg-[#3a3a4c] self-stretch flex-shrink-0" />
+          <div className="hidden md:block w-px bg-[#3a3a4c] self-stretch flex-shrink-0" />
 
           {/* Right */}
           <motion.div
@@ -120,7 +107,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="w-full lg:flex-1"
+            className="w-full md:flex-1"
           >
             {stats.map((stat, i) => (
               <div key={stat.label}>

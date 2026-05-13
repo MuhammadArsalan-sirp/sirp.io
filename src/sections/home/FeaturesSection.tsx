@@ -87,7 +87,7 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
                 <h3
                   className="font-sans font-semibold text-white mb-3"
                   style={{
-                    fontSize: '26px',
+                    fontSize: 'clamp(1.125rem, 1.8vw, 1.625rem)',
                     lineHeight: '1.3',
                   }}
                 >
