@@ -23,11 +23,11 @@ export function BlogGrid() {
           {shown.map((post, i) => (
             <motion.div
               key={post.id}
+              className="blog-grid-item"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: (i % 4) * 0.07 }}
-              style={{ height: '100%' }}
             >
               <Link href={`/blog/${post.slug}`} className="blog-card">
                 {/* Hover arrow */}

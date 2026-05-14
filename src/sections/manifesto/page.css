@@ -221,6 +221,58 @@
   text-align: left;
 }
 
+/* SAF table — fit narrow viewports (manifesto only; shared component used only here today). */
+@media (max-width: 640px) {
+  .manifesto-page .soc-af-table-scroll {
+    overflow-x: visible;
+  }
+
+  .manifesto-page .soc-af-table {
+    min-width: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .manifesto-page .soc-af-table thead th {
+    padding: 0.38rem 0.28rem;
+    font-size: 0.48rem;
+    letter-spacing: 0.055em;
+    white-space: normal;
+    line-height: 1.22;
+    vertical-align: bottom;
+  }
+
+  .manifesto-page .soc-af-table tbody td {
+    padding: 0.38rem 0.28rem;
+    font-size: 0.62rem;
+    line-height: 1.28;
+    overflow-wrap: break-word;
+  }
+
+  .manifesto-page .soc-af-table tbody td:first-child {
+    font-size: 0.66rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .manifesto-page .soc-af-table thead th {
+    padding: 0.32rem 0.22rem;
+    font-size: 0.44rem;
+    letter-spacing: 0.04em;
+    line-height: 1.18;
+  }
+
+  .manifesto-page .soc-af-table tbody td {
+    padding: 0.32rem 0.22rem;
+    font-size: 0.54rem;
+    line-height: 1.24;
+  }
+
+  .manifesto-page .soc-af-table tbody td:first-child {
+    font-size: 0.58rem;
+  }
+}
+
 .manifesto-key-insights-divider-wrap {
   background: #0b0c10;
 }
