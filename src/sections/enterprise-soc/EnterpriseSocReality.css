@@ -1,7 +1,9 @@
-/* ─── Reality card ────────────────────────────────────────── */
+/* ─── Reality card — matches home page feature-card style ─── */
 .reality-card {
+  border: 11px solid transparent;
   border-radius: 20px;
   background-color: rgb(18, 18, 24);
+  box-shadow: 0 0 0 1px rgb(58, 58, 77);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -10,55 +12,20 @@
   position: relative;
   isolation: isolate;
   cursor: default;
-  border: 1px solid rgb(58, 58, 77);
-  transition: border-color 0.3s ease;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* ─── Highlighted card — purple border always visible ─────── */
-.reality-card--highlighted {
-  border-color: rgba(142, 45, 255, 0.6);
-  box-shadow: 0 0 32px rgba(142, 45, 255, 0.12);
+/* odd cards (1 & 3) — gradient flows top → bottom on hover */
+.reality-card:nth-child(odd):hover {
+  box-shadow: none;
+  background: linear-gradient(rgb(18, 18, 24), rgb(18, 18, 24)) padding-box,
+    linear-gradient(to bottom, rgb(18, 18, 24) 0%, #8A3CFF 30%, #B14DFF 65%, #5A189A 100%) border-box;
 }
 
-/* ─── Purple outline inside on hover ─────────────────────── */
-.reality-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 20px;
-  border: 1px solid rgba(142, 45, 255, 0.7);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  z-index: 10;
+/* even cards (2 & 4) — gradient flows bottom → top on hover */
+.reality-card:nth-child(even):hover {
+  box-shadow: none;
+  background: linear-gradient(rgb(18, 18, 24), rgb(18, 18, 24)) padding-box,
+    linear-gradient(to top, rgb(18, 18, 24) 0%, #8A3CFF 30%, #B14DFF 65%, #5A189A 100%) border-box;
 }
 
-/* ─── Purple glow inside on hover ────────────────────────── */
-.reality-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 20px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  z-index: 9;
-  box-shadow:
-    inset 0 0 40px rgba(142, 45, 255, 0.15),
-    inset 0 0 80px rgba(142, 45, 255, 0.08),
-    inset 0 0 120px rgba(142, 45, 255, 0.04);
-  background: linear-gradient(
-    135deg,
-    rgba(142, 45, 255, 0.07) 0%,
-    transparent 50%,
-    rgba(142, 45, 255, 0.03) 100%
-  );
-}
-
-.reality-card:hover::before {
-  opacity: 1;
-}
-
-.reality-card:hover::after {
-  opacity: 1;
-}

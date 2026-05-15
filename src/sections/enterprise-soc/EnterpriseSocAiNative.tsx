@@ -10,9 +10,9 @@ export function EnterpriseSocAiNative() {
   const { heading, subtext, cta, image, imageAlt } = ENTERPRISE_SOC_AI_NATIVE
 
   return (
-    <section className="bg-[#121218] py-[100px] overflow-hidden">
+    <section className="bg-[#121218] py-16 md:py-[100px] overflow-hidden">
       <div className="container-sirp">
-        <div className="grid grid-cols-1 lg:grid-cols-[42fr_58fr] gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[42fr_58fr] gap-10 lg:gap-16 items-center">
 
           {/* Left — text + CTA */}
           <motion.div
