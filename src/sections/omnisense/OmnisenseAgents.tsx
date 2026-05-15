@@ -74,15 +74,15 @@ function AgentCard({ agent }: { agent: Agent }) {
   return (
     <div
       className="agent-card-outer relative flex-shrink-0 overflow-hidden"
-      style={{ borderRadius: '16px', padding: '1px', width: '295px', height: '345px' }}
+      style={{ borderRadius: '16px', padding: '1px', width: '260px', height: '320px' }}
     >
       {/* Spinning border */}
       <div className="agent-card-spin" />
 
       {/* Inner card */}
       <div
-        className="agent-card relative flex flex-col overflow-hidden h-full p-6 cursor-default"
-        style={{ borderRadius: '15px', background: 'linear-gradient(rgb(0, 0, 0) 0%, rgb(18, 18, 24) 70%)', height: '343px' }}
+        className="agent-card relative flex flex-col overflow-hidden h-full p-5 cursor-default"
+        style={{ borderRadius: '15px', background: 'linear-gradient(rgb(0, 0, 0) 0%, rgb(18, 18, 24) 70%)', height: '318px' }}
       >
         {/* Icon */}
         <div
@@ -98,7 +98,7 @@ function AgentCard({ agent }: { agent: Agent }) {
         </div>
 
         {/* Title */}
-        <h4 className="font-sans font-bold text-white mb-2" style={{ fontSize: '16px', lineHeight: '1.3' }}>
+        <h4 className="font-sans font-bold text-white mb-2" style={{ fontSize: '15px', lineHeight: '1.3' }}>
           {agent.title}
         </h4>
 
@@ -122,7 +122,7 @@ export function OmnisenseAgents({ data }: OmnisenseAgentsProps) {
   const doubled = [...items, ...items]
 
   return (
-    <section className="py-24 overflow-hidden" style={{ background: 'linear-gradient(rgb(33, 33, 46) 15%, rgb(25, 25, 36) 21%, rgb(18, 18, 24) 38%)' }}>
+    <section className="py-[50px] md:py-[100px] overflow-hidden" style={{ background: 'linear-gradient(rgb(33, 33, 46) 15%, rgb(25, 25, 36) 21%, rgb(18, 18, 24) 38%)' }}>
 
       <style>{`
         @keyframes agents-marquee {
@@ -187,29 +187,26 @@ export function OmnisenseAgents({ data }: OmnisenseAgentsProps) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="container-sirp text-center mb-14"
+        className="container-sirp text-center mb-10 md:mb-14"
       >
         <h2
-          className="font-sans font-bold text-white mb-5"
-          style={{ fontSize: '56px', lineHeight: '1.08', letterSpacing: '-0.03em' }}
+          className="font-sans font-bold text-white mb-4"
+          style={{ fontSize: 'clamp(28px, 4.5vw, 56px)', lineHeight: '1.08', letterSpacing: '-0.03em' }}
         >
           {heading}
         </h2>
-        <p
-          className="font-sans text-white leading-relaxed mx-auto"
-          style={{ fontSize: '18px', maxWidth: '680px' }}
-        >
+        <p className="font-sans text-white text-base md:text-lg leading-relaxed mx-auto" style={{ maxWidth: '680px' }}>
           {description}
         </p>
       </motion.div>
 
       {/* Marquee */}
-      <div className="relative">
+      <div className="relative overflow-hidden">
         {/* Left fade */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+        <div className="absolute left-0 top-0 bottom-0 w-12 md:w-24 z-10 pointer-events-none"
           style={{ background: 'linear-gradient(to right, rgb(18, 18, 24), transparent)' }} />
         {/* Right fade */}
-        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+        <div className="absolute right-0 top-0 bottom-0 w-12 md:w-24 z-10 pointer-events-none"
           style={{ background: 'linear-gradient(to left, rgb(18, 18, 24), transparent)' }} />
 
         <div className="agents-track flex gap-4 w-max px-4">
