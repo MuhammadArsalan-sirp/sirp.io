@@ -15,6 +15,13 @@
   text-decoration: none;
   overflow: hidden;
   transition: opacity 0.3s ease;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+}
+
+button.sirp-button {
+  font: inherit;
 }
 
 .sirp-button:focus-visible {
@@ -66,6 +73,13 @@
 
 .sirp-button--secondary:focus-visible {
   outline-color: rgba(255, 255, 255, 0.75);
+}
+
+.sirp-button--disabled,
+button.sirp-button:disabled {
+  pointer-events: none;
+  cursor: default;
+  user-select: none;
 }
 
 @media (max-width: 640px) {

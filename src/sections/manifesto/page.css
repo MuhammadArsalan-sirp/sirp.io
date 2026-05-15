@@ -141,12 +141,6 @@
   border: 0;
 }
 
-.manifesto-cite-inert {
-  pointer-events: none;
-  cursor: default;
-  user-select: none;
-}
-
 .manifesto-abstract-section {
   background: #0b0c10;
   padding: 2.5rem 0 3rem;
