@@ -1,8 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 import Image from 'next/image'
+import { Button } from '@/components/shared/Button'
 import { STATS_DATA } from '@/lib/constants'
 
 /* ─── Types ──────────────────────────────────────────────── */
@@ -90,12 +90,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
             </p>
 
             {/* Button */}
-            <Link
-              href={learnMoreHref}
-              className="inline-flex items-center bg-[#8e2dff] text-white px-7 py-3 rounded-[50px] font-medium text-sm hover:bg-[#a855f7] transition-all duration-200 no-underline"
-            >
-              Learn more
-            </Link>
+            <Button href={learnMoreHref}>Learn more</Button>
           </motion.div>
 
           {/* Vertical divider */}

@@ -9,7 +9,7 @@ export function SomHero() {
   const { heading, subtext, cta } = SOM_HERO
 
   return (
-    <section className="bg-[#121218] pt-36 pb-20 relative overflow-x-hidden">
+    <section className="bg-[#121218] pt-12 pb-20 relative overflow-x-hidden">
 
       {/* Subtle purple grid */}
       <div

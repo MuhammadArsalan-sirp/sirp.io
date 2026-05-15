@@ -8,7 +8,7 @@ export function EnterpriseSocHero() {
   const { badge, heading, description, cta } = ENTERPRISE_SOC_HERO
 
   return (
-    <section className="bg-[#121218] pt-36 pb-24 overflow-hidden relative">
+    <section className="bg-[#121218] pt-12 pb-24 overflow-hidden relative">
 
       {/* Subtle purple grid */}
       <div

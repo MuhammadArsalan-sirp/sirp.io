@@ -45,12 +45,9 @@ export default function Page() {
             <Button href={MANIFESTO_DRIVE_VIEW} target="_blank" rel="noopener noreferrer">
               Download Paper
             </Button>
-            <span
-              className="sirp-button sirp-button--secondary manifesto-cite-inert"
-              aria-disabled="true"
-            >
+            <Button variant="secondary" disabled>
               Cite this Paper
-            </span>
+            </Button>
           </div>
         </div>
       </section>

@@ -13,7 +13,7 @@ export const BLOG_HERO = {
     'For a complete overview of Autonomous SOC and governed decision-driven security operations, start with our canonical guide:',
   guideLink: {
     label: 'Autonomous SOC: From Playbooks to Decision Systems',
-    href: '/whitepaper',
+    href: '/technical-white-paper',
   },
 } as const
 
@@ -172,6 +172,6 @@ export const BLOG_WHITEPAPER_CTA = {
   text: 'For a deeper technical exploration of how these ideas are implemented in practice — including architecture, decision flows, and governance — read our founder-authored whitepaper:',
   link: {
     label: 'An AI-Native Architecture for Autonomous Security Operations',
-    href: '/whitepaper',
+    href: '/technical-white-paper',
   },
 } as const

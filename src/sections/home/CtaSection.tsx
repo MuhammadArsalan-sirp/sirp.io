@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Button } from '@/components/shared/Button'
 import { CTA_DATA } from '@/lib/constants'
 import './CtaSection.css'
 
@@ -25,7 +25,7 @@ interface CtaSectionProps {
 
 /* ─── Component ──────────────────────────────────────────── */
 export function CtaSection({ data = CTA_DATA }: CtaSectionProps) {
-  const { headingItalic, primaryBtn, secondaryBtn } = data
+  const { primaryBtn, secondaryBtn } = data
 
   return (
     <section className="bg-[#121218] relative z-[2] -mt-32 overflow-hidden">
@@ -71,19 +71,11 @@ export function CtaSection({ data = CTA_DATA }: CtaSectionProps) {
             drive <em>itself</em>
           </h2>
 
-          <div className="flex items-center justify-center gap-4 flex-wrap mt-8 md:mt-10">
-            <Link
-              href={primaryBtn.href}
-              className="inline-flex items-center bg-[#8e2dff] text-white px-8 py-3.5 rounded-full font-sans font-medium text-base hover:bg-[#a855f7] transition-all duration-200 no-underline shadow-[0_0_30px_rgba(142,45,255,0.5)]"
-            >
-              {primaryBtn.label}
-            </Link>
-            <Link
-              href={secondaryBtn.href}
-              className="hidden md:inline-flex items-center border border-white/30 text-white px-8 py-3.5 rounded-full font-sans font-medium text-base hover:bg-white/10 hover:border-white/50 transition-all duration-200 no-underline bg-white/5"
-            >
+          <div className="cta-section-actions flex items-center justify-center gap-4 flex-wrap mt-8 md:mt-10">
+            <Button href={primaryBtn.href}>{primaryBtn.label}</Button>
+            <Button href={secondaryBtn.href} variant="secondary" className="hidden md:inline-flex">
               {secondaryBtn.label}
-            </Link>
+            </Button>
           </div>
 
         </motion.div>

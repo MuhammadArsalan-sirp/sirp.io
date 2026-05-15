@@ -65,8 +65,24 @@
     padding: 3.5rem 0 2.5rem;
   }
 
+  .info-cta-heading {
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+  }
+
   .info-cta-body {
-    font-size: 0.98rem;
+    margin-top: 1.15rem;
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+
+  .info-cta-body p {
+    margin-bottom: 0.95rem;
+  }
+
+  .info-cta-button-row {
+    margin-top: 1.1rem;
   }
 }
 
@@ -125,13 +141,18 @@
   }
 
   .info-cta-block--authority .info-cta-heading {
-    font-size: clamp(1.85rem, 6.5vw, 2.5rem);
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+    line-height: 1.18;
   }
 
   .info-cta-block--authority .info-cta-body {
-    margin-top: 1.75rem;
-    font-size: 16px;
-    line-height: 1.38;
+    margin-top: 1.35rem;
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
+
+  .info-cta-block--authority .info-cta-body > p {
+    margin-bottom: 0.85rem;
   }
 }
 

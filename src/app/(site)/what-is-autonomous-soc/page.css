@@ -56,98 +56,136 @@
     letter-spacing: 0.01em;
   }
 
-  /* Benefits intro — comfortable read width on phones */
-  .what-is-autonomous-soc-page .autonomous-benefits-intro {
-    font-size: 1.25rem;
-    line-height: 1.45;
+  /* Match shared PageHeader / InfoCtaBlock mobile scale */
+  .what-is-autonomous-soc-page .page-header-heading {
+    font-size: clamp(1.65rem, 7.2vw, 2.15rem);
+    letter-spacing: -0.01em;
   }
 
-  /* Headings — slightly smaller on small phones (page-scoped) */
-  .what-is-autonomous-soc-page .page-header-heading {
-    font-size: clamp(2.2rem, 6.2vw, 3.15rem);
-    letter-spacing: 0.008em;
+  .what-is-autonomous-soc-page .page-header-subtext {
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
 
   .what-is-autonomous-soc-page .traditional-models-heading {
-    font-size: 34px;
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
     line-height: 1.18;
   }
 
+  .what-is-autonomous-soc-page .split-left-body {
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+
   .what-is-autonomous-soc-page .how-autonomous-heading {
-    font-size: clamp(1.72rem, 4.8vw, 2.5rem);
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+    line-height: 1.18;
+  }
+
+  .what-is-autonomous-soc-page .how-autonomous-intro,
+  .what-is-autonomous-soc-page .how-autonomous-lead,
+  .what-is-autonomous-soc-page .how-autonomous-card-description,
+  .what-is-autonomous-soc-page .how-autonomous-notes p {
+    font-size: 0.875rem;
+    line-height: 1.65;
   }
 
   .what-is-autonomous-soc-page .how-autonomous-card-title {
-    font-size: clamp(1.35rem, 4vw, 1.5rem);
+    font-size: clamp(1.05rem, 3.2vw, 1.2rem);
+    line-height: 1.22;
   }
 
   .what-is-autonomous-soc-page .autonomous-benefits-heading {
-    font-size: clamp(1.82rem, 5vw, 2.45rem);
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+    line-height: 1.18;
+  }
+
+  .what-is-autonomous-soc-page .autonomous-benefits-intro {
+    font-size: 0.875rem;
+    line-height: 1.65;
   }
 
   .what-is-autonomous-soc-page .autonomous-benefit-title {
-    font-size: 1.35rem;
+    font-size: 1.05rem;
+    line-height: 1.22;
   }
 
-  /* Right balance, safety, comparison: Tailwind `text-[42px]` h2 */
+  .what-is-autonomous-soc-page .autonomous-benefit-body p {
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+
   .what-is-autonomous-soc-page section[class*='py-24'][class*='121218'] h2 {
-    font-size: 34px !important;
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem) !important;
     line-height: 1.18 !important;
+  }
+
+  .what-is-autonomous-soc-page section[class*='py-24'][class*='121218'] p,
+  .what-is-autonomous-soc-page section[class*='py-24'][class*='121218'] li {
+    font-size: 0.875rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .what-is-autonomous-soc-page .comparison-section-intro p {
+    font-size: 0.875rem;
+    line-height: 1.65;
   }
 
   .what-is-autonomous-soc-page section[class*='121218'] article h3 {
-    font-size: 1.3125rem !important;
+    font-size: 1rem !important;
+    line-height: 1.22 !important;
+  }
+
+  .what-is-autonomous-soc-page section[class*='121218'] article ul {
+    font-size: 0.875rem !important;
+    line-height: 1.65 !important;
   }
 
   .what-is-autonomous-soc-page div[class*='mt-28'] h3 {
-    font-size: clamp(1.85rem, 5vw, 2.05rem) !important;
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem) !important;
     line-height: 1.18 !important;
   }
 
+  .what-is-autonomous-soc-page div[class*='mt-28'] p {
+    font-size: 0.875rem !important;
+    line-height: 1.65 !important;
+  }
+
   .what-is-autonomous-soc-page .what-is-autonomous-soc-cta-wrap h2 {
-    font-size: clamp(2.1rem, 7vw, 2.65rem) !important;
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem) !important;
     line-height: 1.18 !important;
   }
 }
 
 @media (max-width: 480px) {
   .what-is-autonomous-soc-page .page-header-heading {
-    font-size: clamp(1.95rem, 6.5vw, 2.65rem);
+    font-size: clamp(1.5rem, 6.8vw, 1.95rem);
   }
 
   .what-is-autonomous-soc-page .traditional-models-heading {
-    font-size: 30px;
+    font-size: clamp(1.35rem, 5.8vw, 1.75rem);
   }
 
-  .what-is-autonomous-soc-page .how-autonomous-heading {
-    font-size: clamp(1.58rem, 5.2vw, 2.1rem);
+  .what-is-autonomous-soc-page .how-autonomous-heading,
+  .what-is-autonomous-soc-page .autonomous-benefits-heading {
+    font-size: clamp(1.35rem, 5.8vw, 1.75rem);
   }
 
   .what-is-autonomous-soc-page .how-autonomous-card-title {
-    font-size: 1.25rem;
-  }
-
-  .what-is-autonomous-soc-page .autonomous-benefits-heading {
-    font-size: clamp(1.68rem, 5.2vw, 2.15rem);
+    font-size: 1.05rem;
   }
 
   .what-is-autonomous-soc-page .autonomous-benefit-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
-  .what-is-autonomous-soc-page section[class*='py-24'][class*='121218'] h2 {
-    font-size: 30px !important;
+  .what-is-autonomous-soc-page section[class*='py-24'][class*='121218'] h2,
+  .what-is-autonomous-soc-page div[class*='mt-28'] h3,
+  .what-is-autonomous-soc-page .what-is-autonomous-soc-cta-wrap h2 {
+    font-size: clamp(1.35rem, 5.8vw, 1.75rem) !important;
   }
 
   .what-is-autonomous-soc-page section[class*='121218'] article h3 {
-    font-size: 1.2rem !important;
-  }
-
-  .what-is-autonomous-soc-page div[class*='mt-28'] h3 {
-    font-size: 1.75rem !important;
-  }
-
-  .what-is-autonomous-soc-page .what-is-autonomous-soc-cta-wrap h2 {
-    font-size: clamp(1.85rem, 7.5vw, 2.4rem) !important;
+    font-size: 0.95rem !important;
   }
 }

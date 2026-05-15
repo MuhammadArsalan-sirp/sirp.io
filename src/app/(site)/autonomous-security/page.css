@@ -1,3 +1,32 @@
+/* "Go Deeper" diagram — show full architecture (avoid cover cropping the top). */
+.autonomous-security-page .split-info-cta-image.autonomous-security-split .split-image-wrap {
+  background: transparent;
+  height: clamp(380px, 48vw, 560px);
+}
+
+.autonomous-security-page .split-info-cta-image.autonomous-security-split .split-image {
+  object-fit: contain;
+  object-position: top center;
+}
+
+@media (max-width: 900px) {
+  .autonomous-security-page .split-info-cta-image.autonomous-security-split .split-image-wrap {
+    height: clamp(280px, 68vw, 440px);
+  }
+}
+
+@media (max-width: 640px) {
+  .autonomous-security-page .split-info-cta-image.autonomous-security-split .split-image-wrap {
+    height: clamp(220px, 62vw, 320px);
+  }
+}
+
+@media (max-width: 480px) {
+  .autonomous-security-page .split-info-cta-image.autonomous-security-split .split-image-wrap {
+    height: clamp(200px, 58vw, 280px);
+  }
+}
+
 /* Tighter vertical rhythm between stacked sections on small viewports (page-only). */
 
 @media (max-width: 768px) {
