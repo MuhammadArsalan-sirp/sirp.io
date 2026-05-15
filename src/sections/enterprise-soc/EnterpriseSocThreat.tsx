@@ -18,7 +18,7 @@ export function EnterpriseSocThreat() {
   const { heading, steps, cta } = ENTERPRISE_SOC_THREAT
 
   return (
-    <section className="bg-[#121218] overflow-x-hidden pt-[160px]">
+    <section className="bg-[#121218] overflow-x-hidden pt-12">
 
       {/* ── Centered heading ── */}
       <motion.div

@@ -1,8 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import { Button } from '@/components/shared/Button'
 import { HERO_DATA } from '@/lib/constants'
 import { ShineIcon } from '@/components/shared/ShineIcon'
 
@@ -103,19 +103,13 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex items-center gap-4 flex-wrap"
         >
-          <Link
-            href={primaryBtn.href}
-            className="inline-flex items-center gap-2 bg-[#8e2dff] text-white px-7 py-3 rounded-full font-sans font-medium text-sm hover:bg-[#a855f7] transition-all duration-200 no-underline shadow-[0_0_24px_rgba(142,45,255,0.4)]"
-          >
+          <Button href={primaryBtn.href}>
             {primaryBtn.label}
             <ArrowRight className="w-4 h-4" />
-          </Link>
-          <Link
-            href={secondaryBtn.href}
-            className="inline-flex items-center gap-2 border border-white/20 text-white/70 px-7 py-3 rounded-full font-sans font-medium text-sm hover:text-white hover:border-white/40 transition-all duration-200 no-underline"
-          >
+          </Button>
+          <Button href={secondaryBtn.href} variant="secondary">
             {secondaryBtn.label}
-          </Link>
+          </Button>
         </motion.div>
 
       </div>

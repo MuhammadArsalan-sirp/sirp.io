@@ -177,16 +177,40 @@
     padding-bottom: 1.75rem;
   }
 
+  .technical-white-paper-page .page-header-heading {
+    font-size: clamp(1.65rem, 7.2vw, 2.15rem);
+    letter-spacing: -0.01em;
+  }
+
+  .technical-white-paper-page .page-header-subtext {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .technical-white-paper-page .page-header-subtitle {
+    font-size: clamp(0.95rem, 3.8vw, 1.1rem);
+  }
+
   .whitepaper-hero-diagram {
     padding-bottom: 2rem;
   }
 
+  .whitepaper-architecture-frame {
+    min-height: clamp(200px, 52vw, 360px);
+  }
+
   .whitepaper-section {
-    padding: 2.5rem 0 2.25rem;
+    padding: 1.85rem 0 1.65rem;
   }
 
   .whitepaper-section:last-of-type {
-    padding-bottom: 3rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .whitepaper-section-heading {
+    margin-bottom: 1.25rem;
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+    line-height: 1.18;
   }
 
   .whitepaper-section-body > p,
@@ -194,6 +218,22 @@
   .whitepaper-strong-label,
   .whitepaper-list,
   .whitepaper-ordered-list {
-    font-size: 0.98rem;
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+
+  .whitepaper-copyright {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .technical-white-paper-page .page-header-heading {
+    font-size: clamp(1.5rem, 6.8vw, 1.95rem);
+  }
+
+  .technical-white-paper-page .whitepaper-section-heading {
+    font-size: clamp(1.35rem, 5.8vw, 1.75rem);
   }
 }
