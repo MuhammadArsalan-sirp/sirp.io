@@ -222,6 +222,8 @@ export default function Page() {
       />
 
       <SplitInfoCtaImage
+        sectionClassName="autonomous-security-split"
+        imageObjectFit="contain"
         heading="Go Deeper"
         body={
           <>

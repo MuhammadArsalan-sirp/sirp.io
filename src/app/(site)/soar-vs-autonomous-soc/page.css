@@ -51,30 +51,74 @@
     padding-bottom: 3.25rem !important;
   }
 
+  /* Match shared PageHeader / InfoCtaBlock mobile scale */
+  .soar-vs-autonomous-soc-page .page-header-heading,
+  .soar-vs-autonomous-soc-page .page-header-heading-line2 {
+    font-size: clamp(1.65rem, 7.2vw, 2.15rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+  }
+
+  .soar-vs-autonomous-soc-page .page-header-subtext {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
   .soar-vs-autonomous-soc-page .traditional-models-heading {
-    font-size: 34px;
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
     line-height: 1.18;
   }
 
+  .soar-vs-autonomous-soc-page .split-info-cta-image--body-18 .info-cta-body,
+  .soar-vs-autonomous-soc-page .split-left-body {
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+
   .soar-vs-autonomous-soc-page .autonomous-benefits-heading {
-    font-size: clamp(1.82rem, 5vw, 2.45rem);
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+    line-height: 1.18;
+  }
+
+  .soar-vs-autonomous-soc-page .autonomous-benefits-intro,
+  .soar-vs-autonomous-soc-page .autonomous-benefit-body p {
+    font-size: 0.875rem;
+    line-height: 1.65;
   }
 
   .soar-vs-autonomous-soc-page .autonomous-benefit-title {
-    font-size: 1.35rem;
+    font-size: 1.05rem;
+    line-height: 1.22;
   }
 
   .soar-vs-autonomous-soc-page .comparison-section--soar h2 {
-    font-size: 34px !important;
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem) !important;
     line-height: 1.18 !important;
   }
 
+  .soar-vs-autonomous-soc-page .comparison-section-intro p,
+  .soar-vs-autonomous-soc-page .comparison-section-footer-with-link p {
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+
   .soar-vs-autonomous-soc-page .comparison-section--soar article h3 {
-    font-size: 19px !important;
+    font-size: 1rem !important;
+    line-height: 1.22 !important;
+  }
+
+  .soar-vs-autonomous-soc-page .comparison-section--soar ul.comparison-card-list--soar {
+    font-size: 0.875rem !important;
+    line-height: 1.65 !important;
   }
 
   .soar-vs-autonomous-soc-page .info-cta-block--authority .info-cta-heading {
-    font-size: clamp(1.65rem, 5.5vw, 2.25rem) !important;
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem) !important;
+  }
+
+  .soar-vs-autonomous-soc-page .info-cta-block--authority .info-cta-body {
+    font-size: 0.875rem !important;
+    line-height: 1.65 !important;
   }
 
   .soar-vs-autonomous-soc-page .comparison-section-footer-with-link {
@@ -94,37 +138,33 @@
   }
 
   .soar-vs-autonomous-soc-page .soar-vs-autonomous-soc-cta-wrap h2 {
-    font-size: clamp(2rem, 7vw, 2.55rem) !important;
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem) !important;
     line-height: 1.18 !important;
   }
 }
 
 @media (max-width: 480px) {
-  .soar-vs-autonomous-soc-page .traditional-models-heading {
-    font-size: 30px;
+  .soar-vs-autonomous-soc-page .page-header-heading,
+  .soar-vs-autonomous-soc-page .page-header-heading-line2 {
+    font-size: clamp(1.5rem, 6.8vw, 1.95rem);
   }
 
-  .soar-vs-autonomous-soc-page .autonomous-benefits-heading {
-    font-size: clamp(1.68rem, 5.2vw, 2.15rem);
+  .soar-vs-autonomous-soc-page .traditional-models-heading {
+    font-size: clamp(1.35rem, 5.8vw, 1.75rem);
+  }
+
+  .soar-vs-autonomous-soc-page .autonomous-benefits-heading,
+  .soar-vs-autonomous-soc-page .comparison-section--soar h2,
+  .soar-vs-autonomous-soc-page .info-cta-block--authority .info-cta-heading,
+  .soar-vs-autonomous-soc-page .soar-vs-autonomous-soc-cta-wrap h2 {
+    font-size: clamp(1.35rem, 5.8vw, 1.75rem) !important;
   }
 
   .soar-vs-autonomous-soc-page .autonomous-benefit-title {
-    font-size: 1.2rem;
-  }
-
-  .soar-vs-autonomous-soc-page .comparison-section--soar h2 {
-    font-size: 30px !important;
+    font-size: 1rem;
   }
 
   .soar-vs-autonomous-soc-page .comparison-section--soar article h3 {
-    font-size: 18px !important;
-  }
-
-  .soar-vs-autonomous-soc-page .info-cta-block--authority .info-cta-heading {
-    font-size: clamp(1.5rem, 5.8vw, 2rem) !important;
-  }
-
-  .soar-vs-autonomous-soc-page .soar-vs-autonomous-soc-cta-wrap h2 {
-    font-size: clamp(1.85rem, 7.5vw, 2.35rem) !important;
+    font-size: 0.95rem !important;
   }
 }

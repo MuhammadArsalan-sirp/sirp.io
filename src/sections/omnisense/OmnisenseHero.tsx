@@ -25,7 +25,7 @@ export function OmnisenseHero({ data }: OmnisenseHeroProps) {
   const { badge, headingItalic, heading, description, ctaLabel, ctaHref, image, imageAlt } = data
 
   return (
-    <section className="bg-[#121218] pt-32 pb-0 overflow-hidden relative">
+    <section className="bg-[#121218] pt-12 pb-0 overflow-hidden relative">
 
       {/* Background grid */}
       <div
