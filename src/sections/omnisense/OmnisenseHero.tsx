@@ -25,28 +25,19 @@ export function OmnisenseHero({ data }: OmnisenseHeroProps) {
   const { badge, headingItalic, heading, description, ctaLabel, ctaHref, image, imageAlt } = data
 
   return (
-    <section className="bg-[#121218] pt-12 pb-0 overflow-hidden relative">
+    <section
+      className="pt-11 md:pt-32 lg:pt-25 pb-0 overflow-hidden relative"
+      style={{ background: 'linear-gradient(rgb(37, 37, 52) 0%, rgb(18, 18, 24) 42%)' }}
+    >
 
-      {/* Background grid */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(142,45,255,0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(142,45,255,0.03) 1px, transparent 1px)
-          `,
-          backgroundSize: '60px 60px',
-        }}
-      />
-
-      <div className="container-sirp relative z-10">
+<div className="container-sirp relative z-10">
 
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-5 lg:mb-8"
+          className="mb-5 lg:-mb-4"
         >
           <span className="inline-flex items-center gap-2 font-mono text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-lg border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]">
             ✦ {badge}
@@ -88,7 +79,7 @@ export function OmnisenseHero({ data }: OmnisenseHeroProps) {
             </p>
             <Link
               href={ctaHref}
-              className="flex items-center justify-center lg:inline-flex bg-[#8e2dff] text-white px-6 py-4 lg:px-7 lg:py-3.5 rounded-full font-sans font-medium text-sm hover:bg-[#a855f7] transition-all duration-200 no-underline shadow-[0_0_24px_rgba(142,45,255,0.4)]"
+              className="self-start inline-flex items-center justify-center bg-[#8e2dff] text-white px-6 py-3.5 rounded-full font-sans font-medium text-sm hover:bg-[#a855f7] transition-all duration-200 no-underline shadow-[0_0_24px_rgba(142,45,255,0.4)]"
             >
               {ctaLabel}
             </Link>

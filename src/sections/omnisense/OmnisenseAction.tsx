@@ -30,18 +30,18 @@ export function OmnisenseAction({ data }: OmnisenseActionProps) {
           transition={{ duration: 0.5 }}
         >
           {/* Text */}
-          <div className="text-center mb-8 md:mb-12 max-w-[640px] mx-auto">
+          <div className="text-center mb-10 md:mb-14 max-w-[640px] mx-auto px-4 md:px-0">
             <h2
-              className="font-sans font-bold text-white mb-4 md:mb-5"
-              style={{ fontSize: 'clamp(28px, 4.5vw, 60px)', lineHeight: '1.1', letterSpacing: '-0.03em' }}
+              className="font-bold text-white mb-6 md:mb-7"
+              style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: '53px', lineHeight: '1.1', letterSpacing: '-0.03em' }}
             >
               {heading}
             </h2>
-            <p className="font-sans text-white/80 leading-relaxed mb-3 md:mb-5 text-[15px] md:text-lg">
+            <p className="text-white/80 leading-relaxed mb-6 md:mb-8" style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: '20px' }}>
               {description}
             </p>
-            <p className="font-sans text-white/60 leading-relaxed text-sm md:text-base">{note1}</p>
-            <p className="font-sans text-white/60 leading-relaxed text-sm md:text-base">{note2}</p>
+            <p className="text-white/60 leading-relaxed mb-2" style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: '20px' }}>{note1}</p>
+            <p className="text-white/60 leading-relaxed" style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: '20px' }}>{note2}</p>
           </div>
 
           {/* YouTube embed — 16/9 responsive */}

@@ -38,9 +38,9 @@ export function IntegrationsSection({ data = INTEGRATIONS_DATA }: IntegrationsSe
 
   return (
     <section
-      className="pt-[54px] md:pt-[100px] relative z-[3]"
+      className="pt-[54px] md:pt-[100px] relative z-[20]"
       style={{
-        background: 'linear-gradient(to bottom, #121218 0%, #121218 50%, rgba(18,18,24,0.5) 80%, transparent 100%)',
+        background: 'linear-gradient(rgb(37, 37, 52) 0%, rgba(18, 18, 24, 0) 15%)',
       }}
     >
       <div className="container-sirp">

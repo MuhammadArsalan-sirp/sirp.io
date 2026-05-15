@@ -16,7 +16,7 @@ export function EnterpriseSocDashboard() {
   const { heading, subtext, metrics } = ENTERPRISE_SOC_DASHBOARD
 
   return (
-    <section className="bg-[#121218] py-[68px] overflow-hidden border-t border-b border-white/10">
+    <section className="bg-[#121218] overflow-hidden border-t border-b border-white/10">
       <div className="dashboard-grid container-sirp">
 
         {/* Left: heading */}
