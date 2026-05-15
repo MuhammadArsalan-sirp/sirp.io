@@ -20,7 +20,7 @@ export function OmnisenseAction({ data }: OmnisenseActionProps) {
   const { heading, description, note1, note2, videoId } = data
 
   return (
-    <section className="py-24" style={{ background: 'linear-gradient(rgb(33, 33, 46) 15%, rgb(25, 25, 36) 21%, rgb(18, 18, 24) 38%)' }}>
+    <section className="py-[50px] md:py-[100px]" style={{ background: 'linear-gradient(rgb(33, 33, 46) 15%, rgb(25, 25, 36) 21%, rgb(18, 18, 24) 38%)' }}>
       <div className="container-sirp">
 
         <motion.div
@@ -28,30 +28,29 @@ export function OmnisenseAction({ data }: OmnisenseActionProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="px-8 py-14"
         >
           {/* Text */}
-          <div className="text-center mb-10 max-w-[640px] mx-auto">
+          <div className="text-center mb-8 md:mb-12 max-w-[640px] mx-auto">
             <h2
-              className="font-sans font-bold text-white mb-5"
-              style={{ fontSize: '60px', lineHeight: '1.1', letterSpacing: '-0.03em' }}
+              className="font-sans font-bold text-white mb-4 md:mb-5"
+              style={{ fontSize: 'clamp(28px, 4.5vw, 60px)', lineHeight: '1.1', letterSpacing: '-0.03em' }}
             >
               {heading}
             </h2>
-            <p className="font-sans text-white/80 leading-relaxed mb-6" style={{ fontSize: '20px' }}>
+            <p className="font-sans text-white/80 leading-relaxed mb-3 md:mb-5 text-[15px] md:text-lg">
               {description}
             </p>
-            <p className="font-sans text-white/60 leading-relaxed" style={{ fontSize: '20px' }}>{note1}</p>
-            <p className="font-sans text-white/60 leading-relaxed" style={{ fontSize: '20px' }}>{note2}</p>
+            <p className="font-sans text-white/60 leading-relaxed text-sm md:text-base">{note1}</p>
+            <p className="font-sans text-white/60 leading-relaxed text-sm md:text-base">{note2}</p>
           </div>
 
-          {/* YouTube embed */}
+          {/* YouTube embed — 16/9 responsive */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="rounded-xl overflow-hidden border border-[#3a3a4c] mx-auto"
+            className="rounded-xl overflow-hidden border border-[#3a3a4c] mx-auto w-full"
             style={{ maxWidth: '860px', aspectRatio: '16/9', position: 'relative' }}
           >
             <iframe
