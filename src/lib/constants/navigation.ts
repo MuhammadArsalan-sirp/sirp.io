@@ -30,8 +30,8 @@ export const NAV_LINKS = [
     label: 'Resources',
     href: '#',
     children: [
-      { label: 'Manifesto', href: '/manifesto', description: 'Our vision' },
       { label: 'Blog', href: '/blog', description: 'Insights & news' },
+      { label: 'Manifesto', href: '/manifesto', description: 'Our vision' },
       { label: 'Whitepaper', href: '/technical-white-paper', description: 'Deep dive' },
     ],
   },

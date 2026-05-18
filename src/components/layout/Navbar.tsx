@@ -269,12 +269,8 @@ export function Navbar() {
                   }
                 >
                   <div
-                    className="pointer-events-none absolute inset-0 bg-[#14141a]/35 backdrop-blur-lg backdrop-saturate-150"
-                    aria-hidden
-                  />
-                  <div
                     className={cn(
-                      'relative z-[1] min-h-full bg-[#14141a] px-0 py-3',
+                      'relative z-[1] min-h-full bg-[#14141a]/72 px-0 py-3 backdrop-blur-xl backdrop-saturate-150',
                       hasMobileSubmenuOpen && 'overflow-visible',
                     )}
                     onClick={() => {
@@ -317,7 +313,7 @@ export function Navbar() {
                             )}
                             {hasChildren && isExpanded && item.children && (
                               <div
-                                className="absolute left-1/2 top-full z-30 w-fit max-w-[calc(100vw-2rem)] -translate-x-1/2 -mt-2 rounded-[20px] bg-[#060606] px-5 py-6 shadow-lg shadow-black/30"
+                                className="absolute left-1/2 top-full z-30 w-fit max-w-[calc(100vw-2rem)] -translate-x-1/2 -mt-2 rounded-[20px] bg-[#060606] px-4 py-3 shadow-lg shadow-black/30"
                                 onClick={stopMobilePanelClose}
                               >
                                 <ul className="m-0 flex list-none flex-col gap-0 p-0 text-left">
@@ -325,7 +321,7 @@ export function Navbar() {
                                     <li key={child.href}>
                                       <Link
                                         href={child.href}
-                                        className="block whitespace-nowrap px-2 py-2.5 font-sans text-[15px] font-normal leading-[1.35] text-white no-underline transition-opacity hover:opacity-80"
+                                        className="block whitespace-nowrap px-1 py-2 text-left font-sans text-[15px] font-normal leading-[1.35] text-white no-underline transition-opacity hover:opacity-80"
                                         onClick={() => setMobileOpen(false)}
                                       >
                                         {child.label}
