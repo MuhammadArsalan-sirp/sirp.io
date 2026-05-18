@@ -15,7 +15,7 @@ export function EnterpriseSocShift() {
   const { heading, subtext, cards } = ENTERPRISE_SOC_SHIFT
 
   return (
-    <section className="bg-[#121218] py-16 md:py-[100px] overflow-hidden">
+    <section className="shift-section bg-[#121218] py-16 md:py-[100px] overflow-hidden">
       <div className="container-sirp">
 
         {/* Centered heading */}
@@ -29,7 +29,7 @@ export function EnterpriseSocShift() {
           <h2
             className="font-sans font-bold text-white mb-6"
             style={{
-              fontSize: '60px',
+              fontSize: 'clamp(2rem, 6vw, 2.75rem)',
               lineHeight: '1.1',
               letterSpacing: '-0.03em',
             }}
@@ -45,7 +45,7 @@ export function EnterpriseSocShift() {
         </motion.div>
 
         {/* 3-column card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {cards.map((card, i) => (
             <motion.div
               key={card.id}

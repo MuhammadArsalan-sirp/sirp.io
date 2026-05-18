@@ -18,7 +18,7 @@ export function EnterpriseSocReality() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-16 max-w-[780px]"
+          className="mb-8 lg:mb-16 max-w-[780px]"
         >
           <span className="inline-flex items-center gap-2 font-mono text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-lg border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)] mb-6">
             <Image
@@ -34,7 +34,7 @@ export function EnterpriseSocReality() {
           <h2
             className="font-sans font-bold text-white mb-6"
             style={{
-              fontSize: '60px',
+              fontSize: 'clamp(36px, 4.5vw, 60px)',
               lineHeight: '1.1',
               letterSpacing: '-0.03em',
             }}
@@ -53,7 +53,7 @@ export function EnterpriseSocReality() {
         </motion.div>
 
         {/* 2×2 card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-[30px]">
           {cards.map((card, i) => (
             <motion.div
               key={card.id}
@@ -65,7 +65,7 @@ export function EnterpriseSocReality() {
             >
               {/* Text top (before image) */}
               {card.textTop && (
-                <div className="px-5 pt-6 pb-5 md:px-8 md:pt-8 md:pb-6">
+                <div className="px-5 pt-6 pb-5 md:px-8 md:pt-8 md:pb-6 lg:p-[30px]">
                   <h3
                     className="font-sans font-semibold text-white mb-3"
                     style={{ fontSize: 'clamp(22px, 3.5vw, 34px)', lineHeight: '1.3' }}
@@ -79,7 +79,7 @@ export function EnterpriseSocReality() {
               )}
 
               {/* Image */}
-              <div className="relative w-full h-[240px] md:h-[400px] overflow-hidden">
+              <div className="relative w-full h-[180px] md:h-[360px] lg:h-[390px] overflow-hidden">
                 <Image
                   src={card.image}
                   alt={card.imageAlt}
@@ -91,7 +91,7 @@ export function EnterpriseSocReality() {
 
               {/* Text bottom (after image) */}
               {!card.textTop && (
-                <div className="px-5 py-5 md:px-8 md:py-7">
+                <div className="px-5 py-5 md:px-8 md:py-7 lg:p-[30px]">
                   <h3
                     className="font-sans font-semibold text-white mb-3"
                     style={{ fontSize: 'clamp(22px, 3.5vw, 34px)', lineHeight: '1.3' }}
