@@ -12,6 +12,7 @@ import { Button } from '@/components/shared/Button'
 export function Navbar() {
   const [scrolled, setScrolled]     = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [mobileExpanded, setMobileExpanded] = useState<string[]>([])
   const [activeDropdown, setActive] = useState<string | null>(null)
   const pathname   = usePathname()
   const closeTimer = useRef<ReturnType<typeof setTimeout>>(null)
@@ -23,6 +24,16 @@ export function Navbar() {
   }, [])
 
   useEffect(() => { setMobileOpen(false); setActive(null) }, [pathname])
+
+  useEffect(() => {
+    if (!mobileOpen) setMobileExpanded([])
+  }, [mobileOpen])
+
+  const toggleMobileSection = (label: string) => {
+    setMobileExpanded((prev) =>
+      prev.includes(label) ? prev.filter((l) => l !== label) : [...prev, label],
+    )
+  }
 
   const handleMouseEnter = (label: string) => {
     if (closeTimer.current) clearTimeout(closeTimer.current)
@@ -107,7 +118,8 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Main nav */}
+      {/* Main nav + mobile menu (menu sits flush below logo row, same horizontal inset as nav) */}
+      <div className="relative">
       <nav className="container-sirp flex items-center justify-between h-16">
 
         {/* Logo */}
@@ -204,45 +216,115 @@ export function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — blur only behind the panel */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-[#3a3a4c] bg-[#080810]/98 backdrop-blur-md">
-          <div className="container-sirp py-4 space-y-1">
-            {NAV_LINKS.map((item) => (
-              <div key={item.label}>
-                {'children' in item && item.children ? (
-                  <>
-                    <p className="px-3 py-2 font-mono text-[11px] font-medium text-white/40 uppercase tracking-widest">
-                      {item.label}
-                    </p>
-                    {item.children.map((child) => (
+        <>
+          <button
+            type="button"
+            className="fixed inset-0 z-30 cursor-default border-none bg-transparent lg:hidden"
+            aria-label="Close menu"
+            onClick={() => setMobileOpen(false)}
+          />
+          <div className="absolute left-0 right-0 top-full z-[31] lg:hidden">
+            <div
+              className="container-sirp"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Mobile navigation"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative flex w-full flex-col overflow-hidden shadow-2xl shadow-black/40 isolate">
+            <div
+              className="pointer-events-none absolute inset-0 bg-[#14141a]/35 backdrop-blur-lg backdrop-saturate-150"
+              aria-hidden
+            />
+            <div
+              className={cn(
+                'relative flex flex-col bg-[#14141a]',
+                'px-5 py-3',
+              )}
+            >
+            <ul
+              className={cn(
+                'flex flex-col list-none m-0 p-0',
+                mobileExpanded.length === 0 ? 'items-center gap-0' : 'gap-0.5',
+              )}
+            >
+              {NAV_LINKS.map((item) => {
+                const hasChildren = 'children' in item && item.children?.length
+                const isExpanded = mobileExpanded.includes(item.label)
+                const isCompact = mobileExpanded.length === 0
+
+                return (
+                  <li key={item.label} className="w-full">
+                    {hasChildren ? (
+                      <>
+                        <button
+                          type="button"
+                          className={cn(
+                            'w-full border-none bg-transparent font-sans text-base font-medium text-white cursor-pointer transition-opacity hover:opacity-80',
+                            isCompact
+                              ? 'px-4 py-2.5 text-center'
+                              : 'flex items-center justify-between gap-2 px-2 py-2.5',
+                          )}
+                          onClick={() => toggleMobileSection(item.label)}
+                          aria-expanded={isExpanded}
+                        >
+                          <span>{item.label}</span>
+                          {!isCompact && (
+                            <ChevronDown
+                              className={cn(
+                                'h-4 w-4 shrink-0 text-white/70 transition-transform duration-200',
+                                isExpanded && 'rotate-180',
+                              )}
+                            />
+                          )}
+                        </button>
+                        {isExpanded && (
+                          <ul className="mb-1 space-y-0.5 pt-1.5 list-none m-0 px-3 p-0 text-left">
+                            {item.children.map((child) => (
+                              <li key={child.href}>
+                                <Link
+                                  href={child.href}
+                                  className="block px-1 py-2 font-sans text-sm text-white/90 no-underline transition-colors hover:bg-white/5 hover:text-white"
+                                  onClick={() => setMobileOpen(false)}
+                                >
+                                  {child.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </>
+                    ) : (
                       <Link
-                        key={child.href}
-                        href={child.href}
-                        className="block px-5 py-2.5 font-sans text-sm text-white hover:bg-white/5 rounded-[10px] transition-colors no-underline"
+                        href={item.href}
+                        className={cn(
+                          'block font-sans text-base font-medium text-white no-underline transition-opacity hover:opacity-80',
+                          isCompact ? 'px-4 py-2.5 text-center' : 'px-2 py-2.5',
+                        )}
+                        onClick={() => setMobileOpen(false)}
                       >
-                        {child.label}
+                        {item.label}
                       </Link>
-                    ))}
-                  </>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="block px-3 py-2.5 font-sans text-sm font-medium text-white hover:bg-white/5 rounded-[10px] transition-colors no-underline"
-                  >
-                    {item.label}
-                  </Link>
-                )}
+                    )}
+                  </li>
+                )
+              })}
+              <li className="flex w-full justify-center py-2.5">
+                <Button href="/contact" variant="secondary" className="sirp-button--mobile-demo">
+                  Get a demo
+                </Button>
+              </li>
+            </ul>
+            </div>
               </div>
-            ))}
-            <div className="pt-3 border-t border-[#3a3a4c]">
-              <Button href="/contact" variant="secondary" className="w-full justify-center">
-                Get a demo
-              </Button>
             </div>
           </div>
-        </div>
+        </>
       )}
+
+      </div>
 
     </header>
   )

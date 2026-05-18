@@ -75,6 +75,28 @@ button.sirp-button {
   outline-color: rgba(255, 255, 255, 0.75);
 }
 
+/* Mobile nav menu — pill size only; colors match secondary CTA */
+.sirp-button--secondary.sirp-button--mobile-demo {
+  min-width: unset;
+  width: auto;
+  height: 50px;
+  padding: 8px 26px;
+  border-radius: 9999px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: none;
+}
+
+.sirp-button--secondary.sirp-button--mobile-demo:hover {
+  background: transparent;
+  border-color: #8e2dff;
+  box-shadow: none;
+}
+
 .sirp-button--disabled,
 button.sirp-button:disabled {
   pointer-events: none;
@@ -87,6 +109,12 @@ button.sirp-button:disabled {
     font-size: 0.8125rem;
     padding: 0.5rem 1.2rem;
     letter-spacing: 0.015em;
+  }
+
+  .sirp-button--secondary.sirp-button--mobile-demo {
+    height: 50px;
+    padding: 8px 26px;
+    font-size: 0.9375rem;
   }
 
   .sirp-button__text {
