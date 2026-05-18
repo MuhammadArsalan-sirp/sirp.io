@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useLayoutEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -13,9 +13,11 @@ export function Navbar() {
   const [scrolled, setScrolled]     = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileExpanded, setMobileExpanded] = useState<string[]>([])
+  const [collapsedPanelHeight, setCollapsedPanelHeight] = useState<number | null>(null)
   const [activeDropdown, setActive] = useState<string | null>(null)
   const pathname   = usePathname()
   const closeTimer = useRef<ReturnType<typeof setTimeout>>(null)
+  const mobilePanelRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -26,14 +28,32 @@ export function Navbar() {
   useEffect(() => { setMobileOpen(false); setActive(null) }, [pathname])
 
   useEffect(() => {
-    if (!mobileOpen) setMobileExpanded([])
+    if (!mobileOpen) {
+      setMobileExpanded([])
+      setCollapsedPanelHeight(null)
+    }
   }, [mobileOpen])
 
+  const hasMobileSubmenuOpen = mobileExpanded.length > 0
+
+  useLayoutEffect(() => {
+    if (!mobileOpen || hasMobileSubmenuOpen || !mobilePanelRef.current) return
+    setCollapsedPanelHeight(mobilePanelRef.current.getBoundingClientRect().height)
+  }, [mobileOpen, hasMobileSubmenuOpen])
+
   const toggleMobileSection = (label: string) => {
-    setMobileExpanded((prev) =>
-      prev.includes(label) ? prev.filter((l) => l !== label) : [...prev, label],
-    )
+    setMobileExpanded((prev) => {
+      if (prev.includes(label)) return []
+      if (mobilePanelRef.current) {
+        setCollapsedPanelHeight(mobilePanelRef.current.getBoundingClientRect().height)
+      }
+      return [label]
+    })
   }
+
+  const closeMobileSubmenu = () => setMobileExpanded([])
+
+  const stopMobilePanelClose = (e: { stopPropagation: () => void }) => e.stopPropagation()
 
   const handleMouseEnter = (label: string) => {
     if (closeTimer.current) clearTimeout(closeTimer.current)
@@ -235,101 +255,101 @@ export function Navbar() {
             >
               <div
                 className={cn(
-                  'relative mx-auto flex w-full max-w-[353px] flex-col shadow-2xl shadow-black/40 isolate',
-                  mobileExpanded.length > 0 ? 'overflow-visible' : 'overflow-hidden',
+                  'relative mx-auto w-full max-w-[353px] shadow-2xl shadow-black/40',
+                  hasMobileSubmenuOpen ? 'overflow-visible' : 'overflow-hidden',
                 )}
               >
-            <div
-              className="pointer-events-none absolute inset-0 bg-[#14141a]/35 backdrop-blur-lg backdrop-saturate-150"
-              aria-hidden
-            />
-            <div
-              className={cn(
-                'relative flex flex-col bg-[#14141a] px-0 py-3',
-              )}
-            >
-            <ul
-              className={cn(
-                'flex flex-col list-none m-0 p-0',
-                mobileExpanded.length === 0 ? 'items-center gap-0' : 'w-full gap-0',
-              )}
-            >
-              {mobileExpanded.length > 0 ? (
-                (() => {
-                  const expandedItem = NAV_LINKS.find(
-                    (item) =>
-                      mobileExpanded.includes(item.label) &&
-                      'children' in item &&
-                      item.children?.length,
-                  )
-                  if (!expandedItem || !('children' in expandedItem) || !expandedItem.children) {
-                    return null
+                <div
+                  ref={mobilePanelRef}
+                  className="relative"
+                  style={
+                    hasMobileSubmenuOpen && collapsedPanelHeight
+                      ? { minHeight: collapsedPanelHeight }
+                      : undefined
                   }
-                  return (
-                    <li key={expandedItem.label} className="w-full">
-                      <button
-                        type="button"
-                        className="w-full border-none bg-transparent px-4 py-2.5 text-center font-sans text-base font-medium text-white cursor-pointer transition-opacity hover:opacity-80"
-                        onClick={() => toggleMobileSection(expandedItem.label)}
-                        aria-expanded
-                      >
-                        {expandedItem.label}
-                      </button>
-                      <div className="relative z-10 mx-auto -mt-2 w-fit max-w-full overflow-hidden rounded-[20px] bg-[#060606] px-5 py-6">
-                        <ul className="m-0 flex list-none flex-col gap-0 p-0 text-left">
-                          {expandedItem.children.map((child) => (
-                            <li key={child.href}>
-                              <Link
-                                href={child.href}
-                                className="block whitespace-nowrap px-2 py-2.5 font-sans text-[15px] font-normal leading-[1.35] text-white no-underline transition-opacity hover:opacity-80"
-                                onClick={() => setMobileOpen(false)}
-                              >
-                                {child.label}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </li>
-                  )
-                })()
-              ) : (
-                <>
-                  {NAV_LINKS.map((item) => {
-                    const hasChildren = 'children' in item && item.children?.length
+                >
+                  <div
+                    className="pointer-events-none absolute inset-0 bg-[#14141a]/35 backdrop-blur-lg backdrop-saturate-150"
+                    aria-hidden
+                  />
+                  <div
+                    className={cn(
+                      'relative z-[1] min-h-full bg-[#14141a] px-0 py-3',
+                      hasMobileSubmenuOpen && 'overflow-visible',
+                    )}
+                    onClick={() => {
+                      if (hasMobileSubmenuOpen) closeMobileSubmenu()
+                    }}
+                  >
+                    <ul className="m-0 flex list-none flex-col items-center gap-0 p-0">
+                      {NAV_LINKS.map((item) => {
+                        const hasChildren = 'children' in item && item.children?.length
+                        const isExpanded = mobileExpanded.includes(item.label)
 
-                    return (
-                      <li key={item.label} className="w-full">
-                        {hasChildren ? (
-                          <button
-                            type="button"
-                            className="w-full border-none bg-transparent px-4 py-2 text-center font-sans text-base font-medium text-white cursor-pointer transition-opacity hover:opacity-80"
-                            onClick={() => toggleMobileSection(item.label)}
-                            aria-expanded={false}
+                        return (
+                          <li
+                            key={item.label}
+                            className={cn('w-full', hasChildren && isExpanded && 'relative z-20')}
                           >
-                            {item.label}
-                          </button>
-                        ) : (
-                          <Link
-                            href={item.href}
-                            className="block px-4 py-2 text-center font-sans text-base font-medium text-white no-underline transition-opacity hover:opacity-80"
-                            onClick={() => setMobileOpen(false)}
-                          >
-                            {item.label}
-                          </Link>
-                        )}
+                            {hasChildren ? (
+                              <button
+                                type="button"
+                                className="w-full border-none bg-transparent px-4 py-2 text-center font-sans text-base font-medium text-white cursor-pointer transition-opacity hover:opacity-80"
+                                onClick={(e) => {
+                                  stopMobilePanelClose(e)
+                                  toggleMobileSection(item.label)
+                                }}
+                                aria-expanded={isExpanded}
+                              >
+                                {item.label}
+                              </button>
+                            ) : (
+                              <Link
+                                href={item.href}
+                                className="block px-4 py-2 text-center font-sans text-base font-medium text-white no-underline transition-opacity hover:opacity-80"
+                                onClick={(e) => {
+                                  stopMobilePanelClose(e)
+                                  setMobileOpen(false)
+                                }}
+                              >
+                                {item.label}
+                              </Link>
+                            )}
+                            {hasChildren && isExpanded && item.children && (
+                              <div
+                                className="absolute left-1/2 top-full z-30 w-fit max-w-[calc(100vw-2rem)] -translate-x-1/2 -mt-2 rounded-[20px] bg-[#060606] px-5 py-6 shadow-lg shadow-black/30"
+                                onClick={stopMobilePanelClose}
+                              >
+                                <ul className="m-0 flex list-none flex-col gap-0 p-0 text-left">
+                                  {item.children.map((child) => (
+                                    <li key={child.href}>
+                                      <Link
+                                        href={child.href}
+                                        className="block whitespace-nowrap px-2 py-2.5 font-sans text-[15px] font-normal leading-[1.35] text-white no-underline transition-opacity hover:opacity-80"
+                                        onClick={() => setMobileOpen(false)}
+                                      >
+                                        {child.label}
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+                          </li>
+                        )
+                      })}
+                      <li className="flex w-full justify-center pt-1.5 pb-0" onClick={stopMobilePanelClose}>
+                        <Button
+                          href="/contact"
+                          variant="secondary"
+                          className="sirp-button--mobile-demo"
+                        >
+                          Get a demo
+                        </Button>
                       </li>
-                    )
-                  })}
-                  <li className="flex w-full justify-center pt-1.5 pb-0">
-                    <Button href="/contact" variant="secondary" className="sirp-button--mobile-demo">
-                      Get a demo
-                    </Button>
-                  </li>
-                </>
-              )}
-            </ul>
-            </div>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
