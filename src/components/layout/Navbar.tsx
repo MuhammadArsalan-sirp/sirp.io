@@ -233,89 +233,101 @@ export function Navbar() {
               aria-label="Mobile navigation"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative flex w-full flex-col overflow-hidden shadow-2xl shadow-black/40 isolate">
+              <div
+                className={cn(
+                  'relative mx-auto flex w-full max-w-[353px] flex-col shadow-2xl shadow-black/40 isolate',
+                  mobileExpanded.length > 0 ? 'overflow-visible' : 'overflow-hidden',
+                )}
+              >
             <div
               className="pointer-events-none absolute inset-0 bg-[#14141a]/35 backdrop-blur-lg backdrop-saturate-150"
               aria-hidden
             />
             <div
               className={cn(
-                'relative flex flex-col bg-[#14141a]',
-                'px-5 py-3',
+                'relative flex flex-col bg-[#14141a] px-0 py-3',
               )}
             >
             <ul
               className={cn(
                 'flex flex-col list-none m-0 p-0',
-                mobileExpanded.length === 0 ? 'items-center gap-0' : 'gap-0.5',
+                mobileExpanded.length === 0 ? 'items-center gap-0' : 'w-full gap-0',
               )}
             >
-              {NAV_LINKS.map((item) => {
-                const hasChildren = 'children' in item && item.children?.length
-                const isExpanded = mobileExpanded.includes(item.label)
-                const isCompact = mobileExpanded.length === 0
-
-                return (
-                  <li key={item.label} className="w-full">
-                    {hasChildren ? (
-                      <>
-                        <button
-                          type="button"
-                          className={cn(
-                            'w-full border-none bg-transparent font-sans text-base font-medium text-white cursor-pointer transition-opacity hover:opacity-80',
-                            isCompact
-                              ? 'px-4 py-2.5 text-center'
-                              : 'flex items-center justify-between gap-2 px-2 py-2.5',
-                          )}
-                          onClick={() => toggleMobileSection(item.label)}
-                          aria-expanded={isExpanded}
-                        >
-                          <span>{item.label}</span>
-                          {!isCompact && (
-                            <ChevronDown
-                              className={cn(
-                                'h-4 w-4 shrink-0 text-white/70 transition-transform duration-200',
-                                isExpanded && 'rotate-180',
-                              )}
-                            />
-                          )}
-                        </button>
-                        {isExpanded && (
-                          <ul className="mb-1 space-y-0.5 pt-1.5 list-none m-0 px-3 p-0 text-left">
-                            {item.children.map((child) => (
-                              <li key={child.href}>
-                                <Link
-                                  href={child.href}
-                                  className="block px-1 py-2 font-sans text-sm text-white/90 no-underline transition-colors hover:bg-white/5 hover:text-white"
-                                  onClick={() => setMobileOpen(false)}
-                                >
-                                  {child.label}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className={cn(
-                          'block font-sans text-base font-medium text-white no-underline transition-opacity hover:opacity-80',
-                          isCompact ? 'px-4 py-2.5 text-center' : 'px-2 py-2.5',
-                        )}
-                        onClick={() => setMobileOpen(false)}
+              {mobileExpanded.length > 0 ? (
+                (() => {
+                  const expandedItem = NAV_LINKS.find(
+                    (item) =>
+                      mobileExpanded.includes(item.label) &&
+                      'children' in item &&
+                      item.children?.length,
+                  )
+                  if (!expandedItem || !('children' in expandedItem) || !expandedItem.children) {
+                    return null
+                  }
+                  return (
+                    <li key={expandedItem.label} className="w-full">
+                      <button
+                        type="button"
+                        className="w-full border-none bg-transparent px-4 py-2.5 text-center font-sans text-base font-medium text-white cursor-pointer transition-opacity hover:opacity-80"
+                        onClick={() => toggleMobileSection(expandedItem.label)}
+                        aria-expanded
                       >
-                        {item.label}
-                      </Link>
-                    )}
+                        {expandedItem.label}
+                      </button>
+                      <div className="relative z-10 mx-auto -mt-2 w-fit max-w-full overflow-hidden rounded-[20px] bg-[#060606] px-5 py-6">
+                        <ul className="m-0 flex list-none flex-col gap-0 p-0 text-left">
+                          {expandedItem.children.map((child) => (
+                            <li key={child.href}>
+                              <Link
+                                href={child.href}
+                                className="block whitespace-nowrap px-2 py-2.5 font-sans text-[15px] font-normal leading-[1.35] text-white no-underline transition-opacity hover:opacity-80"
+                                onClick={() => setMobileOpen(false)}
+                              >
+                                {child.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </li>
+                  )
+                })()
+              ) : (
+                <>
+                  {NAV_LINKS.map((item) => {
+                    const hasChildren = 'children' in item && item.children?.length
+
+                    return (
+                      <li key={item.label} className="w-full">
+                        {hasChildren ? (
+                          <button
+                            type="button"
+                            className="w-full border-none bg-transparent px-4 py-2 text-center font-sans text-base font-medium text-white cursor-pointer transition-opacity hover:opacity-80"
+                            onClick={() => toggleMobileSection(item.label)}
+                            aria-expanded={false}
+                          >
+                            {item.label}
+                          </button>
+                        ) : (
+                          <Link
+                            href={item.href}
+                            className="block px-4 py-2 text-center font-sans text-base font-medium text-white no-underline transition-opacity hover:opacity-80"
+                            onClick={() => setMobileOpen(false)}
+                          >
+                            {item.label}
+                          </Link>
+                        )}
+                      </li>
+                    )
+                  })}
+                  <li className="flex w-full justify-center pt-1.5 pb-0">
+                    <Button href="/contact" variant="secondary" className="sirp-button--mobile-demo">
+                      Get a demo
+                    </Button>
                   </li>
-                )
-              })}
-              <li className="flex w-full justify-center py-2.5">
-                <Button href="/contact" variant="secondary" className="sirp-button--mobile-demo">
-                  Get a demo
-                </Button>
-              </li>
+                </>
+              )}
             </ul>
             </div>
               </div>
