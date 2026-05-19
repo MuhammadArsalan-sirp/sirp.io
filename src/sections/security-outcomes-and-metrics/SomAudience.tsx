@@ -17,7 +17,7 @@ export function SomAudience() {
   const { badge, items } = SOM_AUDIENCE
 
   return (
-    <section className="bg-[#121218] py-[100px] overflow-hidden">
+    <section className="bg-[#121218] py-14 md:py-16 lg:py-20 xl:py-[100px] overflow-hidden">
       <div className="container-sirp">
 
         {/* Badge */}
@@ -34,7 +34,7 @@ export function SomAudience() {
         </motion.div>
 
         {/* 3-column card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-5">
           {items.map((item, i) => (
             <motion.div
               key={item.id}

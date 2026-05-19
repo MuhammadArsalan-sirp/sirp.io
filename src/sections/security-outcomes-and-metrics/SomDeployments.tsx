@@ -9,7 +9,7 @@ export function SomDeployments() {
   const { badge, heading, items } = SOM_DEPLOYMENTS
 
   return (
-    <section className="bg-[#121218] py-[100px] overflow-hidden">
+    <section className="bg-[#121218] py-14 md:py-16 lg:py-20 xl:py-[100px] overflow-hidden">
       <div className="container-sirp">
 
         {/* Badge */}
@@ -37,7 +37,7 @@ export function SomDeployments() {
         </motion.h2>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
           {items.map((item, i) => (
             <motion.div
               key={item.id}

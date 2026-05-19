@@ -60,13 +60,12 @@ export function SomHero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.05 }}
-          className="text-white mx-auto"
+          className="text-white mx-auto text-center"
           style={{
             fontFamily: 'var(--font-inter, sans-serif)',
             fontWeight: 500,
-            fontSize: 'clamp(2.4rem, 5vw, 74px)',
+            fontSize: 'clamp(2.75rem, 5vw, 74px)',
             lineHeight: '110%',
-            textAlign: 'center',
             maxWidth: '860px',
           }}
         >
@@ -80,10 +79,10 @@ export function SomHero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.18 }}
-          className="mx-auto mt-7"
+          className="mx-auto mt-7 text-center"
           style={{
-            fontFamily: 'var(--font-sans)',
-            fontSize: '17px',
+            fontFamily: 'var(--font-inter, sans-serif)',
+            fontSize: '18px',
             lineHeight: '1.65',
             color: '#ffffff',
             maxWidth: '500px',
@@ -96,7 +95,7 @@ export function SomHero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.28 }}
-          className="mt-8"
+          className="mt-8 flex justify-center"
         >
           <Link
             href={cta.href}

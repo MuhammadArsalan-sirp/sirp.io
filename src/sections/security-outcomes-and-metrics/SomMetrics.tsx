@@ -6,11 +6,12 @@ import { SOM_METRICS } from '@/lib/constants/security-outcomes-and-metrics'
 import './SomMetrics.css'
 
 const ICON_MAP = {
-  bargraph: '/images/enterprise-soc/bargraph.svg',
-  search:   '/images/enterprise-soc/search.svg',
-  current:  '/images/enterprise-soc/current.svg',
-  dollar:   '/images/enterprise-soc/dollar.svg',
-  download: '/images/enterprise-soc/download.svg',
+  bargraph:      '/images/enterprise-soc/bargraph.svg',
+  search:        '/images/enterprise-soc/search.svg',
+  current:       '/images/enterprise-soc/current.svg',
+  dollar:        '/images/enterprise-soc/dollar.svg',
+  download:      '/images/enterprise-soc/download.svg',
+  'analyst-hours': '/images/Analyst-hours.svg',
 } as const
 
 export function SomMetrics() {
@@ -29,9 +30,11 @@ export function SomMetrics() {
           className="som-metrics-heading-cell"
         >
           <h2
-            className="font-sans font-bold text-white"
+            className="text-white"
             style={{
-              fontSize: 'clamp(2rem, 3vw, 2.8rem)',
+              fontFamily: 'var(--font-inter, sans-serif)',
+              fontWeight: 500,
+              fontSize: '42px',
               lineHeight: '1.15',
               letterSpacing: '-0.02em',
             }}

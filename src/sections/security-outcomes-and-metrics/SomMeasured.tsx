@@ -9,7 +9,7 @@ export function SomMeasured() {
   const { label, excluded, items } = SOM_MEASURED
 
   return (
-    <section className="bg-[#121218] pb-[100px] px-[80px]">
+    <section className="bg-[#121218] pb-14 md:pb-16 lg:pb-20 xl:pb-[100px] px-4 md:px-8 lg:px-12 xl:px-[80px]">
       <div className="w-full">
 
         {/* Heading */}
@@ -30,7 +30,7 @@ export function SomMeasured() {
         </motion.p>
 
         {/* 4-column cards */}
-        <div className="grid grid-cols-4 gap-4 w-full">
+        <div className="grid grid-cols-1 xl:grid-cols-4 gap-4 w-full">
           {items.map((item, i) => (
             <motion.div
               key={item.id}
