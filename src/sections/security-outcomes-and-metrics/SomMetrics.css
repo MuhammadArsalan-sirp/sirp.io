@@ -136,63 +136,14 @@
   filter: hue-rotate(-120deg) drop-shadow(0 0 6px rgba(127, 210, 216, 0.5));
 }
 
-/* ─── Desktop (≥ 1280px) ─────────────────────────────────── */
-@media (min-width: 1280px) {
-  .som-metrics-grid {
-    grid-template-columns: 5fr 4fr 4fr;
-    grid-template-rows: minmax(260px, auto) minmax(260px, auto);
-  }
-
-  .som-metrics-heading-cell {
-    grid-column: 1;
-    grid-row: 1 / 3;
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
-    border-bottom: none;
-  }
-
-  .som-metric-cell {
-    border-bottom: none;
-    border-right: none;
-  }
-
-  .som-metric-cell:nth-child(2),
-  .som-metric-cell:nth-child(3) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .som-metric-cell:nth-child(2),
-  .som-metric-cell:nth-child(4) {
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .som-metric-cell-value {
-    font-size: 64px;
-  }
-}
-
 /* ─── iPad Pro / Laptop (1024 – 1279px) ──────────────────── */
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .som-metrics-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-
   .som-metrics-heading-cell {
-    grid-column: 1;
-    grid-row: auto;
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding: 48px 32px;
   }
 
   .som-metric-cell {
     padding: 36px 28px;
-    border-right: none !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .som-metric-cell:last-child {
-    border-bottom: none;
   }
 
   .som-metric-cell-value {
@@ -203,13 +154,13 @@
 /* ─── iPad / Tablet (768 – 1023px) ───────────────────────── */
 @media (min-width: 768px) and (max-width: 1023px) {
   .som-metrics-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
   }
 
   .som-metrics-heading-cell {
-    grid-column: 1;
-    grid-row: auto;
+    grid-column: 1 / 3;
+    grid-row: 1;
     border-right: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding: 44px 32px;
@@ -217,12 +168,16 @@
 
   .som-metric-cell {
     padding: 32px 28px;
-    border-right: none !important;
+  }
+
+  .som-metric-cell:nth-child(2),
+  .som-metric-cell:nth-child(3) {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  .som-metric-cell:last-child {
-    border-bottom: none;
+  .som-metric-cell:nth-child(2),
+  .som-metric-cell:nth-child(4) {
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .som-metric-cell-value {
