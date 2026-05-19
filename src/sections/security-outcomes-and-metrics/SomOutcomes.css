@@ -126,23 +126,114 @@
   color: #ffffff;
 }
 
-/* ─── Responsive ──────────────────────────────────────────── */
-@media (max-width: 768px) {
+/* ─── iPad Pro / Laptop (1024 – 1279px) ──────────────────── */
+@media (min-width: 1024px) and (max-width: 1279px) {
   .outcomes-body {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
 
   .outcomes-text {
+    padding: 48px 40px;
     border-right: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 36px 28px;
   }
 
   .outcomes-image-wrap {
-    min-height: 280px;
+    min-height: 380px;
+  }
+
+  .outcomes-title {
+    font-size: 34px;
+  }
+
+  .outcomes-para {
+    font-size: 16px;
+  }
+}
+
+/* ─── iPad / Tablet (768 – 1023px) ───────────────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .outcomes-body {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .outcomes-text {
+    padding: 40px 36px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .outcomes-title {
+    font-size: 30px;
+  }
+
+  .outcomes-para {
+    font-size: 15px;
+  }
+
+  .outcomes-image-wrap {
+    min-height: 320px;
   }
 
   .outcomes-tabs {
     flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .outcomes-tab {
+    flex: none;
+    font-size: 12px;
+  }
+}
+
+/* ─── Mobile (< 768px) ────────────────────────────────────── */
+@media (max-width: 767px) {
+  /* Stack card as column and move tabs to top */
+  .outcomes-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .outcomes-tabs {
+    order: -1;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px;
+    border-top: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .outcomes-tab {
+    flex: none;
+    width: 100%;
+    font-size: 13px;
+    padding: 10px 16px;
+    text-align: center;
+  }
+
+  .outcomes-body {
+    order: 0;
+    grid-template-columns: 1fr;
+  }
+
+  /* Hide image on mobile */
+  .outcomes-image-wrap {
+    display: none;
+  }
+
+  .outcomes-text {
+    border-right: none;
+    padding: 28px 20px;
+  }
+
+  .outcomes-title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .outcomes-para {
+    font-size: 15px;
   }
 }

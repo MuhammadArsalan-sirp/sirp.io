@@ -38,14 +38,78 @@
   align-items: center;
 }
 
-/* ─── Responsive ──────────────────────────────────────────── */
-@media (max-width: 768px) {
+/* ─── Desktop (≥ 1280px) ─────────────────────────────────── */
+@media (min-width: 1280px) {
   .som-soc-grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
   }
 
   .som-soc-heading {
-    font-size: 36px;
+    font-size: 42px;
+  }
+
+  .som-soc-image-wrap {
+    min-height: 560px;
+  }
+}
+
+/* ─── iPad Pro / Laptop (1024 – 1279px) ──────────────────── */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .som-soc-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .som-soc-heading {
+    font-size: 34px;
+  }
+
+  .som-soc-image-wrap {
+    min-height: 440px;
+  }
+}
+
+/* ─── iPad / Tablet (768 – 1023px) ───────────────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .som-soc-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .som-soc-heading {
+    font-size: 30px;
+    margin-bottom: 24px;
+  }
+
+  .som-soc-para {
+    font-size: 16px;
+  }
+
+  .som-soc-image-wrap {
+    min-height: 360px;
+  }
+}
+
+/* ─── Mobile (< 768px) ────────────────────────────────────── */
+@media (max-width: 767px) {
+  .som-soc-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .som-soc-heading {
+    font-family: var(--font-inter, sans-serif);
+    font-size: 42px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .som-soc-para {
+    font-size: 18px;
+  }
+
+  .som-soc-image-wrap {
+    min-height: 260px;
   }
 }

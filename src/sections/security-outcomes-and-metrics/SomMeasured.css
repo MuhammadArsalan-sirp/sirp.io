@@ -62,3 +62,35 @@
   text-align: center;
   margin-top: 32px;
 }
+
+/* ─── iPad / Tablet (768 – 1023px) ───────────────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .som-measured-card {
+    padding: 24px;
+  }
+
+  .som-measured-value {
+    font-size: 17px;
+  }
+}
+
+/* ─── Mobile (< 768px) ────────────────────────────────────── */
+@media (max-width: 767px) {
+  .som-measured-card {
+    padding: 20px 16px;
+    gap: 14px;
+  }
+
+  .som-measured-value {
+    font-size: 15px;
+  }
+
+  .som-measured-label {
+    font-size: 13px;
+  }
+
+  .som-measured-excluded {
+    font-size: 12px;
+    margin-top: 24px;
+  }
+}

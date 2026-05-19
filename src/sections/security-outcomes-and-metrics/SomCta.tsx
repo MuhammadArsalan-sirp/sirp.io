@@ -43,7 +43,7 @@ export function SomCta() {
             className="text-white text-center"
             style={{
               fontFamily: 'var(--font-inter, sans-serif)',
-              fontSize: '60px',
+              fontSize: 'clamp(2rem, 5vw, 60px)',
               fontWeight: 500,
               lineHeight: '120%',
               maxWidth: '700px',
@@ -57,7 +57,7 @@ export function SomCta() {
             className="text-center mt-6 mx-auto"
             style={{
               fontFamily: 'var(--font-inter, sans-serif)',
-              fontSize: '20px',
+              fontSize: 'clamp(15px, 2vw, 20px)',
               fontWeight: 500,
               color: '#ffffff',
               maxWidth: '520px',
