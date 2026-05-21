@@ -21,10 +21,12 @@ interface CtaData {
 
 interface CtaSectionProps {
   data?: CtaData
+  /** When false, dome/glow do not overlap the section above (e.g. long step diagrams). */
+  overlapTop?: boolean
 }
 
 /* ─── Component ──────────────────────────────────────────── */
-export function CtaSection({ data = CTA_DATA }: CtaSectionProps) {
+export function CtaSection({ data = CTA_DATA, overlapTop = true }: CtaSectionProps) {
   const { headingItalic, primaryBtn, secondaryBtn } = data
 
   return (

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { PurplePill } from '@/components/shared/PurplePill'
 import { FEATURES_DATA } from '@/lib/constants'
 import './FeaturesSection.css'
 
@@ -30,7 +31,7 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
   const { pill, heading, headingItalic, features } = data
 
   return (
-    <section className="bg-[#121218] border-b border-[#3a3a4c] py-[50px] md:py-[100px] overflow-hidden">
+    <section className="bg-[#121218] py-[50px] md:py-[100px] overflow-hidden">
       <div className="container-sirp">
 
         {/* Heading */}

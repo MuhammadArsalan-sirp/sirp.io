@@ -13,11 +13,12 @@ interface Step {
 
 interface HowItWorksStepsProps {
   data?: readonly Step[]
+  sectionClassName?: string
 }
 
-export function HowItWorksSteps({ data = [] }: HowItWorksStepsProps) {
+export function HowItWorksSteps({ data = [], sectionClassName }: HowItWorksStepsProps) {
   return (
-    <section className="bg-[#121218] py-10 md:py-20 lg:py-24">
+    <section className={['bg-[#121218] py-10 md:py-20 lg:py-24', sectionClassName].filter(Boolean).join(' ')}>
       <div className="container-sirp">
         <div className="space-y-12 md:space-y-24 lg:space-y-32">
           {data.map((step, i) => (

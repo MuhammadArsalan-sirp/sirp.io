@@ -43,11 +43,7 @@
 
 .manifesto-page .manifesto-insight-card-pill {
   align-self: flex-start;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.58rem;
   font-weight: 600;
-  font-family: var(--font-mono);
   background: rgba(88, 28, 135, 0.55);
   border-color: rgba(168, 85, 247, 0.45);
 }

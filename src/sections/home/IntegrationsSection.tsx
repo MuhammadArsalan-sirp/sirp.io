@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { PurplePill } from '@/components/shared/PurplePill'
 import { INTEGRATIONS_DATA } from '@/lib/constants'
 import './IntegrationsSection.css'
 
@@ -55,7 +56,7 @@ export function IntegrationsSection({ data = INTEGRATIONS_DATA }: IntegrationsSe
         >
           <span className="inline-flex items-center gap-1 font-sans text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-md border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]">
             {pill}
-          </span>
+          </PurplePill>
           <h2
             className="font-sans font-bold text-white mt-4 mb-4"
             style={{

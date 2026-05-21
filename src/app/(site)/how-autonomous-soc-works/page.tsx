@@ -18,6 +18,7 @@ export default function HowAutonomousSocWorksPage() {
   return (
     <div className="how-autonomous-soc-works-page">
       <PageHeader
+        showBottomBorder={false}
         badgeText={badge}
         heading={
           headingItalic ? (
@@ -34,8 +35,11 @@ export default function HowAutonomousSocWorksPage() {
       <HowItWorksOverview data={HOW_AUTONOMOUS_SOC_WORKS_DATA.overview} />
       <HowItWorksSteps data={HOW_AUTONOMOUS_SOC_WORKS_DATA.steps.slice(0, 5)} />
       <HowItWorksVideo videoId="VIeVs8nbM6U" />
-      <HowItWorksSteps data={HOW_AUTONOMOUS_SOC_WORKS_DATA.steps.slice(5)} />
-      <CtaSection data={CTA_DATA} />
+      <HowItWorksSteps
+        data={HOW_AUTONOMOUS_SOC_WORKS_DATA.steps.slice(5)}
+        sectionClassName="!pb-20 md:!pb-28 lg:!pb-36"
+      />
+      <CtaSection data={CTA_DATA} overlapTop={false} />
     </div>
   )
 }

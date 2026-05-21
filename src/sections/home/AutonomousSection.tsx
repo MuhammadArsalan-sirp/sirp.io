@@ -30,7 +30,7 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
 
   return (
     <section
-      className="border-b border-[#3a3a4c] py-16 md:py-[100px] overflow-hidden"
+      className="py-16 md:py-[100px] overflow-hidden"
       style={{ background: 'linear-gradient(#252534 0%, #121218 20%)' }}
     >
       <div className="container-sirp">

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Button } from '@/components/shared/Button'
+import { PurplePill } from '@/components/shared/PurplePill'
 import { STATS_DATA } from '@/lib/constants'
 
 /* ─── Types ──────────────────────────────────────────────── */
@@ -65,7 +66,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
 
             {/* Heading */}
             <h2
-              className="text-white font-bold mt-4 mb-4"
+              className="text-white font-bold mt-3 mb-3"
               style={{
                 fontSize: 'clamp(1.8rem, 3.5vw, 2.625rem)',
                 lineHeight: '1.2',
@@ -85,7 +86,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
             </h2>
 
             {/* Subheading */}
-            <p className="text-white/60 text-base leading-[1.7] max-w-[400px] mb-8 font-['Inter',sans-serif]">
+            <p className="text-white/60 text-base leading-[1.7] max-w-[400px] mb-14 font-['Inter',sans-serif]">
               {subheading}
             </p>
 
@@ -102,7 +103,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="w-full md:flex-1"
+            className="w-full md:flex-1 md:pt-8 md:pb-8 lg:pt-16 lg:pb-16"
           >
             {stats.map((stat, i) => (
               <div key={stat.label}>
@@ -111,10 +112,10 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="flex items-start gap-4 py-6 md:py-7"
+                  className="flex items-center gap-4 py-4 md:py-5"
                 >
                   {/* Icon */}
-                  <div className="relative flex-shrink-0 w-[58px] h-[97px]">
+                  <div className="relative flex-shrink-0 w-[58px] h-[97px] self-center">
                     <Image
                       src={stat.icon}
                       alt={stat.label}
@@ -127,7 +128,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
                   {/* Mobile: number+% stacked above label | Desktop: number% + label inline */}
                   <div className="flex flex-col gap-1 lg:flex-row lg:items-center lg:gap-6 flex-1">
                     {/* Number + % */}
-                    <div className="flex items-start gap-0 flex-shrink-0">
+                    <div className="flex items-center gap-0 flex-shrink-0">
                       <span
                         className="font-['Noto_Serif',serif] font-normal leading-[1.1]"
                         style={{
@@ -142,7 +143,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
                         {stat.value}
                       </span>
                       <span
-                        className="font-['Noto_Serif',serif] font-normal leading-[1.1] mt-1"
+                        className="font-['Noto_Serif',serif] font-normal leading-[1.1] self-start mt-2 lg:mt-3"
                         style={{
                           fontSize: 'clamp(3.375rem, 16vw, 4rem)',
                           backgroundImage: stat.gradient,
@@ -156,7 +157,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
                     </div>
 
                     {/* Label */}
-                    <span className="text-white font-semibold text-base font-['Inter',sans-serif]">
+                    <span className="text-white font-semibold text-base leading-snug font-['Inter',sans-serif] lg:max-w-[220px]">
                       {stat.label}
                     </span>
                   </div>
