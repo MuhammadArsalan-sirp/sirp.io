@@ -42,21 +42,19 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
       className="relative overflow-hidden"
       style={{ height: 'calc(100dvh - 4.5rem)', maxHeight: 'calc(100dvh - 4.5rem)' }}
     >
-      {/* Background video */}
-      <div className="absolute inset-y-0 inset-x-0 z-0 hero-section-x pointer-events-none">
-        <div className="relative h-full w-full overflow-hidden">
-          <video
-            ref={videoRef}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            className="absolute inset-0 h-full w-full object-cover object-[center_20%]"
-          >
-            <source src={videoSrc} type="video/webm" />
-          </video>
-        </div>
+      {/* Background video — full width, no crop */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center bg-[#121218] pointer-events-none">
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="h-full w-full object-contain object-center"
+        >
+          <source src={videoSrc} type="video/webm" />
+        </video>
       </div>
 
       {/* Bottom fade — matches AutonomousSection top (#252534) */}
