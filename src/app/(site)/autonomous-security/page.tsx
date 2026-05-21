@@ -30,6 +30,7 @@ export default function Page() {
       />
 
       <InfoCtaBlock
+        sectionClassName="autonomous-security-designed-world"
         heading="The SOC Was Not Designed for This World"
         body={
           <>
