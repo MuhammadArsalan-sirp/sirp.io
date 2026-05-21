@@ -1,0 +1,14 @@
+/* Page-scoped: bottom CTA (`CtaSection` h2 — overrides inline size on small phones). */
+
+@media (max-width: 640px) {
+  .how-autonomous-soc-works-page > section:last-of-type h2 {
+    font-size: clamp(2rem, 7vw, 2.55rem) !important;
+    line-height: 1.18 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-autonomous-soc-works-page > section:last-of-type h2 {
+    font-size: clamp(1.85rem, 7.5vw, 2.35rem) !important;
+  }
+}

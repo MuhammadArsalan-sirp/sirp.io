@@ -9,6 +9,7 @@
   background: #8e2dff;
   color: #ffffff;
   font-family: 'Inter', sans-serif;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   text-decoration: none;
@@ -65,4 +66,24 @@
 
 .sirp-button--secondary:focus-visible {
   outline-color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 640px) {
+  .sirp-button {
+    font-size: 0.8125rem;
+    padding: 0.5rem 1.2rem;
+    letter-spacing: 0.015em;
+  }
+
+  .sirp-button__text {
+    gap: 0.35rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sirp-button {
+    font-size: 0.75rem;
+    padding: 0.45rem 1rem;
+    letter-spacing: 0.012em;
+  }
 }
