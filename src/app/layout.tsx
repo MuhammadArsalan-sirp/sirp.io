@@ -73,7 +73,10 @@ export default function RootLayout({
       className={`${inter.variable} ${notoSerif.variable} ${ibmPlexMono.variable}`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen bg-[#121218] text-white antialiased overflow-x-hidden flex flex-col">
+      <body
+        className="min-h-screen bg-[#121218] text-white antialiased overflow-x-hidden flex flex-col"
+        suppressHydrationWarning
+      >
 
         <Navbar />
         <main className="flex-1">{children}</main>
