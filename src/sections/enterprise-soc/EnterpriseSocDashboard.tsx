@@ -60,7 +60,16 @@ export function EnterpriseSocDashboard() {
 
             <div className="dashboard-metric-body">
               {metric.icon && (
-                <div className={`dashboard-pill dashboard-pill--${metric.color}`}>
+                <div
+                  className={cn(
+                    'dashboard-pill',
+                    metric.id === 'mttd' && 'dashboard-pill--decrease',
+                    metric.id === 'economics' && 'dashboard-pill--decrease-right',
+                    metric.id !== 'mttd' &&
+                      metric.id !== 'economics' &&
+                      `dashboard-pill--${metric.color}`,
+                  )}
+                >
                   <Image
                     src={ICON_MAP[metric.icon]}
                     alt=""

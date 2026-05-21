@@ -162,6 +162,24 @@
   filter: hue-rotate(-120deg) drop-shadow(0 0 6px rgba(39, 232, 126, 0.5));
 }
 
+.dashboard-pill--decrease::before {
+  background-image: none;
+  border: 3.5px solid #a1dee2;
+  filter: none;
+  box-shadow:
+    0 0 8px rgba(161, 222, 226, 0.75),
+    0 0 16px rgba(161, 222, 226, 0.35);
+}
+
+.dashboard-pill--decrease-right::before {
+  background-image: none;
+  border: 3.5px solid #9a47ff;
+  filter: none;
+  box-shadow:
+    0 0 8px rgba(154, 71, 255, 0.75),
+    0 0 16px rgba(154, 71, 255, 0.35);
+}
+
 .dashboard-pill--purple::before {
   filter: drop-shadow(0 0 6px rgba(180, 100, 255, 0.5));
 }
