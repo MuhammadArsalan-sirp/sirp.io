@@ -127,10 +127,35 @@
 @media (max-width: 768px) {
   .threat-cta-dome {
     width: 120%;
-    height: 360px;
+    height: 300px;
+    bottom: 120px;
   }
 
   .threat-cta-glow {
     width: 100%;
+  }
+
+  .threat-cta-dome-outline {
+    width: 100%;
+    bottom: 280px;
+  }
+
+  .threat-steps__item {
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  .threat-steps__sep {
+    margin-right: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .threat-steps {
+    gap: 4px 0;
+  }
+
+  .threat-steps__item {
+    padding: 4px 10px;
   }
 }

@@ -35,6 +35,77 @@
   border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* ─── Tablet (768px – 1023px): 2-column ──────────────────── */
+@media (max-width: 1023px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .dashboard-heading-cell {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    padding: 40px 32px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .dashboard-metric-cell:nth-child(2),
+  .dashboard-metric-cell:nth-child(3) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .dashboard-metric-cell:nth-child(2),
+  .dashboard-metric-cell:nth-child(4) {
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* reset borders for even/odd pairs */
+  .dashboard-metric-cell:nth-child(3) {
+    border-right: none;
+  }
+
+  .dashboard-metric-cell:nth-child(4),
+  .dashboard-metric-cell:nth-child(5) {
+    border-bottom: none;
+  }
+}
+
+/* ─── Mobile (<640px): single column ─────────────────────── */
+@media (max-width: 639px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-heading-cell {
+    padding: 48px 24px 40px;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .dashboard-metric-cell {
+    padding: 36px 28px;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .dashboard-metric-cell:last-child {
+    border-bottom: none;
+  }
+
+  .dashboard-heading-cell h2 {
+    font-size: 42px !important;
+  }
+
+  .dashboard-heading-cell p {
+    font-size: 18px !important;
+  }
+
+  .dashboard-value {
+    font-size: 48px;
+  }
+}
+
 /* ─── Badge ───────────────────────────────────────────────── */
 .dashboard-badge {
   font-family: var(--font-inter, sans-serif);

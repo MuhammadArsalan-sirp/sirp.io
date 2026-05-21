@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useLayoutEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -12,9 +12,12 @@ import { Button } from '@/components/shared/Button'
 export function Navbar() {
   const [scrolled, setScrolled]     = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [mobileExpanded, setMobileExpanded] = useState<string[]>([])
+  const [collapsedPanelHeight, setCollapsedPanelHeight] = useState<number | null>(null)
   const [activeDropdown, setActive] = useState<string | null>(null)
   const pathname   = usePathname()
   const closeTimer = useRef<ReturnType<typeof setTimeout>>(null)
+  const mobilePanelRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -23,6 +26,34 @@ export function Navbar() {
   }, [])
 
   useEffect(() => { setMobileOpen(false); setActive(null) }, [pathname])
+
+  useEffect(() => {
+    if (!mobileOpen) {
+      setMobileExpanded([])
+      setCollapsedPanelHeight(null)
+    }
+  }, [mobileOpen])
+
+  const hasMobileSubmenuOpen = mobileExpanded.length > 0
+
+  useLayoutEffect(() => {
+    if (!mobileOpen || hasMobileSubmenuOpen || !mobilePanelRef.current) return
+    setCollapsedPanelHeight(mobilePanelRef.current.getBoundingClientRect().height)
+  }, [mobileOpen, hasMobileSubmenuOpen])
+
+  const toggleMobileSection = (label: string) => {
+    setMobileExpanded((prev) => {
+      if (prev.includes(label)) return []
+      if (mobilePanelRef.current) {
+        setCollapsedPanelHeight(mobilePanelRef.current.getBoundingClientRect().height)
+      }
+      return [label]
+    })
+  }
+
+  const closeMobileSubmenu = () => setMobileExpanded([])
+
+  const stopMobilePanelClose = (e: { stopPropagation: () => void }) => e.stopPropagation()
 
   const handleMouseEnter = (label: string) => {
     if (closeTimer.current) clearTimeout(closeTimer.current)
@@ -107,7 +138,8 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Main nav */}
+      {/* Main nav + mobile menu (menu sits flush below logo row, same horizontal inset as nav) */}
+      <div className="relative">
       <nav className="container-sirp flex items-center justify-between h-16">
 
         {/* Logo */}
@@ -204,45 +236,123 @@ export function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — blur only behind the panel */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-[#3a3a4c] bg-[#080810]/98 backdrop-blur-md">
-          <div className="container-sirp py-4 space-y-1">
-            {NAV_LINKS.map((item) => (
-              <div key={item.label}>
-                {'children' in item && item.children ? (
-                  <>
-                    <p className="px-3 py-2 font-mono text-[11px] font-medium text-white/40 uppercase tracking-widest">
-                      {item.label}
-                    </p>
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        className="block px-5 py-2.5 font-sans text-sm text-white hover:bg-white/5 rounded-[10px] transition-colors no-underline"
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="block px-3 py-2.5 font-sans text-sm font-medium text-white hover:bg-white/5 rounded-[10px] transition-colors no-underline"
-                  >
-                    {item.label}
-                  </Link>
+        <>
+          <button
+            type="button"
+            className="fixed inset-0 z-30 cursor-default border-none bg-transparent lg:hidden"
+            aria-label="Close menu"
+            onClick={() => setMobileOpen(false)}
+          />
+          <div className="absolute left-0 right-0 top-full z-[31] lg:hidden">
+            <div
+              className="container-sirp"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Mobile navigation"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div
+                className={cn(
+                  'relative mx-auto w-full max-w-[353px] shadow-2xl shadow-black/40',
+                  hasMobileSubmenuOpen ? 'overflow-visible' : 'overflow-hidden',
                 )}
+              >
+                <div
+                  ref={mobilePanelRef}
+                  className="relative"
+                  style={
+                    hasMobileSubmenuOpen && collapsedPanelHeight
+                      ? { minHeight: collapsedPanelHeight }
+                      : undefined
+                  }
+                >
+                  <div
+                    className={cn(
+                      'relative z-[1] min-h-full bg-[#14141a]/72 px-0 py-3 backdrop-blur-xl backdrop-saturate-150',
+                      hasMobileSubmenuOpen && 'overflow-visible',
+                    )}
+                    onClick={() => {
+                      if (hasMobileSubmenuOpen) closeMobileSubmenu()
+                    }}
+                  >
+                    <ul className="m-0 flex list-none flex-col items-center gap-0 p-0">
+                      {NAV_LINKS.map((item) => {
+                        const hasChildren = 'children' in item && item.children?.length
+                        const isExpanded = mobileExpanded.includes(item.label)
+
+                        return (
+                          <li
+                            key={item.label}
+                            className={cn('w-full', hasChildren && isExpanded && 'relative z-20')}
+                          >
+                            {hasChildren ? (
+                              <button
+                                type="button"
+                                className="w-full border-none bg-transparent px-4 py-2 text-center font-sans text-base font-medium text-white cursor-pointer transition-opacity hover:opacity-80"
+                                onClick={(e) => {
+                                  stopMobilePanelClose(e)
+                                  toggleMobileSection(item.label)
+                                }}
+                                aria-expanded={isExpanded}
+                              >
+                                {item.label}
+                              </button>
+                            ) : (
+                              <Link
+                                href={item.href}
+                                className="block px-4 py-2 text-center font-sans text-base font-medium text-white no-underline transition-opacity hover:opacity-80"
+                                onClick={(e) => {
+                                  stopMobilePanelClose(e)
+                                  setMobileOpen(false)
+                                }}
+                              >
+                                {item.label}
+                              </Link>
+                            )}
+                            {hasChildren && isExpanded && item.children && (
+                              <div
+                                className="absolute left-1/2 top-full z-30 w-fit max-w-[calc(100vw-2rem)] -translate-x-1/2 -mt-2 rounded-[20px] bg-[#060606] px-4 py-3 shadow-lg shadow-black/30"
+                                onClick={stopMobilePanelClose}
+                              >
+                                <ul className="m-0 flex list-none flex-col gap-0 p-0 text-left">
+                                  {item.children.map((child) => (
+                                    <li key={child.href}>
+                                      <Link
+                                        href={child.href}
+                                        className="block whitespace-nowrap px-1 py-2 text-left font-sans text-[15px] font-normal leading-[1.35] text-white no-underline transition-opacity hover:opacity-80"
+                                        onClick={() => setMobileOpen(false)}
+                                      >
+                                        {child.label}
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+                          </li>
+                        )
+                      })}
+                      <li className="flex w-full justify-center pt-1.5 pb-0" onClick={stopMobilePanelClose}>
+                        <Button
+                          href="/contact"
+                          variant="secondary"
+                          className="sirp-button--mobile-demo"
+                        >
+                          Get a demo
+                        </Button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-            ))}
-            <div className="pt-3 border-t border-[#3a3a4c]">
-              <Button href="/contact" variant="secondary" className="w-full justify-center">
-                Get a demo
-              </Button>
             </div>
           </div>
-        </div>
+        </>
       )}
+
+      </div>
 
     </header>
   )

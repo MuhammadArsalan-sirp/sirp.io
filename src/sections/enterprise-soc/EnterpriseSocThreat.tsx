@@ -69,7 +69,7 @@ export function EnterpriseSocThreat() {
       </motion.div>
 
       {/* ── CTA dome area ── */}
-      <div className="relative flex flex-col items-center min-h-[700px] pb-20">
+      <div className="relative flex flex-col items-center min-h-[500px] md:min-h-[700px] pb-20">
 
         {/* Dome layers */}
         <div className="threat-dome-layers" aria-hidden="true">
@@ -96,7 +96,7 @@ export function EnterpriseSocThreat() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="relative z-[3] text-center px-4"
-          style={{ paddingTop: '160px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '30px' }}
+          style={{ paddingTop: 'clamp(80px, 12vw, 160px)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '30px' }}
         >
           {/* Badge */}
           <span
@@ -119,7 +119,7 @@ export function EnterpriseSocThreat() {
             className="text-white mx-auto"
             style={{
               fontFamily: 'var(--font-serif)',
-              fontSize: '60px',
+              fontSize: 'clamp(2rem, 5vw, 3.75rem)',
               fontStyle: 'italic',
               fontWeight: 500,
               lineHeight: '120%',
@@ -138,7 +138,7 @@ export function EnterpriseSocThreat() {
             className="text-white mx-auto"
             style={{
               fontFamily: 'var(--font-inter, sans-serif)',
-              fontSize: '20px',
+              fontSize: 'clamp(15px, 2vw, 20px)',
               fontWeight: 500,
               lineHeight: '150%',
               textAlign: 'center',
