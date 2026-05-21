@@ -2,16 +2,23 @@
 
 .integrations-strip {
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
   -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgb(0,0,0) 15%, rgb(0,0,0) 85%, rgba(0,0,0,0) 100%);
   mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgb(0,0,0) 15%, rgb(0,0,0) 85%, rgba(0,0,0,0) 100%);
 }
 
 .integrations-track {
   display: flex;
-  gap: 16px;
+  gap: 10px;
   width: max-content;
   animation: scroll-left 40s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .integrations-track {
+    gap: 16px;
+  }
 }
 
 @keyframes scroll-left {

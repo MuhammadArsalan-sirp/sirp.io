@@ -54,7 +54,7 @@ export function IntegrationsSection({ data = INTEGRATIONS_DATA }: IntegrationsSe
           transition={{ duration: 0.5 }}
           className="text-center mb-10 md:mb-20"
         >
-          <PurplePill className="rounded-md" showSparkle={false}>
+          <span className="inline-flex items-center gap-1 font-sans text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-md border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]">
             {pill}
           </PurplePill>
           <h2
@@ -82,12 +82,12 @@ export function IntegrationsSection({ data = INTEGRATIONS_DATA }: IntegrationsSe
           {doubled.map((logo, i) => (
             <div
               key={i}
-              className="w-[88px] h-[88px] rounded-[18px] bg-[#1a1a26] border border-[#3a3a4c] flex items-center justify-center flex-shrink-0 p-3 hover:border-[#8e2dff] transition-colors duration-200 overflow-hidden"
+              className="w-[60px] h-[60px] md:w-[88px] md:h-[88px] rounded-[12px] md:rounded-[18px] bg-[#1a1a26] border border-[#3a3a4c] flex items-center justify-center flex-shrink-0 p-2 md:p-3 hover:border-[#8e2dff] transition-colors duration-200 overflow-hidden"
             >
               <img
                 src={logo.src}
                 alt={logo.name}
-                className="w-12 h-12 object-contain"
+                className="w-8 h-8 md:w-12 md:h-12 object-contain"
                 onError={(e) => {
                   const t = e.target as HTMLImageElement
                   t.style.display = 'none'

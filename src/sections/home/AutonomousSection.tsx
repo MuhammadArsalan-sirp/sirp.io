@@ -113,9 +113,9 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
           transition={{ duration: 0.5, delay: 0.15 }}
           className="relative max-w-[1000px] mx-auto aspect-video md:aspect-auto overflow-hidden rounded-xl md:rounded-none"
         >
-          {/* Purple glow */}
+          {/* Purple glow — desktop only */}
           <div
-            className="absolute bottom-[-60px] left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none z-0"
+            className="hidden lg:block absolute bottom-[-60px] left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none z-0"
             style={{
               background: 'radial-gradient(ellipse at center, rgba(142,45,255,0.35) 0%, transparent 70%)',
             }}
@@ -131,17 +131,43 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
               className="relative z-[1]"
             >
               {activeTab === 'Assist mode' ? (
-                <Lottie
-                  animationData={require('../../../public/animations/assist-mode/home-01A.json')}
-                  loop={true}
-                  className="w-full h-auto"
-                />
+                <>
+                  {/* Mobile & Tablet */}
+                  <div className="block lg:hidden">
+                    <Lottie
+                      animationData={require('../../../public/animations/Home-Feature-01-Assist-MOBILE_LOTTIE/home-01A-mobile.json')}
+                      loop={true}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  {/* Desktop */}
+                  <div className="hidden lg:block">
+                    <Lottie
+                      animationData={require('../../../public/animations/assist-mode/home-01A.json')}
+                      loop={true}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                </>
               ) : (
-                <Lottie
-                  animationData={require('../../../public/animations/autonomous/home-01B.json')}
-                  loop={true}
-                  className="w-full h-auto"
-                />
+                <>
+                  {/* Mobile & Tablet */}
+                  <div className="block lg:hidden">
+                    <Lottie
+                      animationData={require('../../../public/animations/Home-Feature-01-Autonomous-MOBILE_LOTTIE/home-01B-mobile.json')}
+                      loop={true}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  {/* Desktop */}
+                  <div className="hidden lg:block">
+                    <Lottie
+                      animationData={require('../../../public/animations/autonomous/home-01B.json')}
+                      loop={true}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                </>
               )}
             </motion.div>
           </AnimatePresence>

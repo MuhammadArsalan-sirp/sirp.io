@@ -19,7 +19,7 @@ export function Footer() {
             <div className="flex items-start justify-between gap-4 mb-5">
               <Link href="/" className="inline-block shrink-0">
                 <Image
-                  src="/images/logos/SIRP-Logo.png"
+                  src="/images/logos/SIRP-Logo.svg"
                   alt={SITE_NAME}
                   width={100}
                   height={32}
@@ -76,7 +76,7 @@ export function Footer() {
                 className="h-11 w-auto max-w-[80px] object-contain sm:h-12 sm:max-w-[88px]"
               />
               <Image
-                src="/images/logos/soc2type2.png"
+                src="/images/logos/soc2.png"
                 alt="SOC 2 Type II"
                 width={112}
                 height={72}

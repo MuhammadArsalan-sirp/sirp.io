@@ -19,8 +19,10 @@ export default function OmnisensePage() {
       <OmnisensePlatform data={OMNISENSE_PAGE_DATA.platform} />
       <OmnisenseAgents data={OMNISENSE_PAGE_DATA.agents} />
       <OmnisenseAction data={OMNISENSE_PAGE_DATA.action} />
-      <IntegrationsSection data={INTEGRATIONS_DATA} />
-      <CtaSection data={CTA_DATA} />
+      <div className="relative overflow-visible isolate">
+        <IntegrationsSection data={INTEGRATIONS_DATA} />
+        <CtaSection data={CTA_DATA} />
+      </div>
     </>
   )
 }

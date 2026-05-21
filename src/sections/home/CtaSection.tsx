@@ -30,12 +30,7 @@ export function CtaSection({ data = CTA_DATA, overlapTop = true }: CtaSectionPro
   const { headingItalic, primaryBtn, secondaryBtn } = data
 
   return (
-    <section
-      className={[
-        'bg-[#121218] relative z-[2] overflow-hidden',
-        overlapTop ? '-mt-32' : 'cta-section--no-overlap',
-      ].join(' ')}
-    >
+    <section className="bg-[#121218] relative z-[2] -mt-32 overflow-visible">
       <div className="relative flex flex-col items-center justify-center min-h-[560px] md:min-h-[560px] lg:min-h-[620px] pt-0 md:pt-20 pb-16 md:pb-36">
 
         {/* Purple glow */}
