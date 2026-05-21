@@ -51,3 +51,30 @@
   color: #ffffff;
   line-height: 1.65;
 }
+
+/* ─── iPad / Tablet (768 – 1023px) ───────────────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .som-mwhy-card {
+    padding: 28px;
+  }
+
+  .som-mwhy-title {
+    font-size: 18px;
+  }
+}
+
+/* ─── Mobile (< 768px) ────────────────────────────────────── */
+@media (max-width: 767px) {
+  .som-mwhy-card {
+    padding: 24px 20px;
+    gap: 16px;
+  }
+
+  .som-mwhy-title {
+    font-size: 17px;
+  }
+
+  .som-mwhy-body {
+    font-size: 14px;
+  }
+}

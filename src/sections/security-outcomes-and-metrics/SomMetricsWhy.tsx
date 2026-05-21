@@ -9,7 +9,7 @@ export function SomMetricsWhy() {
   const { heading, subtext, columns } = SOM_WHY
 
   return (
-    <section className="bg-[#121218] py-[100px]">
+    <section className="bg-[#121218] py-14 md:py-16 lg:py-20 xl:py-[100px]">
       <div className="container-sirp">
 
         {/* Heading */}
@@ -18,22 +18,22 @@ export function SomMetricsWhy() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <h2
             className="text-white font-sans mb-5"
-            style={{ fontFamily: 'var(--font-inter, sans-serif)', fontSize: '60px', fontWeight: 500, lineHeight: '115%' }}
+            style={{ fontFamily: 'var(--font-inter, sans-serif)', fontSize: 'clamp(2rem, 4vw, 60px)', fontWeight: 500, lineHeight: '115%' }}
           >
-            Why these metrics move<br />together
+            Why these metrics move<br className="hidden md:block" /> together
           </h2>
           <p
             className="mx-auto"
             style={{
               fontFamily: 'var(--font-inter, sans-serif)',
-              fontSize: '20px',
+              fontSize: 'clamp(15px, 2vw, 20px)',
               fontWeight: 600,
               color: '#ffffff',
-              whiteSpace: 'nowrap',
+              maxWidth: '600px',
             }}
           >
             {subtext}
@@ -41,7 +41,7 @@ export function SomMetricsWhy() {
         </motion.div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-5">
           {columns.map((col, i) => (
             <motion.div
               key={col.id}

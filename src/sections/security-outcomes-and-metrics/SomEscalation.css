@@ -14,7 +14,7 @@
   place-content: flex-start;
   align-items: flex-start;
   gap: 60px;
-  width: 522px;
+  width: 100%;
   height: min-content;
   position: relative;
   overflow: visible;
@@ -117,14 +117,76 @@
   width: 100%;
 }
 
-/* ─── Responsive ──────────────────────────────────────────── */
-@media (max-width: 768px) {
+/* ─── Desktop (≥ 1280px) ─────────────────────────────────── */
+@media (min-width: 1280px) {
   .som-esc-grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
+    grid-template-columns: 5fr 7fr;
+    gap: 80px;
+  }
+
+  .som-esc-text {
+    gap: 60px;
   }
 
   .som-esc-heading {
-    font-size: 36px;
+    font-size: 42px;
+  }
+}
+
+/* ─── iPad Pro / Laptop (1024 – 1279px) ──────────────────── */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .som-esc-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .som-esc-heading {
+    font-size: 34px;
+  }
+
+  .som-esc-text {
+    gap: 48px;
+  }
+}
+
+/* ─── iPad / Tablet (768 – 1023px) ───────────────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .som-esc-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .som-esc-heading {
+    font-size: 30px;
+  }
+
+  .som-esc-text {
+    gap: 36px;
+  }
+}
+
+/* ─── Mobile (< 768px) ────────────────────────────────────── */
+@media (max-width: 767px) {
+  .som-esc-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .som-esc-heading {
+    font-size: 26px;
+  }
+
+  .som-esc-text {
+    gap: 32px;
+  }
+
+  .som-esc-item {
+    font-size: 14px;
+  }
+
+  .som-esc-stat,
+  .som-esc-summary,
+  .som-esc-label {
+    font-size: 14px;
   }
 }

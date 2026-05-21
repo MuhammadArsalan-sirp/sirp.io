@@ -10,7 +10,7 @@
   height: 676px;
   animation: 6s ease-in-out infinite alternate som-cta-dome-rise;
   position: absolute;
-  top: -278px;
+  top: -312px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -84,13 +84,49 @@
   }
 }
 
-@media (max-width: 768px) {
+/* ─── iPad Pro / Laptop (1024 – 1279px) ──────────────────── */
+@media (min-width: 1024px) and (max-width: 1279px) {
   .som-cta-dome {
-    width: 120%;
-    height: 360px;
+    width: 1051px;
+    height: 440px;
+  }
+
+  .som-cta-dome-outline {
+    bottom: 394px;
+  }
+}
+
+/* ─── iPad / Tablet (768 – 1023px) ───────────────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .som-cta-dome {
+    width: 130%;
+    height: 387px;
+  }
+
+  .som-cta-glow {
+    width: 80%;
+    top: -384px;
+  }
+
+  .som-cta-dome-outline {
+    width: 891px;
+    bottom: 341px;
+  }
+}
+
+/* ─── Mobile (< 768px) ────────────────────────────────────── */
+@media (max-width: 767px) {
+  .som-cta-dome {
+    width: 136%;
+    height: 320px;
   }
 
   .som-cta-glow {
     width: 100%;
+  }
+
+  .som-cta-dome-outline {
+    width: 100%;
+    bottom: 395px;
   }
 }

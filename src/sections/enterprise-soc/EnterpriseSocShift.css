@@ -32,3 +32,10 @@
   filter: drop-shadow(0 0 6px rgba(180, 100, 255, 0.5));
   pointer-events: none;
 }
+
+/* ─── iPad Mini (768×1024) ────────────────────────────────── */
+@media (max-width: 768px) {
+  .shift-section {
+    padding-top: clamp(60px, 20vw, 162px);
+  }
+}
