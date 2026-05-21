@@ -154,12 +154,22 @@
   pointer-events: none;
 }
 
-.dashboard-pill--orange::before {
-  filter: hue-rotate(120deg) drop-shadow(0 0 6px rgba(255, 160, 60, 0.5));
+.dashboard-pill--teal::before {
+  background-image: none;
+  border: 3.5px solid #27e87e;
+  filter: none;
+  box-shadow:
+    0 0 8px rgba(39, 232, 126, 0.75),
+    0 0 16px rgba(39, 232, 126, 0.35);
 }
 
-.dashboard-pill--teal::before {
-  filter: hue-rotate(-120deg) drop-shadow(0 0 6px rgba(39, 232, 126, 0.5));
+.dashboard-pill--orange::before {
+  background-image: none;
+  border: 3.5px solid #ff9030;
+  filter: none;
+  box-shadow:
+    0 0 8px rgba(255, 144, 48, 0.75),
+    0 0 16px rgba(255, 144, 48, 0.35);
 }
 
 .dashboard-pill--decrease::before {
