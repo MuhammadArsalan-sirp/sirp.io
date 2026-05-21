@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { ENTERPRISE_SOC_DASHBOARD } from '@/lib/constants/enterprise-soc'
+import { cn } from '@/lib/utils'
 import './EnterpriseSocDashboard.css'
 
 const ICON_MAP = {
@@ -70,7 +71,14 @@ export function EnterpriseSocDashboard() {
                 </div>
               )}
               <div>
-                <div className={`dashboard-value dashboard-value--${metric.color}`}>
+                <div
+                  className={cn(
+                    'dashboard-value',
+                    metric.id === 'economics' && 'dashboard-value--decrease-right',
+                    metric.id === 'mttd' && 'dashboard-value--decrease',
+                    metric.value !== 'Decrease' && `dashboard-value--${metric.color}`,
+                  )}
+                >
                   {metric.value}
                 </div>
                 <p className="text-white" style={{ fontFamily: 'var(--font-inter, sans-serif)', fontSize: '14px', marginTop: '6px' }}>

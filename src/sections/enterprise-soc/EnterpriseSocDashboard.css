@@ -189,3 +189,17 @@
   background-clip: text;
 }
 .dashboard-value--purple { color: #b060ff; }
+
+.dashboard-value--decrease {
+  background: linear-gradient(to right, #a1dee2 0%, #d4f0f2 45%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dashboard-value--decrease-right {
+  background: linear-gradient(to right, #9a47ff 0%, #c99aff 45%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
