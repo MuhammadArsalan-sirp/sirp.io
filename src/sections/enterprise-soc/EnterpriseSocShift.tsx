@@ -15,7 +15,7 @@ export function EnterpriseSocShift() {
   const { heading, subtext, cards } = ENTERPRISE_SOC_SHIFT
 
   return (
-    <section className="bg-[#121218] py-[100px] overflow-hidden">
+    <section className="bg-[#121218] py-16 md:py-[100px] overflow-hidden">
       <div className="container-sirp">
 
         {/* Centered heading */}
@@ -29,7 +29,7 @@ export function EnterpriseSocShift() {
           <h2
             className="font-sans font-bold text-white mb-6"
             style={{
-              fontSize: 'clamp(2.4rem, 4vw, 3.4rem)',
+              fontSize: '60px',
               lineHeight: '1.1',
               letterSpacing: '-0.03em',
             }}
@@ -38,7 +38,7 @@ export function EnterpriseSocShift() {
           </h2>
           <p
             className="font-sans text-white/60 leading-relaxed"
-            style={{ fontSize: '17px' }}
+            style={{ fontSize: '20px' }}
           >
             {subtext}
           </p>

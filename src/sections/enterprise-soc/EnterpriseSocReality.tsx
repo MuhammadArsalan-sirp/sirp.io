@@ -9,7 +9,7 @@ export function EnterpriseSocReality() {
   const { badge, heading, subtext, cards } = ENTERPRISE_SOC_REALITY
 
   return (
-    <section className="bg-[#121218] py-[100px] overflow-hidden">
+    <section className="bg-[#121218] py-16 md:py-[100px] overflow-hidden">
       <div className="container-sirp">
 
         {/* Header */}
@@ -21,13 +21,20 @@ export function EnterpriseSocReality() {
           className="mb-16 max-w-[780px]"
         >
           <span className="inline-flex items-center gap-2 font-mono text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-lg border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)] mb-6">
-            ✦ {badge}
+            <Image
+              src="/images/enterprise-soc/shine.svg"
+              alt=""
+              width={14}
+              height={14}
+              unoptimized
+            />
+            {badge}
           </span>
 
           <h2
             className="font-sans font-bold text-white mb-6"
             style={{
-              fontSize: 'clamp(2.4rem, 4.5vw, 3.6rem)',
+              fontSize: '60px',
               lineHeight: '1.1',
               letterSpacing: '-0.03em',
             }}
@@ -39,7 +46,7 @@ export function EnterpriseSocReality() {
 
           <p
             className="font-sans text-white/70 leading-relaxed"
-            style={{ fontSize: '17px' }}
+            style={{ fontSize: '20px' }}
           >
             {subtext}
           </p>
@@ -58,10 +65,10 @@ export function EnterpriseSocReality() {
             >
               {/* Text top (before image) */}
               {card.textTop && (
-                <div className="px-8 pt-8 pb-6">
+                <div className="px-5 pt-6 pb-5 md:px-8 md:pt-8 md:pb-6">
                   <h3
                     className="font-sans font-semibold text-white mb-3"
-                    style={{ fontSize: '34px', lineHeight: '1.3' }}
+                    style={{ fontSize: 'clamp(22px, 3.5vw, 34px)', lineHeight: '1.3' }}
                   >
                     {card.title}
                   </h3>
@@ -72,7 +79,7 @@ export function EnterpriseSocReality() {
               )}
 
               {/* Image */}
-              <div className="relative w-full h-[400px] overflow-hidden">
+              <div className="relative w-full h-[240px] md:h-[400px] overflow-hidden">
                 <Image
                   src={card.image}
                   alt={card.imageAlt}
@@ -84,10 +91,10 @@ export function EnterpriseSocReality() {
 
               {/* Text bottom (after image) */}
               {!card.textTop && (
-                <div className="px-8 py-7">
+                <div className="px-5 py-5 md:px-8 md:py-7">
                   <h3
                     className="font-sans font-semibold text-white mb-3"
-                    style={{ fontSize: '34px', lineHeight: '1.3' }}
+                    style={{ fontSize: 'clamp(22px, 3.5vw, 34px)', lineHeight: '1.3' }}
                   >
                     {card.title}
                   </h3>

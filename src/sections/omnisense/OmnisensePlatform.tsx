@@ -51,15 +51,16 @@ export function OmnisensePlatform({ data }: OmnisensePlatformProps) {
           <h2
             className="font-sans font-bold text-white"
             style={{
-              fontSize: 'clamp(32px, 5vw, 64px)',
+              fontSize: 'clamp(42px, 5vw, 64px)',
               lineHeight: '1.08',
               letterSpacing: '-0.03em',
             }}
           >
             {heading}
             <br />
-            <em>{headingItalic}</em>{' '}
-            {headingSuffix}
+            <span className="block text-[16px] md:text-[inherit]" style={{ lineHeight: '120%' }}>
+              <em>{headingItalic}</em>{' '}{headingSuffix}
+            </span>
           </h2>
         </motion.div>
 
@@ -69,8 +70,13 @@ export function OmnisensePlatform({ data }: OmnisensePlatformProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="rounded-2xl border border-[#3a3a4c] overflow-hidden mx-auto"
-          style={{ maxWidth: '1000px', background: 'transparent' }}
+          className="overflow-hidden mx-auto w-full"
+          style={{
+            maxWidth: '1000px',
+            background: 'rgb(18, 18, 24)',
+            borderRadius: '35px',
+            border: '1px solid rgb(58, 58, 77)',
+          }}
         >
           {/* Content area */}
           <AnimatePresence mode="wait">
@@ -90,9 +96,7 @@ export function OmnisensePlatform({ data }: OmnisensePlatformProps) {
                 >
                   {active.title}
                 </h3>
-                <p
-                  className="font-sans text-white/70 leading-relaxed text-sm md:text-[15px]"
-                >
+                <p className="font-sans text-white/70 leading-relaxed text-sm md:text-[15px]">
                   {active.description}
                 </p>
               </div>
@@ -110,23 +114,25 @@ export function OmnisensePlatform({ data }: OmnisensePlatformProps) {
             </motion.div>
           </AnimatePresence>
 
-          {/* Tab bar — wraps to 2 rows on mobile, single row on md+ */}
+          {/* Tab bar */}
           <div
             className="flex flex-wrap"
-            style={{ borderTop: '1px solid #3a3a4c' }}
+            style={{ borderTop: '1px solid rgb(58, 58, 77)' }}
           >
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex-1 min-w-[33%] md:min-w-0 py-3 md:py-4 font-sans text-xs md:text-sm font-medium transition-all duration-200 cursor-pointer border-none outline-none whitespace-nowrap px-2 md:px-3 ${
+                className={`flex-1 min-w-[50%] md:min-w-0 py-3 md:py-4 font-sans text-xs md:text-sm font-medium transition-all duration-200 cursor-pointer border-none outline-none whitespace-nowrap px-2 md:px-3 ${
                   activeTab === tab.id
-                    ? 'bg-[#8e2dff] text-white'
-                    : 'bg-transparent text-white/50 hover:text-white hover:bg-white/5'
+                    ? 'text-white'
+                    : 'text-white/50 hover:text-white hover:bg-white/5'
                 }`}
                 style={{
-                  borderRight: '1px solid #3a3a4c',
-                  borderBottom: '1px solid #3a3a4c',
+                  background: activeTab === tab.id ? 'rgb(142, 45, 255)' : 'transparent',
+                  opacity: activeTab === tab.id ? 1 : 0.9,
+                  borderRight: '1px solid rgb(89, 89, 104)',
+                  borderBottom: '1px solid rgb(89, 89, 104)',
                 }}
               >
                 {tab.label}
