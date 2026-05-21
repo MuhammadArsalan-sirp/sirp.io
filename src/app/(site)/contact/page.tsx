@@ -1,9 +1,11 @@
 'use client'
 
-import { FormEvent, useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import './page.css'
 import { PurplePill } from '@/components/shared/PurplePill'
+import { ContactForm } from './ContactForm'
 
 const COUNTRY_OPTIONS = [
   'Afghanistan',
@@ -205,91 +207,15 @@ const COUNTRY_OPTIONS = [
   'Zimbabwe',
 ] as const
 
-const CONTACT_SUBMITTED_STORAGE_KEY = 'sirp_contact_submitted'
-
-type SelectOption = {
-  label: string
-  value: string
-}
-
-function ContactCustomSelect({
-  name,
-  options,
-  placeholder = 'Please Select',
-}: {
-  name: string
-  options: readonly SelectOption[]
-  placeholder?: string
-}) {
-  const [open, setOpen] = useState(false)
-  const [value, setValue] = useState('')
-  const rootRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const onPointerDown = (event: MouseEvent) => {
-      if (!rootRef.current?.contains(event.target as Node)) {
-        setOpen(false)
-      }
-    }
-    document.addEventListener('mousedown', onPointerDown)
-    return () => document.removeEventListener('mousedown', onPointerDown)
-  }, [])
-
-  const selected = options.find((option) => option.value === value)
-
-  return (
-    <div className="contact-custom-select" ref={rootRef}>
-      <input type="hidden" name={name} value={value} />
-      <button
-        type="button"
-        className="contact-custom-select-trigger"
-        onClick={() => setOpen((prev) => !prev)}
-        aria-haspopup="listbox"
-        aria-expanded={open}
-      >
-        <span className={selected ? '' : 'contact-custom-select-placeholder'}>
-          {selected?.label ?? placeholder}
-        </span>
-      </button>
-      {open ? (
-        <ul className="contact-custom-select-menu" role="listbox">
-          {options.map((option) => (
-            <li key={option.value}>
-              <button
-                type="button"
-                className="contact-custom-select-option"
-                onClick={() => {
-                  setValue(option.value)
-                  setOpen(false)
-                }}
-              >
-                {option.label}
-              </button>
-            </li>
-          ))}
-        </ul>
-      ) : null}
-    </div>
-  )
-}
-
 export default function Page() {
   const router = useRouter()
   const [isSubmitted, setIsSubmitted] = useState(false)
-  const [isSubmitStateReady, setIsSubmitStateReady] = useState(false)
 
   useEffect(() => {
-    if (typeof window === 'undefined') return
-    const submitted = window.localStorage.getItem(CONTACT_SUBMITTED_STORAGE_KEY)
-    setIsSubmitted(submitted === 'true')
-    setIsSubmitStateReady(true)
+    window.localStorage.removeItem('sirp_contact_submitted')
   }, [])
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    if (typeof window !== 'undefined') {
-      window.localStorage.setItem(CONTACT_SUBMITTED_STORAGE_KEY, 'true')
-    }
+  function handleFormSuccess() {
     setIsSubmitted(true)
   }
 
@@ -322,9 +248,7 @@ export default function Page() {
             </p>
           </div>
 
-          {!isSubmitStateReady ? (
-            <div className="contact-form-card contact-form-card--loading" aria-hidden="true" />
-          ) : isSubmitted ? (
+          {isSubmitted ? (
             <div className="contact-form-card contact-inline-message" role="status" aria-live="polite">
               <h2>You&rsquo;re In. Welcome to Actually Autonomous.</h2>
               <p>
@@ -335,92 +259,20 @@ export default function Page() {
               <p><strong>Two reads from the core of Autonomous SecOps:</strong></p>
               <ul>
                 <li>
-                  <a href="https://www.sirp.io/blog/sirp-6-0-3-actually-autonomous" target="_blank" rel="noopener noreferrer">
+                  <Link href="/blog/sirp-6-0-3-actually-autonomous">
                     <strong>SIRP 6.0.3</strong> &rarr; Actually Autonomous
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="https://www.sirp.io/blog/inside-the-ai-mesh" target="_blank" rel="noopener noreferrer">
+                  <Link href="/omnisense">
                     <strong>Inside the AI Mesh</strong> &rarr; How SIRP&rsquo;s triage agents eliminate noise at scale
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <p>Talk soon.</p>
             </div>
           ) : (
-            <form className="contact-form-card" aria-label="Contact form" onSubmit={handleSubmit}>
-              <div className="contact-form-grid">
-                <label className="contact-field">
-                  <span>First Name*</span>
-                  <input type="text" name="firstName" autoComplete="given-name" />
-                </label>
-                <label className="contact-field">
-                  <span>Last Name*</span>
-                  <input type="text" name="lastName" autoComplete="family-name" />
-                </label>
-
-                <label className="contact-field">
-                  <span>Job Title*</span>
-                  <input type="text" name="jobTitle" autoComplete="organization-title" />
-                </label>
-                <label className="contact-field">
-                  <span>Business Email*</span>
-                  <input type="email" name="businessEmail" autoComplete="email" />
-                </label>
-
-                <label className="contact-field">
-                  <span>Company</span>
-                  <input type="text" name="company" autoComplete="organization" />
-                </label>
-                <label className="contact-field">
-                  <span>Company Website</span>
-                  <input type="url" name="companyWebsite" autoComplete="url" />
-                </label>
-
-                <label className="contact-field">
-                  <span>Phone*</span>
-                  <input type="tel" name="phone" autoComplete="tel" />
-                </label>
-                <label className="contact-field">
-                  <span>Company size*</span>
-                  <ContactCustomSelect
-                    name="companySize"
-                    options={[
-                      { label: '<500', value: '<500' },
-                      { label: '>500', value: '>500' },
-                    ]}
-                  />
-                </label>
-              </div>
-
-              <label className="contact-field contact-field-full">
-                <span>Country / Region*</span>
-                <ContactCustomSelect
-                  name="countryRegion"
-                  options={COUNTRY_OPTIONS.map((country) => ({
-                    label: country,
-                    value: country,
-                  }))}
-                />
-              </label>
-
-              <label className="contact-field contact-field-full">
-                <span>How did you hear about us?*</span>
-                <textarea name="howDidYouHear" rows={3} />
-              </label>
-
-              <p className="contact-legal">
-                SIRP needs the contact information you provide to us to contact you about our products
-                and services. You may unsubscribe from these communications at any time. For information
-                on how to unsubscribe, as well as our privacy practices, and our commitment to protecting
-                your privacy, please review our Privacy Policy.
-              </p>
-
-              <div className="contact-recaptcha">protected by reCAPTCHA</div>
-              <button type="submit" className="contact-submit">
-                Send
-              </button>
-            </form>
+            <ContactForm countries={COUNTRY_OPTIONS} onSuccess={handleFormSuccess} />
           )}
         </div>
       </section>
