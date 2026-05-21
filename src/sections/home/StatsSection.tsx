@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Button } from '@/components/shared/Button'
+import { PurplePill } from '@/components/shared/PurplePill'
 import { STATS_DATA } from '@/lib/constants'
 
 /* ─── Types ──────────────────────────────────────────────── */
@@ -54,13 +55,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
           >
             {/* Pill */}
             <div className="mb-4">
-              <span className="inline-flex items-center gap-2 font-mono text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-md border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                  <circle cx="6" cy="6" r="5" stroke="white" strokeOpacity="0.4" strokeWidth="1.5" />
-                  <path d="M6 6 L6 1 A5 5 0 0 1 11 6 Z" fill="white" />
-                </svg>
-                {pill}
-              </span>
+              <PurplePill className="rounded-md">{pill}</PurplePill>
             </div>
 
             {/* Heading */}
