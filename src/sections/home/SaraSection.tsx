@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Button } from '@/components/shared/Button'
 import { SARA_DATA } from '@/lib/constants'
 
 /* ─── Types ──────────────────────────────────────────────── */
@@ -63,14 +63,9 @@ export function SaraSection({ data = SARA_DATA }: SaraSectionProps) {
               {description}
             </p>
 
-            <Link
-              href={learnMoreHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center bg-[#8e2dff] text-white px-7 py-3 rounded-full font-sans font-medium text-sm hover:bg-[#a855f7] transition-all duration-200 no-underline shadow-[0_0_20px_rgba(142,45,255,0.35)]"
-            >
+            <Button href={learnMoreHref} target="_blank" rel="noopener noreferrer">
               {learnMoreLabel}
-            </Link>
+            </Button>
           </motion.div>
 
           {/* Right — image */}

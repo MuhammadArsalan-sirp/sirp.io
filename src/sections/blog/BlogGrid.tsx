@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { Button } from '@/components/shared/Button'
 import { BLOG_POSTS } from '@/lib/constants/blog'
 import './BlogGrid.css'
 
@@ -61,20 +62,17 @@ export function BlogGrid() {
 
         <div className="blog-load-more">
           {hasMore && (
-            <button
-              className="blog-load-btn"
-              onClick={() => setVisible(v => Math.min(v + LOAD_MORE_COUNT, BLOG_POSTS.length))}
+            <Button
+              variant="secondary"
+              onClick={() => setVisible((v) => Math.min(v + LOAD_MORE_COUNT, BLOG_POSTS.length))}
             >
               Load More
-            </button>
+            </Button>
           )}
           {visible > INITIAL_COUNT && (
-            <button
-              className="blog-load-btn"
-              onClick={() => setVisible(INITIAL_COUNT)}
-            >
+            <Button variant="secondary" onClick={() => setVisible(INITIAL_COUNT)}>
               Show Less
-            </button>
+            </Button>
           )}
         </div>
 

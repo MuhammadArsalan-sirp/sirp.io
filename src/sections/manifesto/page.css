@@ -69,6 +69,20 @@
   letter-spacing: -0.01em;
 }
 
+@media (max-width: 640px) {
+  .manifesto-page .page-header-heading {
+    font-size: clamp(1.65rem, 7.2vw, 2.15rem);
+  }
+
+  .manifesto-page .page-header-subtitle {
+    font-size: clamp(0.95rem, 3.8vw, 1.1rem);
+  }
+
+  .manifesto-page .page-header-subtext {
+    margin-top: 1rem;
+  }
+}
+
 .manifesto-page .page-header-byline {
   margin-top: 2rem;
   font-size: 1rem;
@@ -125,12 +139,6 @@
   width: 100%;
   height: clamp(520px, 72vh, 920px);
   border: 0;
-}
-
-.manifesto-cite-inert {
-  pointer-events: none;
-  cursor: default;
-  user-select: none;
 }
 
 .manifesto-abstract-section {
