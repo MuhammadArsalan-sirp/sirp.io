@@ -22,7 +22,8 @@ export function Button({ href, children, variant = 'primary', className, target,
       rel={rel}
       className={cn('sirp-button', variant === 'secondary' && 'sirp-button--secondary', className)}
     >
-      {children}
+      <span className="sirp-button__text">{children}</span>
+      {variant === 'primary' && <span className="sirp-button__glow" aria-hidden />}
     </Link>
   )
 }
