@@ -3,7 +3,7 @@
 .soar-alternatives-page .section-lead,
 .soar-alternatives-page .statement-lines-section,
 .soar-alternatives-page .split-info-cta-image,
-.soar-alternatives-page .autonomous-soc-comparison-section,
+.soar-alternatives-page section[class*='py-24'][class*='121218'],
 .soar-alternatives-page .faq-accordion-section,
 .soar-alternatives-page .soar-alt-info-cta-outro {
   border-bottom: none;
@@ -27,15 +27,15 @@
   padding-inline: 0;
 }
 
-.soar-alternatives-page .autonomous-soc-comparison-section {
+.soar-alternatives-page section[class*='py-24'][class*='121218'] {
   padding: 2.25rem 0;
 }
 
-.soar-alternatives-page .autonomous-soc-comparison-section .container-sirp > .mt-10 {
+.soar-alternatives-page section[class*='py-24'][class*='121218'] .container-sirp > .mt-10 {
   margin-top: 2rem;
 }
 
-.soar-alternatives-page .autonomous-soc-comparison-section .container-sirp > .mt-12 {
+.soar-alternatives-page section[class*='py-24'][class*='121218'] .container-sirp > .mt-12 {
   margin-top: 2rem;
 }
 
@@ -125,15 +125,43 @@
 
 @media (max-width: 900px) {
   .soar-alternatives-page .split-info-cta-image.soar-alt-what-replaces .split-image-wrap {
-    height: clamp(280px, 72vw, 500px);
+    height: clamp(240px, 62vw, 420px);
   }
 
   .soar-alternatives-page .split-info-cta-image.soar-alt-who-should-replacing .split-image-wrap {
-    height: clamp(260px, 68vw, 440px);
+    height: clamp(220px, 58vw, 380px);
   }
 
   .soar-alternatives-page .split-info-cta-image.soar-alt-migration-path .split-image-wrap {
-    height: clamp(270px, 70vw, 480px);
+    height: clamp(230px, 60vw, 400px);
+  }
+}
+
+@media (max-width: 640px) {
+  .soar-alternatives-page .split-info-cta-image.soar-alt-what-replaces .split-image-wrap {
+    height: clamp(170px, 52vw, 240px);
+  }
+
+  .soar-alternatives-page .split-info-cta-image.soar-alt-who-should-replacing .split-image-wrap {
+    height: clamp(160px, 50vw, 220px);
+  }
+
+  .soar-alternatives-page .split-info-cta-image.soar-alt-migration-path .split-image-wrap {
+    height: clamp(165px, 51vw, 230px);
+  }
+}
+
+@media (max-width: 480px) {
+  .soar-alternatives-page .split-info-cta-image.soar-alt-what-replaces .split-image-wrap {
+    height: clamp(132px, 48vw, 200px);
+  }
+
+  .soar-alternatives-page .split-info-cta-image.soar-alt-who-should-replacing .split-image-wrap {
+    height: clamp(128px, 46vw, 190px);
+  }
+
+  .soar-alternatives-page .split-info-cta-image.soar-alt-migration-path .split-image-wrap {
+    height: clamp(130px, 47vw, 195px);
   }
 }
 
@@ -154,7 +182,252 @@
 }
 
 @media (max-width: 640px) {
+  /* Match shared PageHeader / InfoCtaBlock mobile scale */
+  .soar-alternatives-page .page-header-heading {
+    font-size: clamp(1.65rem, 7.2vw, 2.15rem);
+    letter-spacing: -0.01em;
+  }
+
   .soar-alternatives-page .page-header-subtext {
-    font-size: 0.94rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .soar-alternatives-page .page-header-subtitle {
+    font-size: clamp(0.95rem, 3.8vw, 1.1rem);
+  }
+
+  .soar-alternatives-page .section-lead-heading,
+  .soar-alternatives-page .statement-lines-heading {
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+    line-height: 1.18;
+  }
+
+  .soar-alternatives-page .section-lead-subheading,
+  .soar-alternatives-page .statement-lines-body p,
+  .soar-alternatives-page .section-lead-children p,
+  .soar-alternatives-page .section-lead-children li {
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+
+  .soar-alternatives-page .black-gradient-card-title {
+    font-size: 1.05rem;
+    line-height: 1.22;
+  }
+
+  .soar-alternatives-page .black-gradient-card-text,
+  .soar-alternatives-page .black-gradient-card-text p,
+  .soar-alternatives-page .black-gradient-card-text li {
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+
+  .soar-alternatives-page .split-info-cta-image.soar-alt-split .info-cta-heading {
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+    line-height: 1.18;
+  }
+
+  .soar-alternatives-page .split-info-cta-image.soar-alt-split .split-left-body,
+  .soar-alternatives-page .split-info-cta-image.soar-alt-split .info-cta-body {
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+
+  .soar-alternatives-page section[class*='py-24'][class*='121218'] h2 {
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem) !important;
+    line-height: 1.18 !important;
+  }
+
+  .soar-alternatives-page .comparison-section-intro p,
+  .soar-alternatives-page section[class*='py-24'][class*='121218'] p,
+  .soar-alternatives-page section[class*='py-24'][class*='121218'] li {
+    font-size: 0.875rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .soar-alternatives-page section[class*='121218'] article h3 {
+    font-size: 1rem !important;
+    line-height: 1.22 !important;
+  }
+
+  .soar-alternatives-page section[class*='121218'] article ul {
+    font-size: 0.875rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .soar-alternatives-page div[class*='mt-28'] h3 {
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem) !important;
+    line-height: 1.18 !important;
+  }
+
+  .soar-alternatives-page div[class*='mt-28'] p {
+    font-size: 0.875rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .soar-alternatives-page .soar-alt-info-cta-outro .info-cta-heading {
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+    line-height: 1.18;
+  }
+
+  .soar-alternatives-page .soar-alt-info-cta-outro .info-cta-body {
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+
+  .soar-alternatives-page .faq-accordion-heading {
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+    margin-bottom: 0.65rem;
+  }
+
+  .soar-alternatives-page .section-lead {
+    padding: 1.75rem 0 1.5rem;
+  }
+
+  .soar-alternatives-page .statement-lines-section {
+    padding: 1.75rem 0 1.5rem;
+  }
+
+  .soar-alternatives-page .statement-lines-heading {
+    margin-bottom: 1.25rem;
+  }
+
+  .soar-alternatives-page .section-lead-children {
+    margin-top: 1.25rem;
+    gap: 0.85rem;
+  }
+
+  .soar-alternatives-page .statement-lines-body {
+    gap: 1rem;
+  }
+
+  .soar-alternatives-page .split-info-cta-image.soar-alt-split .split-info-cta-inner {
+    gap: 1rem;
+  }
+
+  .soar-alternatives-page .split-info-cta-image.soar-alt-split {
+    padding-block: 1.35rem;
+  }
+
+  .soar-alternatives-page section[class*='py-24'][class*='121218'] {
+    padding-top: 1.35rem !important;
+    padding-bottom: 1.35rem !important;
+  }
+
+  .soar-alternatives-page section[class*='py-24'][class*='121218'] .container-sirp > .mt-10 {
+    margin-top: 1.35rem !important;
+  }
+
+  .soar-alternatives-page .faq-accordion-section {
+    padding-block: 1.35rem;
+  }
+
+  .soar-alternatives-page .soar-alt-info-cta-outro.info-cta-block {
+    padding-block: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Primary CTA — slightly under global mobile `.sirp-button` (still readable). */
+  .soar-alternatives-page .soar-alt-info-cta-outro .sirp-button:not(.sirp-button--secondary) {
+    font-size: 0.8rem;
+    padding: 0.48rem 1.1rem;
+  }
+
+  .soar-alternatives-page .faq-accordion-trigger {
+    font-size: 0.88rem;
+    padding: 0.8rem 1rem;
+    min-height: 3rem;
+    gap: 0.65rem;
+  }
+
+  .soar-alternatives-page .faq-accordion-answer {
+    font-size: 0.84rem;
+    line-height: 1.62;
+  }
+
+  .soar-alternatives-page .faq-accordion-panel {
+    padding: 0.12rem 1rem 0.95rem;
+  }
+
+  .soar-alternatives-page .faq-accordion-list {
+    gap: 0.22rem;
+    padding: 0.25rem;
+  }
+
+  .soar-alternatives-page .faq-accordion-toggle {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .soar-alternatives-page .page-header-heading {
+    font-size: clamp(1.5rem, 6.8vw, 1.95rem);
+  }
+
+  .soar-alternatives-page .section-lead-heading,
+  .soar-alternatives-page .statement-lines-heading,
+  .soar-alternatives-page .split-info-cta-image.soar-alt-split .info-cta-heading,
+  .soar-alternatives-page section[class*='py-24'][class*='121218'] h2,
+  .soar-alternatives-page div[class*='mt-28'] h3,
+  .soar-alternatives-page .soar-alt-info-cta-outro .info-cta-heading,
+  .soar-alternatives-page .faq-accordion-heading {
+    font-size: clamp(1.35rem, 5.8vw, 1.75rem) !important;
+  }
+
+  .soar-alternatives-page .black-gradient-card-title {
+    font-size: 1rem;
+  }
+
+  .soar-alternatives-page section[class*='121218'] article h3 {
+    font-size: 0.95rem !important;
+  }
+
+  .soar-alternatives-page .section-lead {
+    padding: 1.5rem 0 1.25rem;
+  }
+
+  .soar-alternatives-page .statement-lines-section {
+    padding: 1.5rem 0 1.25rem;
+  }
+
+  .soar-alternatives-page .split-info-cta-image.soar-alt-split .split-info-cta-inner {
+    gap: 0.85rem;
+  }
+
+  .soar-alternatives-page .split-info-cta-image.soar-alt-split {
+    padding-block: 1.1rem;
+  }
+
+  .soar-alternatives-page section[class*='py-24'][class*='121218'] {
+    padding-top: 1.1rem !important;
+    padding-bottom: 1.1rem !important;
+  }
+
+  .soar-alternatives-page .faq-accordion-section {
+    padding-block: 1.1rem;
+  }
+
+  .soar-alternatives-page .soar-alt-info-cta-outro .sirp-button:not(.sirp-button--secondary) {
+    font-size: 0.73rem;
+    padding: 0.44rem 0.95rem;
+  }
+
+  .soar-alternatives-page .faq-accordion-trigger {
+    font-size: 0.82rem;
+    padding: 0.72rem 0.85rem;
+    min-height: 2.85rem;
+  }
+
+  .soar-alternatives-page .faq-accordion-answer {
+    font-size: 0.8rem;
+    line-height: 1.58;
+  }
+
+  .soar-alternatives-page .faq-accordion-panel {
+    padding-inline: 0.85rem;
+    padding-bottom: 0.85rem;
   }
 }

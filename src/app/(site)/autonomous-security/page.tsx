@@ -1,10 +1,11 @@
 import { PageHeader } from '@/components/layout/PageHeader'
 import { InfoCtaBlock } from '@/components/shared/InfoCtaBlock'
 import { SplitInfoCtaImage } from '@/components/shared/SplitInfoCtaImage'
+import './page.css'
 
 export default function Page() {
   return (
-    <>
+    <div className="autonomous-security-page">
       <PageHeader
         badgeText="Pillar"
         heading={
@@ -221,6 +222,8 @@ export default function Page() {
       />
 
       <SplitInfoCtaImage
+        sectionClassName="autonomous-security-split"
+        imageObjectFit="contain"
         heading="Go Deeper"
         body={
           <>
@@ -239,6 +242,6 @@ export default function Page() {
           href: '/technical-white-paper',
         }}
       />
-    </>
+    </div>
   )
 }

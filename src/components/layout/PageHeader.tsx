@@ -44,7 +44,7 @@ export function PageHeader({
 
           <h1 className="page-header-heading">{heading}</h1>
           {headingLine2 != null ? <h2 className="page-header-heading-line2">{headingLine2}</h2> : null}
-          <p className="page-header-subtext">{subtext}</p>
+          <div className="page-header-subtext">{subtext}</div>
         </div>
       </div>
     </section>

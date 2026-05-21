@@ -77,6 +77,7 @@ export default function Page() {
       }
     />
 
+    <div className="soar-vs-autonomous-soc-page">
       <SplitInfoCtaImage
         animateOnScroll
         bodyFontSize="18"
@@ -216,6 +217,7 @@ export default function Page() {
       <div className="soar-vs-autonomous-soc-cta-wrap">
         <CtaSection data={CTA_DATA} />
       </div>
+    </div>
     </>
   )
 }

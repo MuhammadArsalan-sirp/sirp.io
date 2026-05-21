@@ -32,7 +32,7 @@ export function OmnisensePlatform({ data }: OmnisensePlatformProps) {
   const active = tabs.find(t => t.id === activeTab)!
 
   return (
-    <section className="py-24 relative" style={{ background: 'linear-gradient(rgb(33, 33, 46) 15%, rgb(25, 25, 36) 21%, rgb(18, 18, 24) 38%)' }}>
+    <section className="py-[50px] md:py-[100px] relative" style={{ background: 'linear-gradient(rgb(33, 33, 46) 15%, rgb(25, 25, 36) 21%, rgb(18, 18, 24) 38%)' }}>
       <div className="container-sirp">
 
         {/* Badge + heading — centered */}
@@ -41,9 +41,9 @@ export function OmnisensePlatform({ data }: OmnisensePlatformProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-10 md:mb-14"
         >
-          <div className="mb-6">
+          <div className="mb-4 md:mb-6">
             <span className="inline-flex items-center gap-2 font-mono text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-lg border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]">
               ✦ {badge}
             </span>
@@ -51,15 +51,16 @@ export function OmnisensePlatform({ data }: OmnisensePlatformProps) {
           <h2
             className="font-sans font-bold text-white"
             style={{
-              fontSize: '64px',
+              fontSize: 'clamp(42px, 5vw, 64px)',
               lineHeight: '1.08',
               letterSpacing: '-0.03em',
             }}
           >
             {heading}
             <br />
-            <em>{headingItalic}</em>{' '}
-            {headingSuffix}
+            <span className="block text-[16px] md:text-[inherit]" style={{ lineHeight: '120%' }}>
+              <em>{headingItalic}</em>{' '}{headingSuffix}
+            </span>
           </h2>
         </motion.div>
 
@@ -69,8 +70,13 @@ export function OmnisensePlatform({ data }: OmnisensePlatformProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="rounded-2xl border border-[#3a3a4c] overflow-hidden mx-auto"
-          style={{ maxWidth: '1000px', background: 'transparent' }}
+          className="overflow-hidden mx-auto w-full"
+          style={{
+            maxWidth: '1000px',
+            background: 'rgb(18, 18, 24)',
+            borderRadius: '35px',
+            border: '1px solid rgb(58, 58, 77)',
+          }}
         >
           {/* Content area */}
           <AnimatePresence mode="wait">
@@ -80,26 +86,23 @@ export function OmnisensePlatform({ data }: OmnisensePlatformProps) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-0"
+              className="grid grid-cols-1 md:grid-cols-2 gap-0"
             >
               {/* Left — title + description */}
-              <div className="p-10 flex flex-col justify-center">
+              <div className="p-6 md:p-8 lg:p-10 flex flex-col justify-center order-2 md:order-1">
                 <h3
-                  className="font-sans font-bold text-white mb-4"
-                  style={{ fontSize: '32px', lineHeight: '1.15', letterSpacing: '-0.02em' }}
+                  className="font-sans font-bold text-white mb-3 md:mb-4"
+                  style={{ fontSize: 'clamp(20px, 2.5vw, 32px)', lineHeight: '1.15', letterSpacing: '-0.02em' }}
                 >
                   {active.title}
                 </h3>
-                <p
-                  className="font-sans text-white/70 leading-relaxed"
-                  style={{ fontSize: '15px' }}
-                >
+                <p className="font-sans text-white/70 leading-relaxed text-sm md:text-[15px]">
                   {active.description}
                 </p>
               </div>
 
               {/* Right — screenshot */}
-              <div className="relative overflow-hidden" style={{ minHeight: '380px' }}>
+              <div className="relative overflow-hidden min-h-[220px] md:min-h-[320px] lg:min-h-[380px] order-1 md:order-2">
                 <Image
                   src={active.image}
                   alt={active.title}
@@ -111,22 +114,25 @@ export function OmnisensePlatform({ data }: OmnisensePlatformProps) {
             </motion.div>
           </AnimatePresence>
 
-          {/* Tab bar — bottom of card */}
+          {/* Tab bar */}
           <div
-            className="flex items-stretch"
-            style={{ borderTop: '1px solid #3a3a4c' }}
+            className="flex flex-wrap"
+            style={{ borderTop: '1px solid rgb(58, 58, 77)' }}
           >
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex-1 py-4 font-sans text-sm font-medium transition-all duration-200 cursor-pointer border-none outline-none ${
+                className={`flex-1 min-w-[50%] md:min-w-0 py-3 md:py-4 font-sans text-xs md:text-sm font-medium transition-all duration-200 cursor-pointer border-none outline-none whitespace-nowrap px-2 md:px-3 ${
                   activeTab === tab.id
-                    ? 'bg-[#8e2dff] text-white'
-                    : 'bg-transparent text-white/50 hover:text-white hover:bg-white/5'
+                    ? 'text-white'
+                    : 'text-white/50 hover:text-white hover:bg-white/5'
                 }`}
                 style={{
-                  borderRight: '1px solid #3a3a4c',
+                  background: activeTab === tab.id ? 'rgb(142, 45, 255)' : 'transparent',
+                  opacity: activeTab === tab.id ? 1 : 0.9,
+                  borderRight: '1px solid rgb(89, 89, 104)',
+                  borderBottom: '1px solid rgb(89, 89, 104)',
                 }}
               >
                 {tab.label}

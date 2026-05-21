@@ -69,6 +69,20 @@
   letter-spacing: -0.01em;
 }
 
+@media (max-width: 640px) {
+  .manifesto-page .page-header-heading {
+    font-size: clamp(1.65rem, 7.2vw, 2.15rem);
+  }
+
+  .manifesto-page .page-header-subtitle {
+    font-size: clamp(0.95rem, 3.8vw, 1.1rem);
+  }
+
+  .manifesto-page .page-header-subtext {
+    margin-top: 1rem;
+  }
+}
+
 .manifesto-page .page-header-byline {
   margin-top: 2rem;
   font-size: 1rem;
@@ -125,12 +139,6 @@
   width: 100%;
   height: clamp(520px, 72vh, 920px);
   border: 0;
-}
-
-.manifesto-cite-inert {
-  pointer-events: none;
-  cursor: default;
-  user-select: none;
 }
 
 .manifesto-abstract-section {
@@ -219,6 +227,58 @@
   width: 100%;
   max-width: 100%;
   text-align: left;
+}
+
+/* SAF table — fit narrow viewports (manifesto only; shared component used only here today). */
+@media (max-width: 640px) {
+  .manifesto-page .soc-af-table-scroll {
+    overflow-x: visible;
+  }
+
+  .manifesto-page .soc-af-table {
+    min-width: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .manifesto-page .soc-af-table thead th {
+    padding: 0.38rem 0.28rem;
+    font-size: 0.48rem;
+    letter-spacing: 0.055em;
+    white-space: normal;
+    line-height: 1.22;
+    vertical-align: bottom;
+  }
+
+  .manifesto-page .soc-af-table tbody td {
+    padding: 0.38rem 0.28rem;
+    font-size: 0.62rem;
+    line-height: 1.28;
+    overflow-wrap: break-word;
+  }
+
+  .manifesto-page .soc-af-table tbody td:first-child {
+    font-size: 0.66rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .manifesto-page .soc-af-table thead th {
+    padding: 0.32rem 0.22rem;
+    font-size: 0.44rem;
+    letter-spacing: 0.04em;
+    line-height: 1.18;
+  }
+
+  .manifesto-page .soc-af-table tbody td {
+    padding: 0.32rem 0.22rem;
+    font-size: 0.54rem;
+    line-height: 1.24;
+  }
+
+  .manifesto-page .soc-af-table tbody td:first-child {
+    font-size: 0.58rem;
+  }
 }
 
 .manifesto-key-insights-divider-wrap {

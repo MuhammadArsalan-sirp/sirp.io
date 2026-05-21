@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { Button } from '@/components/shared/Button'
 import { BLOG_POSTS } from '@/lib/constants/blog'
 import './BlogGrid.css'
 
@@ -23,11 +24,11 @@ export function BlogGrid() {
           {shown.map((post, i) => (
             <motion.div
               key={post.id}
+              className="blog-grid-item"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: (i % 4) * 0.07 }}
-              style={{ height: '100%' }}
             >
               <Link href={`/blog/${post.slug}`} className="blog-card">
                 {/* Hover arrow */}
@@ -61,20 +62,17 @@ export function BlogGrid() {
 
         <div className="blog-load-more">
           {hasMore && (
-            <button
-              className="blog-load-btn"
-              onClick={() => setVisible(v => Math.min(v + LOAD_MORE_COUNT, BLOG_POSTS.length))}
+            <Button
+              variant="secondary"
+              onClick={() => setVisible((v) => Math.min(v + LOAD_MORE_COUNT, BLOG_POSTS.length))}
             >
               Load More
-            </button>
+            </Button>
           )}
           {visible > INITIAL_COUNT && (
-            <button
-              className="blog-load-btn"
-              onClick={() => setVisible(INITIAL_COUNT)}
-            >
+            <Button variant="secondary" onClick={() => setVisible(INITIAL_COUNT)}>
               Show Less
-            </button>
+            </Button>
           )}
         </div>
 

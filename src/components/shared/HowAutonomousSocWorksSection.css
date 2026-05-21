@@ -132,3 +132,46 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Smaller number pill + tighter gap to title on narrow phones */
+@media (max-width: 640px) {
+  .how-autonomous-number-wrap {
+    width: 34px;
+    height: 68px;
+    margin-bottom: 6px;
+  }
+
+  .how-autonomous-number-border {
+    width: 34px !important;
+    height: 68px !important;
+  }
+
+  .how-autonomous-number {
+    font-size: 1.65rem;
+  }
+
+  .how-autonomous-card-title {
+    margin-top: 1.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-autonomous-number-wrap {
+    width: 30px;
+    height: 60px;
+    margin-bottom: 4px;
+  }
+
+  .how-autonomous-number-border {
+    width: 30px !important;
+    height: 60px !important;
+  }
+
+  .how-autonomous-number {
+    font-size: 1.45rem;
+  }
+
+  .how-autonomous-card-title {
+    margin-top: 1.35rem;
+  }
+}

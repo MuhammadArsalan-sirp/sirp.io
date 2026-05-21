@@ -38,9 +38,9 @@ export function IntegrationsSection({ data = INTEGRATIONS_DATA }: IntegrationsSe
 
   return (
     <section
-      className="pt-[100px] overflow-visible relative z-[3]"
+      className="pt-[54px] md:pt-[100px] relative z-[20]"
       style={{
-        background: 'linear-gradient(to bottom, #121218 0%, #121218 50%, rgba(18,18,24,0.5) 80%, transparent 100%)',
+        background: 'linear-gradient(rgb(37, 37, 52) 0%, rgba(18, 18, 24, 0) 15%)',
       }}
     >
       <div className="container-sirp">
@@ -51,15 +51,15 @@ export function IntegrationsSection({ data = INTEGRATIONS_DATA }: IntegrationsSe
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-20"
+          className="text-center mb-10 md:mb-20"
         >
-          <span className="inline-flex items-center gap-1 font-mono text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]">
+          <span className="inline-flex items-center gap-1 font-mono text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-md border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]">
             {pill}
           </span>
           <h2
-            className="font-sans font-bold text-white mt-4 mb-5"
+            className="font-sans font-bold text-white mt-4 mb-4"
             style={{
-              fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+              fontSize: 'clamp(2rem, 6vw, 5rem)',
               lineHeight: '1.1',
               letterSpacing: '-0.03em',
             }}
@@ -68,7 +68,7 @@ export function IntegrationsSection({ data = INTEGRATIONS_DATA }: IntegrationsSe
             <em>{headingItalic}</em>{' '}
             {headingSuffix}
           </h2>
-          <p className="font-sans text-white/70 text-lg leading-[1.7] max-w-[680px] mx-auto">
+          <p className="font-sans text-white/70 text-base md:text-lg leading-[1.7] max-w-[680px] mx-auto">
             {description}
           </p>
         </motion.div>
