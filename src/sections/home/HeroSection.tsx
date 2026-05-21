@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/shared/Button'
@@ -28,31 +29,46 @@ interface HeroSectionProps {
 /* ─── Component ──────────────────────────────────────────── */
 export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
   const { pill, subheading, primaryBtn, secondaryBtn, videoSrc } = data
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+    video.play().catch(() => {})
+  }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section
+      className="relative overflow-hidden"
+      style={{ height: 'calc(100dvh - 4.5rem)', maxHeight: 'calc(100dvh - 4.5rem)' }}
+    >
+      {/* Background video */}
+      <div className="absolute inset-y-0 inset-x-0 z-0 pl-12 pr-5 sm:pl-16 sm:pr-8 md:pl-24 md:pr-10 lg:pl-[280px] lg:pr-0 pointer-events-none">
+        <div className="relative h-full w-full overflow-hidden">
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className="absolute inset-0 h-full w-full object-cover object-[center_20%]"
+          >
+            <source src={videoSrc} type="video/webm" />
+          </video>
+        </div>
+      </div>
 
-      {/* Bottom fade */}
+      {/* Bottom fade into stats section */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none z-[1]"
+        className="absolute bottom-0 left-0 right-0 z-[1] h-48 pointer-events-none"
         style={{
-          background: 'linear-gradient(#121218 0%, #252534 100%)',
+          background: 'linear-gradient(to top, #121218 0%, rgba(18, 18, 24, 0) 100%)',
         }}
       />
 
-      {/* Background video */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-      >
-        <source src={videoSrc} type="video/webm" />
-      </video>
-
       {/* Content */}
-      <div className="absolute bottom-0 left-0 right-0 z-[1] flex flex-col gap-10 px-5 pb-14 sm:px-10 md:px-14 lg:right-auto lg:pl-[200px] lg:pr-0 lg:gap-[60px] lg:pb-20">
+      <div className="absolute left-0 right-0 z-[2] flex flex-col gap-4 pl-12 pr-5 bottom-[8rem] sm:pl-16 sm:pr-8 sm:bottom-[8.5rem] md:pl-24 md:pr-10 md:bottom-[9rem] lg:pl-[280px] lg:pr-0 lg:gap-6 lg:bottom-[9.5rem]">
 
         {/* Pill */}
         <motion.div
@@ -70,14 +86,14 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
         </motion.div>
 
         {/* Heading + subheading */}
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-3">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-sans font-bold text-white"
             style={{
-              fontSize: 'clamp(2.75rem, 12vw, 5.5rem)',
+              fontSize: 'clamp(2.25rem, 4.8vw, 5rem)',
               lineHeight: '1.08',
               letterSpacing: '-0.03em',
             }}
@@ -89,7 +105,7 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-sans font-medium text-base md:text-xl leading-relaxed text-white"
+            className="mt-3 md:mt-4 font-sans font-medium text-sm md:text-lg leading-relaxed text-white"
             style={{ maxWidth: '740px' }}
           >
             {subheading}

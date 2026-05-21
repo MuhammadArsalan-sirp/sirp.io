@@ -16,6 +16,7 @@ export function Navbar() {
   const [collapsedPanelHeight, setCollapsedPanelHeight] = useState<number | null>(null)
   const [activeDropdown, setActive] = useState<string | null>(null)
   const pathname   = usePathname()
+  const isHome     = pathname === '/'
   const closeTimer = useRef<ReturnType<typeof setTimeout>>(null)
   const mobilePanelRef = useRef<HTMLDivElement>(null)
 
@@ -66,7 +67,8 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        'relative w-full z-40 transition-all duration-300',
+        'w-full z-40 transition-all duration-300',
+        isHome ? 'absolute top-0 left-0 right-0' : 'relative',
         scrolled
           ? 'bg-[#080810]/95 backdrop-blur-md border-b border-[#3a3a4c]'
           : 'bg-transparent',
