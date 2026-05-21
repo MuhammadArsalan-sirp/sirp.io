@@ -3,17 +3,21 @@ import { PageHeader } from '@/components/layout/PageHeader'
 import { PurplePill } from '@/components/shared/PurplePill'
 import { BlogGrid } from '@/sections/blog/BlogGrid'
 import { BlogChangelog } from '@/sections/blog/BlogChangelog'
+import { getPublishedBlogPosts } from '@/lib/blog/queries'
 import { BLOG_HERO } from '@/lib/constants/blog'
 import './page.css'
 
+export const revalidate = 60
+
 export const metadata = {
-  title: 'Blog | SIRP',
+  title: 'Blog',
   description:
     'Autonomous SOC insights, security operations research, and AI-native security content from the SIRP team.',
 }
 
-export default function BlogPage() {
+export default async function BlogPage() {
   const hero = BLOG_HERO
+  const posts = await getPublishedBlogPosts()
 
   return (
     <div className="blog-page">
@@ -43,7 +47,7 @@ export default function BlogPage() {
           </>
         }
       />
-      <BlogGrid />
+      <BlogGrid posts={posts} />
       <BlogChangelog />
     </div>
   )
