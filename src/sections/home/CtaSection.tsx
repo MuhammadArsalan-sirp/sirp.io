@@ -21,14 +21,21 @@ interface CtaData {
 
 interface CtaSectionProps {
   data?: CtaData
+  /** When false, dome/glow do not overlap the section above (e.g. long step diagrams). */
+  overlapTop?: boolean
 }
 
 /* ─── Component ──────────────────────────────────────────── */
-export function CtaSection({ data = CTA_DATA }: CtaSectionProps) {
+export function CtaSection({ data = CTA_DATA, overlapTop = true }: CtaSectionProps) {
   const { headingItalic, primaryBtn, secondaryBtn } = data
 
   return (
-    <section className="bg-[#121218] relative z-[2] -mt-32 overflow-hidden">
+    <section
+      className={[
+        'bg-[#121218] relative z-[2] overflow-hidden',
+        overlapTop ? '-mt-32' : 'cta-section--no-overlap',
+      ].join(' ')}
+    >
       <div className="relative flex flex-col items-center justify-center min-h-[560px] md:min-h-[560px] lg:min-h-[620px] pt-0 md:pt-20 pb-16 md:pb-36">
 
         {/* Purple glow */}
