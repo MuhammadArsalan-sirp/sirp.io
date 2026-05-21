@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/shared/Button'
 import { HERO_DATA } from '@/lib/constants'
-import { ShineIcon } from '@/components/shared/ShineIcon'
+import { PurplePill } from '@/components/shared/PurplePill'
 
 /* ─── Types ──────────────────────────────────────────────── */
 interface HeroBtn {
@@ -76,13 +76,9 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <span
-            className="inline-flex items-center gap-2 text-[11px] font-medium tracking-widest uppercase rounded-lg border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]"
-            style={{ padding: '5px 10px 6px', fontFamily: 'var(--font-inter)' }}
-          >
-            <ShineIcon size={12} />
+          <PurplePill className="rounded-lg px-2.5 py-1">
             {pill}
-          </span>
+          </PurplePill>
         </motion.div>
 
         {/* Heading + subheading */}

@@ -14,12 +14,8 @@
 }
 
 .blog-page-guide-purple-pill {
-  font-family: var(--font-inter), 'Inter', sans-serif;
-  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
   line-height: 1.35;
-  text-transform: none;
   padding: 0.32rem 0.72rem;
   border-radius: 5px;
   max-width: min(100%, 36rem);
@@ -48,7 +44,7 @@
   }
 
   .blog-page-guide-purple-pill {
-    font-size: 0.625rem;
+    font-size: 11px;
     padding: 0.28rem 0.62rem;
   }
 

@@ -34,11 +34,6 @@
 }
 
 .manifesto-page .page-header-badge .purple-pill {
-  text-transform: none;
-  letter-spacing: 0.04em;
-  font-size: 0.7rem;
-  font-weight: 500;
-  font-family: var(--font-inter), 'Inter', sans-serif;
   background: rgba(88, 28, 135, 0.55);
   border-color: rgba(168, 85, 247, 0.45);
 }
@@ -165,11 +160,6 @@
 .manifesto-page .manifesto-key-insights-kicker,
 .manifesto-page .manifesto-citation-footer-pill,
 .manifesto-page .manifesto-about-author-pill {
-  text-transform: none;
-  letter-spacing: 0.04em;
-  font-size: 0.7rem;
-  font-weight: 500;
-  font-family: var(--font-inter), 'Inter', sans-serif;
   background: rgba(88, 28, 135, 0.55);
   border-color: rgba(168, 85, 247, 0.45);
 }
