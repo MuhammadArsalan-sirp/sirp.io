@@ -80,7 +80,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
             </h2>
 
             {/* Subheading */}
-            <p className="text-white/60 text-base leading-[1.7] max-w-[400px] mb-6 font-['Inter',sans-serif]">
+            <p className="text-white/60 text-base leading-[1.7] max-w-[400px] mb-14 font-['Inter',sans-serif]">
               {subheading}
             </p>
 
