@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { PurplePill } from '@/components/shared/PurplePill'
 import { FEATURES_DATA } from '@/lib/constants'
 import './FeaturesSection.css'
 
@@ -30,7 +31,7 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
   const { pill, heading, headingItalic, features } = data
 
   return (
-    <section className="bg-[#121218] border-b border-[#3a3a4c] py-[50px] md:py-[100px] overflow-hidden">
+    <section className="bg-[#121218] py-[50px] md:py-[100px] overflow-hidden">
       <div className="container-sirp">
 
         {/* Heading */}
@@ -41,10 +42,7 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
           transition={{ duration: 0.5 }}
           className="mb-16 max-w-[700px]"
         >
-          <span className="inline-flex items-center gap-1.5 font-mono text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-md border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]">
-            <img src="/images/shine.svg" alt="" className="w-3 h-3" />
-            {pill}
-          </span>
+          <PurplePill className="rounded-md">{pill}</PurplePill>
           <h2
             className="font-sans text-white mt-4"
             style={{

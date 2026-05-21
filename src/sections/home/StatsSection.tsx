@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Button } from '@/components/shared/Button'
+import { PurplePill } from '@/components/shared/PurplePill'
 import { STATS_DATA } from '@/lib/constants'
 
 /* ─── Types ──────────────────────────────────────────────── */
@@ -41,8 +42,8 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
 
   return (
     <section className="bg-[#121218] border-t border-[#3a3a4c]">
-      <div className="container-sirp">
-        <div className="flex flex-col md:flex-row items-start gap-10 md:gap-10 lg:gap-[80px] py-16 md:py-12 lg:py-0">
+      <div className="hero-section-x">
+        <div className="flex flex-col md:flex-row items-start gap-8 md:gap-10 lg:gap-[80px] py-12 md:py-10 lg:py-0">
 
           {/* Left */}
           <motion.div
@@ -50,22 +51,16 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="w-full md:flex-none md:w-[320px] lg:w-[560px] md:pt-10 md:pb-10 lg:pt-[100px] lg:pb-[100px]"
+            className="w-full md:flex-none md:w-[320px] lg:w-[560px] pt-3 md:pt-10 md:pb-8 lg:pt-20 lg:pb-16"
           >
             {/* Pill */}
-            <div className="mb-5">
-              <span className="inline-flex items-center gap-2 font-mono text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-md border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                  <circle cx="6" cy="6" r="5" stroke="white" strokeOpacity="0.4" strokeWidth="1.5" />
-                  <path d="M6 6 L6 1 A5 5 0 0 1 11 6 Z" fill="white" />
-                </svg>
-                {pill}
-              </span>
+            <div className="mb-4">
+              <PurplePill className="rounded-md">{pill}</PurplePill>
             </div>
 
             {/* Heading */}
             <h2
-              className="text-white font-bold mt-4 mb-4"
+              className="text-white font-bold mt-3 mb-3"
               style={{
                 fontSize: 'clamp(1.8rem, 3.5vw, 2.625rem)',
                 lineHeight: '1.2',
@@ -85,7 +80,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
             </h2>
 
             {/* Subheading */}
-            <p className="text-white/60 text-base leading-[1.7] max-w-[400px] mb-8 font-['Inter',sans-serif]">
+            <p className="text-white/60 text-base leading-[1.7] max-w-[400px] mb-14 font-['Inter',sans-serif]">
               {subheading}
             </p>
 
@@ -102,7 +97,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="w-full md:flex-1"
+            className="w-full md:flex-1 pt-6 md:pt-8 lg:pt-16 lg:pb-16"
           >
             {stats.map((stat, i) => (
               <div key={stat.label}>
@@ -111,7 +106,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="flex items-start gap-4 py-6 md:py-7"
+                  className="flex items-start gap-4 py-4 md:py-5"
                 >
                   {/* Icon */}
                   <div className="relative flex-shrink-0 w-[58px] h-[97px]">

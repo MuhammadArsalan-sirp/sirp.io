@@ -1,10 +1,11 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/shared/Button'
 import { HERO_DATA } from '@/lib/constants'
-import { ShineIcon } from '@/components/shared/ShineIcon'
+import { PurplePill } from '@/components/shared/PurplePill'
 
 /* ─── Types ──────────────────────────────────────────────── */
 interface HeroBtn {
@@ -25,59 +26,85 @@ interface HeroSectionProps {
   data?: HeroData
 }
 
+const HERO_ENTER = {
+  duration: 0.5,
+  ease: [0.16, 1, 0.3, 1] as const,
+}
+
+/** Video fades in just after hero copy starts */
+const VIDEO_DELAY_S = 0.05
+
 /* ─── Component ──────────────────────────────────────────── */
 export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
   const { pill, subheading, primaryBtn, secondaryBtn, videoSrc } = data
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      videoRef.current?.play().catch(() => {})
+    }, VIDEO_DELAY_S * 1000)
+    return () => window.clearTimeout(timer)
+  }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section
+      className="relative isolate overflow-hidden"
+      style={{ height: 'calc(100dvh - 4.5rem)', maxHeight: 'calc(100dvh - 4.5rem)' }}
+    >
+      {/* Background video — enters with hero copy */}
+      <motion.div
+        className="absolute inset-0 z-0 flex items-center justify-center bg-[#121218] pointer-events-none"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ ...HERO_ENTER, delay: VIDEO_DELAY_S }}
+      >
+        <video
+          ref={videoRef}
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="relative z-0 h-full w-full object-contain object-center"
+        >
+          <source src={videoSrc} type="video/webm" />
+        </video>
+      </motion.div>
 
-      {/* Bottom fade */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none z-[1]"
+      {/* Bottom fade — matches AutonomousSection top (#252534) */}
+      <motion.div
+        className="absolute bottom-0 left-0 right-0 z-[1] h-48 pointer-events-none"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ ...HERO_ENTER, delay: VIDEO_DELAY_S }}
         style={{
-          background: 'linear-gradient(#121218 0%, #252534 100%)',
+          background: 'linear-gradient(to top, #252534 0%, rgba(37, 37, 52, 0) 100%)',
         }}
       />
 
-      {/* Background video */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-      >
-        <source src={videoSrc} type="video/webm" />
-      </video>
-
-      {/* Content */}
-      <div className="absolute bottom-0 left-0 right-0 z-[1] flex flex-col gap-10 px-5 pb-14 sm:px-10 md:px-14 lg:right-auto lg:pl-[200px] lg:pr-0 lg:gap-[60px] lg:pb-20">
+      {/* Content — above video */}
+      <div className="absolute inset-x-0 bottom-[8rem] z-10 hero-section-x flex flex-col gap-4 sm:bottom-[8.5rem] md:bottom-[9rem] lg:gap-6 lg:bottom-[9.5rem]">
 
         {/* Pill */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ ...HERO_ENTER, delay: 0 }}
+          className="relative z-10"
         >
-          <span
-            className="inline-flex items-center gap-2 text-[11px] font-medium tracking-widest uppercase rounded-lg border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]"
-            style={{ padding: '5px 10px 6px', fontFamily: 'var(--font-inter)' }}
-          >
-            <ShineIcon size={12} />
+          <PurplePill className="rounded-lg px-2.5 py-1">
             {pill}
-          </span>
+          </PurplePill>
         </motion.div>
 
         {/* Heading + subheading */}
-        <div className="flex flex-col gap-5">
+        <div className="relative z-10 flex flex-col gap-3">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
+            transition={{ ...HERO_ENTER, delay: 0.02 }}
             className="font-sans font-bold text-white"
             style={{
-              fontSize: 'clamp(2.75rem, 12vw, 5.5rem)',
+              fontSize: 'clamp(2.25rem, 4.8vw, 5rem)',
               lineHeight: '1.08',
               letterSpacing: '-0.03em',
             }}
@@ -88,8 +115,8 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-sans font-medium text-base md:text-xl leading-relaxed text-white"
+            transition={{ ...HERO_ENTER, delay: 0.03 }}
+            className="mt-3 md:mt-4 font-sans font-medium text-sm md:text-lg leading-relaxed text-white"
             style={{ maxWidth: '740px' }}
           >
             {subheading}
@@ -100,8 +127,8 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex items-center gap-4 flex-wrap"
+          transition={{ ...HERO_ENTER, delay: 0.04 }}
+          className="relative z-10 flex items-center gap-4 flex-wrap"
         >
           <Button href={primaryBtn.href}>
             {primaryBtn.label}
