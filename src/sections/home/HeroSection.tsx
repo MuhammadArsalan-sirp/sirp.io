@@ -43,7 +43,7 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
       style={{ height: 'calc(100dvh - 4.5rem)', maxHeight: 'calc(100dvh - 4.5rem)' }}
     >
       {/* Background video */}
-      <div className="absolute inset-y-0 inset-x-0 z-0 pl-12 pr-5 sm:pl-16 sm:pr-8 md:pl-24 md:pr-10 lg:pl-[280px] lg:pr-0 pointer-events-none">
+      <div className="absolute inset-y-0 inset-x-0 z-0 hero-section-x pointer-events-none">
         <div className="relative h-full w-full overflow-hidden">
           <video
             ref={videoRef}
@@ -68,7 +68,7 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
       />
 
       {/* Content */}
-      <div className="absolute left-0 right-0 z-[2] flex flex-col gap-4 pl-12 pr-5 bottom-[8rem] sm:pl-16 sm:pr-8 sm:bottom-[8.5rem] md:pl-24 md:pr-10 md:bottom-[9rem] lg:pl-[280px] lg:pr-0 lg:gap-6 lg:bottom-[9.5rem]">
+      <div className="absolute left-0 right-0 z-[2] hero-section-x flex flex-col gap-4 bottom-[8rem] sm:bottom-[8.5rem] md:bottom-[9rem] lg:gap-6 lg:bottom-[9.5rem]">
 
         {/* Pill */}
         <motion.div

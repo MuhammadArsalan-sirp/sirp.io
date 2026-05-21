@@ -96,6 +96,30 @@ p, nav a, nav button, li {
 @media (min-width: 768px)  { .container-sirp { padding-inline: 2.5rem; } }
 @media (min-width: 1280px) { .container-sirp { padding-inline: 3rem; } }
 
+/* Matches hero copy horizontal inset (viewport-relative, not container-sirp) */
+.hero-section-x {
+  padding-left: 3rem;
+  padding-right: 1.25rem;
+}
+@media (min-width: 640px) {
+  .hero-section-x {
+    padding-left: 4rem;
+    padding-right: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .hero-section-x {
+    padding-left: 6rem;
+    padding-right: 2.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .hero-section-x {
+    padding-left: 280px;
+    padding-right: 0;
+  }
+}
+
 .gradient-text {
   background: linear-gradient(135deg, #f0eeff 30%, #a855f7 100%);
   -webkit-background-clip: text;
