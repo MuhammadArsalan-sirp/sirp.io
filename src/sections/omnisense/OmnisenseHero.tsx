@@ -39,7 +39,7 @@ export function OmnisenseHero({ data }: OmnisenseHeroProps) {
           transition={{ duration: 0.5 }}
           className="mb-5 lg:-mb-4"
         >
-          <span className="inline-flex items-center gap-2 font-mono text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-lg border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]">
+          <span className="inline-flex items-center gap-2 font-sans text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-lg border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]">
             ✦ {badge}
           </span>
         </motion.div>

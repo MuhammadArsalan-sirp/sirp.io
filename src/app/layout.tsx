@@ -56,6 +56,10 @@ export const metadata: Metadata = {
     images: ['/og-image.png'],
   },
   robots: { index: true, follow: true },
+  icons: {
+    icon: '/images/logos/sirp_favicon.svg',
+    shortcut: '/images/logos/sirp_favicon.svg',
+  },
 }
 
 export const viewport: Viewport = {

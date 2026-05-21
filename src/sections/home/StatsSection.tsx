@@ -42,7 +42,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
   return (
     <section className="bg-[#121218] border-t border-[#3a3a4c]">
       <div className="container-sirp">
-        <div className="flex flex-col md:flex-row items-start gap-10 md:gap-10 lg:gap-[80px] py-16 md:py-12 lg:py-0">
+        <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-[80px] py-16 lg:py-0">
 
           {/* Left */}
           <motion.div
@@ -50,11 +50,11 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="w-full md:flex-none md:w-[320px] lg:w-[560px] md:pt-10 md:pb-10 lg:pt-[100px] lg:pb-[100px]"
+            className="w-full lg:flex-none lg:w-[560px] lg:pt-[100px] lg:pb-[100px]"
           >
             {/* Pill */}
             <div className="mb-5">
-              <span className="inline-flex items-center gap-2 font-mono text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-md border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]">
+              <span className="inline-flex items-center gap-2 font-sans text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-md border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
                   <circle cx="6" cy="6" r="5" stroke="white" strokeOpacity="0.4" strokeWidth="1.5" />
                   <path d="M6 6 L6 1 A5 5 0 0 1 11 6 Z" fill="white" />
@@ -94,7 +94,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
           </motion.div>
 
           {/* Vertical divider */}
-          <div className="hidden md:block w-px bg-[#3a3a4c] self-stretch flex-shrink-0" />
+          <div className="hidden lg:block w-px bg-[#3a3a4c] self-stretch flex-shrink-0" />
 
           {/* Right */}
           <motion.div

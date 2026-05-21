@@ -41,7 +41,7 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
           transition={{ duration: 0.5 }}
           className="mb-16 max-w-[700px]"
         >
-          <span className="inline-flex items-center gap-1.5 font-mono text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-md border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]">
+          <span className="inline-flex items-center gap-1.5 font-sans text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-md border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]">
             <img src="/images/shine.svg" alt="" className="w-3 h-3" />
             {pill}
           </span>
@@ -59,7 +59,7 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
         </motion.div>
 
         {/* 2x2 Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="features-grid">
           {features.map((feature, i) => (
             <motion.div
               key={feature.id}

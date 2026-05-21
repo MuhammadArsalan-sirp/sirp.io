@@ -28,7 +28,7 @@ export function CtaSection({ data = CTA_DATA }: CtaSectionProps) {
   const { headingItalic, primaryBtn, secondaryBtn } = data
 
   return (
-    <section className="bg-[#121218] relative z-[2] -mt-32 overflow-hidden">
+    <section className="bg-[#121218] relative z-[2] -mt-32 overflow-visible">
       <div className="relative flex flex-col items-center justify-center min-h-[560px] md:min-h-[560px] lg:min-h-[620px] pt-0 md:pt-20 pb-16 md:pb-36">
 
         {/* Purple glow */}

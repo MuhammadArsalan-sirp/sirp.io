@@ -145,7 +145,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" aria-label="SIRP home">
           <Image
-            src="/images/logos/SIRP-Logo.png"
+            src="/images/logos/SIRP-Logo.svg"
             alt="SIRP"
             width={100}
             height={36}
