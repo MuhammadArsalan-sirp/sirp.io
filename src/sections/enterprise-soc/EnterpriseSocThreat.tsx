@@ -7,18 +7,27 @@ import { ENTERPRISE_SOC_THREAT } from '@/lib/constants/enterprise-soc'
 import './EnterpriseSocThreat.css'
 
 const ICON_MAP = {
-  bargraph: '/images/enterprise-soc/bargraph.svg',
-  search: '/images/enterprise-soc/search.svg',
-  quater: '/images/enterprise-soc/quater.svg',
-  current: '/images/enterprise-soc/current.svg',
-  download: '/images/enterprise-soc/download.svg',
+  bargraph: '/images/alert.svg',
+  search:   '/images/context.svg',
+  quater:   '/images/confidence.svg',
+  current:  '/images/containment.svg',
+  download: '/images/response.svg',
 } as const
 
 export function EnterpriseSocThreat() {
   const { heading, steps, cta } = ENTERPRISE_SOC_THREAT
 
   return (
-    <section className="bg-[#121218] overflow-x-hidden pt-12">
+    <section className="bg-[#121218] overflow-x-hidden pt-31 relative">
+
+      {/* ── Top gradient overlay ── */}
+      <div
+        className="absolute inset-x-0 top-0 pointer-events-none z-10"
+        style={{
+          height: '400px',
+          background: 'linear-gradient(rgb(37, 37, 52) 0%, rgba(18, 18, 24, 0) 59%)',
+        }}
+      />
 
       {/* ── Centered heading ── */}
       <motion.div
@@ -69,7 +78,7 @@ export function EnterpriseSocThreat() {
       </motion.div>
 
       {/* ── CTA dome area ── */}
-      <div className="relative flex flex-col items-center min-h-[700px] pb-20">
+      <div className="relative flex flex-col items-center min-h-[437px] md:min-h-[700px] pb-20">
 
         {/* Dome layers */}
         <div className="threat-dome-layers" aria-hidden="true">
@@ -96,7 +105,7 @@ export function EnterpriseSocThreat() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="relative z-[3] text-center px-4"
-          style={{ paddingTop: '160px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '30px' }}
+          style={{ paddingTop: 'clamp(60px, 12vw, 160px)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}
         >
           {/* Badge */}
           <span
@@ -119,7 +128,7 @@ export function EnterpriseSocThreat() {
             className="text-white mx-auto"
             style={{
               fontFamily: 'var(--font-serif)',
-              fontSize: '60px',
+              fontSize: 'clamp(2rem, 6vw, 2.75rem)',
               fontStyle: 'italic',
               fontWeight: 500,
               lineHeight: '120%',
@@ -138,7 +147,7 @@ export function EnterpriseSocThreat() {
             className="text-white mx-auto"
             style={{
               fontFamily: 'var(--font-inter, sans-serif)',
-              fontSize: '20px',
+              fontSize: 'clamp(15px, 2vw, 20px)',
               fontWeight: 500,
               lineHeight: '150%',
               textAlign: 'center',

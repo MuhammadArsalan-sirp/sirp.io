@@ -35,6 +35,113 @@
   border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* ─── Tablet 2-column: iPad Air / Surface Pro / iPad Pro (769px–1023px) ── */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .dashboard-heading-cell {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    padding: 40px 32px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .dashboard-metric-cell {
+    padding: 36px 28px;
+  }
+
+  .dashboard-metric-cell:nth-child(2),
+  .dashboard-metric-cell:nth-child(3) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .dashboard-metric-cell:nth-child(2),
+  .dashboard-metric-cell:nth-child(4) {
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .dashboard-metric-cell:nth-child(3) {
+    border-right: none;
+  }
+
+  .dashboard-metric-cell:nth-child(4),
+  .dashboard-metric-cell:nth-child(5) {
+    border-bottom: none;
+  }
+
+  .dashboard-value {
+    font-size: 48px;
+  }
+
+  .dashboard-metric-body {
+    gap: 24px;
+  }
+}
+
+/* ─── iPad Mini + Mobile (≤768px): single column ─────────── */
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .dashboard-heading-cell {
+    grid-column: 1;
+    grid-row: auto;
+    padding: 40px 32px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .dashboard-metric-cell {
+    padding: 36px 32px;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .dashboard-metric-cell:last-child {
+    border-bottom: none;
+  }
+
+  .dashboard-value {
+    font-size: 48px;
+  }
+
+  .dashboard-metric-body {
+    gap: 24px;
+  }
+}
+
+/* ─── Mobile phones (≤639px) ─────────────────────────────── */
+@media (max-width: 639px) {
+  .dashboard-heading-cell {
+    padding: 48px 24px 40px;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .dashboard-metric-cell {
+    border-bottom: 1px solid #ffffff14;
+    padding: 36px 0px;
+  }
+
+  .dashboard-heading-cell h2 {
+    font-size: 42px !important;
+  }
+
+  .dashboard-heading-cell p {
+    font-size: 18px !important;
+  }
+
+  .dashboard-value {
+    font-size: 48px;
+  }
+}
+
 /* ─── Badge ───────────────────────────────────────────────── */
 .dashboard-badge {
   font-family: var(--font-inter, sans-serif);
