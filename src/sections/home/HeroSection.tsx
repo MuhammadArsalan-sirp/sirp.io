@@ -59,11 +59,11 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
         </div>
       </div>
 
-      {/* Bottom fade into stats section */}
+      {/* Bottom fade — matches AutonomousSection top (#252534) */}
       <div
         className="absolute bottom-0 left-0 right-0 z-[1] h-48 pointer-events-none"
         style={{
-          background: 'linear-gradient(to top, #121218 0%, rgba(18, 18, 24, 0) 100%)',
+          background: 'linear-gradient(to top, #252534 0%, rgba(37, 37, 52, 0) 100%)',
         }}
       />
 
