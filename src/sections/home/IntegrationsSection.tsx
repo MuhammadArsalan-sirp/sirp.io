@@ -38,12 +38,17 @@ export function IntegrationsSection({ data = INTEGRATIONS_DATA }: IntegrationsSe
 
   return (
     <section
-      className="pt-[54px] md:pt-[100px] relative z-[20]"
-      style={{
-        background: 'linear-gradient(rgb(37, 37, 52) 0%, rgba(18, 18, 24, 0) 15%)',
-      }}
+      className="bg-[#121218] pt-[54px] md:pt-[100px] relative z-[20]"
     >
-      <div className="container-sirp">
+      {/* Top gradient overlay — purely decorative transition from section above */}
+      <div
+        className="absolute inset-x-0 top-0 pointer-events-none z-0"
+        style={{
+          height: '220px',
+          background: 'linear-gradient(rgb(37, 37, 52) 0%, rgba(18, 18, 24, 0) 100%)',
+        }}
+      />
+      <div className="container-sirp relative z-[1]">
 
         {/* Heading */}
         <motion.div

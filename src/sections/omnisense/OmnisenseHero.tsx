@@ -79,7 +79,7 @@ export function OmnisenseHero({ data }: OmnisenseHeroProps) {
             </p>
             <Link
               href={ctaHref}
-              className="self-start inline-flex items-center justify-center bg-[#8e2dff] text-white px-6 py-3.5 rounded-full font-sans font-medium text-sm hover:bg-[#a855f7] transition-all duration-200 no-underline shadow-[0_0_24px_rgba(142,45,255,0.4)]"
+              className="self-start inline-flex items-center justify-center bg-[#8e2dff] text-white px-6 py-3.5 rounded-full font-sans font-medium text-sm hover:bg-[#a855f7] transition-all duration-200 no-underline"
             >
               {ctaLabel}
             </Link>

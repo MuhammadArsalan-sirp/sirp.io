@@ -160,7 +160,7 @@ export function EnterpriseSocThreat() {
           {/* CTA button */}
           <Link
             href={cta.btn.href}
-            className="inline-flex items-center bg-[#8e2dff] text-white px-8 py-3.5 rounded-full font-sans font-semibold text-sm hover:bg-[#a855f7] transition-all duration-200 no-underline shadow-[0_0_30px_rgba(142,45,255,0.5)]"
+            className="inline-flex items-center bg-[#8e2dff] text-white px-8 py-3.5 rounded-full font-sans font-semibold text-sm hover:bg-[#a855f7] transition-all duration-200 no-underline "
           >
             {cta.btn.label}
           </Link>

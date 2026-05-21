@@ -99,7 +99,7 @@ export function SomHero() {
         >
           <Link
             href={cta.href}
-            className="inline-flex items-center bg-[#8e2dff] text-white px-8 py-3.5 rounded-full font-sans font-semibold text-sm hover:bg-[#a855f7] transition-all duration-200 no-underline shadow-[0_0_30px_rgba(142,45,255,0.4)]"
+            className="inline-flex items-center bg-[#8e2dff] text-white px-8 py-3.5 rounded-full font-sans font-semibold text-sm hover:bg-[#a855f7] transition-all duration-200 no-underline"
           >
             {cta.label}
           </Link>
