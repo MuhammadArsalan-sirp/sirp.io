@@ -18,6 +18,7 @@ export default function HowAutonomousSocWorksPage() {
   return (
     <div className="how-autonomous-soc-works-page">
       <PageHeader
+        showBottomBorder={false}
         badgeText={badge}
         heading={
           headingItalic ? (
