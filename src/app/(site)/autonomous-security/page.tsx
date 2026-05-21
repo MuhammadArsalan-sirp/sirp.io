@@ -1,6 +1,7 @@
 import { PageHeader } from '@/components/layout/PageHeader'
 import { InfoCtaBlock } from '@/components/shared/InfoCtaBlock'
 import { SplitInfoCtaImage } from '@/components/shared/SplitInfoCtaImage'
+import { CtaSection } from '@/sections/home/CtaSection'
 import './page.css'
 
 export default function Page() {
@@ -242,6 +243,13 @@ export default function Page() {
           href: '/technical-white-paper',
         }}
       />
+
+      <div className="cta-dome-section">
+        <CtaSection
+          showIntegrations={false}
+          subtext="This page is the canonical guide to SIRP's Autonomous Security narrative. It is intended for architectural and strategic understanding, not product marketing."
+        />
+      </div>
     </div>
   )
 }

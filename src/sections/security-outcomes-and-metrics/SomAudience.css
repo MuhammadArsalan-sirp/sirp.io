@@ -32,3 +32,21 @@
   filter: drop-shadow(0 0 6px rgba(180, 100, 255, 0.5));
   pointer-events: none;
 }
+
+/* ─── iPad / Tablet (768 – 1023px) ───────────────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .som-audience-card {
+    padding: 28px 24px;
+  }
+}
+
+/* ─── Mobile (< 768px) ────────────────────────────────────── */
+@media (max-width: 767px) {
+  .som-audience-card {
+    padding: 28px 20px;
+  }
+
+  .som-audience-pill {
+    margin-bottom: 20px;
+  }
+}

@@ -2,7 +2,7 @@
 export const SITE_URL = 'https://www.sirp.io'
 export const SITE_NAME = 'SIRP'
 export const SITE_DESCRIPTION = 'OmniSense — the first Autonomous SOC Platform that detects, learns, and responds autonomously.'
-
+ 
 /* ─── Navigation ─────────────────────────────────────────── */
 export const NAV_LINKS = [
   {
@@ -39,7 +39,7 @@ export const NAV_LINKS = [
     href: '/contact',
   },
 ] as const
-
+ 
 /* ─── Routes ─────────────────────────────────────────────── */
 export const ROUTES = {
   home: '/',
@@ -56,7 +56,7 @@ export const ROUTES = {
   manifesto: '/manifesto',
   contact: '/contact',
 } as const
-
+ 
 /* ─── Footer ─────────────────────────────────────────────── */
 export const FOOTER_LINKS = [
   {

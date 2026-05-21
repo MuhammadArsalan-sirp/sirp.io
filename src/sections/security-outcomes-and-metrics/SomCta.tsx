@@ -43,7 +43,7 @@ export function SomCta() {
             className="text-white text-center"
             style={{
               fontFamily: 'var(--font-inter, sans-serif)',
-              fontSize: '60px',
+              fontSize: 'clamp(2rem, 5vw, 60px)',
               fontWeight: 500,
               lineHeight: '120%',
               maxWidth: '700px',
@@ -57,7 +57,7 @@ export function SomCta() {
             className="text-center mt-6 mx-auto"
             style={{
               fontFamily: 'var(--font-inter, sans-serif)',
-              fontSize: '20px',
+              fontSize: 'clamp(15px, 2vw, 20px)',
               fontWeight: 500,
               color: '#ffffff',
               maxWidth: '520px',
@@ -70,7 +70,7 @@ export function SomCta() {
           <div className="flex items-center justify-center mt-10">
             <Link
               href={btn.href}
-              className="inline-flex items-center bg-[#8e2dff] text-white px-8 py-3.5 rounded-full font-sans font-semibold text-base hover:bg-[#a855f7] transition-all duration-200 no-underline shadow-[0_0_30px_rgba(142,45,255,0.5)]"
+              className="inline-flex items-center bg-[#8e2dff] text-white px-8 py-3.5 rounded-full font-sans font-semibold text-base hover:bg-[#a855f7] transition-all duration-200 no-underline"
             >
               {btn.label}
             </Link>

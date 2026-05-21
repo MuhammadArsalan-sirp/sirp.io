@@ -9,7 +9,7 @@ export function SomSocMeans() {
   const { heading, paragraphs } = SOM_VENN
 
   return (
-    <section className="bg-[#121218] py-[100px]">
+    <section className="bg-[#121218] py-14 md:py-16 lg:py-20 xl:py-[100px]">
       <div className="container-sirp">
         <div className="som-soc-grid">
 

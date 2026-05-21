@@ -1,3 +1,10 @@
+/* ─── Dome layers container ───────────────────────────────── */
+.cta-dome-layers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
 /* ─── Purple glow ─────────────────────────────────────────── */
 .cta-glow {
   pointer-events: none;
@@ -6,8 +13,8 @@
   will-change: transform, opacity;
   transform-origin: top;
   background: radial-gradient(at 50% 100%, #d69dff 0%, #8e2dffcc 30%, #6414c833 60%, #0000 85%);
-  width: 787px;
-  height: 676px;
+  width: 766px;
+  height: 565px;
   animation: 6s ease-in-out infinite alternate purple-dome-rise;
   position: absolute;
   top: -278px;
@@ -38,10 +45,10 @@
   background-color: #121218;
   border-bottom: none;
   border-radius: 57% 57% 0 0 / 102% 100% 0 0;
-  width: 956px;
-  height: 330px;
+  width: 1000px;
+  height: 438px;
   position: absolute;
-  bottom: 177px;
+  top: 21%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -60,148 +67,78 @@
 
 /* ─── White outline arc ───────────────────────────────────── */
 .cta-dome-outline {
-  z-index: 18;
+  z-index: 1;
   pointer-events: none;
   filter: blur(3px);
-  width: 981px;
+  width: 891px;
   line-height: 0;
   position: absolute;
-  bottom: 267px;
+  bottom: 332px;
   left: 50%;
   overflow: hidden;
   transform: translateX(-50%);
 }
 
-/* ─── Laptop (1025px – 1200px) ───────────────────────────── */
-@media (min-width: 1025px) and (max-width: 1200px) {
-  .cta-dome {
-    width: 860px;
-    height: 310px;
-    bottom: 160px;
-  }
-
-  .cta-dome-outline {
-    width: 890px;
-    bottom: 248px;
-  }
-
-  .cta-glow {
-    width: 720px;
-  }
+/* ─── Large desktop (≤1400px) ───────────────────────────── */
+@media (max-width: 1400px) {
+  .cta-dome         { width: 920px; height: 438px; }
+  .cta-dome-outline { width: 820px; bottom: 332px; }
+  .cta-glow         { width: 720px; }
 }
 
-/* ─── iPad Pro / Surface Pro (821px – 1024px) ────────────── */
-@media (min-width: 821px) and (max-width: 1024px) {
-  .cta-dome {
-    width: 95%;
-    height: 320px;
-    bottom: 140px;
-  }
-
-  .cta-glow {
-    width: 80%;
-  }
-
-  .cta-dome-outline {
-    width: 95%;
-    bottom: 248px;
-  }
+/* ─── Laptop (≤1200px) ──────────────────────────────────── */
+@media (max-width: 1200px) {
+  .cta-dome         { width: 840px; height: 420px; }
+  .cta-dome-outline { width: 750px; bottom: 318px; }
+  .cta-glow         { width: 680px; }
 }
 
-/* ─── iPad Air (769px – 820px) ───────────────────────────── */
-@media (min-width: 769px) and (max-width: 820px) {
-  .cta-dome {
-    width: 95%;
-    height: 310px;
-    bottom: 130px;
-  }
-
-  .cta-glow {
-    width: 80%;
-  }
-
-  .cta-dome-outline {
-    width: 95%;
-    bottom: 238px;
-  }
+/* ─── iPad Pro / Surface Pro (≤1024px) ─────────────────── */
+@media (max-width: 1024px) {
+  .cta-dome         { width: 96%; height: 400px; }
+  .cta-dome-outline { width: 88%; bottom: 300px; }
+  .cta-glow         { width: 80%; }
 }
 
-/* ─── iPad Mini / Large phone (481px – 768px) ────────────── */
-@media (min-width: 481px) and (max-width: 768px) {
-  .cta-dome {
-    width: 130%;
-    height: 457px;
-    bottom: -51px;
-  }
-
-  .cta-glow {
-    width: 100%;
-    height: 520px;
-    top: -80px;
-  }
-
-  .cta-dome-outline {
-    width: 120%;
-    bottom: 180px;
-  }
+/* ─── iPad Air (≤820px) ─────────────────────────────────── */
+@media (max-width: 820px) {
+  .cta-dome         { width: 108%; height: 380px; }
+  .cta-dome-outline { width: 98%;  bottom: 280px; }
+  .cta-glow         { width: 90%; }
 }
 
-/* ─── iPhone 14 Pro Max (415px – 480px) ─────────────────── */
-@media (min-width: 415px) and (max-width: 480px) {
-  .cta-dome {
-    width: 148%;
-    height: 359px;
-    bottom: -51px;
-  }
-
-  .cta-glow {
-    width: 100%;
-    height: 520px;
-    top: -80px;
-  }
-
-  .cta-dome-outline {
-    width: 120%;
-    bottom: 180px;
-  }
+/* ─── iPad Mini (≤768px) ────────────────────────────────── */
+@media (max-width: 768px) {
+  .cta-dome         { width: 120%; height: 360px; }
+  .cta-dome-outline { width: 110%; bottom: 260px; }
+  .cta-glow         { width: 95%; }
 }
 
-/* ─── iPhone 12 Pro (376px – 414px) ─────────────────────── */
-@media (min-width: 376px) and (max-width: 414px) {
-  .cta-dome {
-    width: 148%;
-    height: 347px;
-    bottom: -51px;
-  }
-
-  .cta-glow {
-    width: 100%;
-    height: 520px;
-    top: -80px;
-  }
-
-  .cta-dome-outline {
-    width: 120%;
-    bottom: 180px;
-  }
+/* ─── Large phones (≤600px) ────────────────────────────── */
+@media (max-width: 600px) {
+  .cta-dome         { width: 140%; height: 340px; top: 18%; }
+  .cta-dome-outline { width: 128%; bottom: 240px; }
+  .cta-glow         { width: 100%; height: 480px; top: -200px; }
 }
 
-/* ─── Small phones (≤375px) — Samsung S8+, iPhone SE ─────── */
+/* ─── iPhone 14 Pro Max (≤430px) ────────────────────────── */
+@media (max-width: 430px) {
+  .cta-dome         { width: 158%; height: 320px; top: 16%; }
+  .cta-dome-outline { width: 145%; bottom: 220px; }
+  .cta-glow         { width: 100%; height: 440px; top: -180px; }
+}
+
+/* ─── iPhone 12 Pro (≤390px) ────────────────────────────── */
+@media (max-width: 390px) {
+  .cta-dome         { width: 140%; height: 300px; top: 16%; }
+  .cta-dome-outline { width: 117%; bottom: 326px; }
+  .cta-glow         { width: 100%; height: 420px; top: -160px; }
+  .cta-content      { padding-top: 120px !important; }
+}
+
+/* ─── Small phones (≤375px) ─────────────────────────────── */
 @media (max-width: 375px) {
-  .cta-dome {
-    width: 148%;
-    height: 338px;
-    bottom: -51px;
-  }
-
-  .cta-glow {
-    width: 100%;
-    height: 520px;
-    top: -80px;
-  }
-
-  .cta-dome-outline {
-    width: 120%;
-    bottom: 180px;
-  }
+  .cta-dome         { width: 175%; height: 295px; top: 14%; }
+  .cta-dome-outline { width: 162%; bottom: 195px; }
+  .cta-glow         { width: 100%; height: 400px; top: -150px; }
 }
