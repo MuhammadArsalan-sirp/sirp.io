@@ -143,31 +143,6 @@ export const BLOG_POSTS: BlogPost[] = [
   },
 ]
 
-export interface ChangelogPost {
-  id: string
-  slug: string
-  date: string
-  title: string
-  image: string
-}
-
-export const CHANGELOG_POSTS: ChangelogPost[] = [
-  {
-    id: 'cl-1',
-    slug: 'sirp-6-0-4-autonomy-sharpened',
-    date: 'Dec 16, 2025',
-    title: 'Sirp 6.0.4: Autonomy, Sharpened',
-    image: '/images/blogs/imgi_9_8pkaLhd9kL7GFuNDL40lHEV1Fw.jpg',
-  },
-  {
-    id: 'cl-2',
-    slug: 'sirp-6-0-3-actually-autonomous',
-    date: 'Nov 26, 2025',
-    title: 'SIRP 6.0.3 — Actually Autonomous',
-    image: '/images/blogs/imgi_58_vPdBarHvOmpSsD3vIrr4ptX6zM.jpg',
-  },
-]
-
 export const BLOG_WHITEPAPER_CTA = {
   text: 'For a deeper technical exploration of how these ideas are implemented in practice — including architecture, decision flows, and governance — read our founder-authored whitepaper:',
   link: {
