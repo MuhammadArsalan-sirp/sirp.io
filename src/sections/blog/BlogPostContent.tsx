@@ -1,5 +1,14 @@
+import type { Components } from 'react-markdown'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+
+const markdownComponents: Components = {
+  table: ({ children }) => (
+    <div className="blog-post-table-wrap">
+      <table>{children}</table>
+    </div>
+  ),
+}
 
 type BlogPostContentProps = {
   content: string
@@ -22,7 +31,9 @@ export function BlogPostContent({ content }: BlogPostContentProps) {
 
   return (
     <div className="blog-post-prose">
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+      <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+        {content}
+      </ReactMarkdown>
     </div>
   )
 }

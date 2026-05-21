@@ -59,7 +59,10 @@ export function BlogGrid({ posts }: BlogGridProps) {
 
                 <div className="blog-card-content">
                   <div className="blog-card-meta">
-                    <span className="blog-card-date">{post.date}</span>
+                    {post.type ? (
+                      <span className="blog-card-category">{post.type}</span>
+                    ) : null}
+                    {post.date ? <span className="blog-card-date">{post.date}</span> : null}
                   </div>
                   <h3 className="blog-card-title">{post.title}</h3>
                 </div>

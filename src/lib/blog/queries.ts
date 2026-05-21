@@ -1,8 +1,8 @@
 import { createSupabaseClient } from '@/lib/supabase/server'
-import { rowToCard } from './format'
+import { isChangelogType, rowToCard, sortBlogGridPosts } from './format'
 import type { BlogPostCard, BlogPostRow } from './types'
 
-const LIST_COLUMNS = 'id, title, slug, excerpt, cover_image, published_at' as const
+const LIST_COLUMNS = 'id, title, slug, excerpt, cover_image, published_at, type' as const
 
 function isPublished(publishedAt: string | null): boolean {
   if (!publishedAt) return false
@@ -29,6 +29,17 @@ export async function getPublishedBlogPosts(): Promise<BlogPostCard[]> {
   }
 
   return (data ?? []).filter((row) => isPublished(row.published_at)).map(rowToCard)
+}
+
+export async function getPublishedChangelogPosts(): Promise<BlogPostCard[]> {
+  const posts = await getPublishedBlogPosts()
+  return posts.filter((post) => isChangelogType(post.type))
+}
+
+export async function getPublishedBlogGridPosts(): Promise<BlogPostCard[]> {
+  const posts = await getPublishedBlogPosts()
+  const gridPosts = posts.filter((post) => !isChangelogType(post.type))
+  return sortBlogGridPosts(gridPosts)
 }
 
 export async function getBlogPostBySlug(slug: string): Promise<BlogPostRow | null> {

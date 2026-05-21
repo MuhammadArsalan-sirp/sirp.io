@@ -7,6 +7,7 @@ export type BlogPostRow = {
   excerpt: string | null
   cover_image: string | null
   published_at: string | null
+  type: string | null
 }
 
 /** Card data used by the blog listing UI */
@@ -16,5 +17,7 @@ export type BlogPostCard = {
   title: string
   image: string
   date: string
+  publishedAt: string
+  type?: string
   excerpt?: string
 }

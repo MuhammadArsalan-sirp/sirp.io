@@ -3,7 +3,7 @@ import { PageHeader } from '@/components/layout/PageHeader'
 import { PurplePill } from '@/components/shared/PurplePill'
 import { BlogGrid } from '@/sections/blog/BlogGrid'
 import { BlogChangelog } from '@/sections/blog/BlogChangelog'
-import { getPublishedBlogPosts } from '@/lib/blog/queries'
+import { getPublishedBlogGridPosts, getPublishedChangelogPosts } from '@/lib/blog/queries'
 import { BLOG_HERO } from '@/lib/constants/blog'
 import './page.css'
 
@@ -17,7 +17,10 @@ export const metadata = {
 
 export default async function BlogPage() {
   const hero = BLOG_HERO
-  const posts = await getPublishedBlogPosts()
+  const [posts, changelogPosts] = await Promise.all([
+    getPublishedBlogGridPosts(),
+    getPublishedChangelogPosts(),
+  ])
 
   return (
     <div className="blog-page">
@@ -48,7 +51,7 @@ export default async function BlogPage() {
         }
       />
       <BlogGrid posts={posts} />
-      <BlogChangelog />
+      <BlogChangelog posts={changelogPosts} />
     </div>
   )
 }

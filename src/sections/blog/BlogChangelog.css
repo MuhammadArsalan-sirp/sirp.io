@@ -65,6 +65,10 @@
   flex-shrink: 0;
 }
 
+.changelog-card-image img {
+  filter: grayscale(100%);
+}
+
 /* ─── Content ─────────────────────────────────────────────── */
 .changelog-card-content {
   display: flex;
@@ -87,14 +91,22 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #8e2dff;
+  color: #b889ff;
 }
 
 .changelog-card-date {
+  margin-left: auto;
   font-family: var(--font-inter, sans-serif);
   font-size: 12px;
   font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
+}
+
+.changelog-cta--solo {
+  margin-top: 0;
 }
 
 /* ─── Title ───────────────────────────────────────────────── */

@@ -245,6 +245,80 @@
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+/* Markdown / HTML tables — dark grid (sirp.io blog style) */
+.blog-post-table-wrap {
+  width: 100%;
+  margin: 2rem 0;
+  overflow-x: auto;
+  border: 1px solid #333;
+  border-radius: 10px;
+  background: transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+.blog-post-prose table,
+.blog-post-table-wrap table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  table-layout: auto;
+  background: transparent;
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.blog-post-prose:not(.blog-post-prose-html) > table {
+  margin: 2rem 0;
+  border: 1px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.blog-post-prose-html table {
+  margin: 2rem 0;
+  border: 1px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.blog-post-prose :is(th, td),
+.blog-post-table-wrap :is(th, td) {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid #333;
+}
+
+.blog-post-prose th,
+.blog-post-table-wrap th {
+  font-weight: 600;
+  color: #fff;
+  background: transparent;
+}
+
+.blog-post-prose td,
+.blog-post-table-wrap td {
+  font-weight: 500;
+  color: #fff;
+  background: transparent;
+}
+
+.blog-post-prose tbody tr,
+.blog-post-table-wrap tbody tr {
+  background: transparent;
+}
+
+.blog-post-prose table em,
+.blog-post-table-wrap table em,
+.blog-post-prose-html table em {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-style: italic;
+  color: #fff;
+}
+
 .blog-post-prose pre {
   margin: 1.5rem 0;
   padding: 1rem;
@@ -305,5 +379,11 @@
   .blog-post-prose h5,
   .blog-post-prose h6 {
     font-size: 1rem;
+  }
+
+  .blog-post-prose :is(th, td),
+  .blog-post-table-wrap :is(th, td) {
+    padding: 0.75rem 0.875rem;
+    font-size: 0.9rem;
   }
 }
