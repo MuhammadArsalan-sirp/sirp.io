@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import { PurplePill } from '@/components/shared/PurplePill'
 import { ENTERPRISE_SOC_THREAT } from '@/lib/constants/enterprise-soc'
 import './EnterpriseSocThreat.css'
 
@@ -98,21 +99,7 @@ export function EnterpriseSocThreat() {
           className="relative z-[3] text-center px-4"
           style={{ paddingTop: 'clamp(80px, 12vw, 160px)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '30px' }}
         >
-          {/* Badge */}
-          <span
-            className="inline-flex items-center gap-2 text-white"
-            style={{
-              fontFamily: 'var(--font-inter, sans-serif)',
-              fontSize: '12px',
-              fontWeight: 600,
-              padding: '6px 12px',
-              borderRadius: '5px',
-              border: '0.75px solid rgb(142,45,255)',
-              background: 'rgba(142,45,255,0.25)',
-            }}
-          >
-            ✦ {cta.badge}
-          </span>
+          <PurplePill>{cta.badge}</PurplePill>
 
           {/* Heading */}
           <h2

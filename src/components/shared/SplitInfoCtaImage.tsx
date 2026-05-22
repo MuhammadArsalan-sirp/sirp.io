@@ -47,13 +47,15 @@ export function SplitInfoCtaImage({
   bodyFontSize = 'default',
   animateOnScroll = false,
 }: SplitInfoCtaImageProps) {
+  const imageOnLeft = imageLeft || imagePosition === 'left'
+
   const composedSectionClassName = cn(
     topShade ? 'split-info-cta-image split-info-cta-image--top-shade' : 'split-info-cta-image',
     bodyFontSize === '18' && 'split-info-cta-image--body-18',
     sectionClassName,
   )
 
-  const innerClassName = imageLeft
+  const innerClassName = imageOnLeft
     ? 'split-info-cta-inner split-info-cta-inner--image-left'
     : 'split-info-cta-inner'
 

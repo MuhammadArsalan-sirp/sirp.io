@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import { PurplePill } from '@/components/shared/PurplePill'
 import { SOM_OUTCOMES } from '@/lib/constants/security-outcomes-and-metrics'
 import './SomOutcomes.css'
 
@@ -46,7 +47,7 @@ export function SomOutcomes() {
             <div className="outcomes-text">
               <h3 className="outcomes-title">{active.title}</h3>
               {active.badge && (
-                <span className="outcomes-badge">✦ {active.badge}</span>
+                <PurplePill className="mt-4 mb-6">{active.badge}</PurplePill>
               )}
               <AnimatePresence mode="wait">
                 <motion.div

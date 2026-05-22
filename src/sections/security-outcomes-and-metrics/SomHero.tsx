@@ -1,8 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import Link from 'next/link'
+import { PurplePill } from '@/components/shared/PurplePill'
 import { SOM_HERO } from '@/lib/constants/security-outcomes-and-metrics'
 
 export function SomHero() {
@@ -32,27 +32,7 @@ export function SomHero() {
           transition={{ duration: 0.5 }}
           className="flex justify-center mb-8"
         >
-          <span
-            className="inline-flex items-center gap-2 text-white"
-            style={{
-              fontFamily: 'var(--font-inter, sans-serif)',
-              fontSize: '12px',
-              fontWeight: 500,
-              padding: '5px 14px 5px 6px',
-              borderRadius: '6px',
-              border: '1px solid rgba(142,45,255,0.5)',
-              background: 'rgba(142,45,255,0.15)',
-            }}
-          >
-            <Image
-              src="/images/enterprise-soc/quater.svg"
-              alt=""
-              width={16}
-              height={16}
-              unoptimized
-            />
-            Security outcomes
-          </span>
+          <PurplePill className="rounded-lg">Security outcomes</PurplePill>
         </motion.div>
 
         {/* Heading — Framer source: h1 is Inter 500, only italic part is Noto Serif */}

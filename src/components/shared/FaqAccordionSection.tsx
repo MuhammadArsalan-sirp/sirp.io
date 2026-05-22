@@ -15,15 +15,13 @@ export type FaqAccordionSectionData = {
 
 type FaqAccordionSectionProps = {
   data: FaqAccordionSectionData
-  /** Index of the item open on first render, or `null` for all closed. Omitted defaults to first item open. */
+  /** Index of the item open on first render, or `null` for all closed. Omitted defaults to all closed. */
   defaultOpenIndex?: number | null
 }
 
-export function FaqAccordionSection({ data, defaultOpenIndex }: FaqAccordionSectionProps) {
+export function FaqAccordionSection({ data, defaultOpenIndex = null }: FaqAccordionSectionProps) {
   const baseId = useId()
-  const [openIndex, setOpenIndex] = useState<number | null>(
-    defaultOpenIndex === undefined ? 0 : defaultOpenIndex,
-  )
+  const [openIndex, setOpenIndex] = useState<number | null>(defaultOpenIndex)
 
   return (
     <section className="faq-accordion-section">

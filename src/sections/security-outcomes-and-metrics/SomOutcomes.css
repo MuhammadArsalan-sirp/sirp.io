@@ -20,24 +20,6 @@
   justify-content: center;
 }
 
-/* ─── Badge ───────────────────────────────────────────────── */
-.outcomes-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-inter, sans-serif);
-  font-size: 12px;
-  font-weight: 500;
-  color: #ffffff;
-  padding: 5px 14px;
-  border-radius: 5px;
-  border: 0.75px solid rgb(142, 45, 255);
-  background-color: rgba(142, 45, 255, 0.25);
-  margin-top: 16px;
-  margin-bottom: 24px;
-  width: fit-content;
-}
-
 /* ─── Title ───────────────────────────────────────────────── */
 .outcomes-title {
   font-family: var(--font-inter, sans-serif);

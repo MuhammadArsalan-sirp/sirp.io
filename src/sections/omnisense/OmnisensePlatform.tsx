@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import { PurplePill } from '@/components/shared/PurplePill'
 
 /* ─── Types ──────────────────────────────────────────────── */
 interface Tab {
@@ -43,10 +44,8 @@ export function OmnisensePlatform({ data }: OmnisensePlatformProps) {
           transition={{ duration: 0.5 }}
           className="text-center mb-10 md:mb-14"
         >
-          <div className="mb-4 md:mb-6">
-            <span className="inline-flex items-center gap-2 font-sans text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-lg border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]">
-              ✦ {badge}
-            </span>
+          <div className="mb-4 md:mb-6 flex justify-center">
+            <PurplePill className="rounded-lg">{badge}</PurplePill>
           </div>
           <h2
             className="font-sans font-bold text-white"

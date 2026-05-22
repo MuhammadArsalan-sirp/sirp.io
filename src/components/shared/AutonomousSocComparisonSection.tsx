@@ -16,6 +16,8 @@ type ComparisonFooterWithLink = {
   linkHref: string
   afterLink: string
   taglines: readonly string[]
+  /** Default `after` (link paragraph first). SOAR Alternatives uses `before`. */
+  taglinesPosition?: 'before' | 'after'
 }
 
 export type AutonomousSocComparisonData = {
@@ -141,6 +143,9 @@ export function AutonomousSocComparisonSection({
             transition={{ duration: 0.45 }}
             className="comparison-section-footer-with-link"
           >
+            {data.footerWithLink.taglinesPosition === 'before'
+              ? data.footerWithLink.taglines.map((line) => <p key={line}>{line}</p>)
+              : null}
             <p>
               {data.footerWithLink.beforeLink}
               <Link
@@ -151,9 +156,9 @@ export function AutonomousSocComparisonSection({
               </Link>
               {data.footerWithLink.afterLink}
             </p>
-            {data.footerWithLink.taglines.map((line) => (
-              <p key={line}>{line}</p>
-            ))}
+            {data.footerWithLink.taglinesPosition !== 'before'
+              ? data.footerWithLink.taglines.map((line) => <p key={line}>{line}</p>)
+              : null}
           </motion.div>
         )}
 

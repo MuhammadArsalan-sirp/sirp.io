@@ -39,7 +39,7 @@ export function IntegrationsSection({ data = INTEGRATIONS_DATA }: IntegrationsSe
 
   return (
     <section
-      className="pt-[54px] md:pt-[100px] relative z-[20]"
+      className="border-t border-[#3a3a4c] pt-[54px] md:pt-[100px] relative z-[20]"
       style={{
         background: 'linear-gradient(rgb(37, 37, 52) 0%, rgba(18, 18, 24, 0) 15%)',
       }}

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { PurplePill } from '@/components/shared/PurplePill'
 import { SOM_AUDIENCE } from '@/lib/constants/security-outcomes-and-metrics'
 import './SomAudience.css'
 
@@ -28,9 +29,7 @@ export function SomAudience() {
           transition={{ duration: 0.5 }}
           className="flex justify-center mb-14"
         >
-          <span className="inline-flex items-center gap-2 text-[12px] font-medium px-3 py-1 rounded-lg border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]" style={{ fontFamily: 'var(--font-inter, sans-serif)' }}>
-            ✦ {badge}
-          </span>
+          <PurplePill className="rounded-lg">{badge}</PurplePill>
         </motion.div>
 
         {/* 3-column card grid */}
