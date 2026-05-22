@@ -125,7 +125,18 @@
   clip-path: inset(10% 5% 10% 5%);
 }
 
-/* "Who Should Consider Replacing SOAR?" — illustration, no clip */
+/* Comparison footer → "Who Should Consider" band (Framer: tight stack) */
+.soar-alternatives-page section[class*='py-24'][class*='121218'] .comparison-section-footer-with-link {
+  margin-top: 2.5rem;
+  margin-bottom: 0;
+}
+
+.soar-alternatives-page .split-info-cta-image.soar-alt-who-should-replacing {
+  padding-top: 2rem;
+  padding-bottom: 2.25rem;
+}
+
+/* "Who Should Consider Replacing SOAR?" — illustration left, copy right */
 .soar-alternatives-page .split-info-cta-image.soar-alt-who-should-replacing .split-image-wrap {
   background: transparent;
   height: clamp(360px, 46vw, 580px);
