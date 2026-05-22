@@ -87,11 +87,11 @@ export function Footer() {
 
           {/* Link columns */}
           {FOOTER_LINKS.map((col) => (
-            <div key={col.heading}>
-              <h3 className="font-mono text-[11px] font-medium text-white/40 uppercase tracking-widest mb-4">
+            <div key={col.heading} className="text-center">
+              <h3 className="mb-2 font-sans text-base font-medium leading-5 text-white">
                 {col.heading}
               </h3>
-              <ul className="space-y-3 list-none p-0 m-0">
+              <ul className="m-0 list-none space-y-1.5 p-0">
                 {col.links.map((link) => (
                   <li key={link.href}>
                     {'external' in link && link.external ? (
@@ -99,15 +99,15 @@ export function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 font-sans text-sm text-white/55 hover:text-white transition-colors no-underline"
+                        className="inline-flex items-center justify-center gap-1.5 font-sans text-sm text-white/55 no-underline transition-colors hover:text-white"
                       >
                         {link.label}
-                        <ExternalLink className="w-3 h-3 opacity-50" />
+                        <ExternalLink className="h-3 w-3 opacity-50" />
                       </a>
                     ) : (
                       <Link
                         href={link.href}
-                        className="font-sans text-sm text-white/55 hover:text-white transition-colors no-underline"
+                        className="inline-block font-sans text-sm text-white/55 no-underline transition-colors hover:text-white"
                       >
                         {link.label}
                       </Link>
