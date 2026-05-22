@@ -81,8 +81,9 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
         }}
       />
 
-      {/* Content — above video */}
-      <div className="absolute left-0 right-0 bottom-[8rem] z-10 flex flex-col gap-4 pl-12 pr-5 sm:bottom-[8.5rem] sm:pl-16 sm:pr-8 md:bottom-[9rem] md:pl-24 md:pr-10 lg:bottom-[9.5rem] lg:gap-6 lg:pl-[280px] lg:pr-0">
+      {/* Content — aligned with header logo via container-sirp */}
+      <div className="absolute left-0 right-0 bottom-[8rem] z-10 sm:bottom-[8.5rem] md:bottom-[9rem] lg:bottom-[9.5rem]">
+        <div className="container-sirp flex flex-col gap-4 lg:gap-6">
 
         {/* Pill */}
         <motion.div
@@ -139,6 +140,7 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
           </Button>
         </motion.div>
 
+        </div>
       </div>
     </section>
   )
