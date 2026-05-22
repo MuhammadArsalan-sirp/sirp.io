@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { PurplePill } from '@/components/shared/PurplePill'
 import { ENTERPRISE_SOC_REALITY } from '@/lib/constants/enterprise-soc'
 import './EnterpriseSocReality.css'
 
@@ -20,16 +21,7 @@ export function EnterpriseSocReality() {
           transition={{ duration: 0.5 }}
           className="mb-16 max-w-[780px]"
         >
-          <span className="inline-flex items-center gap-2 font-sans text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-lg border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)] mb-6">
-            <Image
-              src="/images/enterprise-soc/shine.svg"
-              alt=""
-              width={14}
-              height={14}
-              unoptimized
-            />
-            {badge}
-          </span>
+          <PurplePill className="mb-6 rounded-lg">{badge}</PurplePill>
 
           <h2
             className="font-sans font-bold text-white mb-6"
