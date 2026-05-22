@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { PurplePill } from '@/components/shared/PurplePill'
 import { SOM_DEPLOYMENTS } from '@/lib/constants/security-outcomes-and-metrics'
 import './SomDeployments.css'
 
@@ -20,7 +21,7 @@ export function SomDeployments() {
           transition={{ duration: 0.5 }}
           className="mb-6"
         >
-          <span className="deploy-badge">✦ {badge}</span>
+          <PurplePill>{badge}</PurplePill>
         </motion.div>
 
         {/* Heading */}
