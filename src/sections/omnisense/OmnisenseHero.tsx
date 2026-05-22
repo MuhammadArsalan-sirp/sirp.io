@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import { PurplePill } from '@/components/shared/PurplePill'
 
 /* ─── Types ──────────────────────────────────────────────── */
 interface HeroData {
@@ -39,9 +40,7 @@ export function OmnisenseHero({ data }: OmnisenseHeroProps) {
           transition={{ duration: 0.5 }}
           className="mb-5 lg:-mb-4"
         >
-          <span className="inline-flex items-center gap-2 font-sans text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-lg border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]">
-            ✦ {badge}
-          </span>
+          <PurplePill className="rounded-lg">{badge}</PurplePill>
         </motion.div>
 
         {/* Mobile: stacked — Desktop: 2-column */}
