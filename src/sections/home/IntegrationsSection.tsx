@@ -54,9 +54,7 @@ export function IntegrationsSection({ data = INTEGRATIONS_DATA }: IntegrationsSe
           transition={{ duration: 0.5 }}
           className="text-center mb-10 md:mb-20"
         >
-          <span className="inline-flex items-center gap-1 font-sans text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-md border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]">
-            {pill}
-          </PurplePill>
+          <PurplePill>{pill}</PurplePill>
           <h2
             className="font-sans font-bold text-white mt-4 mb-4"
             style={{
