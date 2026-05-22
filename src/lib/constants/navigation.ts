@@ -60,37 +60,34 @@ export const ROUTES = {
 /* ─── Footer ─────────────────────────────────────────────── */
 export const FOOTER_LINKS = [
   {
-    heading: 'Product',
+    heading: 'Autonomous Security',
     links: [
-      { label: 'Autonomous Security', href: '/autonomous-security' },
-      { label: 'OmniSense', href: '/omnisense' },
-      { label: 'Enterprise SOC', href: '/enterprise-soc' },
+      { label: 'Pillar', href: '/autonomous-security' },
+      { label: 'What is an Autonomous SOC', href: '/what-is-autonomous-soc' },
+      { label: 'How it works', href: '/how-autonomous-soc-works' },
+      { label: 'SOAR vs Autonomous', href: '/soar-vs-autonomous-soc' },
+      { label: 'SOAR Alternatives', href: '/soar-alternatives' },
     ],
   },
   {
-    heading: 'Learn',
+    heading: 'Platform',
     links: [
-      { label: 'What is Autonomous SOC?', href: '/what-is-autonomous-soc' },
-      { label: 'How it Works', href: '/how-autonomous-soc-works' },
-      { label: 'SOAR vs Autonomous SOC', href: '/soar-vs-autonomous-soc' },
-      { label: 'SOAR Alternatives', href: '/soar-alternatives' },
+      { label: 'OmniSense™', href: '/omnisense' },
+      { label: 'Enterprise Autonomous SOC', href: '/enterprise-soc' },
+      { label: 'Outcomes & Metrics', href: '/security-outcomes-and-metrics' },
+      { label: 'Whitepaper', href: '/technical-white-paper' },
     ],
   },
   {
     heading: 'Resources',
     links: [
-      { label: 'Technical White Paper', href: '/technical-white-paper' },
-      { label: 'Security Metrics', href: '/security-outcomes-and-metrics' },
-      { label: 'Manifesto', href: '/manifesto' },
       { label: 'Blog', href: '/blog' },
+      { label: 'Technical Whitepaper', href: '/technical-white-paper' },
+      { label: 'Manifesto', href: '/manifesto' },
     ],
   },
   {
     heading: 'Company',
-    links: [
-      { label: 'Contact', href: '/contact' },
-      { label: 'LinkedIn', href: 'https://linkedin.com/company/sirp-io', external: true },
-      { label: 'Twitter', href: 'https://twitter.com/sirp_io', external: true },
-    ],
+    links: [{ label: 'Contact', href: '/contact' }],
   },
 ] as const
