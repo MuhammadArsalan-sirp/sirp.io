@@ -5,7 +5,7 @@
 
 .dashboard-grid {
   display: grid;
-  grid-template-columns: 5fr 4fr 4fr;
+  grid-template-columns: 4fr 4.5fr 4.5fr;
   grid-template-rows: minmax(260px, auto) minmax(260px, auto);
 }
 
@@ -110,6 +110,10 @@
   .dashboard-value {
     font-size: 48px;
   }
+
+  .dashboard-metric-body p {
+    white-space: normal;
+  }
 }
 
 /* ─── Badge ───────────────────────────────────────────────── */
@@ -126,15 +130,24 @@
 .dashboard-metric-body {
   display: flex;
   flex-flow: row;
-  flex: none;
+  flex: 1;
   place-content: center flex-start;
   align-items: center;
-  gap: 40px;
-  width: min-content;
-  height: min-content;
+  gap: 32px;
+  width: 100%;
+  min-width: 0;
   padding: 0;
   position: relative;
   overflow: visible;
+}
+
+.dashboard-metric-body > div:last-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.dashboard-metric-body p {
+  white-space: nowrap;
 }
 
 /* ─── Pill ────────────────────────────────────────────────── */

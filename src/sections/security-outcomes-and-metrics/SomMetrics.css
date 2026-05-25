@@ -5,7 +5,7 @@
 
 .som-metrics-grid {
   display: grid;
-  grid-template-columns: 5fr 4fr 4fr;
+  grid-template-columns: 4fr 4.5fr 4.5fr;
   grid-template-rows: minmax(260px, auto) minmax(260px, auto);
 }
 
@@ -54,14 +54,23 @@
 .som-metric-cell-body {
   display: flex;
   flex-flow: row;
-  flex: none;
+  flex: 1;
   place-content: center flex-start;
   align-items: center;
-  gap: 40px;
-  width: min-content;
-  height: min-content;
+  gap: 32px;
+  width: 100%;
+  min-width: 0;
   position: relative;
   overflow: visible;
+}
+
+.som-metric-cell-body > div:last-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.som-metric-cell-body p {
+  white-space: nowrap;
 }
 
 /* ─── Pill ────────────────────────────────────────────────── */
@@ -152,5 +161,9 @@
   .som-metric-cell:nth-child(2),
   .som-metric-cell:nth-child(4) {
     border-right: none;
+  }
+
+  .som-metric-cell-body p {
+    white-space: normal;
   }
 }
