@@ -70,20 +70,10 @@ export function ImpactMetricsDashboard({
           transition={{ duration: 0.5 }}
           className="impact-metrics-heading-cell"
         >
-          <h2
-            className="font-sans font-bold text-white"
-            style={{
-              fontSize: 'clamp(2rem, 3vw, 2.8rem)',
-              lineHeight: '1.15',
-              letterSpacing: '-0.02em',
-            }}
-          >
+          <h2 className="impact-metrics-heading font-sans font-bold text-white">
             {heading}
           </h2>
-          <p
-            className="font-sans text-white/60 leading-relaxed mt-5"
-            style={{ fontSize: '16px' }}
-          >
+          <p className="impact-metrics-subtext font-sans text-white/60 leading-relaxed">
             {subtext}
           </p>
         </motion.div>
@@ -111,16 +101,7 @@ export function ImpactMetricsDashboard({
               </div>
               <div>
                 <div className={getValueClassName(metric)}>{metric.value}</div>
-                <p
-                  className="text-white"
-                  style={{
-                    fontFamily: 'var(--font-inter, sans-serif)',
-                    fontSize: '14px',
-                    marginTop: '6px',
-                  }}
-                >
-                  {metric.subtitle}
-                </p>
+                <p className="impact-metrics-subtitle text-white">{metric.subtitle}</p>
               </div>
             </div>
           </motion.div>
