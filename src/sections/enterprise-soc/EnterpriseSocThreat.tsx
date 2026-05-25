@@ -30,15 +30,11 @@ export function EnterpriseSocThreat() {
         className="text-center px-4"
       >
         <h2
-          className="text-white mx-auto"
+          className="esoc-threat-heading text-white mx-auto max-w-[780px]"
           style={{
             fontFamily: 'var(--font-serif)',
             fontStyle: 'italic',
             fontWeight: 500,
-            fontSize: 'clamp(2.4rem, 5vw, 4rem)',
-            lineHeight: '1.15',
-            letterSpacing: '-0.02em',
-            maxWidth: '780px',
           }}
         >
           {heading}
@@ -103,15 +99,11 @@ export function EnterpriseSocThreat() {
 
           {/* Heading */}
           <h2
-            className="text-white mx-auto"
+            className="esoc-threat-cta-heading text-white mx-auto max-w-[720px] text-center"
             style={{
               fontFamily: 'var(--font-serif)',
-              fontSize: 'clamp(2rem, 5vw, 3.75rem)',
               fontStyle: 'italic',
               fontWeight: 500,
-              lineHeight: '120%',
-              textAlign: 'center',
-              maxWidth: '720px',
             }}
           >
             {cta.headingItalic}
@@ -122,14 +114,10 @@ export function EnterpriseSocThreat() {
 
           {/* Subtext */}
           <p
-            className="text-white mx-auto"
+            className="esoc-threat-cta-subtext text-white mx-auto max-w-[520px] text-center"
             style={{
               fontFamily: 'var(--font-inter, sans-serif)',
-              fontSize: 'clamp(15px, 2vw, 20px)',
               fontWeight: 500,
-              lineHeight: '150%',
-              textAlign: 'center',
-              maxWidth: '520px',
             }}
           >
             {cta.subtext}

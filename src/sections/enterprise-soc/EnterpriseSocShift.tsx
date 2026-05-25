@@ -26,21 +26,10 @@ export function EnterpriseSocShift() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16 max-w-[960px] mx-auto w-full"
         >
-          <h2
-            className="font-sans font-bold text-white mb-6 mx-auto w-full"
-            style={{
-              fontSize: '60px',
-              lineHeight: '1.1',
-              letterSpacing: '-0.03em',
-              maxWidth: '960px',
-            }}
-          >
+          <h2 className="esoc-section-heading font-sans font-bold text-white mb-6 mx-auto w-full max-w-[960px]">
             {heading.prefix}<em>{heading.italic}</em>
           </h2>
-          <p
-            className="font-sans text-white/60 leading-relaxed mx-auto w-full"
-            style={{ fontSize: '20px', maxWidth: '960px' }}
-          >
+          <p className="esoc-section-subtext font-sans text-white/60 mx-auto w-full max-w-[960px]">
             {subtext}
           </p>
         </motion.div>
@@ -68,18 +57,11 @@ export function EnterpriseSocShift() {
               </div>
 
               {/* Title */}
-              <h3
-                className="font-sans font-semibold text-white mb-4"
-                style={{ fontSize: '20px', lineHeight: '1.35' }}
-              >
+              <h3 className="esoc-shift-card-title font-sans font-semibold text-white mb-4">
                 {card.title}
               </h3>
 
-              {/* Description */}
-              <p
-                className="font-sans text-white/60 leading-[1.75]"
-                style={{ fontSize: '15px' }}
-              >
+              <p className="esoc-shift-card-body font-sans text-white/60">
                 {card.description}
               </p>
             </motion.div>

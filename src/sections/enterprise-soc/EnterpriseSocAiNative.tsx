@@ -22,20 +22,10 @@ export function EnterpriseSocAiNative() {
             transition={{ duration: 0.6 }}
             className="flex flex-col gap-7"
           >
-            <h2
-              className="font-sans font-bold text-white"
-              style={{
-                fontSize: 'clamp(2rem, 3.5vw, 3rem)',
-                lineHeight: '1.1',
-                letterSpacing: '-0.025em',
-              }}
-            >
+            <h2 className="esoc-section-heading font-sans font-bold text-white">
               {heading}
             </h2>
-            <p
-              className="font-sans text-white/70 leading-relaxed"
-              style={{ fontSize: '16px' }}
-            >
+            <p className="esoc-section-subtext font-sans text-white/70">
               {subtext}
             </p>
             <div>

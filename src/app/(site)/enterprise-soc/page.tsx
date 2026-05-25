@@ -4,6 +4,7 @@ import { EnterpriseSocShift } from '@/sections/enterprise-soc/EnterpriseSocShift
 import { EnterpriseSocDashboard } from '@/sections/enterprise-soc/EnterpriseSocDashboard'
 import { EnterpriseSocAiNative } from '@/sections/enterprise-soc/EnterpriseSocAiNative'
 import { EnterpriseSocThreat } from '@/sections/enterprise-soc/EnterpriseSocThreat'
+import './page.css'
 
 export const metadata = {
   title: 'Enterprise SOC | SIRP',
@@ -13,13 +14,13 @@ export const metadata = {
 
 export default function EnterpriseSocPage() {
   return (
-    <>
+    <div className="enterprise-soc-page">
       <EnterpriseSocHero />
       <EnterpriseSocReality />
       <EnterpriseSocShift />
       <EnterpriseSocDashboard />
       <EnterpriseSocAiNative />
       <EnterpriseSocThreat />
-    </>
+    </div>
   )
 }
