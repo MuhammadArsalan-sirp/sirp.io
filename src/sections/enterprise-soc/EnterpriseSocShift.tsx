@@ -24,21 +24,22 @@ export function EnterpriseSocShift() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16 max-w-[720px] mx-auto"
+          className="text-center mb-16 max-w-[960px] mx-auto w-full"
         >
           <h2
-            className="font-sans font-bold text-white mb-6"
+            className="font-sans font-bold text-white mb-6 mx-auto w-full"
             style={{
               fontSize: '60px',
               lineHeight: '1.1',
               letterSpacing: '-0.03em',
+              maxWidth: '960px',
             }}
           >
             {heading.prefix}<em>{heading.italic}</em>
           </h2>
           <p
-            className="font-sans text-white/60 leading-relaxed"
-            style={{ fontSize: '20px' }}
+            className="font-sans text-white/60 leading-relaxed mx-auto w-full"
+            style={{ fontSize: '20px', maxWidth: '960px' }}
           >
             {subtext}
           </p>

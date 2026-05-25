@@ -47,7 +47,7 @@ export function SomOutcomes() {
             <div className="outcomes-text">
               <h3 className="outcomes-title">{active.title}</h3>
               {active.badge && (
-                <PurplePill className="mt-4 mb-6">{active.badge}</PurplePill>
+                <PurplePill className="outcomes-badge-pill mt-4 mb-6">{active.badge}</PurplePill>
               )}
               <AnimatePresence mode="wait">
                 <motion.div

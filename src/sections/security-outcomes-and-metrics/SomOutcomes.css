@@ -30,6 +30,13 @@
   margin-bottom: 24px;
 }
 
+/* Pill is inline in markup but flex column stretches children — shrink to label width */
+.outcomes-text .outcomes-badge-pill {
+  align-self: flex-start;
+  width: fit-content;
+  max-width: 100%;
+}
+
 /* ─── Paragraphs ──────────────────────────────────────────── */
 .outcomes-paras {
   display: flex;

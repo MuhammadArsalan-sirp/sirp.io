@@ -30,18 +30,31 @@ export function OmnisenseAction({ data }: OmnisenseActionProps) {
           transition={{ duration: 0.5 }}
         >
           {/* Text */}
-          <div className="text-center mb-10 md:mb-14 max-w-[640px] mx-auto px-4 md:px-0">
+          <div className="text-center mb-10 md:mb-14 max-w-[960px] mx-auto px-4 md:px-0 w-full">
             <h2
-              className="font-bold text-white mb-6 md:mb-7"
-              style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: '53px', lineHeight: '1.1', letterSpacing: '-0.03em' }}
+              className="font-bold text-white mb-6 md:mb-7 mx-auto w-full"
+              style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: '53px', lineHeight: '1.1', letterSpacing: '-0.03em', maxWidth: '960px' }}
             >
               {heading}
             </h2>
-            <p className="text-white/80 leading-relaxed mb-6 md:mb-8" style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: '20px' }}>
+            <p
+              className="text-white/80 leading-relaxed mb-6 md:mb-8 mx-auto w-full"
+              style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: '20px', maxWidth: '960px' }}
+            >
               {description}
             </p>
-            <p className="text-white/60 leading-relaxed mb-2" style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: '20px' }}>{note1}</p>
-            <p className="text-white/60 leading-relaxed" style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: '20px' }}>{note2}</p>
+            <p
+              className="text-white/60 leading-relaxed mb-2 mx-auto w-full"
+              style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: '20px', maxWidth: '960px' }}
+            >
+              {note1}
+            </p>
+            <p
+              className="text-white/60 leading-relaxed mx-auto w-full"
+              style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: '20px', maxWidth: '960px' }}
+            >
+              {note2}
+            </p>
           </div>
 
           {/* YouTube embed — 16/9 responsive */}
