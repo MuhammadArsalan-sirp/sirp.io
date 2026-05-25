@@ -74,13 +74,14 @@ export function SaraSection({ data = SARA_DATA }: SaraSectionProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex items-center justify-center"
           >
             <Image
               src={image}
               alt={imageAlt}
               width={600}
               height={600}
-              className="w-full h-auto"
+              className="w-full max-w-[420px] md:max-w-none h-auto"
               unoptimized
             />
           </motion.div>

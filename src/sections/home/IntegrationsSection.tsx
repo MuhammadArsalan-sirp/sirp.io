@@ -75,7 +75,7 @@ export function IntegrationsSection({ data = INTEGRATIONS_DATA }: IntegrationsSe
       </div>
 
       {/* Logo strip — full width */}
-      <div className="integrations-strip pb-20 relative z-[10]">
+      <div className="integrations-strip pb-32 sm:pb-36 md:pb-52 relative z-[10]">
         <div className="integrations-track">
           {doubled.map((logo, i) => (
             <div

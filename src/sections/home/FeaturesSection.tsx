@@ -40,7 +40,7 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-16 max-w-[700px]"
+          className="mb-10 md:mb-16 max-w-[700px]"
         >
           <span className="inline-flex items-center gap-1.5 font-sans text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-md border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]">
             <img src="/images/shine.svg" alt="" className="w-3 h-3" />
@@ -72,7 +72,7 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
             >
               {/* Image top */}
               {!feature.textTop && (
-                <div className="relative w-full h-[230px] md:h-[280px] overflow-hidden">
+                <div className="relative w-full h-[200px] md:h-[280px] overflow-hidden">
                   <Image
                     src={feature.image}
                     alt={feature.title}
@@ -84,7 +84,7 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
               )}
 
               {/* Body */}
-              <div className="px-7 py-7">
+              <div className="px-5 py-5 md:px-7 md:py-7">
                 <h3
                   className="font-sans font-semibold text-white mb-3"
                   style={{
@@ -101,7 +101,7 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
 
               {/* Image bottom */}
               {feature.textTop && (
-                <div className="relative w-full h-[230px] md:h-[280px] overflow-hidden">
+                <div className="relative w-full h-[200px] md:h-[280px] overflow-hidden">
                   <Image
                     src={feature.image}
                     alt={feature.title}

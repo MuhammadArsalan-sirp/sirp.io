@@ -86,7 +86,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
             </h2>
 
             {/* Subheading */}
-            <p className="text-white/60 text-base leading-[1.7] max-w-[400px] mb-14 font-['Inter',sans-serif]">
+            <p className="text-white/60 text-base leading-[1.7] max-w-[400px] mb-8 lg:mb-14 font-['Inter',sans-serif]">
               {subheading}
             </p>
 
@@ -112,10 +112,10 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="flex items-center gap-4 py-4 md:py-5"
+                  className="flex items-center gap-3 md:gap-4 py-3 md:py-5"
                 >
                   {/* Icon */}
-                  <div className="relative flex-shrink-0 w-[58px] h-[97px] self-center">
+                  <div className="relative flex-shrink-0 w-[44px] h-[74px] md:w-[58px] md:h-[97px] self-center">
                     <Image
                       src={stat.icon}
                       alt={stat.label}
@@ -132,7 +132,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
                       <span
                         className="font-['Noto_Serif',serif] font-normal leading-[1.1]"
                         style={{
-                          fontSize: 'clamp(5.625rem, 26vw, 6.875rem)',
+                          fontSize: 'clamp(4rem, 20vw, 6.875rem)',
                           letterSpacing: '-0.02em',
                           backgroundImage: stat.gradient,
                           WebkitBackgroundClip: 'text',
@@ -145,7 +145,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
                       <span
                         className="font-['Noto_Serif',serif] font-normal leading-[1.1] self-start mt-2 lg:mt-3"
                         style={{
-                          fontSize: 'clamp(3.375rem, 16vw, 4rem)',
+                          fontSize: 'clamp(2.5rem, 12vw, 4rem)',
                           backgroundImage: stat.gradient,
                           WebkitBackgroundClip: 'text',
                           WebkitTextFillColor: 'transparent',

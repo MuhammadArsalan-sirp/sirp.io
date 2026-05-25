@@ -2,12 +2,14 @@
 .features-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
-@media (min-width: 1440px) {
+/* 2-column from desktop up (1024px) */
+@media (min-width: 1024px) {
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
   }
 }
 

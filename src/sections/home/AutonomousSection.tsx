@@ -72,7 +72,7 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
           transition={{ duration: 0.4, delay: 0.1 }}
           className="flex items-center justify-center mb-8 md:mb-12 px-0"
         >
-          <div className="flex w-full max-w-[380px] md:w-auto">
+          <div className="flex w-full max-w-[340px] sm:max-w-[380px] md:w-auto">
             {tabs.map((tab, i) => {
               const isActive = activeTab === tab
               const isFirst = i === 0
@@ -82,7 +82,7 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
                   onClick={() => setActiveTab(tab)}
                   style={{
                     height: '38px',
-                    padding: '8px 20px',
+                    padding: '8px 14px',
                     fontSize: '12px',
                     fontWeight: 600,
                     fontFamily: 'Inter, sans-serif',
@@ -95,7 +95,7 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
                     backgroundColor: isActive ? 'rgb(142, 45, 255)' : 'rgb(24, 24, 33)',
                     boxShadow: !isFirst ? 'inset 1px 0 0 rgb(89,89,104), inset 0 1px 0 rgb(89,89,104), inset 0 -1px 0 rgb(89,89,104), 1px 0 0 rgb(89,89,104)' : 'none',
                     flex: 1,
-                    minWidth: '151px',
+                    whiteSpace: 'nowrap',
                   }}
                 >
                   {tab}

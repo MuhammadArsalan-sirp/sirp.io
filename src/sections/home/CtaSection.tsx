@@ -1,96 +1,137 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import Link from 'next/link'
 import { CTA_DATA } from '@/lib/constants'
 import './CtaSection.css'
 
-/* ─── Types ──────────────────────────────────────────────── */
-interface CtaBtn {
-  label: string
-  href:  string
+/* ─── Exact SVG paths from Framer source ─────────────────────────────────── */
+const DOME_PATH    = 'M 532 0 C 238.185 0 0 238.184 0 532 L 1064 532 C 1064 238.185 825.816 0 532 0 Z'
+const GLOW_PURPLE  = 'M 275 0 C 123.122 0 0 112.377 0 251 L 550 251 C 550 112.377 426.878 0 275 0 Z'
+const GLOW_WHITE   = 'M 312 0 C 139.687 0 0 112.377 0 251 L 624 251 C 624 112.377 484.313 0 312 0 Z'
+/* Arc = top-edge stroke of the dome path (open, no fill) */
+const ARC_PATH     = 'M 0 532 C 0 238.184 238.185 0 532 0 C 825.816 0 1064 238.185 1064 532'
+
+/* ─── Types ──────────────────────────────────────────────────────────────── */
+interface CtaBtn  { label: string; href: string }
+interface CtaData { heading: string; headingItalic: string; primaryBtn: CtaBtn; secondaryBtn: CtaBtn }
+interface CtaSectionProps { data?: CtaData; overlapTop?: boolean }
+
+/* ─── Reusable inline glow SVGs ──────────────────────────────────────────── */
+function PurpleGlow() {
+  return (
+    <svg viewBox="0 0 550 251" overflow="visible" width="550" height="251" aria-hidden="true">
+      <path d={GLOW_PURPLE} fill="rgb(142,45,255)" />
+    </svg>
+  )
+}
+function WhiteGlow() {
+  return (
+    <svg viewBox="0 0 624 251" overflow="visible" width="624" height="251" aria-hidden="true">
+      <path d={GLOW_WHITE} fill="rgb(255,255,255)" />
+    </svg>
+  )
+}
+function ArcSVG({ strokeWidth = 1.5 }: { strokeWidth?: number }) {
+  return (
+    <svg
+      viewBox="0 0 1064 532"
+      overflow="visible"
+      preserveAspectRatio="none"
+      width="100%"
+      height="100%"
+      aria-hidden="true"
+      style={{ display: 'block' }}
+    >
+      <path d={ARC_PATH} fill="none" stroke="white" strokeWidth={strokeWidth} />
+    </svg>
+  )
 }
 
-interface CtaData {
-  heading:       string
-  headingItalic: string
-  primaryBtn:    CtaBtn
-  secondaryBtn:  CtaBtn
-}
-
-interface CtaSectionProps {
-  data?: CtaData
-  /** When false, dome/glow do not overlap the section above (e.g. long step diagrams). */
-  overlapTop?: boolean
-}
-
-/* ─── Component ──────────────────────────────────────────── */
-export function CtaSection({ data = CTA_DATA, overlapTop = true }: CtaSectionProps) {
-  const { headingItalic, primaryBtn, secondaryBtn } = data
+/* ─── Component ──────────────────────────────────────────────────────────── */
+export function CtaSection({ data = CTA_DATA }: CtaSectionProps) {
+  const { primaryBtn, secondaryBtn } = data
 
   return (
-    <section className="bg-[#121218] relative z-[2] -mt-32 overflow-visible">
-      <div className="relative flex flex-col items-center justify-center min-h-[560px] md:min-h-[560px] lg:min-h-[620px] pt-0 md:pt-20 pb-16 md:pb-36">
+    <section className="cta-section">
 
-        {/* Purple glow */}
-        <div className="cta-glow" />
+      {/* ── Dome component (all visual layers) ──────────────────────────── */}
+      <div className="cta-dome-container">
 
-        {/* Black dome */}
-        <div className="cta-dome" />
+        {/* Glow 1 & 2 — purple, blur(100px), translateY ~15px */}
+        <div className="cta-gl cta-gl--p cta-gl--1"><PurpleGlow /></div>
+        <div className="cta-gl cta-gl--p cta-gl--2"><PurpleGlow /></div>
 
-        {/* White outline arc */}
-        <div className="cta-dome-outline">
-          <Image
-            src="/images/whiteoutlinedom.svg"
-            alt=""
-            width={859}
-            height={217}
-            unoptimized
-            style={{ width: '100%', height: 'auto', display: 'block' }}
-          />
+        {/* Glow 3 & 4 — white, blur(25px), opacity 0.09 */}
+        <div className="cta-gl cta-gl--w cta-gl--3"><WhiteGlow /></div>
+        <div className="cta-gl cta-gl--w cta-gl--4"><WhiteGlow /></div>
+
+        {/* Glow 5 & 6 — purple, blur(100px), translateY ~2px */}
+        <div className="cta-gl cta-gl--p cta-gl--5"><PurpleGlow /></div>
+        <div className="cta-gl cta-gl--p cta-gl--6"><PurpleGlow /></div>
+
+        {/* Main dome — exact Framer SVG path 1064×532, fill #121218 */}
+        <div className="cta-dome-svg">
+          <svg
+            viewBox="0 0 1064 532"
+            overflow="visible"
+            preserveAspectRatio="none"
+            width="100%"
+            height="100%"
+            aria-hidden="true"
+            style={{ display: 'block' }}
+          >
+            <path d={DOME_PATH} fill="rgb(18,18,24)" />
+          </svg>
         </div>
 
-        {/* Content */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative z-[3] text-center pt-[280px] md:pt-40 lg:pt-44"
-        >
-          <h2
-            className="text-white text-center mt-4 md:mt-16"
-            style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: 'clamp(1.75rem, 5vw, 3.5rem)',
-              fontWeight: 500,
-              lineHeight: '120%',
-            }}
-          >
-            Watch your<br />
-            Autonomous SOC<br />
-            drive <em>itself</em>
-          </h2>
+        {/* Arc pair 1 — sharp, mask 37%→100% (×2 matching Framer) */}
+        <div className="cta-arc cta-arc--sharp"><ArcSVG strokeWidth={1.5} /></div>
+        <div className="cta-arc cta-arc--sharp"><ArcSVG strokeWidth={1.5} /></div>
 
-          <div className="flex items-center justify-center gap-3 mt-8 md:mt-10">
-            <Link
-              href={primaryBtn.href}
-              className="inline-flex items-center bg-[#8e2dff] text-white px-5 py-3 md:px-8 md:py-3.5 rounded-full font-sans font-medium text-sm md:text-base hover:bg-[#a855f7] transition-all duration-200 no-underline shadow-[0_0_30px_rgba(142,45,255,0.5)] whitespace-nowrap"
-            >
-              {primaryBtn.label}
-            </Link>
-            <Link
-              href={secondaryBtn.href}
-              className="inline-flex items-center border border-white/30 text-white px-5 py-3 md:px-8 md:py-3.5 rounded-full font-sans font-medium text-sm md:text-base hover:bg-white/10 hover:border-white/50 transition-all duration-200 no-underline bg-white/5 whitespace-nowrap"
-            >
-              {secondaryBtn.label}
-            </Link>
-          </div>
+        {/* Arc pair 2 — blur(20px), mask 31%→112% (×2) */}
+        <div className="cta-arc cta-arc--blur20"><ArcSVG strokeWidth={2.5} /></div>
+        <div className="cta-arc cta-arc--blur20"><ArcSVG strokeWidth={2.5} /></div>
 
-        </motion.div>
+        {/* Arc pair 3 — blur(2px), mask 14%→100% (×2) */}
+        <div className="cta-arc cta-arc--blur2"><ArcSVG strokeWidth={1} /></div>
+        <div className="cta-arc cta-arc--blur2"><ArcSVG strokeWidth={1} /></div>
 
       </div>
+
+      {/* ── Content — heading + buttons ──────────────────────────────────── */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="cta-content"
+      >
+
+        {/* Heading — Inter 500, 56px · "itself" in Noto Serif italic */}
+        <h3 className="cta-heading">
+          Watch your Autonomous SOC drive{' '}
+          <span className="cta-heading-serif">itself</span>
+        </h3>
+
+        {/* Buttons */}
+        <div className="cta-buttons">
+
+          {/* Primary — purple bg, glow ellipse inside */}
+          <Link href={primaryBtn.href} className="cta-btn cta-btn--primary">
+            <span className="cta-btn-label">{primaryBtn.label}</span>
+            <span className="cta-btn-glow" aria-hidden="true" />
+          </Link>
+
+          {/* Secondary — white border, glow ellipse inside */}
+          <Link href={secondaryBtn.href} className="cta-btn cta-btn--secondary">
+            <span className="cta-btn-label">{secondaryBtn.label}</span>
+            <span className="cta-btn-glow" aria-hidden="true" />
+          </Link>
+
+        </div>
+      </motion.div>
+
     </section>
   )
 }
