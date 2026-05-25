@@ -9,7 +9,7 @@ export function SomSocMeans() {
   const { heading, paragraphs } = SOM_VENN
 
   return (
-    <section className="bg-[#121218] py-[100px]">
+    <section className="bg-[#121218] py-16 md:py-[100px]">
       <div className="container-sirp">
         <div className="som-soc-grid">
 
@@ -47,7 +47,7 @@ export function SomSocMeans() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h2 className="som-soc-heading">{heading}</h2>
+            <h2 className="som-soc-heading esoc-section-heading">{heading}</h2>
             <div className="som-soc-paras">
               {paragraphs.map((p, i) => (
                 <p key={i} className="som-soc-para">{p}</p>

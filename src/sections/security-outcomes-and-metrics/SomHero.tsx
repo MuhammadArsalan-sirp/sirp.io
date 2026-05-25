@@ -40,15 +40,8 @@ export function SomHero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.05 }}
-          className="text-white mx-auto"
-          style={{
-            fontFamily: 'var(--font-inter, sans-serif)',
-            fontWeight: 500,
-            fontSize: 'clamp(2.4rem, 5vw, 74px)',
-            lineHeight: '110%',
-            textAlign: 'center',
-            maxWidth: '860px',
-          }}
+          className="esoc-hero-heading text-white mx-auto text-center max-w-[860px] font-sans font-medium"
+          style={{ fontFamily: 'var(--font-inter, sans-serif)' }}
         >
           <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic' }}>
             {heading.italic}{' '}
@@ -60,14 +53,7 @@ export function SomHero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.18 }}
-          className="mx-auto mt-7"
-          style={{
-            fontFamily: 'var(--font-sans)',
-            fontSize: '17px',
-            lineHeight: '1.65',
-            color: '#ffffff',
-            maxWidth: '500px',
-          }}
+          className="esoc-hero-desc mx-auto mt-7 max-w-[500px] text-white font-sans"
         >
           {subtext}
         </motion.p>

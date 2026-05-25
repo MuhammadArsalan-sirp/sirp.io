@@ -14,7 +14,9 @@
   place-content: flex-start;
   align-items: flex-start;
   gap: 60px;
-  width: 522px;
+  width: 100%;
+  max-width: 522px;
+  min-width: 0;
   height: min-content;
   position: relative;
   overflow: visible;
@@ -23,10 +25,10 @@
 /* ─── Heading ─────────────────────────────────────────────── */
 .som-esc-heading {
   font-family: var(--font-inter, sans-serif);
-  font-size: 42px;
+  font-size: clamp(1.5rem, 3vw, 2.625rem);
   font-weight: 500;
   color: #ffffff;
-  line-height: 110%;
+  line-height: 1.1;
 }
 
 /* ─── Escalation block ────────────────────────────────────── */
@@ -122,9 +124,5 @@
   .som-esc-grid {
     grid-template-columns: 1fr;
     gap: 48px;
-  }
-
-  .som-esc-heading {
-    font-size: 36px;
   }
 }

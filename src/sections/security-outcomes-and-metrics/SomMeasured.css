@@ -38,7 +38,7 @@
 /* ─── Value (bold title) ──────────────────────────────────── */
 .som-measured-value {
   font-family: var(--font-inter, sans-serif);
-  font-size: 20px;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
   font-weight: 700;
   color: #ffffff;
   line-height: 1.3;
@@ -47,18 +47,19 @@
 /* ─── Label (description) ─────────────────────────────────── */
 .som-measured-label {
   font-family: var(--font-inter, sans-serif);
-  font-size: 15px;
+  font-size: clamp(0.875rem, 1.3vw, 0.9375rem);
   font-weight: 500;
   color: #ffffff;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* ─── Footer note ─────────────────────────────────────────── */
 .som-measured-excluded {
   font-family: var(--font-inter, sans-serif);
-  font-size: 14px;
+  font-size: clamp(0.8125rem, 1.2vw, 0.875rem);
   font-weight: 600;
   color: #ffffff;
   text-align: center;
   margin-top: 32px;
+  line-height: 1.65;
 }

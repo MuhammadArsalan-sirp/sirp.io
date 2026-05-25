@@ -9,7 +9,7 @@ export function SomMetricsWhy() {
   const { heading, subtext, columns } = SOM_WHY
 
   return (
-    <section className="bg-[#121218] py-[100px]">
+    <section className="bg-[#121218] py-16 md:py-[100px]">
       <div className="container-sirp">
 
         {/* Heading */}
@@ -20,22 +20,10 @@ export function SomMetricsWhy() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2
-            className="text-white font-sans mb-5"
-            style={{ fontFamily: 'var(--font-inter, sans-serif)', fontSize: '60px', fontWeight: 500, lineHeight: '115%' }}
-          >
+          <h2 className="esoc-section-heading text-white font-sans font-medium mb-5">
             Why these metrics move<br />together
           </h2>
-          <p
-            className="mx-auto"
-            style={{
-              fontFamily: 'var(--font-inter, sans-serif)',
-              fontSize: '20px',
-              fontWeight: 600,
-              color: '#ffffff',
-              whiteSpace: 'nowrap',
-            }}
-          >
+          <p className="esoc-section-subtext mx-auto font-sans font-semibold text-white">
             {subtext}
           </p>
         </motion.div>

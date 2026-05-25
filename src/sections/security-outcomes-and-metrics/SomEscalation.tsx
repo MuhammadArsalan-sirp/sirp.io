@@ -9,7 +9,7 @@ export function SomEscalation() {
   const { heading, escalationLabel, escalations, stats, summary } = SOM_SYSTEM
 
   return (
-    <section className="bg-[#121218] py-[100px]">
+    <section className="bg-[#121218] py-16 md:py-[100px]">
       <div className="container-sirp">
         <div className="som-esc-grid">
 
@@ -21,7 +21,7 @@ export function SomEscalation() {
             transition={{ duration: 0.6 }}
             className="som-esc-text"
           >
-            <h2 className="som-esc-heading">{heading}</h2>
+            <h2 className="som-esc-heading esoc-section-heading">{heading}</h2>
 
             {/* Escalation block */}
             <div className="som-esc-escalation">
