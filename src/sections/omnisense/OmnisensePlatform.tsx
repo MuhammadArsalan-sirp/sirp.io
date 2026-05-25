@@ -57,8 +57,8 @@ export function OmnisensePlatform({ data }: OmnisensePlatformProps) {
           >
             {heading}
             <br />
-            <span className="block text-[16px] md:text-[inherit]" style={{ lineHeight: '120%' }}>
-              <em>{headingItalic}</em>{' '}{headingSuffix}
+            <span className="block" style={{ lineHeight: '1.08' }}>
+              <em>{headingItalic}</em> {headingSuffix}
             </span>
           </h2>
         </motion.div>
