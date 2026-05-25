@@ -9,28 +9,20 @@ export function SomMeasured() {
   const { label, excluded, items } = SOM_MEASURED
 
   return (
-    <section className="bg-[#121218] pb-[100px] px-[80px]">
-      <div className="w-full">
+    <section className="bg-[#121218] py-16 md:py-24 lg:pb-[100px]">
+      <div className="container-sirp">
 
-        {/* Heading */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-          style={{
-            fontFamily: 'var(--font-inter, sans-serif)',
-            fontSize: '20px',
-            fontWeight: 700,
-            color: '#ffffff',
-          }}
+          className="esoc-section-subtext text-center mb-12 font-bold text-white"
         >
           {label}
         </motion.p>
 
-        {/* 4-column cards */}
-        <div className="grid grid-cols-4 gap-4 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
           {items.map((item, i) => (
             <motion.div
               key={item.id}
@@ -38,8 +30,7 @@ export function SomMeasured() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="som-measured-card"
-              style={{ width: '100%' }}
+              className="som-measured-card w-full"
             >
               <div className="som-measured-pill">
                 <Image
@@ -56,7 +47,6 @@ export function SomMeasured() {
           ))}
         </div>
 
-        {/* Excluded note */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

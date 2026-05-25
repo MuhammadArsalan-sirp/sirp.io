@@ -44,14 +44,7 @@ export function EnterpriseSocHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.05 }}
           >
-            <h1
-              className="font-sans font-bold text-white"
-              style={{
-                fontSize: 'clamp(44px, 5.5vw, 80px)',
-                lineHeight: '1.05',
-                letterSpacing: '-0.03em',
-              }}
-            >
+            <h1 className="esoc-hero-heading font-sans font-bold text-white">
               {heading.prefix}
               <em>{heading.italic}</em>
               {heading.suffix}
@@ -65,10 +58,7 @@ export function EnterpriseSocHero() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="flex flex-col gap-8"
           >
-            <p
-              className="font-sans text-white leading-relaxed"
-              style={{ fontSize: '18px' }}
-            >
+            <p className="esoc-hero-desc font-sans text-white">
               {description}
             </p>
             <div>

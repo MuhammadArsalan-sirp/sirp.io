@@ -61,7 +61,7 @@ export function ImpactMetricsDashboard({
   pillStyle = 'border',
 }: ImpactMetricsDashboardProps) {
   return (
-    <section className="bg-[#121218] overflow-hidden border-t border-b border-white/10">
+    <section className="impact-metrics-section bg-[#121218] border-t border-b border-white/10">
       <div className="impact-metrics-grid container-sirp">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

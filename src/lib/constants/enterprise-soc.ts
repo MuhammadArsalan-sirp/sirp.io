@@ -1,3 +1,12 @@
+/**
+ * Typography on /enterprise-soc follows soar-alternatives mobile scale
+ * (see app/(site)/soar-alternatives/page.css @media max-width 640px):
+ * - Section h2: clamp(1.45rem, 5.5vw, 1.85rem)
+ * - Body / subtext: 0.875rem, line-height 1.65
+ * - Card h3: 1rem, line-height 1.22
+ * Implemented via app/(site)/enterprise-soc/page.css (.esoc-* classes).
+ */
+
 export const ENTERPRISE_SOC_SHIFT = {
   heading: {
     prefix: 'The SIRP ',

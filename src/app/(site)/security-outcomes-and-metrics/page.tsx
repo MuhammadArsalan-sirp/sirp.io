@@ -8,6 +8,7 @@ import { SomEscalation } from '@/sections/security-outcomes-and-metrics/SomEscal
 import { SomMeasured } from '@/sections/security-outcomes-and-metrics/SomMeasured'
 import { SomSocMeans } from '@/sections/security-outcomes-and-metrics/SomSocMeans'
 import { SomCta } from '@/sections/security-outcomes-and-metrics/SomCta'
+import './page.css'
 
 export const metadata = {
   title: 'Security Outcomes & Metrics | SIRP',
@@ -17,7 +18,7 @@ export const metadata = {
 
 export default function SecurityOutcomesPage() {
   return (
-    <>
+    <div className="security-outcomes-page">
       <SomHero />
       <SomMetrics />
       <SomAudience />
@@ -28,6 +29,6 @@ export default function SecurityOutcomesPage() {
       <SomMeasured />
       <SomSocMeans />
       <SomCta />
-    </>
+    </div>
   )
 }

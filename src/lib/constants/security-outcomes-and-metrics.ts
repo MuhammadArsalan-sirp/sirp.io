@@ -1,3 +1,9 @@
+/**
+ * Typography on /security-outcomes-and-metrics follows soar-alternatives mobile scale
+ * (see app/(site)/soar-alternatives/page.css @media max-width 640px).
+ * Implemented via app/(site)/security-outcomes-and-metrics/page.css (.esoc-* classes).
+ */
+
 export const SOM_HERO = {
   heading: {
     italic: 'Autonomous security:',

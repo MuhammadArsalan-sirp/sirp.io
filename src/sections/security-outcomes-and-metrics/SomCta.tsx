@@ -37,33 +37,13 @@ export function SomCta() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative z-[3] text-center pt-40 px-6"
+          className="relative z-[3] text-center pt-24 md:pt-40 px-6"
         >
-          <h2
-            className="text-white text-center"
-            style={{
-              fontFamily: 'var(--font-inter, sans-serif)',
-              fontSize: '60px',
-              fontWeight: 500,
-              lineHeight: '120%',
-              maxWidth: '700px',
-              margin: '0 auto 0',
-            }}
-          >
+          <h2 className="esoc-section-heading text-white text-center font-sans font-medium max-w-[700px] mx-auto">
             {headingItalic}
           </h2>
 
-          <p
-            className="text-center mt-6 mx-auto"
-            style={{
-              fontFamily: 'var(--font-inter, sans-serif)',
-              fontSize: '20px',
-              fontWeight: 500,
-              color: '#ffffff',
-              maxWidth: '520px',
-              lineHeight: '1.6',
-            }}
-          >
+          <p className="esoc-section-subtext text-center mt-6 mx-auto max-w-[520px] font-sans font-medium text-white">
             {subtext}
           </p>
 

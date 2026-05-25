@@ -18,7 +18,7 @@ export function SomAudience() {
   const { badge, items } = SOM_AUDIENCE
 
   return (
-    <section className="bg-[#121218] py-[100px] overflow-hidden">
+    <section className="bg-[#121218] py-16 md:py-[100px] overflow-hidden">
       <div className="container-sirp">
 
         {/* Badge */}
@@ -56,18 +56,11 @@ export function SomAudience() {
               </div>
 
               {/* Role heading */}
-              <h3
-                className="font-sans font-bold text-white mb-3"
-                style={{ fontSize: '22px', lineHeight: '1.3' }}
-              >
+              <h3 className="esoc-shift-card-title font-sans font-bold text-white mb-3">
                 {item.role}
               </h3>
 
-              {/* Title + description */}
-              <p
-                className="font-sans text-white leading-[1.7]"
-                style={{ fontSize: '15px', fontWeight: 500 }}
-              >
+              <p className="esoc-shift-card-body font-sans text-white font-medium">
                 {item.title}. {item.description}
               </p>
             </motion.div>

@@ -9,10 +9,10 @@
 /* ─── Heading ─────────────────────────────────────────────── */
 .som-soc-heading {
   font-family: var(--font-inter, sans-serif);
-  font-size: 42px;
+  font-size: clamp(1.5rem, 3vw, 2.625rem);
   font-weight: 500;
   color: #ffffff;
-  line-height: 110%;
+  line-height: 1.1;
   margin-bottom: 36px;
 }
 
@@ -25,10 +25,10 @@
 
 .som-soc-para {
   font-family: var(--font-inter, sans-serif);
-  font-size: 18px;
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
   font-weight: 600;
   color: #ffffff;
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 /* ─── Image wrapper ───────────────────────────────────────── */
@@ -45,7 +45,7 @@
     gap: 48px;
   }
 
-  .som-soc-heading {
-    font-size: 36px;
+  .som-soc-image-wrap {
+    min-height: 280px;
   }
 }

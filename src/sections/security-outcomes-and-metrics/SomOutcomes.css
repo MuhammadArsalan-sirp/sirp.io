@@ -23,10 +23,10 @@
 /* ─── Title ───────────────────────────────────────────────── */
 .outcomes-title {
   font-family: var(--font-inter, sans-serif);
-  font-size: 42px;
+  font-size: clamp(1.5rem, 3vw, 2.625rem);
   font-weight: 500;
   color: rgb(255, 255, 255);
-  line-height: 120%;
+  line-height: 1.2;
   margin-bottom: 24px;
 }
 
@@ -46,10 +46,10 @@
 
 .outcomes-para {
   font-family: var(--font-inter, sans-serif);
-  font-size: 18px;
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
   font-weight: 500;
   color: #ffffff;
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 /* ─── Image area ──────────────────────────────────────────── */

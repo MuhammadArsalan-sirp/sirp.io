@@ -20,9 +20,10 @@ export const NAV_LINKS = [
     label: 'Platform',
     href: '#',
     children: [
-      { label: 'OmniSense Platform', href: '/omnisense', description: 'AI-native SOC mesh' },
-      { label: 'Enterprise SOC', href: '/enterprise-soc', description: 'Built for scale' },
+      { label: 'OmniSense', href: '/omnisense', description: 'AI-native SOC mesh' },
+      { label: 'Enterprise Autonomous SOC', href: '/enterprise-soc', description: 'Built for scale' },
       { label: 'Security Outcomes & Metrics', href: '/security-outcomes-and-metrics', description: 'Measurable ROI' },
+      { label: 'Technical Whitepaper', href: '/technical-white-paper', description: 'Architecture deep dive' },
     ],
   },
   {
@@ -75,7 +76,7 @@ export const FOOTER_LINKS = [
       { label: 'OmniSense™', href: '/omnisense' },
       { label: 'Enterprise Autonomous SOC', href: '/enterprise-soc' },
       { label: 'Outcomes & Metrics', href: '/security-outcomes-and-metrics' },
-      { label: 'Whitepaper', href: '/technical-white-paper' },
+      { label: 'Technical Whitepaper', href: '/technical-white-paper' },
     ],
   },
   {
