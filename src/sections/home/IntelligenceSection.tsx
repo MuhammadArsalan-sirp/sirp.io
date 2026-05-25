@@ -40,12 +40,12 @@ export function IntelligenceSection({ data = INTELLIGENCE_DATA }: IntelligenceSe
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <h2
             className="font-sans font-bold text-white mb-5"
             style={{
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+              fontSize: 'clamp(2rem, 5vw, 4rem)',
               lineHeight: '1.15',
               letterSpacing: '-0.03em',
             }}
@@ -53,7 +53,7 @@ export function IntelligenceSection({ data = INTELLIGENCE_DATA }: IntelligenceSe
             {heading}{' '}
             <em>{headingItalic}</em>
           </h2>
-          <p className="font-sans text-white text-lg leading-[1.7] max-w-[620px] mx-auto">
+          <p className="font-sans text-white/70 text-base md:text-lg leading-[1.7] max-w-[620px] mx-auto">
             {description}
           </p>
         </motion.div>

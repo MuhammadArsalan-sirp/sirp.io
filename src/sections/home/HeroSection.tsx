@@ -64,7 +64,7 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
           loop
           playsInline
           preload="auto"
-          className="relative z-0 h-full w-full object-contain object-center"
+          className="relative z-0 h-full w-full object-cover md:object-contain object-center"
         >
           <source src={videoSrc} type="video/webm" />
         </video>
