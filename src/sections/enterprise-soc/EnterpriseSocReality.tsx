@@ -19,7 +19,7 @@ export function EnterpriseSocReality() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="esoc-reality-header mb-16"
+          className="esoc-reality-header mb-10 md:mb-16"
         >
           <PurplePill className="mb-6 rounded-lg">{badge}</PurplePill>
 

@@ -30,7 +30,7 @@ export function SomDeployments() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.05 }}
-          className="esoc-section-heading text-white font-sans font-medium mb-14"
+          className="esoc-section-heading text-white font-sans font-medium mb-10 md:mb-14"
         >
           <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic' }}>{heading.italic}</span>
           {heading.suffix}

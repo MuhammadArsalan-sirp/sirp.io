@@ -23,7 +23,7 @@
 /* ─── Title ───────────────────────────────────────────────── */
 .outcomes-title {
   font-family: var(--font-inter, sans-serif);
-  font-size: clamp(1.5rem, 3vw, 2.625rem);
+  font-size: clamp(1.75rem, 3.5vw, 2.625rem);
   font-weight: 500;
   color: rgb(255, 255, 255);
   line-height: 1.2;
@@ -46,7 +46,7 @@
 
 .outcomes-para {
   font-family: var(--font-inter, sans-serif);
-  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.125rem);
   font-weight: 500;
   color: #ffffff;
   line-height: 1.65;
@@ -115,10 +115,11 @@
   color: #ffffff;
 }
 
-/* ─── Responsive ──────────────────────────────────────────── */
-@media (max-width: 768px) {
+/* ─── Responsive — tablet ─────────────────────────────────── */
+@media (max-width: 1023px) {
   .outcomes-body {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
 
   .outcomes-text {
@@ -133,5 +134,17 @@
 
   .outcomes-tabs {
     flex-wrap: wrap;
+  }
+}
+
+/* ─── Responsive — mobile ─────────────────────────────────── */
+@media (max-width: 640px) {
+  .outcomes-text {
+    padding: 28px 20px;
+  }
+
+  .outcomes-tab {
+    font-size: 12px;
+    padding: 5px 12px;
   }
 }

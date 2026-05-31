@@ -85,10 +85,18 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0;
-  margin-top: 48px;
+  gap: 8px 0;
+  margin-top: 32px;
   margin-bottom: 0;
-  padding: 0 24px;
+  padding: 0 16px;
+}
+
+@media (min-width: 768px) {
+  .threat-steps {
+    margin-top: 48px;
+    padding: 0 24px;
+    gap: 0;
+  }
 }
 
 .threat-steps__item {

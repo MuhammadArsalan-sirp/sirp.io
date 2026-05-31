@@ -24,18 +24,18 @@ export function EnterpriseSocShift() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16 max-w-[960px] mx-auto w-full"
+          className="text-center mb-10 md:mb-16 max-w-[960px] mx-auto w-full"
         >
-          <h2 className="esoc-section-heading font-sans font-bold text-white mb-6 mx-auto w-full max-w-[960px]">
+          <h2 className="esoc-section-heading font-sans font-bold text-white mb-6 mx-auto w-full">
             {heading.prefix}<em>{heading.italic}</em>
           </h2>
-          <p className="esoc-section-subtext font-sans text-white/60 mx-auto w-full max-w-[960px]">
+          <p className="esoc-section-subtext font-sans text-white/60 mx-auto w-full">
             {subtext}
           </p>
         </motion.div>
 
         {/* 3-column card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {cards.map((card, i) => (
             <motion.div
               key={card.id}

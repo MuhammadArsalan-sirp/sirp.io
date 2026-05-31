@@ -1,3 +1,18 @@
+/* ─── Section badge ───────────────────────────────────────── */
+.deploy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-inter, sans-serif);
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+  padding: 5px 14px;
+  border-radius: 5px;
+  border: 0.75px solid rgb(142, 45, 255);
+  background-color: rgba(142, 45, 255, 0.25);
+}
+
 /* ─── Card ────────────────────────────────────────────────── */
 .deploy-card {
   background: rgb(18, 18, 24);
@@ -235,7 +250,28 @@
   margin-top: 6px;
 }
 
-/* ─── Responsive ──────────────────────────────────────────── */
+/* ─── Responsive — tablet/mobile ─────────────────────────── */
+@media (max-width: 768px) {
+  .deploy-card {
+    min-height: auto;
+  }
+
+  .deploy-card-header {
+    min-height: 160px;
+    padding: 24px;
+  }
+
+  .deploy-before-after {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .deploy-card-body {
+    padding: 24px;
+    gap: 16px;
+  }
+}
+
 @media (max-width: 640px) {
   .deploy-logo-row {
     flex-wrap: wrap;

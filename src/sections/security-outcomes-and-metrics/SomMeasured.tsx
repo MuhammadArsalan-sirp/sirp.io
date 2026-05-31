@@ -17,7 +17,7 @@ export function SomMeasured() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="esoc-section-subtext text-center mb-12 font-bold text-white"
+          className="esoc-section-subtext text-center mb-8 md:mb-12 font-bold text-white"
         >
           {label}
         </motion.p>

@@ -18,7 +18,7 @@ export function SomMetricsWhy() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <h2 className="esoc-section-heading text-white font-sans font-medium mb-5">
             Why these metrics move<br />together
@@ -29,7 +29,7 @@ export function SomMetricsWhy() {
         </motion.div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {columns.map((col, i) => (
             <motion.div
               key={col.id}

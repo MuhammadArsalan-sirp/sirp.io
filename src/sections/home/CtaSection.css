@@ -6,9 +6,9 @@
 .cta-section {
   position: relative;
   background-color: rgb(18, 18, 24);
-  z-index: 2;
+  z-index: 30;
   margin-top: -8rem;
-  overflow-x: hidden;
+  overflow-x: clip;
   overflow-y: visible;
   display: flex;
   flex-direction: column;
@@ -146,6 +146,38 @@
   gap: 40px;
 }
 
+/* ─── Pill ────────────────────────────────────────────────────── */
+.cta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-inter), Inter, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  background: rgba(142, 45, 255, 0.25);
+  border: 1px solid rgb(142, 45, 255);
+  border-radius: 6px;
+  padding: 6px 14px;
+  letter-spacing: 0.01em;
+}
+.cta-pill-star {
+  color: rgb(142, 45, 255);
+  font-size: 11px;
+}
+
+/* ─── Description ─────────────────────────────────────────────── */
+.cta-description {
+  font-family: var(--font-inter), Inter, sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 600;
+  line-height: 1.6;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin: 0;
+  max-width: min(600px, 80vw);
+}
+
 /* ─── Heading ─────────────────────────────────────────────────── */
 .cta-heading {
   font-family: var(--font-inter), Inter, sans-serif;
@@ -237,39 +269,39 @@
 }
 
 /* ── iPad Pro / large tablet  821 – 1024 px
-     dome: 95vw × 47.5vw   arch-margin: 80px   content-gap: 70px
-     section min-height = 47.5vw + 80px          padding-top = 150px  */
+     dome: 115vw × 57.5vw   arch-margin: 80px   content-gap: 70px
+     section min-height = 57.5vw + 80px          padding-top = 150px  */
 @media (min-width: 821px) and (max-width: 1024px) {
   .cta-section {
-    min-height: calc(47.5vw + 80px);
+    min-height: calc(57.5vw + 80px);
     padding-top: 150px;
     padding-bottom: 48px;
   }
-  .cta-dome-container { width: 95vw; height: 47.5vw; }
+  .cta-dome-container { width: 115vw; height: 57.5vw; }
   .cta-content { gap: 32px; }
 }
 
 /* ── iPad Air  769 – 820 px
-     dome: 100vw × 50vw   arch-margin: 78px    padding-top = 148px  */
+     dome: 130vw × 65vw   arch-margin: 78px    padding-top = 148px  */
 @media (min-width: 769px) and (max-width: 820px) {
   .cta-section {
-    min-height: calc(50vw + 78px);
+    min-height: calc(65vw + 78px);
     padding-top: 148px;
     padding-bottom: 44px;
   }
-  .cta-dome-container { width: 100vw; height: 50vw; }
+  .cta-dome-container { width: 130vw; height: 65vw; }
   .cta-content { gap: 30px; }
 }
 
 /* ── Tablet / large phone  481 – 768 px
-     dome: 130vw × 65vw   arch-margin: 78px    padding-top = 138px  */
+     dome: 170vw × 85vw   arch-margin: 78px    padding-top = 138px  */
 @media (min-width: 481px) and (max-width: 768px) {
   .cta-section {
-    min-height: calc(65vw + 78px);
+    min-height: calc(85vw + 78px);
     padding-top: 138px;
     padding-bottom: 40px;
   }
-  .cta-dome-container { width: 130vw; height: 65vw; }
+  .cta-dome-container { width: 170vw; height: 85vw; }
   .cta-content        { gap: 28px; }
   .cta-buttons        { flex-direction: column; gap: 10px; }
 }

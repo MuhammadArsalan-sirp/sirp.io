@@ -63,6 +63,11 @@
   min-width: 0;
 }
 
+/* CTA dome tighter overlap */
+.enterprise-soc-page .cta-section {
+  margin-top: -2rem;
+}
+
 @media (max-width: 640px) {
   .enterprise-soc-page .esoc-hero-heading {
     font-size: clamp(1.65rem, 7.2vw, 2.15rem);

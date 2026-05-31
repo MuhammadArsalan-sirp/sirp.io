@@ -25,7 +25,7 @@ export function SomOutcomes() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="esoc-section-heading text-white text-center font-sans font-bold mb-12"
+          className="esoc-section-heading text-white text-center font-sans font-bold mb-8 md:mb-12"
         >
           The four outcomes of<br />switching to Sirp
         </motion.h2>

@@ -42,6 +42,11 @@
   line-height: 1.65;
 }
 
+/* CTA dome tighter overlap */
+.security-outcomes-page .cta-section {
+  margin-top: -2rem;
+}
+
 @media (max-width: 640px) {
   .security-outcomes-page .esoc-hero-heading {
     font-size: clamp(1.65rem, 7.2vw, 2.15rem);
@@ -187,10 +192,5 @@
 
   .security-outcomes-page .som-audience-card {
     padding: 28px 24px;
-  }
-
-  .security-outcomes-page section.py-\[100px\] {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
   }
 }

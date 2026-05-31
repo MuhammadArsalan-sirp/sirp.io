@@ -32,3 +32,10 @@
   filter: drop-shadow(0 0 6px rgba(180, 100, 255, 0.5));
   pointer-events: none;
 }
+
+/* ─── Responsive ──────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .som-audience-card {
+    padding: 28px 24px;
+  }
+}

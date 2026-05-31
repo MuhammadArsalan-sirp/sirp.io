@@ -1,3 +1,8 @@
+/* CTA dome — tighter overlap on this page */
+.soar-alternatives-page .cta-section {
+  margin-top: -2rem;
+}
+
 /* SOAR Alternatives only — no section divider lines under the page header / bands */
 .soar-alternatives-page .page-header,
 .soar-alternatives-page .section-lead,

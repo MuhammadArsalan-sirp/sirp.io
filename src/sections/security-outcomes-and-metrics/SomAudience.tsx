@@ -27,13 +27,13 @@ export function SomAudience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex justify-center mb-14"
+          className="flex justify-center mb-10 md:mb-14"
         >
           <PurplePill className="rounded-lg">{badge}</PurplePill>
         </motion.div>
 
         {/* 3-column card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {items.map((item, i) => (
             <motion.div
               key={item.id}
