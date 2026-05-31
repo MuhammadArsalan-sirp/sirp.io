@@ -24,12 +24,12 @@ export function EnterpriseSocShift() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16 max-w-[720px] mx-auto"
+          className="text-center mb-10 md:mb-16 max-w-[720px] mx-auto"
         >
           <h2
             className="font-sans font-bold text-white mb-6"
             style={{
-              fontSize: '60px',
+              fontSize: 'clamp(2rem, 5.5vw, 3.75rem)',
               lineHeight: '1.1',
               letterSpacing: '-0.03em',
             }}
@@ -38,14 +38,14 @@ export function EnterpriseSocShift() {
           </h2>
           <p
             className="font-sans text-white/60 leading-relaxed"
-            style={{ fontSize: '20px' }}
+            style={{ fontSize: 'clamp(1rem, 1.8vw, 1.25rem)' }}
           >
             {subtext}
           </p>
         </motion.div>
 
         {/* 3-column card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {cards.map((card, i) => (
             <motion.div
               key={card.id}

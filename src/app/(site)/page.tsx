@@ -26,7 +26,7 @@ export default function HomePage() {
       <FeaturesSection data={FEATURES_DATA} />
       <IntelligenceSection data={INTELLIGENCE_DATA} />
       <SaraSection data={SARA_DATA} />
-      <div className="relative overflow-x-hidden overflow-y-visible isolate">
+      <div className="relative overflow-x-clip overflow-y-visible isolate">
         <IntegrationsSection data={INTEGRATIONS_DATA} />
         <CtaSection data={CTA_DATA} />
       </div>

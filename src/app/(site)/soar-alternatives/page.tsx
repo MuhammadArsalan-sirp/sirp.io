@@ -7,10 +7,12 @@ import { SplitInfoCtaImage } from '@/components/shared/SplitInfoCtaImage'
 import { AutonomousSocComparisonSection } from '@/components/shared/AutonomousSocComparisonSection'
 import { FaqAccordionSection } from '@/components/shared/FaqAccordionSection'
 import { InfoCtaBlock } from '@/components/shared/InfoCtaBlock'
+import { CtaSection } from '@/sections/home/CtaSection'
 import {
   SOAR_ALTERNATIVES_FAQ,
   SOAR_ALTERNATIVES_KEY_DIFFERENCES,
   SOAR_ALTERNATIVES_OPERATING_MODEL_CTA,
+  CTA_DATA,
 } from '@/lib/constants'
 import './page.css'
 
@@ -197,25 +199,30 @@ export default function Page() {
 
       <FaqAccordionSection data={SOAR_ALTERNATIVES_FAQ} />
 
-      <InfoCtaBlock
-        sectionClassName="soar-alt-info-cta-outro"
-        heading={
-          <>
-            {SOAR_ALTERNATIVES_OPERATING_MODEL_CTA.headingLine1}
-            <br />
-            {SOAR_ALTERNATIVES_OPERATING_MODEL_CTA.headingLine2}
-          </>
-        }
-        body={
-          <>
-            {SOAR_ALTERNATIVES_OPERATING_MODEL_CTA.paragraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </>
-        }
-        button={SOAR_ALTERNATIVES_OPERATING_MODEL_CTA.primaryButton}
-        secondaryButton={SOAR_ALTERNATIVES_OPERATING_MODEL_CTA.secondaryButton}
-      />
+      <div className="relative overflow-x-hidden overflow-y-visible isolate">
+        <div className="pb-[26px]">
+          <InfoCtaBlock
+            sectionClassName="soar-alt-info-cta-outro"
+            heading={
+              <>
+                {SOAR_ALTERNATIVES_OPERATING_MODEL_CTA.headingLine1}
+                <br />
+                {SOAR_ALTERNATIVES_OPERATING_MODEL_CTA.headingLine2}
+              </>
+            }
+            body={
+              <>
+                {SOAR_ALTERNATIVES_OPERATING_MODEL_CTA.paragraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </>
+            }
+            button={SOAR_ALTERNATIVES_OPERATING_MODEL_CTA.primaryButton}
+            secondaryButton={SOAR_ALTERNATIVES_OPERATING_MODEL_CTA.secondaryButton}
+          />
+        </div>
+        <CtaSection data={CTA_DATA} />
+      </div>
     </div>
   )
 }

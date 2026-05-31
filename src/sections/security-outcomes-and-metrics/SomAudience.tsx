@@ -17,7 +17,7 @@ export function SomAudience() {
   const { badge, items } = SOM_AUDIENCE
 
   return (
-    <section className="bg-[#121218] py-[100px] overflow-hidden">
+    <section className="bg-[#121218] py-16 md:py-[100px] overflow-hidden">
       <div className="container-sirp">
 
         {/* Badge */}
@@ -26,7 +26,7 @@ export function SomAudience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex justify-center mb-14"
+          className="flex justify-center mb-10 md:mb-14"
         >
           <span className="inline-flex items-center gap-2 text-[12px] font-medium px-3 py-1 rounded-lg border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)]" style={{ fontFamily: 'var(--font-inter, sans-serif)' }}>
             ✦ {badge}
@@ -34,7 +34,7 @@ export function SomAudience() {
         </motion.div>
 
         {/* 3-column card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {items.map((item, i) => (
             <motion.div
               key={item.id}

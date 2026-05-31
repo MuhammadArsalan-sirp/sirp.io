@@ -14,8 +14,16 @@ const ARC_PATH     = 'M 0 532 C 0 238.184 238.185 0 532 0 C 825.816 0 1064 238.1
 
 /* ─── Types ──────────────────────────────────────────────────────────────── */
 interface CtaBtn  { label: string; href: string }
-interface CtaData { heading: string; headingItalic: string; primaryBtn: CtaBtn; secondaryBtn: CtaBtn }
-interface CtaSectionProps { data?: CtaData; overlapTop?: boolean }
+interface CtaData { heading: string; headingItalic: string; primaryBtn: CtaBtn; secondaryBtn?: CtaBtn }
+interface CtaSectionProps {
+  data?: CtaData
+  /** Override pill text above the heading */
+  pill?: string
+  /** Override heading — accepts JSX so you can mix italic/normal spans */
+  heading?: React.ReactNode
+  /** Optional description paragraph shown between heading and buttons */
+  description?: string
+}
 
 /* ─── Reusable inline glow SVGs ──────────────────────────────────────────── */
 function PurpleGlow() {
@@ -49,7 +57,7 @@ function ArcSVG({ strokeWidth = 1.5 }: { strokeWidth?: number }) {
 }
 
 /* ─── Component ──────────────────────────────────────────────────────────── */
-export function CtaSection({ data = CTA_DATA }: CtaSectionProps) {
+export function CtaSection({ data = CTA_DATA, pill, heading, description }: CtaSectionProps) {
   const { primaryBtn, secondaryBtn } = data
 
   return (
@@ -99,7 +107,7 @@ export function CtaSection({ data = CTA_DATA }: CtaSectionProps) {
 
       </div>
 
-      {/* ── Content — heading + buttons ──────────────────────────────────── */}
+      {/* ── Content — pill + heading + description + buttons ─────────────── */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -108,26 +116,45 @@ export function CtaSection({ data = CTA_DATA }: CtaSectionProps) {
         className="cta-content"
       >
 
-        {/* Heading — Inter 500, 56px · "itself" in Noto Serif italic */}
+        {/* Optional pill */}
+        {pill && (
+          <span className="cta-pill">
+            <span className="cta-pill-star">✦</span>
+            {pill}
+          </span>
+        )}
+
+        {/* Heading — custom JSX or default */}
         <h3 className="cta-heading">
-          Watch your Autonomous SOC drive{' '}
-          <span className="cta-heading-serif">itself</span>
+          {heading ?? (
+            <>
+              Watch your Autonomous SOC drive{' '}
+              <span className="cta-heading-serif">itself</span>
+            </>
+          )}
         </h3>
+
+        {/* Optional description */}
+        {description && (
+          <p className="cta-description">{description}</p>
+        )}
 
         {/* Buttons */}
         <div className="cta-buttons">
 
-          {/* Primary — purple bg, glow ellipse inside */}
+          {/* Primary — purple bg */}
           <Link href={primaryBtn.href} className="cta-btn cta-btn--primary">
             <span className="cta-btn-label">{primaryBtn.label}</span>
             <span className="cta-btn-glow" aria-hidden="true" />
           </Link>
 
-          {/* Secondary — white border, glow ellipse inside */}
-          <Link href={secondaryBtn.href} className="cta-btn cta-btn--secondary">
-            <span className="cta-btn-label">{secondaryBtn.label}</span>
-            <span className="cta-btn-glow" aria-hidden="true" />
-          </Link>
+          {/* Secondary — white border (optional) */}
+          {secondaryBtn && (
+            <Link href={secondaryBtn.href} className="cta-btn cta-btn--secondary">
+              <span className="cta-btn-label">{secondaryBtn.label}</span>
+              <span className="cta-btn-glow" aria-hidden="true" />
+            </Link>
+          )}
 
         </div>
       </motion.div>

@@ -12,7 +12,7 @@ export function SomOutcomes() {
   const active = items[activeIdx]
 
   return (
-    <section className="py-[100px] overflow-hidden" style={{ background: 'linear-gradient(#121218 47%, #252534 100%)' }}>
+    <section className="py-16 md:py-[100px] overflow-hidden" style={{ background: 'linear-gradient(#121218 47%, #252534 100%)' }}>
       <div className="container-sirp">
 
         {/* Heading */}
@@ -21,7 +21,7 @@ export function SomOutcomes() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-white text-center font-sans font-bold mb-12"
+          className="text-white text-center font-sans font-bold mb-8 md:mb-12"
           style={{
             fontSize: 'clamp(2rem, 5vw, 60px)',
             lineHeight: '1.15',

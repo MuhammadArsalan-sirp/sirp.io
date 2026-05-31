@@ -9,7 +9,7 @@ export function SomDeployments() {
   const { badge, heading, items } = SOM_DEPLOYMENTS
 
   return (
-    <section className="bg-[#121218] py-[100px] overflow-hidden">
+    <section className="bg-[#121218] py-16 md:py-[100px] overflow-hidden">
       <div className="container-sirp">
 
         {/* Badge */}
@@ -29,7 +29,7 @@ export function SomDeployments() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.05 }}
-          className="text-white font-sans mb-14"
+          className="text-white font-sans mb-10 md:mb-14"
           style={{ fontSize: 'clamp(2.4rem, 5vw, 60px)', fontWeight: 500, lineHeight: '110%' }}
         >
           <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic' }}>{heading.italic}</span>

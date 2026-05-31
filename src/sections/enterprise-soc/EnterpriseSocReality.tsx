@@ -18,7 +18,7 @@ export function EnterpriseSocReality() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-16 max-w-[780px]"
+          className="mb-10 md:mb-16 max-w-[780px]"
         >
           <span className="inline-flex items-center gap-2 font-sans text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-lg border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)] mb-6">
             <Image
@@ -34,7 +34,7 @@ export function EnterpriseSocReality() {
           <h2
             className="font-sans font-bold text-white mb-6"
             style={{
-              fontSize: '60px',
+              fontSize: 'clamp(2rem, 5.5vw, 3.75rem)',
               lineHeight: '1.1',
               letterSpacing: '-0.03em',
             }}
@@ -46,7 +46,7 @@ export function EnterpriseSocReality() {
 
           <p
             className="font-sans text-white/70 leading-relaxed"
-            style={{ fontSize: '20px' }}
+            style={{ fontSize: 'clamp(1rem, 1.8vw, 1.25rem)' }}
           >
             {subtext}
           </p>

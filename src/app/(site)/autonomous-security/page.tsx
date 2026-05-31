@@ -1,9 +1,17 @@
 import { PageHeader } from '@/components/layout/PageHeader'
 import { InfoCtaBlock } from '@/components/shared/InfoCtaBlock'
 import { SplitInfoCtaImage } from '@/components/shared/SplitInfoCtaImage'
+import { CtaSection } from '@/sections/home/CtaSection'
 import './page.css'
 
 export default function Page() {
+  const autonomousCtaData = {
+    heading: "Experience true",
+    headingItalic: "autonomy",
+    primaryBtn: { label: "Request Demo", href: "/contact" },
+    secondaryBtn: { label: "Read Whitepaper", href: "/technical-white-paper" }
+  }
+
   return (
     <div className="autonomous-security-page">
       <PageHeader
@@ -243,6 +251,8 @@ export default function Page() {
           href: '/technical-white-paper',
         }}
       />
+
+      <CtaSection data={autonomousCtaData} />
     </div>
   )
 }

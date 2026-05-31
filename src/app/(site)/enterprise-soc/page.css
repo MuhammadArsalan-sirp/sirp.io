@@ -1,0 +1,4 @@
+/* Enterprise SOC — CTA dome tighter overlap */
+.enterprise-soc-page .cta-section {
+  margin-top: -2rem;
+}

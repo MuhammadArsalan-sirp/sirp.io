@@ -76,7 +76,7 @@ export function EnterpriseSocHero() {
           >
             <p
               className="font-sans text-white leading-relaxed"
-              style={{ fontSize: '18px' }}
+              style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.125rem)' }}
             >
               {description}
             </p>

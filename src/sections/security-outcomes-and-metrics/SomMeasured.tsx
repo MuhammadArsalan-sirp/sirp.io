@@ -9,7 +9,7 @@ export function SomMeasured() {
   const { label, excluded, items } = SOM_MEASURED
 
   return (
-    <section className="bg-[#121218] pb-[100px] px-[80px]">
+    <section className="bg-[#121218] pb-16 md:pb-[100px] px-4 sm:px-8 lg:px-[80px]">
       <div className="w-full">
 
         {/* Heading */}
@@ -18,10 +18,10 @@ export function SomMeasured() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
           style={{
             fontFamily: 'var(--font-inter, sans-serif)',
-            fontSize: '20px',
+            fontSize: 'clamp(1rem, 2vw, 1.25rem)',
             fontWeight: 700,
             color: '#ffffff',
           }}
@@ -30,7 +30,7 @@ export function SomMeasured() {
         </motion.p>
 
         {/* 4-column cards */}
-        <div className="grid grid-cols-4 gap-4 w-full">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full">
           {items.map((item, i) => (
             <motion.div
               key={item.id}

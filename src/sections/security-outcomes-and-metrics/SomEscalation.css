@@ -13,8 +13,8 @@
   flex: none;
   place-content: flex-start;
   align-items: flex-start;
-  gap: 60px;
-  width: 522px;
+  gap: 48px;
+  width: 100%;
   height: min-content;
   position: relative;
   overflow: visible;
@@ -23,7 +23,7 @@
 /* ─── Heading ─────────────────────────────────────────────── */
 .som-esc-heading {
   font-family: var(--font-inter, sans-serif);
-  font-size: 42px;
+  font-size: clamp(1.75rem, 4vw, 2.625rem);
   font-weight: 500;
   color: #ffffff;
   line-height: 110%;

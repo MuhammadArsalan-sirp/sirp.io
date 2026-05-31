@@ -9,7 +9,7 @@ export function SomEscalation() {
   const { heading, escalationLabel, escalations, stats, summary } = SOM_SYSTEM
 
   return (
-    <section className="bg-[#121218] py-[100px]">
+    <section className="bg-[#121218] py-16 md:py-[100px]">
       <div className="container-sirp">
         <div className="som-esc-grid">
 
