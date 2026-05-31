@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { PurplePill } from '@/components/shared/PurplePill'
 import { ENTERPRISE_SOC_REALITY } from '@/lib/constants/enterprise-soc'
 import './EnterpriseSocReality.css'
 
@@ -18,36 +19,17 @@ export function EnterpriseSocReality() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-10 md:mb-16 max-w-[780px]"
+          className="esoc-reality-header mb-10 md:mb-16"
         >
-          <span className="inline-flex items-center gap-2 font-sans text-[11px] font-medium tracking-widest uppercase px-3 py-1 rounded-lg border border-[#8e2dff] text-white bg-[rgba(142,45,255,0.25)] mb-6">
-            <Image
-              src="/images/enterprise-soc/shine.svg"
-              alt=""
-              width={14}
-              height={14}
-              unoptimized
-            />
-            {badge}
-          </span>
+          <PurplePill className="mb-6 rounded-lg">{badge}</PurplePill>
 
-          <h2
-            className="font-sans font-bold text-white mb-6"
-            style={{
-              fontSize: 'clamp(2rem, 5.5vw, 3.75rem)',
-              lineHeight: '1.1',
-              letterSpacing: '-0.03em',
-            }}
-          >
+          <h2 className="esoc-section-heading font-sans font-bold text-white mb-6">
             {heading.line1}
             <br />
             <em>{heading.line2}</em>
           </h2>
 
-          <p
-            className="font-sans text-white/70 leading-relaxed"
-            style={{ fontSize: 'clamp(1rem, 1.8vw, 1.25rem)' }}
-          >
+          <p className="esoc-section-subtext font-sans text-white/70">
             {subtext}
           </p>
         </motion.div>
@@ -66,13 +48,10 @@ export function EnterpriseSocReality() {
               {/* Text top (before image) */}
               {card.textTop && (
                 <div className="px-5 pt-6 pb-5 md:px-8 md:pt-8 md:pb-6">
-                  <h3
-                    className="font-sans font-semibold text-white mb-3"
-                    style={{ fontSize: 'clamp(22px, 3.5vw, 34px)', lineHeight: '1.3' }}
-                  >
+                  <h3 className="esoc-card-title font-sans font-semibold text-white mb-3">
                     {card.title}
                   </h3>
-                  <p className="font-sans text-white/60 leading-[1.75]" style={{ fontSize: '16px' }}>
+                  <p className="esoc-card-body font-sans text-white/60">
                     {card.description}
                   </p>
                 </div>
@@ -92,13 +71,10 @@ export function EnterpriseSocReality() {
               {/* Text bottom (after image) */}
               {!card.textTop && (
                 <div className="px-5 py-5 md:px-8 md:py-7">
-                  <h3
-                    className="font-sans font-semibold text-white mb-3"
-                    style={{ fontSize: 'clamp(22px, 3.5vw, 34px)', lineHeight: '1.3' }}
-                  >
+                  <h3 className="esoc-card-title font-sans font-semibold text-white mb-3">
                     {card.title}
                   </h3>
-                  <p className="font-sans text-white/60 leading-[1.75]" style={{ fontSize: '16px' }}>
+                  <p className="esoc-card-body font-sans text-white/60">
                     {card.description}
                   </p>
                 </div>

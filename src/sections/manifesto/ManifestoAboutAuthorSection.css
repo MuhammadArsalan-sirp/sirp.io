@@ -20,8 +20,12 @@
   padding: clamp(1.5rem, 3vw, 2.25rem) clamp(1.35rem, 2.8vw, 2rem);
   text-align: center;
   border-radius: 16px;
-  border: 1px solid rgba(168, 85, 247, 0.55);
+  border: 1.5px solid rgba(168, 85, 247, 0.85);
   background: rgba(142, 45, 255, 0.05);
+  box-shadow:
+    0 0 18px rgba(142, 45, 255, 0.45),
+    0 0 36px rgba(142, 45, 255, 0.2),
+    inset 0 0 28px rgba(142, 45, 255, 0.1);
 }
 
 .manifesto-about-author-text {

@@ -250,7 +250,7 @@
   margin-top: 6px;
 }
 
-/* ─── Responsive ──────────────────────────────────────────── */
+/* ─── Responsive — tablet/mobile ─────────────────────────── */
 @media (max-width: 768px) {
   .deploy-card {
     min-height: auto;
@@ -269,5 +269,29 @@
   .deploy-card-body {
     padding: 24px;
     gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .deploy-logo-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .deploy-company {
+    font-size: 0.8125rem;
+    line-height: 1.35;
+    text-align: center;
+    width: 100%;
+  }
+
+  .deploy-pill-plus {
+    font-size: 1rem;
+  }
+
+  .deploy-logo-pill {
+    width: 28px;
+    height: 48px;
   }
 }

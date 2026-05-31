@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import { PurplePill } from '@/components/shared/PurplePill'
 import { SOM_OUTCOMES } from '@/lib/constants/security-outcomes-and-metrics'
 import './SomOutcomes.css'
 
@@ -12,7 +13,10 @@ export function SomOutcomes() {
   const active = items[activeIdx]
 
   return (
-    <section className="py-16 md:py-[100px] overflow-hidden" style={{ background: 'linear-gradient(#121218 47%, #252534 100%)' }}>
+    <section
+      className="py-16 md:py-[100px] overflow-hidden"
+      style={{ background: 'linear-gradient(#121218 47%, #252534 100%)' }}
+    >
       <div className="container-sirp">
 
         {/* Heading */}
@@ -21,12 +25,7 @@ export function SomOutcomes() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-white text-center font-sans font-bold mb-8 md:mb-12"
-          style={{
-            fontSize: 'clamp(2rem, 5vw, 60px)',
-            lineHeight: '1.15',
-            letterSpacing: '-0.025em',
-          }}
+          className="esoc-section-heading text-white text-center font-sans font-bold mb-8 md:mb-12"
         >
           The four outcomes of<br />switching to Sirp
         </motion.h2>
@@ -46,7 +45,7 @@ export function SomOutcomes() {
             <div className="outcomes-text">
               <h3 className="outcomes-title">{active.title}</h3>
               {active.badge && (
-                <span className="outcomes-badge">✦ {active.badge}</span>
+                <PurplePill className="outcomes-badge-pill mt-4 mb-6">{active.badge}</PurplePill>
               )}
               <AnimatePresence mode="wait">
                 <motion.div

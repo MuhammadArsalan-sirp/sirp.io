@@ -28,15 +28,11 @@ export function EnterpriseSocThreat() {
         className="text-center px-4"
       >
         <h2
-          className="text-white mx-auto"
+          className="esoc-threat-heading text-white mx-auto max-w-[780px]"
           style={{
             fontFamily: 'var(--font-serif)',
             fontStyle: 'italic',
             fontWeight: 500,
-            fontSize: 'clamp(2.4rem, 5vw, 4rem)',
-            lineHeight: '1.15',
-            letterSpacing: '-0.02em',
-            maxWidth: '780px',
           }}
         >
           {heading}

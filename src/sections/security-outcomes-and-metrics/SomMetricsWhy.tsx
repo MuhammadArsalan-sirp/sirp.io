@@ -20,21 +20,10 @@ export function SomMetricsWhy() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 md:mb-16"
         >
-          <h2
-            className="text-white font-sans mb-5"
-            style={{ fontFamily: 'var(--font-inter, sans-serif)', fontSize: 'clamp(2rem, 5.5vw, 3.75rem)', fontWeight: 500, lineHeight: '115%' }}
-          >
+          <h2 className="esoc-section-heading text-white font-sans font-medium mb-5">
             Why these metrics move<br />together
           </h2>
-          <p
-            className="mx-auto"
-            style={{
-              fontFamily: 'var(--font-inter, sans-serif)',
-              fontSize: 'clamp(0.95rem, 1.8vw, 1.25rem)',
-              fontWeight: 600,
-              color: '#ffffff',
-            }}
-          >
+          <p className="esoc-section-subtext mx-auto font-sans font-semibold text-white">
             {subtext}
           </p>
         </motion.div>

@@ -21,7 +21,7 @@ export function SomEscalation() {
             transition={{ duration: 0.6 }}
             className="som-esc-text"
           >
-            <h2 className="som-esc-heading">{heading}</h2>
+            <h2 className="som-esc-heading esoc-section-heading">{heading}</h2>
 
             {/* Escalation block */}
             <div className="som-esc-escalation">

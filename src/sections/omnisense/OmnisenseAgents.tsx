@@ -169,17 +169,17 @@ export function OmnisenseAgents({ data }: OmnisenseAgentsProps) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="container-sirp text-center mb-10 md:mb-14"
+        className="container-sirp text-center mb-10 md:mb-14 max-w-[960px] mx-auto"
       >
         <h2
-          className="font-bold text-white mb-4"
-          style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: '60px', lineHeight: '1.08', letterSpacing: '-0.03em' }}
+          className="font-bold text-white mb-4 mx-auto w-full"
+          style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: '60px', lineHeight: '1.08', letterSpacing: '-0.03em', maxWidth: '960px' }}
         >
           {heading}
         </h2>
         <p
-          className="text-white leading-relaxed mx-auto"
-          style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: '20px', maxWidth: '680px' }}
+          className="text-white leading-relaxed mx-auto w-full"
+          style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: '20px', maxWidth: '960px' }}
         >
           {description}
         </p>

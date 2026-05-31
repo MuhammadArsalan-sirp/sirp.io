@@ -38,13 +38,13 @@ export const SOAR_ALTERNATIVES_KEY_DIFFERENCES = {
       ],
     },
   ],
-  closing: {
-    lines: ['SOAR automates tasks. Autonomous SOC governs outcomes.'],
-    link: {
-      prefix: 'For a full structural comparison, see: ',
-      label: 'SOAR vs Autonomous SOC',
-      href: '/soar-vs-autonomous-soc',
-    },
+  footerWithLink: {
+    beforeLink: 'For a full structural comparison, see: ',
+    linkLabel: 'SOAR vs Autonomous SOC',
+    linkHref: '/soar-vs-autonomous-soc',
+    afterLink: '',
+    taglines: ['SOAR automates tasks.', 'Autonomous SOC governs outcomes.'],
+    taglinesPosition: 'before' as const,
   },
 } as const
 

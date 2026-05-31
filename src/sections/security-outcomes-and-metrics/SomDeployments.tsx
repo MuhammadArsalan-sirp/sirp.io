@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { PurplePill } from '@/components/shared/PurplePill'
 import { SOM_DEPLOYMENTS } from '@/lib/constants/security-outcomes-and-metrics'
 import './SomDeployments.css'
 
@@ -20,7 +21,7 @@ export function SomDeployments() {
           transition={{ duration: 0.5 }}
           className="mb-6"
         >
-          <span className="deploy-badge">✦ {badge}</span>
+          <PurplePill>{badge}</PurplePill>
         </motion.div>
 
         {/* Heading */}
@@ -29,8 +30,7 @@ export function SomDeployments() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.05 }}
-          className="text-white font-sans mb-10 md:mb-14"
-          style={{ fontSize: 'clamp(2.4rem, 5vw, 60px)', fontWeight: 500, lineHeight: '110%' }}
+          className="esoc-section-heading text-white font-sans font-medium mb-10 md:mb-14"
         >
           <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic' }}>{heading.italic}</span>
           {heading.suffix}

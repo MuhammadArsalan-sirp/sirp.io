@@ -41,7 +41,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
   } = data
 
   return (
-    <section className="bg-[#121218] border-t border-[#3a3a4c]">
+    <section className="bg-[#121218] border-t border-b border-[#3a3a4c]">
       <div className="container-sirp">
         <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-[80px] py-16 lg:py-0">
 

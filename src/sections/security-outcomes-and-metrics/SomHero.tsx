@@ -1,8 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import Link from 'next/link'
+import { PurplePill } from '@/components/shared/PurplePill'
 import { SOM_HERO } from '@/lib/constants/security-outcomes-and-metrics'
 
 export function SomHero() {
@@ -32,27 +32,7 @@ export function SomHero() {
           transition={{ duration: 0.5 }}
           className="flex justify-center mb-8"
         >
-          <span
-            className="inline-flex items-center gap-2 text-white"
-            style={{
-              fontFamily: 'var(--font-inter, sans-serif)',
-              fontSize: '12px',
-              fontWeight: 500,
-              padding: '5px 14px 5px 6px',
-              borderRadius: '6px',
-              border: '1px solid rgba(142,45,255,0.5)',
-              background: 'rgba(142,45,255,0.15)',
-            }}
-          >
-            <Image
-              src="/images/enterprise-soc/quater.svg"
-              alt=""
-              width={16}
-              height={16}
-              unoptimized
-            />
-            Security outcomes
-          </span>
+          <PurplePill className="rounded-lg">Security outcomes</PurplePill>
         </motion.div>
 
         {/* Heading — Framer source: h1 is Inter 500, only italic part is Noto Serif */}
@@ -60,15 +40,8 @@ export function SomHero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.05 }}
-          className="text-white mx-auto"
-          style={{
-            fontFamily: 'var(--font-inter, sans-serif)',
-            fontWeight: 500,
-            fontSize: 'clamp(2.4rem, 5vw, 74px)',
-            lineHeight: '110%',
-            textAlign: 'center',
-            maxWidth: '860px',
-          }}
+          className="esoc-hero-heading text-white mx-auto text-center max-w-[860px] font-sans font-medium"
+          style={{ fontFamily: 'var(--font-inter, sans-serif)' }}
         >
           <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic' }}>
             {heading.italic}{' '}
@@ -80,14 +53,7 @@ export function SomHero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.18 }}
-          className="mx-auto mt-7"
-          style={{
-            fontFamily: 'var(--font-sans)',
-            fontSize: '17px',
-            lineHeight: '1.65',
-            color: '#ffffff',
-            maxWidth: '500px',
-          }}
+          className="esoc-hero-desc mx-auto mt-7 max-w-[500px] text-white font-sans"
         >
           {subtext}
         </motion.p>
