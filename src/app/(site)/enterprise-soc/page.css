@@ -1,24 +1,24 @@
 /* Enterprise SOC — typography scale aligned with soar-alternatives/page.css */
 
 .enterprise-soc-page .esoc-hero-heading {
-  font-size: clamp(1.65rem, 5.5vw, 5rem);
+  font-size: 44px;
   line-height: 1.05;
   letter-spacing: -0.03em;
 }
 
 .enterprise-soc-page .esoc-hero-desc {
-  font-size: clamp(0.95rem, 1.6vw, 1.125rem);
+  font-size: 18px;
   line-height: 1.65;
 }
 
 .enterprise-soc-page .esoc-section-heading {
-  font-size: clamp(1.75rem, 4.5vw, 3.75rem);
+  font-size: 60px;
   line-height: 1.1;
   letter-spacing: -0.03em;
 }
 
 .enterprise-soc-page .esoc-section-subtext {
-  font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+  font-size: 18px;
   line-height: 1.65;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .enterprise-soc-page .esoc-threat-heading {
-  font-size: clamp(1.5rem, 4vw, 4rem);
+  font-size: 36px;
   line-height: 1.15;
   letter-spacing: -0.02em;
 }
@@ -63,6 +63,14 @@
   min-width: 0;
 }
 
+.enterprise-soc-page .impact-metrics-heading {
+  font-size: 42px;
+}
+
+.enterprise-soc-page .impact-metrics-subtext {
+  font-size: 18px;
+}
+
 /* CTA dome tighter overlap */
 .enterprise-soc-page .cta-section {
   margin-top: -2rem;
@@ -80,38 +88,46 @@
   }
 
   .enterprise-soc-page .esoc-section-heading {
-    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+    font-size: 60px;
     line-height: 1.18;
     letter-spacing: -0.01em;
   }
 
   .enterprise-soc-page .esoc-section-subtext {
-    font-size: 0.875rem;
+    font-size: 20px;
     line-height: 1.65;
   }
 
+  .enterprise-soc-page .esoc-ainative-section .esoc-section-heading {
+    font-size: 44px;
+  }
+
+  .enterprise-soc-page .esoc-ainative-section .esoc-section-subtext {
+    font-size: 18px;
+  }
+
   .enterprise-soc-page .esoc-card-title {
-    font-size: 1rem;
+    font-size: 26px;
     line-height: 1.22;
   }
 
   .enterprise-soc-page .esoc-card-body {
-    font-size: 0.875rem;
+    font-size: 16px;
     line-height: 1.65;
   }
 
   .enterprise-soc-page .esoc-shift-card-title {
-    font-size: 1rem;
+    font-size: 24px;
     line-height: 1.22;
   }
 
   .enterprise-soc-page .esoc-shift-card-body {
-    font-size: 0.875rem;
+    font-size: 16px;
     line-height: 1.65;
   }
 
   .enterprise-soc-page .esoc-threat-heading {
-    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+    font-size: 36px;
     line-height: 1.18;
   }
 
@@ -140,14 +156,14 @@
   }
 
   .enterprise-soc-page .impact-metrics-heading {
-    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+    font-size: 42px;
     line-height: 1.18;
     letter-spacing: -0.01em;
   }
 
   .enterprise-soc-page .impact-metrics-subtext,
   .enterprise-soc-page .impact-metrics-subtitle {
-    font-size: 0.875rem;
+    font-size: 18px;
     line-height: 1.65;
   }
 

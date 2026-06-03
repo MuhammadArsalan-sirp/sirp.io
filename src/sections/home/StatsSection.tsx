@@ -68,7 +68,7 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
             <h2
               className="text-white font-bold mt-3 mb-3"
               style={{
-                fontSize: 'clamp(1.8rem, 3.5vw, 2.625rem)',
+                fontSize: 'clamp(1.75rem, 5vw, 2.625rem)',
                 lineHeight: '1.2',
                 letterSpacing: '-0.02em',
                 fontFamily: 'Inter, sans-serif',
@@ -114,53 +114,55 @@ export function StatsSection({ data = STATS_DATA }: StatsSectionProps) {
                   transition={{ duration: 0.4, delay: i * 0.1 }}
                   className="flex items-center gap-3 md:gap-4 py-3 md:py-5"
                 >
-                  {/* Icon */}
-                  <div className="relative flex-shrink-0 w-[44px] h-[74px] md:w-[58px] md:h-[97px] self-center">
-                    <Image
-                      src={stat.icon}
-                      alt={stat.label}
-                      fill
-                      style={{ objectFit: 'contain' }}
-                      unoptimized
-                    />
-                  </div>
 
-                  {/* Mobile: number+% stacked above label | Desktop: number% + label inline */}
-                  <div className="flex flex-col gap-1 lg:flex-row lg:items-center lg:gap-6 flex-1">
-                    {/* Number + % */}
-                    <div className="flex items-center gap-0 flex-shrink-0">
-                      <span
-                        className="font-['Noto_Serif',serif] font-normal leading-[1.1]"
-                        style={{
-                          fontSize: 'clamp(4rem, 20vw, 6.875rem)',
-                          letterSpacing: '-0.02em',
-                          backgroundImage: stat.gradient,
-                          WebkitBackgroundClip: 'text',
-                          WebkitTextFillColor: 'transparent',
-                          backgroundClip: 'text',
-                        }}
-                      >
-                        {stat.value}
-                      </span>
-                      <span
-                        className="font-['Noto_Serif',serif] font-normal leading-[1.1] self-start mt-2 lg:mt-3"
-                        style={{
-                          fontSize: 'clamp(2.5rem, 12vw, 4rem)',
-                          backgroundImage: stat.gradient,
-                          WebkitBackgroundClip: 'text',
-                          WebkitTextFillColor: 'transparent',
-                          backgroundClip: 'text',
-                        }}
-                      >
-                        %
-                      </span>
+                    {/* Icon */}
+                    <div className="relative flex-shrink-0 w-[44px] h-[74px] md:w-[58px] md:h-[97px] self-center">
+                      <Image
+                        src={stat.icon}
+                        alt={stat.label}
+                        fill
+                        style={{ objectFit: 'contain' }}
+                        unoptimized
+                      />
                     </div>
 
-                    {/* Label */}
-                    <span className="text-white font-semibold text-base leading-snug font-['Inter',sans-serif] lg:max-w-[220px]">
-                      {stat.label}
-                    </span>
-                  </div>
+                    {/* Number+% stacked above label on mobile, inline on desktop */}
+                    <div className="flex flex-col gap-0.5 lg:flex-row lg:items-center lg:gap-6 lg:flex-1">
+                      {/* Number + % */}
+                      <div className="flex items-center gap-0 flex-shrink-0">
+                        <span
+                          className="font-['Noto_Serif',serif] font-normal leading-[1.1]"
+                          style={{
+                            fontSize: 'clamp(4rem, 18vw, 6.875rem)',
+                            letterSpacing: '-0.02em',
+                            fontVariantNumeric: 'tabular-nums',
+                            backgroundImage: stat.gradient,
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                            backgroundClip: 'text',
+                          }}
+                        >
+                          {stat.value}
+                        </span>
+                        <span
+                          className="font-['Noto_Serif',serif] font-normal leading-[1.1] self-start mt-2 lg:mt-3"
+                          style={{
+                            fontSize: 'clamp(2.25rem, 10vw, 4rem)',
+                            backgroundImage: stat.gradient,
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                            backgroundClip: 'text',
+                          }}
+                        >
+                          %
+                        </span>
+                      </div>
+
+                      {/* Label */}
+                      <span className="text-white font-semibold text-sm leading-snug font-['Inter',sans-serif] lg:max-w-[220px]">
+                        {stat.label}
+                      </span>
+                    </div>
                 </motion.div>
 
                 {/* Row divider */}

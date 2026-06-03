@@ -56,11 +56,17 @@ export function OmnisensePlatform({ data }: OmnisensePlatformProps) {
             }}
           >
             {heading}
-            <br />
-            <span className="block" style={{ lineHeight: '1.08' }}>
-              <em>{headingItalic}</em> {headingSuffix}
-            </span>
           </h2>
+          <p
+            className="font-sans text-white mt-2 md:mt-3"
+            style={{
+              fontSize: '16px',
+              lineHeight: '1.5',
+              letterSpacing: '-0.01em',
+            }}
+          >
+            <em>{headingItalic}</em> {headingSuffix}
+          </p>
         </motion.div>
 
         {/* Card */}

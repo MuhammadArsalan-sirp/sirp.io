@@ -29,7 +29,7 @@
 
 .autonomous-security-page .split-info-cta-image.autonomous-security-split .split-image {
   object-fit: contain;
-  object-position: top center;
+  object-position: center center;
 }
 
 @media (max-width: 900px) {
@@ -40,13 +40,13 @@
 
 @media (max-width: 640px) {
   .autonomous-security-page .split-info-cta-image.autonomous-security-split .split-image-wrap {
-    height: clamp(220px, 62vw, 320px);
+    height: 100vw;
   }
 }
 
 @media (max-width: 480px) {
   .autonomous-security-page .split-info-cta-image.autonomous-security-split .split-image-wrap {
-    height: clamp(200px, 58vw, 280px);
+    height: 100vw;
   }
 }
 
@@ -67,6 +67,12 @@
 }
 
 @media (max-width: 640px) {
+  /* "Go Deeper" heading — 44px on mobile */
+  .autonomous-security-page .split-info-cta-image.autonomous-security-split .info-cta-heading {
+    font-size: 2.75rem; /* 44px */
+    line-height: 1.08;
+  }
+
   .autonomous-security-page .info-cta-block {
     padding: 1.85rem 0 1.15rem;
   }

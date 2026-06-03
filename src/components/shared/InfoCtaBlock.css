@@ -66,14 +66,14 @@
   }
 
   .info-cta-heading {
-    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+    font-size: 1.875rem; /* 30px */
     line-height: 1.18;
     letter-spacing: -0.025em;
   }
 
   .info-cta-body {
     margin-top: 1.15rem;
-    font-size: 0.875rem;
+    font-size: 1rem; /* 16px */
     line-height: 1.65;
   }
 
@@ -141,13 +141,13 @@
   }
 
   .info-cta-block--authority .info-cta-heading {
-    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+    font-size: 1.875rem; /* 30px */
     line-height: 1.18;
   }
 
   .info-cta-block--authority .info-cta-body {
     margin-top: 1.35rem;
-    font-size: 0.875rem;
+    font-size: 1rem; /* 16px */
     line-height: 1.55;
   }
 

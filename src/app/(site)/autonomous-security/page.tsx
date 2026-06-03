@@ -18,7 +18,9 @@ export default function Page() {
         badgeText="Pillar"
         heading={
           <>
-            <em>Autonomous SOC</em>
+            <em>Autonomous</em>
+            <br />
+            <em>SOC</em>
             <br />
             From Playbooks to
             <br />

@@ -58,7 +58,7 @@ export function IntegrationsSection({ data = INTEGRATIONS_DATA }: IntegrationsSe
           <h2
             className="font-sans font-bold text-white mt-4 mb-4"
             style={{
-              fontSize: 'clamp(2rem, 6vw, 5rem)',
+              fontSize: 'clamp(1.75rem, 6vw, 5rem)',
               lineHeight: '1.1',
               letterSpacing: '-0.03em',
             }}

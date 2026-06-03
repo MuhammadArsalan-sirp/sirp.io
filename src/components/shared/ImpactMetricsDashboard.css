@@ -28,13 +28,13 @@
 }
 
 .impact-metrics-heading {
-  font-size: clamp(1.625rem, 7vw, 2rem);
+  font-size: 42px;
   line-height: 1.15;
   letter-spacing: -0.02em;
 }
 
 .impact-metrics-subtext {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   margin-top: 1rem;
 }
@@ -85,8 +85,8 @@
 }
 
 .impact-metrics-pill {
-  width: 36px;
-  height: 64px;
+  width: 44px;
+  height: 80px;
   border-radius: 999px;
   flex-shrink: 0;
   display: flex;
@@ -161,7 +161,7 @@
 .impact-metrics-value {
   font-family: var(--font-serif);
   font-weight: 600;
-  font-size: clamp(2rem, 10vw, 2.75rem);
+  font-size: clamp(2.5rem, 10vw, 2.75rem);
   line-height: 1.05;
   letter-spacing: -0.02em;
   white-space: normal;
