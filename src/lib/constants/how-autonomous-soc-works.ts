@@ -1,7 +1,7 @@
 export const HOW_AUTONOMOUS_SOC_WORKS_DATA = {
   hero: {
     badge: 'HOW IT WORKS',
-    heading: 'How an autonomous SOC works',
+    heading: 'Your SOC, on autopilot.',
     headingItalic: '',
     description: 'SIRP doesn\'t add automation to a broken process. It replaces the process entirely with a continuous decision system that ingests, reasons, governs, acts, and learns. In real time.',
   },

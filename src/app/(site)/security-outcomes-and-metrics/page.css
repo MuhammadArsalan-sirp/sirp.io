@@ -48,71 +48,88 @@
 }
 
 @media (max-width: 640px) {
+  /* ── Headings ── */
   .security-outcomes-page .esoc-hero-heading {
-    font-size: clamp(1.65rem, 7.2vw, 2.15rem);
+    font-size: 42px;
     letter-spacing: -0.01em;
   }
 
-  .security-outcomes-page .esoc-hero-desc {
-    font-size: 0.875rem;
-    line-height: 1.65;
-  }
-
   .security-outcomes-page .esoc-section-heading {
-    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+    font-size: 42px;
     line-height: 1.18;
     letter-spacing: -0.01em;
   }
 
+  .security-outcomes-page .esoc-card-title {
+    font-size: 24px;
+    line-height: 1.22;
+  }
+
+  .security-outcomes-page .esoc-shift-card-title {
+    font-size: 24px;
+    line-height: 1.22;
+  }
+
+  .security-outcomes-page .impact-metrics-heading {
+    font-size: 42px;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+  }
+
+  .security-outcomes-page .outcomes-title {
+    font-size: 42px;
+    line-height: 1.18;
+  }
+
+  .security-outcomes-page .som-mwhy-title {
+    font-size: 24px;
+    line-height: 1.22;
+  }
+
+  .security-outcomes-page .som-soc-heading {
+    font-size: 42px;
+    line-height: 1.18;
+  }
+
+  .security-outcomes-page .som-esc-heading {
+    font-size: 42px;
+    line-height: 1.18;
+  }
+
+  /* ── Paragraphs / body text ── */
+  .security-outcomes-page .esoc-hero-desc {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
   .security-outcomes-page .esoc-section-subtext {
-    font-size: 0.875rem;
+    font-size: 16px;
     line-height: 1.65;
     white-space: normal;
   }
 
-  .security-outcomes-page .esoc-card-title {
-    font-size: 1rem;
-    line-height: 1.22;
-  }
-
   .security-outcomes-page .esoc-card-body {
-    font-size: 0.875rem;
+    font-size: 16px;
     line-height: 1.65;
-  }
-
-  .security-outcomes-page .esoc-shift-card-title {
-    font-size: 1rem;
-    line-height: 1.22;
   }
 
   .security-outcomes-page .esoc-shift-card-body {
-    font-size: 0.875rem;
+    font-size: 16px;
     line-height: 1.65;
-  }
-
-  .security-outcomes-page .impact-metrics-heading {
-    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
-    line-height: 1.18;
-    letter-spacing: -0.01em;
   }
 
   .security-outcomes-page .impact-metrics-subtext,
   .security-outcomes-page .impact-metrics-subtitle {
-    font-size: 0.875rem;
+    font-size: 16px;
     line-height: 1.65;
   }
 
   .security-outcomes-page .impact-metrics-value {
-    font-size: clamp(1.75rem, 8vw, 2.25rem);
-  }
-
-  .security-outcomes-page .outcomes-title {
-    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
-    line-height: 1.18;
+    font-size: clamp(2.5rem, 8vw, 3rem);
   }
 
   .security-outcomes-page .outcomes-para {
-    font-size: 0.875rem;
+    font-size: 16px;
     line-height: 1.65;
   }
 
@@ -121,13 +138,8 @@
     flex: 1 1 100%;
   }
 
-  .security-outcomes-page .som-mwhy-title {
-    font-size: 1rem;
-    line-height: 1.22;
-  }
-
   .security-outcomes-page .som-mwhy-body {
-    font-size: 0.875rem;
+    font-size: 16px;
     line-height: 1.65;
   }
 
@@ -135,13 +147,8 @@
     padding: 28px 24px;
   }
 
-  .security-outcomes-page .som-soc-heading {
-    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
-    line-height: 1.18;
-  }
-
   .security-outcomes-page .som-soc-para {
-    font-size: 0.875rem;
+    font-size: 16px;
     line-height: 1.65;
   }
 
@@ -150,33 +157,28 @@
     gap: 32px;
   }
 
-  .security-outcomes-page .som-esc-heading {
-    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
-    line-height: 1.18;
-  }
-
   .security-outcomes-page .som-esc-label,
   .security-outcomes-page .som-esc-item,
   .security-outcomes-page .som-esc-stat,
   .security-outcomes-page .som-esc-summary {
-    font-size: 0.875rem;
+    font-size: 16px;
     line-height: 1.65;
   }
 
   .security-outcomes-page .som-measured-value {
-    font-size: 1rem;
+    font-size: 24px;
     line-height: 1.22;
   }
 
   .security-outcomes-page .som-measured-label,
   .security-outcomes-page .som-measured-excluded {
-    font-size: 0.875rem;
+    font-size: 16px;
     line-height: 1.65;
   }
 
   .security-outcomes-page .deploy-text,
   .security-outcomes-page .deploy-quote-text {
-    font-size: 0.875rem;
+    font-size: 16px;
     line-height: 1.65;
   }
 
@@ -186,7 +188,7 @@
   }
 
   .security-outcomes-page .deploy-company {
-    font-size: 0.8125rem;
+    font-size: 16px;
     line-height: 1.35;
   }
 

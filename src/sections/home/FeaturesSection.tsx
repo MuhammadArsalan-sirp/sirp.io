@@ -49,7 +49,7 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
           <h2
             className="font-sans text-white mt-4"
             style={{
-              fontSize: 'clamp(2.25rem, 5vw, 3.5rem)',
+              fontSize: 'clamp(1.75rem, 5vw, 3.5rem)',
               fontWeight: 500,
               lineHeight: '1.2',
             }}
@@ -72,7 +72,7 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
             >
               {/* Image top */}
               {!feature.textTop && (
-                <div className="relative w-full h-[200px] md:h-[280px] overflow-hidden">
+                <div className="relative w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[280px] overflow-hidden">
                   <Image
                     src={feature.image}
                     alt={feature.title}
@@ -101,7 +101,7 @@ export function FeaturesSection({ data = FEATURES_DATA }: FeaturesSectionProps) 
 
               {/* Image bottom */}
               {feature.textTop && (
-                <div className="relative w-full h-[200px] md:h-[280px] overflow-hidden">
+                <div className="relative w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[280px] overflow-hidden">
                   <Image
                     src={feature.image}
                     alt={feature.title}

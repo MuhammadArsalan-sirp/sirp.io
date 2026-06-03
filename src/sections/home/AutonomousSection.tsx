@@ -47,7 +47,7 @@ export function AutonomousSection({ data = AUTONOMOUS_DATA }: AutonomousSectionP
           <h2
             className="font-sans font-bold text-white mb-4 md:mb-6"
             style={{
-              fontSize: 'clamp(2rem, 5vw, 3.75rem)',
+              fontSize: 'clamp(1.625rem, 5vw, 3.75rem)',
               lineHeight: '1.1',
               letterSpacing: '-0.03em',
             }}

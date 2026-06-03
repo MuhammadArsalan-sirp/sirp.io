@@ -31,7 +31,7 @@ export function AutonomousSocSafetySection({ data }: AutonomousSocSafetySectionP
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="relative mx-auto w-full max-w-[680px]"
+            className="relative mx-auto w-full max-w-[680px] order-last lg:order-first"
           >
             <Image
               src={data.image.src}
@@ -48,7 +48,7 @@ export function AutonomousSocSafetySection({ data }: AutonomousSocSafetySectionP
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.08 }}
-            className="max-w-[620px]"
+            className="max-w-[620px] order-first lg:order-last"
           >
             <h2 className="font-['Inter',sans-serif] text-white text-[42px] leading-[1.2] font-medium tracking-tight">
               {data.heading.line1}

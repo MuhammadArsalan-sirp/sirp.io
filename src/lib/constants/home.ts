@@ -95,7 +95,8 @@ export const FEATURES_DATA = {
 
 /* ─── Intelligence Section ───────────────────────────────── */
 export const INTELLIGENCE_DATA = {
-  heading: 'See intelligence come',
+  heading: 'See intelligence',
+  headingPrefix: 'come',
   headingItalic: 'alive',
   description: 'From overwhelming alert floods to prioritized incidents and automated response, OmniSense streamlines the entire journey without slowing you down.',
   videoSrc: '/video/Home-Feature.mp4',
@@ -119,7 +120,7 @@ export const INTEGRATIONS_DATA = {
   heading: 'Every tool.',
   headingItalic: 'One',
   headingSuffix: 'intelligence.',
-  description: 'Connect 200+ tools into a single AI-native Autonomous SOC brain, or go further. With SIRP\'s AI assisted code builder, you can create your own integrations on the fly. Your SOC doesn\'t bend to us, OmniSense adapts to your stack.',
+  description: 'OmniSense delivers measurable outcomes with less human intervention.',
   logos: Array.from({ length: 16 }, (_, i) => ({
     name: `Integration ${i + 2}`,
     src: `/images/integrations/logo-${i + 2}.svg`,

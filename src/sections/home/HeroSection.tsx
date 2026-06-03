@@ -82,8 +82,8 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
       />
 
       {/* Content — aligned with header logo via container-sirp */}
-      <div className="absolute left-0 right-0 bottom-[8rem] z-10 sm:bottom-[8.5rem] md:bottom-[9rem] lg:bottom-[9.5rem]">
-        <div className="container-sirp flex flex-col gap-4 lg:gap-6">
+      <div className="absolute left-0 right-0 bottom-[5rem] z-10 sm:bottom-[6rem] md:bottom-[8rem] lg:bottom-[9.5rem]">
+        <div className="container-sirp flex flex-col gap-3 sm:gap-4 lg:gap-6">
 
         {/* Pill */}
         <motion.div
@@ -105,7 +105,7 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
             transition={{ ...HERO_ENTER, delay: 0.02 }}
             className="font-sans font-bold text-white"
             style={{
-              fontSize: 'clamp(2.25rem, 4.8vw, 5rem)',
+              fontSize: 'clamp(1.85rem, 6vw, 5rem)',
               lineHeight: '1.08',
               letterSpacing: '-0.03em',
             }}
@@ -117,7 +117,7 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...HERO_ENTER, delay: 0.03 }}
-            className="mt-3 md:mt-4 font-sans font-medium text-sm md:text-lg leading-relaxed text-white"
+            className="font-sans font-medium text-sm md:text-base lg:text-lg leading-relaxed text-white"
             style={{ maxWidth: '740px' }}
           >
             {subheading}

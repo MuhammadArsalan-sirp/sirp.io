@@ -49,7 +49,7 @@ export function SaraSection({ data = SARA_DATA }: SaraSectionProps) {
             <h2
               className="font-sans font-bold text-white mb-6"
               style={{
-                fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+                fontSize: 'clamp(1.625rem, 4vw, 3rem)',
                 lineHeight: '1.2',
                 letterSpacing: '-0.03em',
               }}

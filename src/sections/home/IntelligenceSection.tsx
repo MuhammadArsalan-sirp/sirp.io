@@ -9,6 +9,7 @@ const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 /* ─── Types ──────────────────────────────────────────────── */
 interface IntelligenceData {
   heading:       string
+  headingPrefix: string
   headingItalic: string
   description:   string
   videoSrc:      string
@@ -28,7 +29,7 @@ const intelligenceAnim = {
 
 /* ─── Component ──────────────────────────────────────────── */
 export function IntelligenceSection({ data = INTELLIGENCE_DATA }: IntelligenceSectionProps) {
-  const { heading, headingItalic, description } = data
+  const { heading, headingPrefix, headingItalic, description } = data
 
   return (
     <section className="bg-[#121218] py-16 md:py-[100px] overflow-hidden">
@@ -45,13 +46,14 @@ export function IntelligenceSection({ data = INTELLIGENCE_DATA }: IntelligenceSe
           <h2
             className="font-sans font-bold text-white mb-5"
             style={{
-              fontSize: 'clamp(2rem, 5vw, 4rem)',
+              fontSize: 'clamp(1.75rem, 5vw, 4rem)',
               lineHeight: '1.15',
               letterSpacing: '-0.03em',
             }}
           >
-            {heading}{' '}
-            <em>{headingItalic}</em>
+            {heading}
+            <br />
+            {headingPrefix} <em>{headingItalic}</em>
           </h2>
           <p className="font-sans text-white/70 text-base md:text-lg leading-[1.7] max-w-[620px] mx-auto">
             {description}

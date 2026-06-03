@@ -9,13 +9,13 @@
 
 @media (max-width: 640px) {
   .how-autonomous-soc-works-page .page-header-heading {
-    font-size: clamp(1.65rem, 7.2vw, 2.15rem);
+    font-size: 2.75rem; /* 44px */
     letter-spacing: -0.01em;
   }
 
   .how-autonomous-soc-works-page .page-header-subtext {
-    font-size: 0.9rem;
-    line-height: 1.6;
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.7;
   }
 
   .how-autonomous-soc-works-page > section.bg-\[\#121218\]:not(:last-of-type) {
@@ -46,7 +46,7 @@
 
 @media (max-width: 480px) {
   .how-autonomous-soc-works-page .page-header-heading {
-    font-size: clamp(1.5rem, 6.8vw, 1.95rem);
+    font-size: 2.75rem; /* keep 44px on small phones */
   }
 
   .how-autonomous-soc-works-page > section.bg-\[\#121218\]:not(:last-of-type) h2,

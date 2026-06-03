@@ -73,7 +73,7 @@ export function OmnisenseHero({ data }: OmnisenseHeroProps) {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="flex flex-col gap-5 lg:justify-end lg:gap-8"
           >
-            <p className="font-sans text-white leading-relaxed text-[15px] lg:text-[17px]">
+            <p className="font-sans text-white leading-relaxed text-[16px] lg:text-[17px]">
               {description}
             </p>
             <Link

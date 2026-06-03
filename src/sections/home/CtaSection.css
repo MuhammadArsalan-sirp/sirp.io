@@ -7,7 +7,7 @@
   position: relative;
   background-color: rgb(18, 18, 24);
   z-index: 30;
-  margin-top: -8rem;
+  margin-top: -4rem;
   overflow-x: clip;
   overflow-y: visible;
   display: flex;

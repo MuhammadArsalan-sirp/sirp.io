@@ -81,6 +81,7 @@ export default function Page() {
       <SplitInfoCtaImage
         animateOnScroll
         bodyFontSize="18"
+        sectionClassName="soar-what-is-soar-section"
         heading={<span className="traditional-models-heading">{whatIsSoar.heading}</span>}
         body={
           <>
