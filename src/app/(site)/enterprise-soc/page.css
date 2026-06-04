@@ -76,6 +76,107 @@
   margin-top: -2rem;
 }
 
+/* CTA pill — layout only; typography from PurplePill + CtaSection.css */
+.enterprise-soc-page .cta-content .cta-pill.purple-pill {
+  position: relative;
+  z-index: 31;
+}
+
+/* Desktop — thinner pill, sits higher in the dome */
+@media (min-width: 769px) {
+  .enterprise-soc-page .cta-content .cta-pill.purple-pill {
+    padding: 4px 11px;
+    font-size: 11px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    border-radius: 5px;
+  }
+
+  .enterprise-soc-page .cta-content:has(.cta-pill) .cta-heading {
+    margin-top: clamp(-1.25rem, -3vw, -0.5rem);
+  }
+}
+
+@media (min-width: 1025px) {
+  .enterprise-soc-page .cta-content .cta-pill.purple-pill {
+    transform: translateY(0.35rem);
+  }
+}
+
+@media (min-width: 821px) and (max-width: 1024px) {
+  .enterprise-soc-page .cta-content .cta-pill.purple-pill {
+    transform: translateY(calc(0.5rem + 0.5vw));
+  }
+}
+
+@media (min-width: 769px) and (max-width: 820px) {
+  .enterprise-soc-page .cta-content .cta-pill.purple-pill {
+    transform: translateY(calc(0.65rem + 1vw));
+  }
+}
+
+/*
+ * iPhone — pin pill inside the dome (absolute to section, vw tracks dome height).
+ * Heading stays in flow below the pill slot.
+ */
+@media (max-width: 768px) {
+  .enterprise-soc-page .cta-section {
+    position: relative;
+  }
+
+  .enterprise-soc-page .cta-content {
+    width: 100%;
+    gap: 16px;
+    padding-top: calc(3.5rem + 39vw);
+  }
+
+  .enterprise-soc-page .cta-content:has(.cta-pill) .cta-heading {
+    margin-top: 0.5rem;
+  }
+
+  .enterprise-soc-page .cta-section .cta-content .cta-pill.purple-pill {
+    position: absolute;
+    top: calc(5rem + 33vw);
+    left: 50%;
+    margin: 0;
+    transform: translateX(-50%) scale(0.88);
+    transform-origin: center top;
+    max-width: calc(100vw - 2.5rem);
+    padding: 2px 6px;
+    font-size: clamp(7px, 1.85vw, 9px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .enterprise-soc-page .cta-content {
+    padding-top: calc(3.75rem + 41vw);
+  }
+
+  .enterprise-soc-page .cta-section .cta-content .cta-pill.purple-pill {
+    top: calc(4.75rem + 35vw);
+    transform: translateX(-50%) scale(0.84);
+    padding: 2px 5px;
+    font-size: clamp(6.5px, 1.75vw, 8px);
+  }
+}
+
+@media (max-width: 375px) {
+  .enterprise-soc-page .cta-content {
+    padding-top: calc(3rem + 44vw);
+  }
+
+  .enterprise-soc-page .cta-section .cta-content .cta-pill.purple-pill {
+    top: calc(4.5rem + 37vw);
+    transform: translateX(-50%) scale(0.8);
+    padding: 1px 4px;
+    font-size: clamp(6px, 1.65vw, 7.5px);
+  }
+}
+
 @media (max-width: 640px) {
   .enterprise-soc-page .esoc-hero-heading {
     font-size: clamp(1.65rem, 7.2vw, 2.15rem);
