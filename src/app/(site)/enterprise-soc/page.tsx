@@ -32,6 +32,7 @@ export default function EnterpriseSocPage() {
         <CtaSection
           data={ENTERPRISE_SOC_CTA}
           pill="This is Not Assistance. This is Autonomy."
+          pillShowSparkle={false}
           heading={
             <>
               <em className="cta-heading-serif">Enterprise SOC transformation</em>{' '}
