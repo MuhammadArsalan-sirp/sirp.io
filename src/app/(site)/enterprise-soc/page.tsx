@@ -31,6 +31,7 @@ export default function EnterpriseSocPage() {
         </div>
         <CtaSection
           data={ENTERPRISE_SOC_CTA}
+          pillShowSparkle={false}
           pill="This is Not Assistance. This is Autonomy."
           heading={
             <>

@@ -71,9 +71,126 @@
   font-size: 18px;
 }
 
-/* CTA dome tighter overlap */
+/* CTA dome — pill sits inside the arc, not on the border */
 .enterprise-soc-page .cta-section {
   margin-top: -2rem;
+  padding-top: 320px;
+}
+
+.enterprise-soc-page .cta-content {
+  gap: 28px;
+}
+
+.enterprise-soc-page .cta-pill {
+  max-width: min(420px, 78vw);
+  padding: 5px 10px;
+  font-size: 11px;
+  line-height: 1.35;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.enterprise-soc-page .cta-heading {
+  max-width: min(640px, 88vw);
+}
+
+.enterprise-soc-page .cta-description {
+  max-width: min(520px, 85vw);
+}
+
+@media (min-width: 821px) and (max-width: 1024px) {
+  .enterprise-soc-page .cta-section {
+    padding-top: 175px;
+  }
+
+  .enterprise-soc-page .cta-content .cta-pill.purple-pill {
+    max-width: min(380px, 82vw);
+  }
+}
+
+/* Mobile — pill below visible arc, narrow width */
+@media (max-width: 768px) {
+  .enterprise-soc-page .cta-section {
+    margin-top: -1rem;
+  }
+
+  .enterprise-soc-page .cta-content {
+    gap: 18px;
+    padding-inline: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .enterprise-soc-page .cta-heading {
+    max-width: min(20rem, calc(100vw - 2.5rem));
+    font-size: clamp(1.35rem, 6.5vw, 1.75rem);
+  }
+
+  .enterprise-soc-page .cta-description {
+    max-width: min(18rem, calc(100vw - 2.5rem));
+    font-size: 0.8125rem;
+    line-height: 1.55;
+  }
+
+  .enterprise-soc-page .cta-content .cta-pill.purple-pill {
+    margin-top: 7rem;
+  }
+}
+
+/*
+ * padding-top = arch margin + ~52% dome height (visible arc is mid-curve, not apex).
+ */
+@media (min-width: 481px) and (max-width: 768px) {
+  .enterprise-soc-page .cta-section {
+    padding-top: calc(6.125rem + 44vw + 8rem);
+    min-height: calc(85vw + 7rem);
+  }
+}
+
+@media (min-width: 415px) and (max-width: 480px) {
+  .enterprise-soc-page .cta-section {
+    padding-top: calc(5.75rem + 39vw + 8rem);
+    min-height: calc(75vw + 6.5rem);
+  }
+}
+
+/* iPhone — thin single-line pill */
+@media (max-width: 480px) {
+  .enterprise-soc-page .cta-content .cta-pill.purple-pill {
+    margin-top: 9rem;
+    box-sizing: border-box;
+    width: max-content;
+    max-width: calc(100vw - 2.5rem);
+    padding: 2px 6px;
+    font-size: 8px;
+    line-height: 1;
+    letter-spacing: 0;
+    border-width: 0.5px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 414px) {
+  .enterprise-soc-page .cta-section {
+    padding-top: calc(7rem + 42vw + 8rem);
+    min-height: calc(77.5vw + 7rem);
+  }
+}
+
+@media (max-width: 375px) {
+  .enterprise-soc-page .cta-section {
+    padding-top: calc(5.5rem + 42vw + 8rem);
+    min-height: calc(80vw + 6.25rem);
+  }
+
+  .enterprise-soc-page .cta-content .cta-pill.purple-pill {
+    font-size: 7.5px;
+    padding: 2px 5px;
+  }
 }
 
 @media (max-width: 640px) {

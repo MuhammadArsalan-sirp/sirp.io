@@ -1,7 +1,9 @@
 'use client'
 
+import type { ReactNode } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { PurplePill } from '@/components/shared/PurplePill'
 import { CTA_DATA } from '@/lib/constants'
 import './CtaSection.css'
 
@@ -18,9 +20,11 @@ interface CtaData { heading: string; headingItalic: string; primaryBtn: CtaBtn; 
 interface CtaSectionProps {
   data?: CtaData
   /** Override pill text above the heading */
-  pill?: string
+  pill?: ReactNode
+  /** Enterprise SOC mobile: omit sparkle so the pill stays thin */
+  pillShowSparkle?: boolean
   /** Override heading — accepts JSX so you can mix italic/normal spans */
-  heading?: React.ReactNode
+  heading?: ReactNode
   /** Optional description paragraph shown between heading and buttons */
   description?: string
 }
@@ -57,7 +61,13 @@ function ArcSVG({ strokeWidth = 1.5 }: { strokeWidth?: number }) {
 }
 
 /* ─── Component ──────────────────────────────────────────────────────────── */
-export function CtaSection({ data = CTA_DATA, pill, heading, description }: CtaSectionProps) {
+export function CtaSection({
+  data = CTA_DATA,
+  pill,
+  heading,
+  description,
+  pillShowSparkle = true,
+}: CtaSectionProps) {
   const { primaryBtn, secondaryBtn } = data
 
   return (
@@ -117,11 +127,10 @@ export function CtaSection({ data = CTA_DATA, pill, heading, description }: CtaS
       >
 
         {/* Optional pill */}
-        {pill && (
-          <span className="cta-pill">
-            <span className="cta-pill-star">✦</span>
+        {pill != null && (
+          <PurplePill className="cta-pill" showSparkle={pillShowSparkle}>
             {pill}
-          </span>
+          </PurplePill>
         )}
 
         {/* Heading — custom JSX or default */}
