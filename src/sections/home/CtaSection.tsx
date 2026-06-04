@@ -126,7 +126,6 @@ export function CtaSection({
         className="cta-content"
       >
 
-        {/* Optional pill */}
         {pill != null && (
           <PurplePill className="cta-pill" showSparkle={pillShowSparkle}>
             {pill}

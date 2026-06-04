@@ -76,16 +76,10 @@
   margin-top: -2rem;
 }
 
-/*
- * Pill on the dome curve — translateY on the pill only (not section padding-top),
- * so spacing after the threat section stays unchanged.
- */
+/* CTA pill — layout only; typography from PurplePill + CtaSection.css */
 .enterprise-soc-page .cta-content .cta-pill.purple-pill {
   position: relative;
   z-index: 31;
-  max-width: min(420px, 78vw);
-  text-align: center;
-  justify-content: center;
 }
 
 @media (min-width: 1025px) {
@@ -137,17 +131,13 @@
     top: calc(5rem + 33vw);
     left: 50%;
     margin: 0;
-    transform: translateX(-50%) scale(1);
+    transform: translateX(-50%) scale(0.88);
     transform-origin: center top;
-    box-sizing: border-box;
-    width: max-content;
     max-width: calc(100vw - 2.5rem);
     padding: 2px 6px;
-    font-size: 7px;
+    font-size: clamp(7px, 1.85vw, 9px);
     line-height: 1.1;
     letter-spacing: -0.02em;
-    gap: 0.15rem;
-    border-width: 0.5px;
     border-radius: 3px;
     white-space: nowrap;
   }
@@ -160,10 +150,9 @@
 
   .enterprise-soc-page .cta-section .cta-content .cta-pill.purple-pill {
     top: calc(4.75rem + 35vw);
-    transform: translateX(-50%) scale(0.96);
+    transform: translateX(-50%) scale(0.84);
     padding: 2px 5px;
-    font-size: 6.5px;
-    border-radius: 3px;
+    font-size: clamp(6.5px, 1.75vw, 8px);
   }
 }
 
@@ -174,11 +163,9 @@
 
   .enterprise-soc-page .cta-section .cta-content .cta-pill.purple-pill {
     top: calc(4.5rem + 37vw);
-    transform: translateX(-50%) scale(0.92);
-    padding: 2px 4px;
-    font-size: 6px;
-    border-radius: 3px;
-    letter-spacing: -0.04em;
+    transform: translateX(-50%) scale(0.8);
+    padding: 1px 4px;
+    font-size: clamp(6px, 1.65vw, 7.5px);
   }
 }
 
