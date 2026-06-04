@@ -16,7 +16,13 @@ const ARC_PATH     = 'M 0 532 C 0 238.184 238.185 0 532 0 C 825.816 0 1064 238.1
 
 /* ─── Types ──────────────────────────────────────────────────────────────── */
 interface CtaBtn  { label: string; href: string }
-interface CtaData { heading: string; headingItalic: string; primaryBtn: CtaBtn; secondaryBtn?: CtaBtn }
+interface CtaData {
+  primaryBtn: CtaBtn
+  secondaryBtn?: CtaBtn
+  /** Optional — default heading is used when `heading` prop is omitted */
+  heading?: string
+  headingItalic?: string
+}
 interface CtaSectionProps {
   data?: CtaData
   /** Override pill text above the heading */
