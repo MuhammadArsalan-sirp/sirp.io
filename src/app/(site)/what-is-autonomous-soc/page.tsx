@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { PageHeader } from '@/components/layout/PageHeader'
 import { SplitInfoCtaImage } from '@/components/shared/SplitInfoCtaImage'
 import { HowAutonomousSocWorksSection } from '@/components/shared/HowAutonomousSocWorksSection'
@@ -7,6 +8,19 @@ import { AutonomousSocSafetySection } from '@/components/shared/AutonomousSocSaf
 import { AutonomousSocComparisonSection } from '@/components/shared/AutonomousSocComparisonSection'
 import { CtaSection } from '@/sections/home/CtaSection'
 import './page.css'
+
+export const metadata: Metadata = {
+  title: 'What Is an Autonomous SOC?',
+  description: 'An Autonomous SOC uses AI to independently detect, investigate, and respond to incidents within governance boundaries — no playbooks, no manual routing, no analyst bottleneck.',
+  alternates: { canonical: '/what-is-autonomous-soc' },
+  openGraph: {
+    url: '/what-is-autonomous-soc',
+    type: 'article',
+    title: 'What Is an Autonomous SOC? | SIRP',
+    description: 'The definitive guide to autonomous security operations — architecture, decision flows, governance, and why traditional SOC models no longer scale.',
+  },
+}
+
 import {
   CTA_DATA,
   WHAT_IS_AUTONOMOUS_SOC_BENEFITS,

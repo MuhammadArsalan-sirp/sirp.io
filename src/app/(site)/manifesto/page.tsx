@@ -15,8 +15,14 @@ const MANIFESTO_DRIVE_EMBED = `https://drive.google.com/file/d/${MANIFESTO_DRIVE
 
 export const metadata: Metadata = {
   title: 'The Autonomous SOC Manifesto',
-  description:
-    'A framework for classifying levels of security operations autonomy — from SIRP Labs.',
+  description: 'A framework for classifying levels of security operations autonomy — from SIRP Labs. Read the definitive model for governed, AI-native security operations.',
+  alternates: { canonical: '/manifesto' },
+  openGraph: {
+    url: '/manifesto',
+    type: 'article',
+    title: 'The Autonomous SOC Manifesto | SIRP',
+    description: 'The SOC Autonomy Framework — a classification model for security operations maturity, from SIRP Labs.',
+  },
 }
 
 export default function Page() {
