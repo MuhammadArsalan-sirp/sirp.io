@@ -8,6 +8,8 @@ import { AutonomousSocComparisonSection } from '@/components/shared/AutonomousSo
 import { FaqAccordionSection } from '@/components/shared/FaqAccordionSection'
 import { InfoCtaBlock } from '@/components/shared/InfoCtaBlock'
 import { CtaSection } from '@/sections/home/CtaSection'
+import { JsonLd } from '@/components/seo/JsonLd'
+import { SITE_URL } from '@/lib/constants'
 import {
   SOAR_ALTERNATIVES_FAQ,
   SOAR_ALTERNATIVES_KEY_DIFFERENCES,
@@ -18,13 +20,43 @@ import './page.css'
 
 export const metadata: Metadata = {
   title: 'SOAR Alternatives',
-  description:
-    'Organizations searching for SOAR alternatives are typically experiencing operational friction — not feature gaps. Explore Autonomous SOC as a governed alternative to legacy workflow automation.',
+  description: 'Organizations experiencing SOAR friction face an architectural limit, not a feature gap. Explore Autonomous SOC as the governed alternative to legacy workflow automation.',
+  alternates: { canonical: '/soar-alternatives' },
+  openGraph: {
+    url: '/soar-alternatives',
+    type: 'article',
+    title: 'SOAR Alternatives — Autonomous SOC | SIRP',
+    description: 'Replace workflow orchestration with governed decision systems. See how Autonomous SOC addresses what SOAR cannot.',
+  },
 }
 
 export default function Page() {
   return (
     <div className="soar-alternatives-page">
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: SOAR_ALTERNATIVES_FAQ.items.map((item) => ({
+            '@type': 'Question',
+            name: item.question,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: item.answer,
+            },
+          })),
+        }}
+      />
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+            { '@type': 'ListItem', position: 2, name: 'SOAR Alternatives', item: `${SITE_URL}/soar-alternatives` },
+          ],
+        }}
+      />
       <PageHeader
         heading="SOAR Alternatives"
         subtext={

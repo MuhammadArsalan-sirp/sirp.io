@@ -47,15 +47,23 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: `${SITE_NAME} | Autonomous SOC Platform`,
     description: SITE_DESCRIPTION,
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${SITE_NAME} | Autonomous SOC Platform`,
     description: SITE_DESCRIPTION,
-    images: ['/og-image.png'],
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
     icon: '/images/logos/sirp_favicon.svg',
     shortcut: '/images/logos/sirp_favicon.svg',

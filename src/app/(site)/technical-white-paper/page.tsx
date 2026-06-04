@@ -5,9 +5,15 @@ import { WhitePaperBody } from '@/sections/technical-white-paper/WhitePaperBody'
 import '@/sections/technical-white-paper/page.css'
 
 export const metadata: Metadata = {
-  title: 'Autonomous SOC Architecture White Paper | SIRP',
-  description:
-    'Read the technical white paper on SIRP’s Autonomous SOC architecture, AI-native security design, decision pipelines, governance controls, and learning systems.',
+  title: 'Autonomous SOC Architecture White Paper',
+  description: 'Read the technical white paper on autonomous SOC architecture — AI-native security design, decision pipelines, governance controls, and learning systems.',
+  alternates: { canonical: '/technical-white-paper' },
+  openGraph: {
+    url: '/technical-white-paper',
+    type: 'article',
+    title: 'Autonomous SOC Architecture White Paper | SIRP',
+    description: 'Founder-authored technical paper on building a governed, AI-native autonomous security operations center.',
+  },
 }
 
 export default function Page() {

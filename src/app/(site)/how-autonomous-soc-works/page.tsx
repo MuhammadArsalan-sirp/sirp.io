@@ -10,6 +10,13 @@ import './page.css'
 export const metadata: Metadata = {
   title: 'How Autonomous SOC Works | AI-Driven Security Decision Flow',
   description: 'SIRP replaces the broken SOC process with a continuous decision system that ingests, reasons, governs, acts, and learns in real time.',
+  alternates: { canonical: '/how-autonomous-soc-works' },
+  openGraph: {
+    url: '/how-autonomous-soc-works',
+    type: 'article',
+    title: 'How Autonomous SOC Works | SIRP',
+    description: 'Five-stage AI decision loop — ingest, reason, govern, act, learn. How SIRP OmniSense operates end-to-end.',
+  },
 }
 
 export default function HowAutonomousSocWorksPage() {
@@ -39,7 +46,7 @@ export default function HowAutonomousSocWorksPage() {
         data={HOW_AUTONOMOUS_SOC_WORKS_DATA.steps.slice(5)}
         sectionClassName="!pb-20 md:!pb-28 lg:!pb-36"
       />
-      <CtaSection data={CTA_DATA} overlapTop={false} />
+      <CtaSection data={CTA_DATA} />
     </div>
   )
 }

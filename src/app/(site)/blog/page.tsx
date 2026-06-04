@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/layout/PageHeader'
 import { PurplePill } from '@/components/shared/PurplePill'
@@ -9,10 +10,16 @@ import './page.css'
 
 export const revalidate = 60
 
-export const metadata = {
-  title: 'Blog',
-  description:
-    'Autonomous SOC insights, security operations research, and AI-native security content from the SIRP team.',
+export const metadata: Metadata = {
+  title: 'Security Operations Blog',
+  description: 'Autonomous SOC insights, security operations research, and AI-native security content from the SIRP team.',
+  alternates: { canonical: '/blog' },
+  openGraph: {
+    url: '/blog',
+    type: 'website',
+    title: 'Security Operations Blog | SIRP',
+    description: 'Insights on autonomous SOC, AI-native security operations, and the future of enterprise security from the SIRP team.',
+  },
 }
 
 export default async function BlogPage() {

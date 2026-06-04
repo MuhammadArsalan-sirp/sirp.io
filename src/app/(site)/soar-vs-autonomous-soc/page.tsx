@@ -23,8 +23,15 @@ import {
 } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: SOAR_VS_AUTONOMOUS_SOC_METADATA.title,
+  title: 'SOAR vs Autonomous SOC | Key Differences Explained',
   description: SOAR_VS_AUTONOMOUS_SOC_METADATA.description,
+  alternates: { canonical: '/soar-vs-autonomous-soc' },
+  openGraph: {
+    url: '/soar-vs-autonomous-soc',
+    type: 'article',
+    title: 'SOAR vs Autonomous SOC — Key Differences | SIRP',
+    description: 'How workflow automation differs from AI-driven decision systems — a side-by-side architectural comparison.',
+  },
 }
 
 export default function Page() {

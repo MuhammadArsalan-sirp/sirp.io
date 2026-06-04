@@ -8,8 +8,15 @@ import { CtaSection } from '@/sections/home/CtaSection'
 import { OMNISENSE_PAGE_DATA, INTEGRATIONS_DATA, CTA_DATA } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'OmniSense™ AI Engine | Security Decision Intelligence',
+  title: 'OmniSense™ — Security Decision Intelligence',
   description: 'SIRP OmniSense™ delivers a governed Autonomous SOC that continuously detects, decides, and executes response actions within defined policy boundaries.',
+  alternates: { canonical: '/omnisense' },
+  openGraph: {
+    url: '/omnisense',
+    type: 'website',
+    title: 'OmniSense™ — Security Decision Intelligence | SIRP',
+    description: 'The AI-native engine powering autonomous detection, risk computation, and governed response at machine speed.',
+  },
 }
 
 export default function OmnisensePage() {

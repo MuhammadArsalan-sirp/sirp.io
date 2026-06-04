@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { EnterpriseSocHero } from '@/sections/enterprise-soc/EnterpriseSocHero'
 import { EnterpriseSocReality } from '@/sections/enterprise-soc/EnterpriseSocReality'
 import { EnterpriseSocShift } from '@/sections/enterprise-soc/EnterpriseSocShift'
@@ -7,10 +8,16 @@ import { EnterpriseSocThreat } from '@/sections/enterprise-soc/EnterpriseSocThre
 import { CtaSection } from '@/sections/home/CtaSection'
 import './page.css'
 
-export const metadata = {
-  title: 'Enterprise SOC | SIRP',
-  description:
-    'SIRP transforms enterprise security operations from human-driven workflows into an AI-native, self-orchestrating system.',
+export const metadata: Metadata = {
+  title: 'Enterprise SOC Platform',
+  description: 'SIRP transforms enterprise security operations from human-driven workflows into an AI-native, self-orchestrating autonomous SOC system.',
+  alternates: { canonical: '/enterprise-soc' },
+  openGraph: {
+    url: '/enterprise-soc',
+    type: 'website',
+    title: 'Enterprise SOC Platform | SIRP',
+    description: 'From human-centered operations to AI-native decision systems — the enterprise SOC transformation built on OmniSense.',
+  },
 }
 
 const ENTERPRISE_SOC_CTA = {

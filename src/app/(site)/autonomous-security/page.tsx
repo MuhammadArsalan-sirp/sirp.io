@@ -1,8 +1,21 @@
+import type { Metadata } from 'next'
 import { PageHeader } from '@/components/layout/PageHeader'
 import { InfoCtaBlock } from '@/components/shared/InfoCtaBlock'
 import { SplitInfoCtaImage } from '@/components/shared/SplitInfoCtaImage'
 import { CtaSection } from '@/sections/home/CtaSection'
 import './page.css'
+
+export const metadata: Metadata = {
+  title: 'Autonomous Security Operations',
+  description: 'How SIRP replaces reactive SOC workflows with AI-native autonomous security — decision systems that detect, investigate, and respond without human bottlenecks.',
+  alternates: { canonical: '/autonomous-security' },
+  openGraph: {
+    url: '/autonomous-security',
+    type: 'website',
+    title: 'Autonomous Security Operations | SIRP',
+    description: 'From playbooks to decision systems — the architectural shift redefining modern security operations.',
+  },
+}
 
 export default function Page() {
   const autonomousCtaData = {
