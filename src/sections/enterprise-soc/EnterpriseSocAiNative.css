@@ -19,8 +19,8 @@
 /* ─── Decorative pill loop ────────────────────────────────── */
 .ai-native-loop {
   position: absolute;
-  width: 320px;
-  height: 600px;
+  width: clamp(180px, 25vw, 320px);
+  height: clamp(340px, 47vw, 600px);
   border-radius: 999px;
   border: 2px solid transparent;
   background:

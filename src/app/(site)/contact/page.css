@@ -453,4 +453,9 @@
   .contact-form-grid {
     grid-template-columns: 1fr;
   }
+
+  .contact-form-card {
+    min-height: auto;
+    padding: 1.25rem 1.25rem 2rem;
+  }
 }
