@@ -5,7 +5,7 @@ import '@/components/shared/DomeHero.css'
 
 interface DomeHeroBtn {
   label: string
-  href?: string
+  href: string
   variant?: 'primary' | 'secondary'
   target?: string
   rel?: string
