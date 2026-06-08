@@ -6,6 +6,7 @@ import { SocAutonomyFrameworkTable } from '@/components/shared/SocAutonomyFramew
 import { KeyInsightsSection } from '@/sections/manifesto/KeyInsightsSection'
 import { ManifestoCitationSection } from '@/sections/manifesto/ManifestoCitationSection'
 import { ManifestoAboutAuthorSection } from '@/sections/manifesto/ManifestoAboutAuthorSection'
+import { CtaSection } from '@/sections/home/CtaSection'
 import '@/sections/manifesto/page.css'
 
 /** Google Drive file; iframe uses `/preview` (Drive embed, same idea as sirp.io/manifesto). */
@@ -113,6 +114,15 @@ export default function Page() {
       </div>
 
       <ManifestoAboutAuthorSection />
+
+      <CtaSection
+        heading={<>Experience the <span className="cta-heading-serif">Self-Driving</span> SOC</>}
+        description="SARA Open is the free AI security analyst powered by OmniSense — the architecture described in this paper."
+        data={{
+          primaryBtn:   { label: 'Try SARA Open — Free', href: '/autonomous-security' },
+          secondaryBtn: { label: 'Request a Demo',        href: '/request-demo' },
+        }}
+      />
     </div>
   )
 }

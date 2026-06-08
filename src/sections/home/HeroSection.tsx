@@ -48,8 +48,8 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
 
   return (
     <section
-      className="relative isolate overflow-hidden"
-      style={{ height: 'calc(100dvh - 4.5rem)', maxHeight: 'calc(100dvh - 4.5rem)' }}
+      className="relative isolate overflow-hidden flex flex-col justify-end xl:max-2xl:!h-[125vh]"
+      style={{ height: '100dvh' }}
     >
       {/* Background video — enters with hero copy */}
       <motion.div
@@ -64,7 +64,7 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
           loop
           playsInline
           preload="auto"
-          className="relative z-0 h-full w-full object-cover md:object-contain object-center"
+          className="relative z-0 h-full w-full object-cover object-center"
         >
           <source src={videoSrc} type="video/webm" />
         </video>
@@ -82,8 +82,8 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
       />
 
       {/* Content — aligned with header logo via container-sirp */}
-      <div className="absolute left-0 right-0 bottom-[5rem] z-10 sm:bottom-[6rem] md:bottom-[8rem] lg:bottom-[9.5rem]">
-        <div className="container-sirp flex flex-col gap-3 sm:gap-4 lg:gap-6">
+      <div className="relative z-10 w-full pb-16 sm:pb-20 md:pb-24 lg:pb-[7vh] xl:max-2xl:pb-[5vh] 2xl:pb-[12vh]">
+        <div className="container-sirp flex flex-col gap-4 md:gap-5 lg:gap-6">
 
         {/* Pill */}
         <motion.div
@@ -98,15 +98,16 @@ export function HeroSection({ data = HERO_DATA }: HeroSectionProps) {
         </motion.div>
 
         {/* Heading + subheading */}
-        <div className="relative z-10 flex flex-col gap-3">
+        <div className="relative z-10 flex flex-col gap-3 md:gap-4 lg:gap-5">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...HERO_ENTER, delay: 0.02 }}
-            className="font-sans font-bold text-white"
+            className="font-sans text-white"
             style={{
-              fontSize: 'clamp(1.85rem, 6vw, 5rem)',
-              lineHeight: '1.08',
+              fontSize: 'clamp(1.85rem, 6.5vw, 5.5rem)',
+              fontWeight: 500,
+              lineHeight: '1.1',
               letterSpacing: '-0.03em',
             }}
           >

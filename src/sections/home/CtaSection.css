@@ -286,56 +286,64 @@
 }
 
 /* ── Tablet / large phone  481 – 768 px
-     dome: 170vw × 85vw   arch-margin: 78px    padding-top = 138px  */
+     dome: 200vw × 100vw   arch-margin: 78px    padding-top = 138px  */
 @media (min-width: 481px) and (max-width: 768px) {
   .cta-section {
-    min-height: calc(85vw + 78px);
+    min-height: calc(100vw + 78px);
     padding-top: 138px;
     padding-bottom: 40px;
   }
-  .cta-dome-container { width: 170vw; height: 85vw; }
+  .cta-dome-container { width: 200vw; height: 100vw; }
   .cta-content        { gap: 28px; }
   .cta-buttons        { flex-direction: column; gap: 10px; }
+  .cta-heading        { font-size: 2.25rem; }
+  .cta-description    { font-size: 1rem; }
 }
 
 /* ── iPhone 14 Pro Max / large phones  415 – 480 px
-     dome: 150vw × 75vw   arch-margin: 72px    padding-top = 128px  */
+     dome: 190vw × 95vw   arch-margin: 72px    padding-top = 128px  */
 @media (min-width: 415px) and (max-width: 480px) {
   .cta-section {
-    min-height: calc(75vw + 72px);
+    min-height: calc(95vw + 72px);
     padding-top: 128px;
     padding-bottom: 36px;
   }
-  .cta-dome-container { width: 150vw; height: 75vw; }
+  .cta-dome-container { width: 190vw; height: 95vw; }
   .cta-content        { gap: 24px; }
   .cta-buttons        { flex-direction: column; gap: 10px; }
   .cta-btn            { padding: 13px 24px; font-size: 14px; }
+  .cta-heading        { font-size: 2.25rem; }
+  .cta-description    { font-size: 1rem; }
 }
 
 /* ── iPhone 12 Pro / mid phones  376 – 414 px
-     dome: 155vw × 77.5vw  arch-margin: 70px   padding-top = 124px  */
+     dome: 195vw × 97.5vw  arch-margin: 70px   padding-top = 124px  */
 @media (min-width: 376px) and (max-width: 414px) {
   .cta-section {
-    min-height: calc(77.5vw + 70px);
+    min-height: calc(97.5vw + 70px);
     padding-top: 124px;
     padding-bottom: 32px;
   }
-  .cta-dome-container { width: 155vw; height: 77.5vw; }
+  .cta-dome-container { width: 195vw; height: 97.5vw; }
   .cta-content        { gap: 22px; }
   .cta-buttons        { flex-direction: column; gap: 10px; }
   .cta-btn            { padding: 12px 22px; font-size: 14px; }
+  .cta-heading        { font-size: 2.25rem; }
+  .cta-description    { font-size: 1rem; }
 }
 
 /* ── Small phones  ≤ 375 px  (iPhone SE, Samsung S8+, etc.)
-     dome: 160vw × 80vw   arch-margin: 68px    padding-top = 120px  */
+     dome: 200vw × 100vw   arch-margin: 68px    padding-top = 120px  */
 @media (max-width: 375px) {
   .cta-section {
-    min-height: calc(80vw + 68px);
+    min-height: calc(100vw + 68px);
     padding-top: 120px;
     padding-bottom: 28px;
   }
-  .cta-dome-container { width: 160vw; height: 80vw; }
+  .cta-dome-container { width: 200vw; height: 100vw; }
   .cta-content        { gap: 20px; }
   .cta-buttons        { flex-direction: column; gap: 8px; }
   .cta-btn            { padding: 12px 20px; font-size: 13px; }
+  .cta-heading        { font-size: 2.25rem; }
+  .cta-description    { font-size: 1rem; }
 }

@@ -4,7 +4,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.62rem 1.65rem;
+  height: 50px;
+  padding: 8px 26px;
+  gap: 8px;
   border-radius: 50px;
   background: #8e2dff;
   color: #ffffff;
@@ -124,7 +126,7 @@ button.sirp-button:disabled {
 
 @media (max-width: 480px) {
   .sirp-button {
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
     padding: 0.45rem 1rem;
     letter-spacing: 0.012em;
   }

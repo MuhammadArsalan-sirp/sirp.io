@@ -116,7 +116,7 @@ export const SARA_DATA = {
 
 /* ─── Integrations Section ───────────────────────────────── */
 export const INTEGRATIONS_DATA = {
-  pill: '⚙️ Autonomous SOC Ecosystem',
+  pill: 'Autonomous SOC Ecosystem',
   heading: 'Every tool.',
   headingItalic: 'One',
   headingSuffix: 'intelligence.',
